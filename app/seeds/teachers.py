@@ -14,18 +14,6 @@ def seed_teachers():
     db.session.add(demo)
     db.session.commit()
 
-
-      "phone": self.phone,
-      "street_address": self.street_address,
-      "city": self.city,
-      "state_id": self.state_id,
-      "zip": self.zip,
-      "photo_url": self.photo_url,
-
-# Uses a raw SQL query to TRUNCATE the users table.
-# SQLAlchemy doesn't have a built in function to do this
-# TRUNCATE Removes all the data from the table, and resets
-# the auto incrementing primary key
 def undo_teachers():
     db.session.execute('TRUNCATE teachers RESTART IDENTITY CASCADE;')
     db.session.commit()
