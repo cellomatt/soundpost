@@ -17,6 +17,10 @@ class Student(db.Model, UserMixin):
   teacher_id = db.Column(db.Integer, db.ForeignKey("teachers.id"), nullable = False)
 
   teacher = db.relationship("Teacher", back_populates="students")
+  assignments = db.relationship("Assignment", back_populates="students")
+  practice_logs = db.relationship("PracticeLog", back_populates="student")
+  timeslots = db.relationship("TimeSlot", back_populates="student")
+
 
   @property
   def password(self):

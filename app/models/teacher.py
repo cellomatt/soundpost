@@ -19,6 +19,10 @@ class Teacher(db.Model, UserMixin):
   photo_url = db.Column(db.String(255), nullable = False)
 
   students = db.relationship("Student", back_populates="teacher")
+  assignments = db.relationship("Assignment", back_populates="teacher")
+  state = db.relationship("State", back_populates="state")
+  timeslots = db.relationship("TimeSlot", back_populates="teacher")
+
 
   @property
   def password(self):
