@@ -1,10 +1,10 @@
 from werkzeug.security import generate_password_hash
 from app.models import db, Teacher, State
 
-state = State.query.filter(State.name == "Missouri").first()
 
 # Adds a demo user. UPDATE for both students and teachers
 def seed_teachers():
+    state = State.query.filter(State.name == "Missouri").first()
 
     demo = Teacher(first_name='Matt', last_name='Kufchak', email_address='matt@email.com',
                 password='password', instrument='cello', phone='123-789-6543', street_address='143 S 1st St',
