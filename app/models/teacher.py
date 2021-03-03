@@ -14,13 +14,13 @@ class Teacher(db.Model, UserMixin):
   phone = db.Column(db.String(15), nullable = False)
   street_address = db.Column(db.String(255), nullable = False)
   city = db.Column(db.String(255), nullable = False)
-  state_id = db.Column(db.Integer, db.ForeignKey("state.id"), nullable = Flase)
+  state_id = db.Column(db.Integer, db.ForeignKey("states.id"), nullable = False)
   zip = db.Column(db.Integer, nullable = False)
   photo_url = db.Column(db.String(255), nullable = False)
 
   students = db.relationship("Student", back_populates="teacher")
   assignments = db.relationship("Assignment", back_populates="teacher")
-  state = db.relationship("State", back_populates="state")
+  state = db.relationship("State", back_populates="teacher")
   timeslots = db.relationship("TimeSlot", back_populates="teacher")
 
 
