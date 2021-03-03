@@ -56,9 +56,10 @@ states = [
 
 def seed_states():
 
-    state_data = [State(state) for state in states]
+    state_data = [State(name=state.name, abbreviation=state.abbreviation) for state in states]
 
-    db.session.add(state_data)
+    for state in state_data:
+        db.session.add(state)
 
     db.session.commit()
 
