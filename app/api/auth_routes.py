@@ -1,11 +1,12 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import User, db
+from app.models import Student, Teacher, db
 from app.forms import LoginForm
-from app.forms import SignUpForm
+from app.forms import SignUpStudentForm, SignUpTeacherForm
 from flask_login import current_user, login_user, logout_user, login_required
 
 auth_routes = Blueprint('auth', __name__)
 
+# ----------- TODO: Needs to be refactored for both students and teachers
 
 def validation_errors_to_error_messages(validation_errors):
     """
@@ -14,7 +15,7 @@ def validation_errors_to_error_messages(validation_errors):
     errorMessages = []
     for field in validation_errors:
         for error in validation_errors[field]:
-            errorMessages.append(f"{field} : {error}")
+            errorMessages.append(f"{field}: {error}")
     return errorMessages
 
 
