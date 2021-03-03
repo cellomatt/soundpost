@@ -2,7 +2,7 @@ from werkzeug.security import generate_password_hash
 from app.models import db, Student, Teacher
 
 # Adds a demo user. UPDATE for both students and teachers
-def seed_users():
+def seed_students():
 
     demo = Student(first_name='Demo', last_name='Student', email_address='demo@email.com',
                 password='password', instrument='cello', phone='999-891-3202', parent_name='Demo Parent',
@@ -16,6 +16,6 @@ def seed_users():
 # SQLAlchemy doesn't have a built in function to do this
 # TRUNCATE Removes all the data from the table, and resets
 # the auto incrementing primary key
-def undo_users():
-    db.session.execute('TRUNCATE users;')
+def undo_students():
+    db.session.execute('TRUNCATE students RESTART IDENTITY CASCADE;')
     db.session.commit()
