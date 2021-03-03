@@ -4,8 +4,9 @@ from app.models import db, Student, Teacher
 # Adds a demo user. UPDATE for both students and teachers
 def seed_users():
 
-    demo = User(username='Demo', email='demo@aa.io',
-                password='password')
+    demo = Student(first_name='Demo', last_name='Student', email_address='demo@email.com',
+                password='password', instrument='cello', phone='999-891-3202', parent_name='Demo Parent',
+                photo_url='https://soundpost-app.s3.us-east-2.amazonaws.com/XzA1NTg5MzUuanBn.jpg', teacher_id=1)
 
     db.session.add(demo)
 
