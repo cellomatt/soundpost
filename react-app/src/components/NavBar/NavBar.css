@@ -11,7 +11,7 @@
   border-right: 4px solid #36ff88;
   border-top: hidden;
   border-left: hidden;
-  border-radius: 0 0 5px 0;
+  border-radius: 0 0 8px 0;
   border-top-right-radius: 0;
 }
 
@@ -20,8 +20,11 @@
   flex-direction: row;
   box-sizing: border-box;
   max-width: 40%;
-  margin: 0 2em;
+  margin: 0.1em 2em;
   align-self: flex-start;
+  flex-grow: 2;
+  flex-shrink: 2;
+  max-height: 100%;
 }
 
 .logout {
@@ -52,7 +55,9 @@
   text-decoration: none;
   justify-content: center;
   box-sizing: border-box;
-  margin: 2.5em 2em 0 0;
+  margin: 2.7em 1em 0 0;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 .nav li {
@@ -64,13 +69,14 @@
   font-size: 2em;
   box-sizing: border-box;
   text-align: center;
+  flex-shrink: 1;
 }
 
 .default:hover {
   color: #36ff68;
   border-bottom: 4px solid #36ff88;
   border-right: 4px solid #36ff88;
-  border-radius: 0 0 5px 0;
+  border-radius: 0 0 8px 0;
   border-top: hidden;
   border-left: hidden;
 }
@@ -82,7 +88,7 @@
   justify-content: space-between;
   background-image: linear-gradient(
     #0061ff 30%,
-    #42ffdc 100%
+    #42ffdc 95%
     );
   height: 20em;
   position: fixed;
