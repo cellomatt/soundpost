@@ -43,7 +43,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
 
   return (
     <div className="main">
-      <form onSubmit={onSignUp}>
+      <form className="form" onSubmit={onSignUp}>
         <div>
           <label>User Name</label>
           <input

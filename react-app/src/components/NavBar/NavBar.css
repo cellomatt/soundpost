@@ -3,6 +3,7 @@
   color: #42ffdc;
   padding: 0 10px 5px;
   border-right: 4px solid transparent;
+  transition: .2s;
 }
 
 .active {
@@ -40,13 +41,15 @@
   cursor: pointer;
   border-right: 4px solid transparent;
   padding: 0 10px 5px;
+  transition: .2s;
 }
 
 .logout:hover {
   color: #36ff68;
-  border-bottom: 4px solid #36ff88;
+  /* border-bottom: 4px solid #36ff88;
   border-right: 4px solid #36ff88;
-  border-radius: 0 0 5px 0;
+  border-radius: 0 0 5px 0; */
+  transition: .2s;
 }
 
 .nav {
@@ -73,11 +76,12 @@
 
 .default:hover {
   color: #36ff68;
-  border-bottom: 4px solid #36ff88;
+  /* border-bottom: 4px solid #36ff88;
   border-right: 4px solid #36ff88;
   border-radius: 0 0 8px 0;
   border-top: hidden;
-  border-left: hidden;
+  border-left: hidden; */
+  transition: .2s;
 }
 
 .navbar {
