@@ -89,13 +89,21 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  /* background-image: linear-gradient(
-    #0061ff 30%,
-    #42ffdc 95%
-    ); */
   height: 10em;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
+}
+
+.navbar-scrolled {
+  background-color: #42ffdc;
+}
+
+.default-scrolled {
+  color: #0061FF;
+}
+
+.logout-scrolled{
+  color: #0061FF;
 }
