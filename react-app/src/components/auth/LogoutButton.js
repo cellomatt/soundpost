@@ -5,7 +5,7 @@ import { logout } from "../../services/auth";
 import { userLogout } from "../../store/session"
 
 
-const LogoutButton = ({setAuthenticated}) => {
+const LogoutButton = ({setAuthenticated, scrolled}) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -16,7 +16,7 @@ const LogoutButton = ({setAuthenticated}) => {
     dispatch(userLogout());
   };
 
-  return <button className="logout" onClick={onLogout}>Logout</button>;
+  return <button className={`logout ${scrolled ? "logout-scrolled" : ""}`} onClick={onLogout}>Logout</button>;
 };
 
 export default LogoutButton;

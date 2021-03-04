@@ -46,9 +46,6 @@
 
 .logout:hover {
   color: #36ff68;
-  /* border-bottom: 4px solid #36ff88;
-  border-right: 4px solid #36ff88;
-  border-radius: 0 0 5px 0; */
   transition: .2s;
 }
 
@@ -76,11 +73,6 @@
 
 .default:hover {
   color: #36ff68;
-  /* border-bottom: 4px solid #36ff88;
-  border-right: 4px solid #36ff88;
-  border-radius: 0 0 8px 0;
-  border-top: hidden;
-  border-left: hidden; */
   transition: .2s;
 }
 
@@ -89,12 +81,30 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  background-image: linear-gradient(
-    #0061ff 30%,
-    #42ffdc 95%
-    );
-  height: 20em;
+  height: 10em;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 100;
+}
+
+.active-scrolled {
+  color: #0061FF;
+  border-bottom: 4px solid #0061FF;
+  border-right: 4px solid #0061FF;
+}
+
+.navbar-scrolled {
+  background-color: #42ffdc;
+  transition: .1s;
+}
+
+.default-scrolled {
+  color: #0061FF;
+  transition: .1s;
+}
+
+.logout-scrolled {
+  color: #0061FF;
+  transition: .1s;
 }
