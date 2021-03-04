@@ -1,0 +1,96 @@
+.default {
+  text-decoration: none;
+  color: #42ffdc;
+  padding: 0 10px 5px;
+  border-right: 4px solid transparent;
+}
+
+.active {
+  color: #36ff68;
+  border-bottom: 4px solid #36ff88;
+  border-right: 4px solid #36ff88;
+  border-top: hidden;
+  border-left: hidden;
+  border-radius: 0 0 8px 0;
+  border-top-right-radius: 0;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  max-width: 40%;
+  margin: 0.5em 2em;
+  align-self: flex-start;
+  flex-grow: 2;
+  flex-shrink: 2;
+  max-height: 100%;
+}
+
+.logout {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 4em;
+  font-family: "P22BayerW00-Universal";
+  font-size: 1em;
+  box-sizing: border-box;
+  color: #42ffdc;
+  text-align: center;
+  cursor: pointer;
+  border-right: 4px solid transparent;
+  padding: 0 10px 5px;
+}
+
+.logout:hover {
+  color: #36ff68;
+  border-bottom: 4px solid #36ff88;
+  border-right: 4px solid #36ff88;
+  border-radius: 0 0 5px 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 3em 1em 0 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.nav li {
+  margin: 0 .2em;
+  list-style-type: none;
+  flex-wrap: none;
+  font-family: "P22BayerW00-Universal";
+  font-size: 2em;
+  box-sizing: border-box;
+  text-align: center;
+  flex-shrink: 1;
+}
+
+.default:hover {
+  color: #36ff68;
+  border-bottom: 4px solid #36ff88;
+  border-right: 4px solid #36ff88;
+  border-radius: 0 0 8px 0;
+  border-top: hidden;
+  border-left: hidden;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    #0061ff 30%,
+    #42ffdc 95%
+    );
+  height: 20em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

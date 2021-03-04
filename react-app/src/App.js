@@ -4,6 +4,7 @@ import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
+import Home from "./components/Home"
 import { authenticate } from "./services/auth";
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
     <BrowserRouter>
       <NavBar setAuthenticated={setAuthenticated} />
       <Switch>
+        {!authenticated && <Route path="/" exact={true} authenticated={authenticated}>
+          <Home />
+        </Route>}
         <Route path="/login" exact={true}>
           <LoginForm
             authenticated={authenticated}
@@ -38,7 +42,7 @@ function App() {
           <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
         </Route>
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <h1>My Home Page</h1>
+        <h1 className="main">Logged In Home Page</h1>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
