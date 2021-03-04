@@ -42,7 +42,6 @@ class Student(db.Model, UserMixin):
       "first_name": self.first_name,
       "last_name": self.last_name,
       "email_address": self.email_address,
-      "hashed_password": self.hashed_password,
       "instrument": self.instrument,
       "phone": self.phone,
       "parent_name": self.parent_name,
