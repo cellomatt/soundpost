@@ -17,7 +17,7 @@ class Student(db.Model, UserMixin):
   teacher_id = db.Column(db.Integer, db.ForeignKey("teachers.id"), nullable = False)
 
   teacher = db.relationship("Teacher", back_populates="students")
-  assignments = db.relationship("Assignment", back_populates="students")
+  assignments = db.relationship("Assignment", back_populates="student")
   practice_logs = db.relationship("PracticeLog", back_populates="student")
   timeslots = db.relationship("TimeSlot", back_populates="student")
 
@@ -42,7 +42,6 @@ class Student(db.Model, UserMixin):
       "first_name": self.first_name,
       "last_name": self.last_name,
       "email_address": self.email_address,
-      "hashed_password": self.hashed_password,
       "instrument": self.instrument,
       "phone": self.phone,
       "parent_name": self.parent_name,
