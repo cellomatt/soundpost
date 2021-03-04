@@ -20,9 +20,9 @@ login = LoginManager(app)
 login.login_view = 'auth.unauthorized'
 
 # TODO: Update for both students and teachers
-# @login.user_loader
-# def load_user(id):
-#     return User.query.get(int(id))
+@login.user_loader
+def load_user(id):
+    return Student.query.get(int(id))
 
 
 # Tell flask about our seed commands
