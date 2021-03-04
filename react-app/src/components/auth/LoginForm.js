@@ -21,13 +21,17 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
       setErrors(user.errors);
     }
   };
-  const updateEmail = (e) => {
-    setEmail(e.target.value);
-  };
 
-  const updatePassword = (e) => {
-    setPassword(e.target.value);
-  };
+  const demoLogin = async (e) => {
+    e.preventDefault();
+    const demoUser = await login('demo@email.com', 'password');
+    if (!demoUser.errors) {
+      dispatch(setUser(demoUser))
+      setAuthenticated(true);
+    } else {
+      setErrors(demoUser.errors);
+    }
+  }
 
   if (authenticated) {
     return <Redirect to="/" />;
@@ -48,7 +52,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             type="text"
             placeholder="Email"
             value={email}
-            onChange={updateEmail}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div>
@@ -58,9 +62,10 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={updatePassword}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button type="submit">Login</button>
+          <button type="submit" onClick={demoLogin}>Demo User</button>
         </div>
       </form>
     </div>
