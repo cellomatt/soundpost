@@ -3,6 +3,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+li,
+ul,
+div,
+span,
+input,
+textarea,
+body,
+select,
+header,
+nav {
+  color: #0061ff;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  text-decoration: none;
+  font-family: "Rubik", sans-serif;
+}
+
 
 body {
   display: flex;
@@ -11,10 +37,99 @@ body {
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
   margin-top: 20em;
   box-sizing: border-box;
   padding: 0;
+  left: 0;
+  top: 0;
   width: 100%;
 	height: 100%;
-	position: fixed;
+	position: absolute;
+  align-items: center;
+}
+
+.form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 2em;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: "Rubik";
+  width: 500px;
+  margin-top: 1.5em;
+}
+
+.form__div {
+  box-sizing: border-box;
+  margin: .3em 0;
+  width: 100%;
+}
+
+.form__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.form__buttons button{
+  margin: 0 1em;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-family: "P22BayerW00-Universal";
+  color: #0061FF;
+  font-size: 2em;
+  padding: .1em .3em;
+  box-sizing: border-box;
+  border: 3px double #0061ff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form__buttons button:hover{
+  border: 3px solid ;
+}
+
+.form__errors {
+  box-sizing: border-box;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}
+
+.form__input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: .3em 0;
+  background-color: transparent;
+  border: 3px solid #0061FF;
+  font-size: 1em;
+  border-radius: 5px;
+  padding: .4em .3em;
+  outline: none;
+}
+
+.form__input:focus {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 3px #0061ff;
+}
+
+.form__title {
+  font-family: "P22BayerW00-Universal";
+  font-size: 3.5em;
+  margin: 0 0 .2em;
+  color: #0061FF;
+  font-weight: 400;
+}
+
+.vertical-center {
+  position: fixed;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }

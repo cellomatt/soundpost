@@ -9,6 +9,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState([]);
   const [repeatPassword, setRepeatPassword] = useState("");
 
   const onSignUp = async (e) => {
@@ -17,6 +18,8 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
       const user = await signUp(username, first_name, last_name, email, password);
       if (!user.errors) {
         setAuthenticated(true);
+      } else {
+        setErrors(user.errors);
       }
     }
   };
@@ -43,45 +46,62 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
 
   return (
     <div className="main">
-      <form onSubmit={onSignUp}>
-        <div>
+      <form className="form vertical-center" onSubmit={onSignUp}>
+        <h1 className="form__title">Sign Up</h1>
+        {errors.length > 0 &&
+        <div className="form__div form__errors">
+          {errors.map((error) => (
+            <div>{error}</div>
+          ))}
+        </div>
+        }
+        <div className="form__div">
           <label>User Name</label>
           <input
             type="text"
+            className="form__input"
             name="username"
             onChange={updateUsername}
             value={username}
+            required={true}
           ></input>
         </div>
-        <div>
+        <div className="form__div">
           <label>Email</label>
           <input
             type="text"
+            className="form__input"
             name="email"
             onChange={updateEmail}
             value={email}
+            required={true}
           ></input>
         </div>
-        <div>
+        <div className="form__div">
           <label>Password</label>
           <input
             type="password"
             name="password"
+            className="form__input"
             onChange={updatePassword}
             value={password}
+            required={true}
           ></input>
         </div>
-        <div>
-          <label>Repeat Password</label>
+        <div className="form__div">
+          <label>Confirm Password</label>
           <input
             type="password"
             name="repeat_password"
+            className="form__input"
             onChange={updateRepeatPassword}
             value={repeatPassword}
             required={true}
           ></input>
         </div>
-        <button type="submit">Sign Up</button>
+        <div className="form__div form__buttons">
+          <button type="submit">Sign Up</button>
+        </div>
       </form>
     </div>
 

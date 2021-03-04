@@ -39,32 +39,39 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
   return (
     <div className="main">
-      <form onSubmit={onLogin}>
-        <div>
+      <form className="form vertical-center" onSubmit={onLogin}>
+        <h1 className="form__title">Log In</h1>
+        {errors.length > 0 &&
+        <div className="form__div form__errors">
           {errors.map((error) => (
             <div>{error}</div>
           ))}
         </div>
-        <div>
-          <label htmlFor="email">Email</label>
+        }
+        <div className="form__div">
+          <label htmlFor="email">Email Address: </label>
           <input
             name="email"
+            className="form__input"
             type="text"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
+        <div className="form__div">
+          <label htmlFor="password">Password: </label>
           <input
             name="password"
+            className="form__input"
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Login</button>
+        </div>
+        <div className="form__div form__buttons">
+          <button type="submit">Log In</button>
           <button type="submit" onClick={demoLogin}>Demo User</button>
         </div>
       </form>
