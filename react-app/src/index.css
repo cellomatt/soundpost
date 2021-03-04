@@ -39,9 +39,8 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  padding-top: 12em;
+  padding-top: 13em;
   box-sizing: border-box;
-
   left: 0;
   top: 0;
   width: 100%;
@@ -49,8 +48,8 @@ body {
 	position: absolute;
   align-items: center;
   background-image: linear-gradient(
-    #0061ff 8em,
-    #42ffdc 20em
+    #0061ff 5em,
+    #42ffdc 15em
     );
 }
 

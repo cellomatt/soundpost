@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import './NavBar.css'
 import {ReactComponent as Logo} from './logo.svg'
+import {ReactComponent as Logo2} from './logo2.svg'
 
 
 const NavBar = ({ authenticated, setAuthenticated }) => {
@@ -15,36 +16,36 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
     if (winScroll > 160) {
       setScrolled(true);
     } else { setScrolled(false); }
-    console.log(winScroll);
+    // console.log(winScroll);
     // document.getElementById("myBar").style.width = scrolled + "%";
   }
 
   return (
     <div className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <Link className="logo" to="/">
-        <Logo  />
+        {!scrolled ? <Logo  /> : <Logo2 />}
       </Link>
       <nav>
       <ul className="nav">
         <li>
-          <NavLink className="default" to="/" exact={true} activeClassName="active">
+          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
             Home
           </NavLink>
         </li>
         <li>
-          {!authenticated && <NavLink className="default" to="/login" exact={true} activeClassName="active">
+          {!authenticated && <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/login" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
             Login
           </NavLink>
         }
         </li>
         <li>
-          {!authenticated && <NavLink className="default" to="/sign-up" exact={true} activeClassName="active">
+          {!authenticated && <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/sign-up" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
             Sign Up
           </NavLink>
         }
         </li>
         <li>
-          <LogoutButton setAuthenticated={setAuthenticated} />
+          <LogoutButton setAuthenticated={setAuthenticated} scrolled={scrolled}/>
         </li>
       </ul>
       </nav>
