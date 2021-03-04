@@ -20,7 +20,7 @@
   flex-direction: row;
   box-sizing: border-box;
   max-width: 40%;
-  margin: 0.1em 2em;
+  margin: 0.5em 2em;
   align-self: flex-start;
   flex-grow: 2;
   flex-shrink: 2;
@@ -55,7 +55,7 @@
   text-decoration: none;
   justify-content: center;
   box-sizing: border-box;
-  margin: 2.7em 1em 0 0;
+  margin: 3em 1em 0 0;
   flex-grow: 1;
   flex-shrink: 1;
 }
@@ -94,5 +94,4 @@
   position: fixed;
   top: 0;
   width: 100%;
-  min-width: 1180px;
 }
