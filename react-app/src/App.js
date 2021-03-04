@@ -29,7 +29,7 @@ function App() {
       <NavBar setAuthenticated={setAuthenticated} />
       <Switch>
         {!authenticated && <Route path="/" exact={true} authenticated={authenticated}>
-          <h1>My Home Page</h1>
+          <h1 className="main">My Home Page</h1>
         </Route>}
         <Route path="/login" exact={true}>
           <LoginForm
@@ -41,7 +41,7 @@ function App() {
           <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
         </Route>
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-        <h1>Logged In Home Page</h1>
+        <h1 className="main">Logged In Home Page</h1>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
