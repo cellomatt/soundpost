@@ -10,7 +10,6 @@ export const setUser = (user) => {
 };
 
 
-
 const initialState = { user: null };
 
 export default function sessionReducer(state = initialState, action) {

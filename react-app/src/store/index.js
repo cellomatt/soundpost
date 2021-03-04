@@ -14,7 +14,6 @@ const rootReducer = (state, action) => {
   return appReducer(state, action)
 }
 
-
 let enhancer;
 
 if (process.env.NODE_ENV === "production") {
