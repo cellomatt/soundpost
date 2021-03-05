@@ -1,8 +1,12 @@
 from flask import Blueprint, jsonify, session, request
 from app.models import Student, Teacher, db
 from app.forms import LoginForm
-from app.forms import SignUpStudentForm, SignUpTeacherForm
+from app.forms import SignUpStudentForm # SignUpTeacherForm
 from flask_login import current_user, login_user, logout_user, login_required
+from ..config import Config
+from ..s3 import *
+import boto3
+import botocore
 
 auth_routes = Blueprint('auth', __name__)
 
@@ -59,14 +63,30 @@ def logout():
 @auth_routes.route('/signup', methods=['POST'])
 def sign_up():
     """
+    If there is a photo, upload it to S3
+    """
+    url = ""
+    if "photo" in request.files:
+        print("-----------------------------There is a photo in the request")
+        file = request.files["photo"]
+        url = upload_file_to_s3(file, Config.S3_BUCKET)
+        print("-----------------------------We successfully uploaded it with this url:", url)
+    """
     Creates a new user and logs them in
     """
-    form = SignUpForm()
+    print("-----------------------------Here is the url:", url)
+    form = SignUpStudentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         user = Student(
             first_name=form.data['first_name'],
-            email_address=form.data['email'],
+            last_name=form.data['last_name'],
+            email_address=form.data['email_address'],
+            phone=form.data['phone'],
+            parent_name=form.data['parent_name'],
+            instrument=form.data['instrument'],
+            teacher_id=form.data['teacher_id'],
+            photo_url=url,
             password=form.data['password']
         )
         db.session.add(user)

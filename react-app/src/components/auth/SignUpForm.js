@@ -23,6 +23,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const [teacher_id, setTeacherId] = useState(null);
   const [errors, setErrors] = useState([]);
   const teachersArray = Object.values(teachers)
+  console.log(teacher_id)
 
   useEffect(() => {
     (async () => {
@@ -37,8 +38,8 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const user = await signUp(first_name, last_name, email_address, password,
-                              instrument, phone, parent_name, photo, teacher_id);
+      const user = await signUp({first_name, last_name, email_address, password,
+                              instrument, phone, parent_name, photo, teacher_id});
       if (!user.errors) {
         dispatch(setUser(user));
         setAuthenticated(true);
@@ -90,7 +91,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           <div className="form__div">
             <label>Email Address *</label>
             <input
-              type="text"
+              type="email"
               className="form__input"
               name="email_address"
               onChange={(e) => setEmailAddress(e.target.value)}
@@ -139,7 +140,6 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
               onChange={(e) => setTeacherId(e.target.value)}
               required={true}
             >
-
                 <option defaultValue>Please select a teacher</option>
                 {teachersArray.map(teacher =>
                 <option value={teacher.id} key={teacher.id}>

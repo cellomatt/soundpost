@@ -32,7 +32,8 @@ export const logout = async () => {
 
 
 export const signUp = async (newStudent) => {
-    const {first_name, last_name, email_address, password,
+  console.log("----------------------new student", newStudent)
+  const {first_name, last_name, email_address, password,
       instrument, phone, parent_name, photo, teacher_id} = newStudent;
     const form = new FormData()
     form.append("first_name", first_name)
@@ -44,17 +45,11 @@ export const signUp = async (newStudent) => {
     form.append("teacher_id", teacher_id)
     if (photo) form.append("photo", photo)
     if (parent_name) form.append("parent_name", parent_name)
+    console.log("----------------form", form)
 
     const response = await fetch("/api/auth/signup", {
     method: "POST",
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
-    // body: JSON.stringify({
-    //   username,
-    //   email,
-    //   password,
-    // }),
+    body: form
   });
   return await response.json();
 }
