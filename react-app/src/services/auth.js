@@ -35,12 +35,19 @@ export const signUp = async (newStudent) => {
     const {first_name, last_name, email_address, password,
       instrument, phone, parent_name, photo, teacher_id} = newStudent;
     const form = new FormData()
-    form.append()
+    form.append("first_name", first_name)
+    form.append("last_name", last_name)
+    form.append("email_address", email_address)
+    form.append("password", password)
+    form.append("instrument", instrument)
+    form.append("phone", phone)
+    form.append("teacher_id", teacher_id)
+    if (photo) form.append("photo", photo)
 
     const response = await fetch("/api/auth/signup", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "multipart/form-data",
     },
     // body: JSON.stringify({
     //   username,
