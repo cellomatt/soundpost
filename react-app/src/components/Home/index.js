@@ -12,7 +12,7 @@ export default function Home() {
         <div className="section__description">
           <h1 className="section__header">What Is Soundpost?</h1>
           <p className="section__description--content">Soundpost is a gathering place for music students and teachers
-          to connect in order to schedule lessons, track progress, and ensure consistent growth and communication.
+          to schedule lessons, track progress, and ensure consistent growth and communication.
           </p>
           <button className="btn__primary section__button"><Link className="section__button--text" to="/signup">Get Started</Link></button>
         </div>
