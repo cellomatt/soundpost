@@ -43,6 +43,7 @@ export const signUp = async (newStudent) => {
     form.append("phone", phone)
     form.append("teacher_id", teacher_id)
     if (photo) form.append("photo", photo)
+    if (parent_name) form.append("parent_name", parent_name)
 
     const response = await fetch("/api/auth/signup", {
     method: "POST",
