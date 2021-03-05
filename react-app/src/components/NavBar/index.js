@@ -36,7 +36,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
         }
         </li>
         <li>
-          {!authenticated && <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/sign-up" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+          {!authenticated && <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/signup" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
             Sign Up
           </NavLink>
         }

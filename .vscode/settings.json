@@ -2,5 +2,8 @@
     "python.pythonPath": ".venv/bin/python",
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
-    "python.linting.pycodestyleEnabled": true
+    "python.linting.pycodestyleEnabled": true,
+    "files.watcherExclude": {
+        "**/.venv/**": true
+    }
 }

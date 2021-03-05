@@ -146,6 +146,11 @@ body {
   font-weight: 400;
 }
 
+html {
+  margin-left: calc(100vw - 100%);
+  overflow: overlay;
+}
+
 input::-webkit-file-upload-button {
   margin-right: .5em;
   outline: none;
@@ -173,4 +178,17 @@ input::-webkit-file-upload-button:hover {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0061ff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+  display: none;
 }
