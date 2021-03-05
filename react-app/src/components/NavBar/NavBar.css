@@ -81,7 +81,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  height: 8em;
+  height: 17em;
   position: fixed;
   top: 0;
   left: 0;
@@ -96,7 +96,11 @@
 }
 
 .navbar-scrolled {
-  background-color: #42ffdc;
+  /* background-color: #42ffdc; */
+  background-image: linear-gradient(
+    #42ffdc 11em,
+    transparent 17em
+    );
   transition: .1s;
 }
 

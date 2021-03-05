@@ -1,3 +1,13 @@
+.home__main {
+  width: 65%;
+  background-color: rgb(66, 255, 220, .5);
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 2em .5em;
+  margin: 2em;
+}
+
+
 .section {
   display: flex;
   flex-direction: row;
