@@ -60,6 +60,24 @@ body {
 .btn__primary {
   margin: 0 1em;
   outline: none;
+  background-color: #0061FF;
+  font-family: "P22BayerW00-Universal";
+  color: #42ffdc;
+  font-size: 2em;
+  padding: .1em .3em;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn__primary:hover {
+  background-color: #0051d4;
+}
+
+.btn__secondary {
+  margin: 0 1em;
+  outline: none;
   background-color: transparent;
   font-family: "P22BayerW00-Universal";
   color: #0061FF;
@@ -71,7 +89,7 @@ body {
   cursor: pointer;
 }
 
-.btn__primary:hover{
+.btn__secondary:hover{
   border: 3px solid ;
 }
 
@@ -113,8 +131,6 @@ body {
   margin-top: 1em;
 }
 
-
-
 .form__errors {
   box-sizing: border-box;
   padding: 1em;
@@ -149,7 +165,8 @@ body {
 
 html {
   margin-left: calc(100vw - 100%);
-  overflow: overlay;
+  overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 input::-webkit-file-upload-button {

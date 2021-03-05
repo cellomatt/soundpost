@@ -3,8 +3,33 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section__button {
+  align-self: center;
+  box-sizing: border-box;
+  margin: .8em;
+  padding: .2em .3em;
+}
+
+.section__button--text {
+  color: #42ffdc;
+  text-decoration: none;
+}
+
+.section__description {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 3em;
+  width: 25em;
+}
+
+.section__description--content {
+  padding-top: 2em;
 }
 
 .section__header {
-  font-family: ""
+  font-family: "Rubik";
+  font-style: italic;
 }
