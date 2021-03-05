@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { signUp } from '../../services/auth';
+import * as teacherActions from '../../store/teacher'
 import './SignUpForm.css'
 
 const SignUpForm = ({authenticated, setAuthenticated}) => {
+  const dispatch = useDispatch();
+  const teachers = useSelector(state => state.teachers)
   const [email_address, setEmailAddress] = useState("");
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
@@ -15,6 +19,10 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const [photo, setPhoto] = useState("");
   const [teacher_id, setTeacherId] = useState(null);
   const [errors, setErrors] = useState([]);
+
+  useEffect(() => {
+    dispatch(teacherActions.getAllTeachers())
+  }, [dispatch])
 
   const onSignUp = async (e) => {
     e.preventDefault();
