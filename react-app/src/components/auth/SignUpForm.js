@@ -20,10 +20,9 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const [phone, setPhone] = useState("");
   const [parent_name, setParentName] = useState("");
   const [photo, setPhoto] = useState("");
-  const [teacher_id, setTeacherId] = useState(null);
+  const [teacher_id, setTeacherId] = useState("");
   const [errors, setErrors] = useState([]);
   const teachersArray = Object.values(teachers)
-  console.log(teacher_id)
 
   useEffect(() => {
     (async () => {
@@ -65,7 +64,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
             ))}
           </div>
           }
-          <p>* indicates a required field</p>
+          <p className="required_label">* indicates a required field</p>
           <div className="form__div">
             <label>First Name *</label>
             <input
@@ -177,7 +176,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
             ></input>
           </div>
           <div className="form__div form__buttons">
-            <button type="submit">Sign Up</button>
+            <button className="btn__primary" type="submit">Sign Up</button>
           </div>
         </form>
       </div>

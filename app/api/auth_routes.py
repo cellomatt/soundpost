@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import Student, db #Teacher
+from app.models import Student, db  # Teacher
 from app.forms import LoginForm
-from app.forms import SignUpStudentForm # SignUpTeacherForm
+from app.forms import SignUpStudentForm  # SignUpTeacherForm
 from flask_login import current_user, login_user, logout_user, login_required
 from ..config import Config
 from ..s3 import *
@@ -11,6 +11,7 @@ import botocore
 auth_routes = Blueprint('auth', __name__)
 
 # ----------- TODO: Needs to be refactored for teachers in addition to students
+
 
 def validation_errors_to_error_messages(validation_errors):
     """
@@ -45,7 +46,8 @@ def login():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         # Add the user to the session, we are logged in!
-        user = Student.query.filter(Student.email_address == form.data['email']).first()
+        user = Student.query.filter(Student.email_address ==
+                                    form.data['email']).first()
         login_user(user)
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
