@@ -20,7 +20,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
     e.preventDefault();
     if (password === repeatPassword) {
       const user = await signUp(first_name, last_name, email_address, password,
-                              instrument, phone, parent_name,  teacher_id);
+                              instrument, phone, parent_name, photo, teacher_id);
       if (!user.errors) {
         setAuthenticated(true);
       } else {
@@ -110,6 +110,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
             value={parent_name}
           ></input>
         </div>
+        {/* ADD A TEACHER SELECT HERE */}
         <div className="form__div">
           <label>Upload A Profile Photo </label>
           <input className="file-input" type="file" onChange={e => setPhoto(e.target.files[0])}/>

@@ -31,17 +31,22 @@ export const logout = async () => {
 };
 
 
-export const signUp = async (username, email, password) => {
-  const response = await fetch("/api/auth/signup", {
+export const signUp = async (newStudent) => {
+    const {first_name, last_name, email_address, password,
+      instrument, phone, parent_name, photo, teacher_id} = newStudent;
+    const form = new FormData()
+    form.append()
+
+    const response = await fetch("/api/auth/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      username,
-      email,
-      password,
-    }),
+    // body: JSON.stringify({
+    //   username,
+    //   email,
+    //   password,
+    // }),
   });
   return await response.json();
 }
