@@ -12,12 +12,9 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
 
   function scroller() {
     let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    // let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     if (winScroll > 160) {
       setScrolled(true);
     } else { setScrolled(false); }
-    // console.log(winScroll);
-    // document.getElementById("myBar").style.width = scrolled + "%";
   }
 
   return (

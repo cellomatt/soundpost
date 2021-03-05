@@ -4,7 +4,6 @@ import { signUp } from '../../services/auth';
 import './SignUpForm.css'
 
 const SignUpForm = ({authenticated, setAuthenticated}) => {
-  const [username, setUsername] = useState("");
   const [email_address, setEmailAddress] = useState("");
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
@@ -13,6 +12,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const [instrument, setInstrument] = useState("");
   const [phone, setPhone] = useState("");
   const [parent_name, setParentName] = useState("");
+  const [photo, setPhoto] = useState("");
   const [teacher_id, setTeacherId] = useState(null);
   const [errors, setErrors] = useState([]);
 
@@ -27,14 +27,6 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
         setErrors(user.errors);
       }
     }
-  };
-
-  const updatePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const updateRepeatPassword = (e) => {
-    setRepeatPassword(e.target.value);
   };
 
   if (authenticated) {
@@ -54,7 +46,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
         }
         <p>* indicates a required field</p>
         <div className="form__div">
-          <label>First Name: *</label>
+          <label>First Name *</label>
           <input
             type="text"
             className="form__input"
@@ -65,7 +57,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           ></input>
         </div>
         <div className="form__div">
-          <label>Last Name: *</label>
+          <label>Last Name *</label>
           <input
             type="text"
             className="form__input"
@@ -76,7 +68,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           ></input>
         </div>
         <div className="form__div">
-          <label>Email Address: *</label>
+          <label>Email Address *</label>
           <input
             type="text"
             className="form__input"
@@ -87,7 +79,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           ></input>
         </div>
         <div className="form__div">
-          <label>Phone Number: *</label>
+          <label>Phone Number *</label>
           <input
             type="text"
             className="form__input"
@@ -98,7 +90,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           ></input>
         </div>
         <div className="form__div">
-          <label>Instrument: *</label>
+          <label>Instrument *</label>
           <input
             type="text"
             className="form__input"
@@ -109,7 +101,21 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           ></input>
         </div>
         <div className="form__div">
-          <label>Password: *</label>
+          <label>Parent or Guardian Name </label>
+          <input
+            type="text"
+            className="form__input"
+            name="parent_name"
+            onChange={(e) => setParentName(e.target.value)}
+            value={parent_name}
+          ></input>
+        </div>
+        <div className="form__div">
+          <label>Upload A Profile Photo </label>
+          <input className="file-input" type="file" onChange={e => setPhoto(e.target.files[0])}/>
+        </div>
+        <div className="form__div">
+          <label>Password *</label>
           <input
             type="password"
             name="password"
@@ -120,7 +126,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           ></input>
         </div>
         <div className="form__div">
-          <label>Confirm Password: *</label>
+          <label>Confirm Password *</label>
           <input
             type="password"
             name="repeat_password"

@@ -53,6 +53,18 @@ body {
     );
 }
 
+.file-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: .3em 0;
+  background-color: transparent;
+  border: 3px solid #0061FF;
+  font-size: 1em;
+  border-radius: 5px;
+  padding: .3em;
+  outline: none;
+}
+
 .form {
   box-sizing: border-box;
   display: flex;
@@ -82,7 +94,6 @@ body {
 .form__buttons button{
   margin: 0 1em;
   outline: none;
-  border: none;
   background-color: transparent;
   font-family: "P22BayerW00-Universal";
   color: #0061FF;
@@ -128,6 +139,28 @@ body {
   margin: 0 0 .2em;
   color: #0061FF;
   font-weight: 400;
+}
+
+input::-webkit-file-upload-button {
+  margin-right: .5em;
+  outline: none;
+  border: none;
+  background-color: #0061FF;
+  color: #42ffdc;
+  font-size: 1em;
+  padding: .2em .3em;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input::-webkit-file-upload-button:hover {
+  background-color: #0051d4;
+}
+
+
+::placeholder {
+  color: #3f81eb;
 }
 
 .vertical-center {
