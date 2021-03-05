@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import Student, Teacher, db
+from app.models import Student, db #Teacher
 from app.forms import LoginForm
 from app.forms import SignUpStudentForm # SignUpTeacherForm
 from flask_login import current_user, login_user, logout_user, login_required
@@ -59,7 +59,7 @@ def logout():
     logout_user()
     return {'message': 'User logged out'}
 
-# fix format of form (in both places)
+
 @auth_routes.route('/signup', methods=['POST'])
 def sign_up():
     """
@@ -67,14 +67,11 @@ def sign_up():
     """
     url = ""
     if "photo" in request.files:
-        print("-----------------------------There is a photo in the request")
         file = request.files["photo"]
         url = upload_file_to_s3(file, Config.S3_BUCKET)
-        print("-----------------------------We successfully uploaded it with this url:", url)
     """
     Creates a new user and logs them in
     """
-    print("-----------------------------Here is the url:", url)
     form = SignUpStudentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
