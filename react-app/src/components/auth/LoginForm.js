@@ -6,6 +6,7 @@ import { setUser } from "../../store/session"
 import './LoginForm.css'
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
+  document.title = "Soundpost — Login"
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -71,8 +72,8 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           />
         </div>
         <div className="form__div form__buttons">
-          <button className="btn__primary" type="submit">Log In</button>
-          <button className="btn__primary" type="submit" onClick={demoLogin}>Demo User</button>
+          <button className="btn__secondary" type="submit">Log In</button>
+          <button className="btn__secondary" type="submit" onClick={demoLogin}>Demo User</button>
         </div>
       </form>
     </div>

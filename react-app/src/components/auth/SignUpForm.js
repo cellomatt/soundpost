@@ -7,6 +7,7 @@ import * as teacherActions from '../../store/teacher'
 import './SignUpForm.css'
 
 const SignUpForm = ({authenticated, setAuthenticated}) => {
+  document.title = "Soundpost — Signup"
   const dispatch = useDispatch();
   const history = useHistory();
   const teachers = useSelector(state => state.teachers.all)
@@ -176,7 +177,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
             ></input>
           </div>
           <div className="form__div form__buttons">
-            <button className="btn__primary" type="submit">Sign Up</button>
+            <button className="btn__secondary" type="submit">Sign Up</button>
           </div>
         </form>
       </div>
