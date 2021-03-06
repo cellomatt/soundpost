@@ -20,7 +20,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
   let sessionLinks;
   if (authenticated) {
     sessionLinks = (
-      <ProfileButton authenticated={authenticated} setAuthenticated={setAuthenticated}/>
+      <ProfileButton setAuthenticated={setAuthenticated}/>
     );
   } else {
     sessionLinks = (

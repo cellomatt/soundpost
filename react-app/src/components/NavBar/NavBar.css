@@ -16,6 +16,39 @@
   border-top-right-radius: 0;
 }
 
+.btn__profile {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.btn__profile--img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.btn__profile--icon {
+  font-size: 3.1em;
+  color: #42ffdc;
+  border: 3px solid #42ffdc;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 10px 10px 10px;
+  width: 70px;
+  height: 70px;
+  background-color: #0061ff;
+}
+
+.btn__profile--icon:hover {
+  background-color: #42ffdc;
+  color: #0061ff;
+}
+
+.btn__profile--icon-scrolled {
+  border: 3px solid #0061ff;
+}
+
 .logo {
   display: flex;
   flex-direction: row;
@@ -55,7 +88,7 @@
   text-decoration: none;
   justify-content: center;
   box-sizing: border-box;
-  margin: 3em 1em 0 0;
+  margin: 2em 1em 0 0;
   flex-grow: 1;
   flex-shrink: 1;
 }
@@ -63,9 +96,8 @@
 .nav li {
   margin: 0 .2em;
   list-style-type: none;
-  /* flex-basis: 4em; */
   font-family: "P22BayerW00-Universal";
-  font-size: 1.8em;
+  font-size: 2.5em;
   box-sizing: border-box;
   text-align: center;
   flex-shrink: 1;
@@ -97,7 +129,6 @@
 }
 
 .navbar-scrolled {
-  /* background-color: #42ffdc; */
   background-image: linear-gradient(
     #42ffdc 11em,
     transparent 17em
