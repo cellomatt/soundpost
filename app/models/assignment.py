@@ -8,7 +8,7 @@ class Assignment(db.Model):
     student_id = db.Column(db.Integer, db.ForeignKey("students.id"), nullable=False,)
     teacher_id = db.Column(db.Integer, db.ForeignKey("teachers.id"), nullable=False,)
     message = db.Column(db.Text, nullable=False)
-    created_at = db.Column(db.DateTime(timezone=True), nullable=False)
+    created_at = db.Column(db.DateTime(timezone=False), nullable=False)
 
     student = db.relationship("Student", back_populates="assignments")
     teacher = db.relationship("Teacher", back_populates="assignments")

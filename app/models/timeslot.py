@@ -9,8 +9,8 @@ class TimeSlot(db.Model):
                            nullable=True,)
     teacher_id = db.Column(db.Integer, db.ForeignKey("teachers.id"),
                            nullable=False,)
-    start_time = db.Column(db.DateTime(timezone=True), nullable=False)
-    end_time = db.Column(db.DateTime(timezone=True), nullable=False)
+    start_time = db.Column(db.DateTime(timezone=False), nullable=False)
+    end_time = db.Column(db.DateTime(timezone=False), nullable=False)
 
     student = db.relationship("Student", back_populates="timeslots")
     teacher = db.relationship("Teacher", back_populates="timeslots")
