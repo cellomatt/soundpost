@@ -108,7 +108,6 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   padding: 2em;
   align-items: flex-start;
   justify-content: center;
