@@ -20,12 +20,17 @@
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  max-width: 40%;
+  max-width: 35%;
   margin: 0.5em 2em;
   align-self: flex-start;
-  flex-grow: 2;
-  flex-shrink: 2;
+  flex-grow: 1;
+  flex-shrink: 1;
   max-height: 100%;
+}
+
+#svg2011 {
+  /* height: 8em; */
+  /* width: 2 */
 }
 
 .logout {
@@ -63,12 +68,13 @@
 .nav li {
   margin: 0 .2em;
   list-style-type: none;
-  flex-wrap: none;
+  /* flex-basis: 4em; */
   font-family: "P22BayerW00-Universal";
-  font-size: 2em;
+  font-size: 1.8em;
   box-sizing: border-box;
   text-align: center;
   flex-shrink: 1;
+  flex-grow: 1;
 }
 
 .default:hover {

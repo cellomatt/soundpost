@@ -29,18 +29,41 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
             Home
           </NavLink>
         </li>
+        {!authenticated &&
         <li>
-          {!authenticated && <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/login" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/login" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
             Login
           </NavLink>
-        }
         </li>
+        }
+        {!authenticated &&
         <li>
-          {!authenticated && <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/signup" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/signup" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
             Sign Up
           </NavLink>
-        }
         </li>
+        }
+        {authenticated &&
+        <li>
+          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/schedule" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+            Schedule Lesson
+          </NavLink>
+        </li>
+        }
+        {authenticated &&
+        <li>
+          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/assignments" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+            Assignments
+          </NavLink>
+        </li>
+        }
+        {authenticated &&
+        <li>
+          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/stats" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+            Practice Stats
+          </NavLink>
+        </li>
+        }
         <li>
           <LogoutButton setAuthenticated={setAuthenticated} scrolled={scrolled}/>
         </li>
