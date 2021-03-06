@@ -9,6 +9,7 @@ import Home from "./components/Home"
 import Dashboard from "./components/Dashboard"
 import { authenticate } from "./services/auth";
 import { setUser } from "./store/session"
+import {ReactComponent as Sketch} from "./images/klee.svg"
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -49,6 +50,13 @@ function App() {
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
           <Dashboard authenticated={authenticated} />
         </ProtectedRoute>
+        <Route>
+          <div className="main">
+            <h1 style={{marginTop: "1em", fontSize: "4em"}}>404</h1>
+            <p>The resource you requested does not exist. Really.</p>
+            {/* <Sketch style={{width: "30%"}}/> */}
+          </div>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

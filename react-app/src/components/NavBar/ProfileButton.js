@@ -39,6 +39,11 @@ export default function ProfileButton({setAuthenticated}) {
         {showMenu && (
         <ul className="">
           <li>
+            <NavLink className="default" to="/" exact={true} activeClassName="active">
+              Dashboard
+            </NavLink>
+          </li>
+          <li>
             <NavLink className="default" to="/schedule" exact={true} activeClassName="active">
               Schedule Lesson
             </NavLink>
