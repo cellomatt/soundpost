@@ -52,9 +52,9 @@ function App() {
         </ProtectedRoute>
         <Route>
           <div className="main">
-            <h1 style={{marginTop: "1em", fontSize: "4em"}}>404</h1>
+            <h1 style={{marginTop: ".5em", fontSize: "4em"}}>404</h1>
             <p>The resource you requested does not exist. Really.</p>
-            {/* <Sketch style={{width: "30%"}}/> */}
+            <Sketch style={{width: "30%", height: "100%", marginTop: "1em"}}/>
           </div>
         </Route>
       </Switch>
