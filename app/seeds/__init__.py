@@ -2,7 +2,7 @@ from flask.cli import AppGroup
 from .students import seed_students, undo_students
 from .teachers import seed_teachers, undo_teachers
 from .states import seed_states, undo_states
-from .practicelogs import seed_practice_logs, undo_practice_logs
+from .practice_logs import seed_practice_logs, undo_practice_logs
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`

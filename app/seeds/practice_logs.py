@@ -5,20 +5,19 @@ from dateutil.relativedelta import *
 
 def seed_practice_logs():
     students = Student.query.all()
-    practice_logs = []
-    start_date = datetime.date(2021, 1, 1)
-    today = datetime.date.today()
+    start_date = date(2021, 1, 1)
+    today = date.today()
     delta = today - start_date
 
     for student in students:
         for i in range(delta.days + 1):
             day = start_date + timedelta(days=i)
-            if day.weekday() not 6:
+            if day.weekday() != 6:
                 log = PracticeLog(
                     student_id=student.id,
                     date=day
                 )
-                db.session.append(log)
+                db.session.add(log)
 
     db.session.commit()
 

@@ -7,7 +7,7 @@ class PracticeLog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     student_id = db.Column(db.Integer, db.ForeignKey("students.id"),
                            nullable=False,)
-    date = db.Column(db.Date, nullable=False, unique=True)
+    date = db.Column(db.Date, nullable=False)
 
     student = db.relationship("Student", back_populates="practice_logs")
 
