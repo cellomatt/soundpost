@@ -17,7 +17,7 @@ def seed_timeslots():
                 time1 = datetime.combine(day, time(hour=j))
                 time2 = time1 + lesson_duration
                 time3 = time2 + lesson_duration
-                if day.weekday() == 3 and j == 15:
+                if day.weekday() == 3 and j == 15 and (day.month < today.month + 1):
                     slot1 = TimeSlot(
                         student_id=students[0].id,
                         teacher_id=teacher.id,
@@ -30,7 +30,7 @@ def seed_timeslots():
                         start_time=time2,
                         end_time=time3
                     )
-                elif day.weekday() == 4 and j == 17:
+                elif day.weekday() == 4 and j == 17 and (day.month < today.month + 1):
                     slot1 = TimeSlot(
                         student_id=students[3].id,
                         teacher_id=teacher.id,
