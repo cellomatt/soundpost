@@ -64,6 +64,7 @@ def seed_students():
         db.session.add(student)
     db.session.commit()
 
+
 def undo_students():
     db.session.execute('TRUNCATE students RESTART IDENTITY CASCADE;')
     db.session.commit()

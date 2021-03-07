@@ -55,12 +55,14 @@ def seed_states():
         {"name": "Wyoming", "abbreviation": "WY"}
     ]
 
-    state_data = [State(name=state["name"], abbreviation=state["abbreviation"]) for state in states]
+    state_data = [State(name=state["name"], abbreviation=state["abbreviation"])
+                  for state in states]
 
     for state in state_data:
         db.session.add(state)
 
     db.session.commit()
+
 
 def undo_states():
     db.session.execute('TRUNCATE states RESTART IDENTITY CASCADE;')

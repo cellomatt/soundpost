@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import LogoutButton from '../auth/LogoutButton';
+import ProfileButton from './ProfileButton'
 import './NavBar.css'
 import {ReactComponent as Logo} from './logo.svg'
 import {ReactComponent as Logo2} from './logo2.svg'
@@ -17,6 +17,28 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
     } else { setScrolled(false); }
   }
 
+  let sessionLinks;
+  if (authenticated) {
+    sessionLinks = (
+      <ProfileButton setAuthenticated={setAuthenticated}/>
+    );
+  } else {
+    sessionLinks = (
+      <>
+      <li>
+        <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/login" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+          Login
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/signup" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+          Sign Up
+        </NavLink>
+      </li>
+      </>
+    )
+  }
+
   return (
     <div className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <Link className="logo" to="/">
@@ -24,30 +46,16 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
       </Link>
       <nav>
       <ul className="nav">
-        <li>
+        {!authenticated && <li>
           <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
             Home
           </NavLink>
         </li>
-        <li>
-          {!authenticated && <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/login" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
-            Login
-          </NavLink>
         }
-        </li>
-        <li>
-          {!authenticated && <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/signup" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
-            Sign Up
-          </NavLink>
-        }
-        </li>
-        <li>
-          <LogoutButton setAuthenticated={setAuthenticated} scrolled={scrolled}/>
-        </li>
+        {sessionLinks}
       </ul>
       </nav>
     </div>
-
   );
 }
 
