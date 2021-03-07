@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './Home.css'
 import {ReactComponent as Calendar} from './calendar.svg';
 import {ReactComponent as Checkmark} from './checkmark.svg';
-
+import {ReactComponent as Music} from './music.svg';
 
 
 export default function Home() {
@@ -45,7 +45,7 @@ export default function Home() {
             <p className="section__description--content">Soundpost makes it easy for teachers to send practice assignments
             directly to a student's dashboard. The most recent assignment displays automatically, but previous assingments are only a click away.</p>
           </div>
-          <p>image placeholder</p>
+          <Music className="section__svg"/>
         </div>
       </div>
     </div>
