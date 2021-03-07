@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import './Home.css'
+import {ReactComponent as Calendar} from './calendar.svg';
+import {ReactComponent as Checkmark} from './checkmark.svg';
+
+
 
 export default function Home() {
   document.title = "Soundpost — Home"
@@ -20,26 +24,26 @@ export default function Home() {
         </div>
         <div className="section">
           <div className="section__description">
-            <h1 className="section__header">Schedule Lessons</h1>
-            <p className="section__description--content">Students can quickly and easily choose lesson times from their teacher's availability.
-            Upcoming lessons display directly in your dashboard so you'll never forget when the next one is!</p>
-          </div>
-          <p>image placeholder</p>
-        </div>
-        <div className="section">
-          <p>image placeholder</p>
-          <div className="section__description">
-            <h1 className="section__header">Practice Effectively</h1>
-            <p className="section__description--content">Soundpost makes it easy for teachers to send practice assignments
-            directly to a student's dashboard. The most recent assignment displays automatically, but previous assingments are only a click away.</p>
-          </div>
-        </div>
-        <div className="section">
-          <div className="section__description">
             <h1 className="section__header">Track Your Practice</h1>
             <p className="section__description--content">With Soundpost, you can also make sure that you're practicing consistently. Students can keep a record of
             which days they practice and look at some cool stats to see how they measure up. Teachers have access to their students' stats and can use the data to
             build and encourage healthy practice habits.</p>
+          </div>
+          <Checkmark className="section__svg"/>
+        </div>
+        <div className="section">
+          <Calendar className="section__svg"/>
+          <div className="section__description">
+            <h1 className="section__header">Schedule Lessons</h1>
+            <p className="section__description--content">Students can quickly and easily choose lesson times from their teacher's availability.
+            Upcoming lessons display directly in your dashboard so you'll never forget when the next one is!</p>
+          </div>
+        </div>
+        <div className="section">
+          <div className="section__description">
+            <h1 className="section__header">Practice Effectively</h1>
+            <p className="section__description--content">Soundpost makes it easy for teachers to send practice assignments
+            directly to a student's dashboard. The most recent assignment displays automatically, but previous assingments are only a click away.</p>
           </div>
           <p>image placeholder</p>
         </div>

@@ -3,7 +3,7 @@
   background-color: rgb(66, 255, 220, .5);
   border-radius: 20px;
   box-sizing: border-box;
-  padding: 2em .5em;
+  padding: 1em .5em;
   margin: 2em;
 }
 
@@ -14,6 +14,8 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  box-sizing: border-box;
+  margin: 1.5em 0;
 }
 
 .section__button {
@@ -31,7 +33,7 @@
 .section__description {
   display: flex;
   flex-direction: column;
-  padding: 2em 3em;
+  padding: 1.5em 3em;
   width: 25em;
 }
 
@@ -42,4 +44,10 @@
 .section__header {
   font-family: "Rubik";
   font-style: italic;
+}
+
+.section__svg {
+  width: 18em;
+  height: 100%;
+  padding: 1em;
 }
