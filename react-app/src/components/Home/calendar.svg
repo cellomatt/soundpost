@@ -419,347 +419,431 @@
   <metadata
      id="metadata5">
   </metadata>
+  <rect
+     style="opacity:0.789106;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.41288;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect1606"
+     width="254.65804"
+     height="173.25189"
+     x="-23.292789"
+     y="73.410774"
+     transform="rotate(-17.603914)" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.653304;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 31.247252,100.36037 71.673541,227.26244 Z"
+     id="path833" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.653304;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 60.237188,91.125247 100.66348,218.02732 Z"
+     id="path833-3" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.653304;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 89.227127,81.890131 129.65342,208.7922 Z"
+     id="path833-6" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.653304;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 118.21706,72.655017 158.64335,199.55709 Z"
+     id="path833-7" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.653304;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 147.207,63.419896 187.63329,190.32197 Z"
+     id="path833-5" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.653304;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 176.19692,54.184785 216.62321,181.08686 Z"
+     id="path833-35" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.653304;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 205.18686,44.949663 245.61315,171.85174 Z"
+     id="path833-62" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.653304;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 234.1768,35.714547 274.60309,162.61662 Z"
+     id="path833-9" />
   <g
-     id="layer1"
-     transform="translate(12.577082,7.8341669)">
-    <rect
-       style="opacity:0.789106;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.41288;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect1606"
-       width="254.65804"
-       height="173.25189"
-       x="-32.91156"
-       y="62.139732"
-       transform="rotate(-17.603914)" />
-    <g
-       id="g1602"
-       transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,-24.113684,47.948285)">
-      <path
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.665425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 27.73975,56.490073 V 192.14676 Z"
-         id="path833" />
-      <path
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.665425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 58.72962,56.490071 V 192.14676 Z"
-         id="path833-3" />
-      <path
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.665425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 89.719492,56.490073 V 192.14676 Z"
-         id="path833-6" />
-      <path
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.665425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 120.70936,56.490076 V 192.14676 Z"
-         id="path833-7" />
-      <path
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.665425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 151.69923,56.490073 V 192.14676 Z"
-         id="path833-5" />
-      <path
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.665425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 182.68908,56.490073 V 192.14676 Z"
-         id="path833-35" />
-      <path
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.665425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 213.67896,56.490072 V 192.14676 Z"
-         id="path833-62" />
-      <path
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.665425;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 244.66883,56.490074 V 192.14676 Z"
-         id="path833-9" />
-      <text
-         xml:space="preserve"
-         id="text886-2"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(-1.5214417,25.398718)"><tspan
-           x="39.857498"
-           y="79.123365"><tspan>6</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-7);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(60.457687,-0.75874377)"><tspan
-           x="41.921804"
-           y="79.123365"><tspan>1</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-6"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-9);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(91.437525,-0.75874377)"><tspan
-           x="39.857498"
-           y="79.123365"><tspan>2</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-2"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-0);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(153.61945,-0.75874376)"><tspan
-           x="40.050423"
-           y="79.123365"><tspan>4</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-6);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(122.4284,-0.75874376)"><tspan
-           x="40.301227"
-           y="79.123365"><tspan>3</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-02"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-79);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(184.41708,-0.75874377)"><tspan
-           x="39.896083"
-           y="79.123365"><tspan>5</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-7"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-3);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(29.460418,25.389149)"><tspan
-           x="40.378397"
-           y="79.123365"><tspan>7</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-22"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-5);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(60.450433,25.270306)"><tspan
-           x="39.973253"
-           y="79.123365"><tspan>8</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-8);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(91.446698,25.418473)"><tspan
-           x="39.857498"
-           y="79.123365"><tspan>9</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-9"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-61);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(121.93767,25.369084)"><tspan
-           x="34.725672"
-           y="79.123365"><tspan>10</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-78"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-31);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(153.42729,25.38884)"><tspan
-           x="39.085795"
-           y="79.123365"><tspan>11</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-03"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-4);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(184.01203,25.408595)"><tspan
-           x="37.021489"
-           y="79.123365"><tspan>12</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-5"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-06);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(-1.5214421,52.05498)"><tspan
-           x="37.465218"
-           y="79.123365"><tspan>13</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-7-6"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-3-1);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(29.460413,52.045411)"><tspan
-           x="37.214414"
-           y="79.123365"><tspan>14</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-22-9"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-5-5);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(60.450429,51.926569)"><tspan
-           x="37.060074"
-           y="79.123365"><tspan>15</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-3-3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-8-5);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(91.446703,52.074736)"><tspan
-           x="37.021489"
-           y="79.123365"><tspan>16</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-9-7"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-61-4);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(121.93767,52.025347)"><tspan
-           x="37.542388"
-           y="79.123365"><tspan>17</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-78-4"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-31-7);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(153.42729,52.045103)"><tspan
-           x="37.137244"
-           y="79.123365"><tspan>18</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-03-5"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-4-6);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(184.01202,52.064858)"><tspan
-           x="37.021489"
-           y="79.123365"><tspan>19</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-5-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-06-2);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(-1.6266912,79.382202)"><tspan
-           x="32.661366"
-           y="79.123365"><tspan>20</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-7-6-7"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-3-1-5);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(29.862933,79.372635)"><tspan
-           x="37.021489"
-           y="79.123365"><tspan>21</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-22-9-8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-5-5-4);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(60.44766,79.253792)"><tspan
-           x="34.957183"
-           y="79.123365"><tspan>22</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-3-3-6"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-8-5-7);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(91.438314,79.401958)"><tspan
-           x="35.400912"
-           y="79.123365"><tspan>23</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-9-7-8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-61-4-4);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(122.43202,79.352569)"><tspan
-           x="35.150109"
-           y="79.123365"><tspan>24</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-78-4-8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-31-7-4);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(153.4272,79.372325)"><tspan
-           x="34.995768"
-           y="79.123365"><tspan>25</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-03-5-4"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-4-6-3);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(184.41701,79.392081)"><tspan
-           x="34.957183"
-           y="79.123365"><tspan>26</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-5-5"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-06-3);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(-1.5294563,105.11486)"><tspan
-           x="35.478082"
-           y="79.123365"><tspan>27</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-7-6-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-3-1-4);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(29.460565,105.1053)"><tspan
-           x="35.072938"
-           y="79.123365"><tspan>28</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-22-9-4"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-5-5-2);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(60.456839,104.98645)"><tspan
-           x="34.957183"
-           y="79.123365"><tspan>29</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-3-3-8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-8-5-6);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(91.343147,105.13462)"><tspan
-           x="33.105095"
-           y="79.123365"><tspan>30</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text886-2-9-7-7"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-61-4-9);fill:#000000;fill-opacity:1;stroke:none;"
-         x="1.2544779"
-         y="0"
-         transform="translate(122.83276,105.08523)"><tspan
-           x="37.465218"
-           y="79.123365"><tspan>31</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         id="text1502"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1504);fill:#000000;fill-opacity:1;stroke:none;"
-         transform="matrix(1.1520805,0,0,1.1520805,-3.2441936,-17.270164)"><tspan
-           x="25.431641"
-           y="54.48248"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal'">January</tspan></tspan></text>
-    </g>
-    <rect
-       style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:1.24525;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect1604"
-       width="27.571142"
-       height="27.571142"
-       x="20.584063"
-       y="120.87359"
-       transform="rotate(-18.081646)" />
+     aria-label="6"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,-5.3909276,79.995458)"
+     id="text886-2"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="m 48.866051,74.994444 q 0,1.698982 -1.205091,2.904073 -1.205092,1.205092 -2.904074,1.205092 -1.65947,0 -2.864562,-1.145825 -1.185336,-1.16558 -1.244602,-2.825051 -0.01976,-0.730957 0.217311,-1.619959 0.256823,-0.829735 0.513646,-1.639715 0,-0.03951 1.936049,-5.946435 h 2.568228 l -1.540937,5.136456 q 2.133605,-0.158045 3.378207,1.027291 1.145825,1.106314 1.145825,2.904073 z m -2.449694,0.01976 q 0,-0.691446 -0.49389,-1.165581 -0.474135,-0.49389 -1.165581,-0.49389 -0.691446,0 -1.185336,0.49389 -0.474134,0.474135 -0.474134,1.165581 0,0.67169 0.474134,1.16558 0.49389,0.474135 1.185336,0.474135 0.691446,0 1.165581,-0.474135 0.49389,-0.49389 0.49389,-1.16558 z"
+       id="path1281" />
   </g>
+  <g
+     aria-label="1"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,44.793335,37.056017)"
+     id="text886-2-0"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-7);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 46.011213,79.123365 H 43.502252 V 65.926624 h 2.508961 z"
+       id="path1284" />
+  </g>
+  <g
+     aria-label="2"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,73.773887,27.823889)"
+     id="text886-2-6"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-9);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 48.806784,79.123365 H 40.667477 V 76.49587 q -0.09878,-1.205092 1.224847,-2.706517 0.49389,-0.533402 2.331161,-1.659471 1.521181,-0.928513 1.896538,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434624,-0.98778 -0.434623,-0.434623 -0.98778,-0.434623 -0.474134,0 -0.84949,0.296334 -0.375357,0.296334 -0.49389,0.770469 -0.01976,0.09878 -0.03951,0.335845 h -2.726272 q 0.01975,-0.335845 0.118533,-0.98778 0.335845,-1.382892 1.461915,-2.232383 1.126069,-0.869246 2.528716,-0.869246 0.49389,0 0.98778,0.118533 1.363137,0.335845 2.252139,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118534,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363136,0.928513 -1.422403,2.054582 l 5.314256,-0.01976 z"
+       id="path1287" />
+  </g>
+  <g
+     aria-label="4"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,131.9429,9.2934018)"
+     id="text886-2-2"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-0);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="m 48.683621,79.14312 h -2.508962 v -3.714053 h -2.904073 q -0.572912,-0.09878 -1.16558,-0.1778 -1.145825,-0.31609 -1.540937,-1.540937 -0.118534,-0.335845 -0.118534,-0.67169 0,-0.80998 0.849491,-1.896538 l 2.805295,-3.990631 q 0.750713,-1.323625 2.153361,-1.323625 0.395112,0 0.770468,0.118533 0.691446,0.217312 1.165581,0.849491 0.49389,0.612424 0.49389,1.185336 z m -2.449695,-6.282281 v -4.464765 l -3.14114,4.464765 z"
+       id="path1290" />
+  </g>
+  <g
+     aria-label="3"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,102.76476,18.588472)"
+     id="text886-2-8"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-6);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="m 48.124445,69.699943 q 0,1.580448 -0.98778,2.528717 1.303869,1.323625 1.303869,3.200407 0,1.600204 -1.047047,2.667006 -1.185336,1.165581 -3.062118,1.165581 -1.936048,0 -3.160896,-1.224847 -0.03951,-0.09878 1.639715,-1.758249 0.197556,0.09878 0.553157,0.276579 0.454379,0.237067 0.948269,0.237067 0.691446,0 1.126069,-0.454379 0.434623,-0.454379 0.335845,-1.224847 -0.07902,-0.730957 -0.889002,-1.205092 -0.572912,-0.335845 -1.540937,-0.335845 v -2.46945 q 1.106314,-0.118534 1.738493,-0.691446 0.355601,-0.335845 0.355601,-0.790224 0,-0.434623 -0.335845,-0.770468 -0.31609,-0.335846 -0.80998,-0.335846 -0.948269,0 -1.48167,0.572913 -0.03951,0.05927 -0.889002,-0.80998 -0.849491,-0.869246 -0.829735,-0.889002 1.402648,-1.402647 3.318941,-1.402647 1.540937,0 2.627495,1.086558 1.086558,1.086558 1.086558,2.627494 z"
+       id="path1293" />
+  </g>
+  <g
+     aria-label="5"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,160.753,0.11557254)"
+     id="text886-2-02"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-79);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="m 48.825614,74.717866 q -0.03951,1.955804 -1.422403,3.318941 -1.382892,1.363136 -3.338697,1.363136 -1.97556,0 -3.358452,-1.382892 l 1.817516,-1.698982 q 0.651934,0.592668 1.560692,0.592668 0.928513,0 1.580448,-0.67169 0.651935,-0.691446 0.651935,-1.600204 0,-0.928513 -0.671691,-1.600203 -0.651934,-0.671691 -1.580448,-0.671691 h -3.378207 v -6.440325 h 7.349083 l -0.01976,2.331161 -5.096944,-0.01976 v 1.619959 h 1.16558 q 2.489206,0 3.911609,2.054583 0.869246,1.264358 0.829735,2.805295 z"
+       id="path1296" />
+  </g>
+  <g
+     aria-label="7"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,23.588664,70.753776)"
+     id="text886-2-7"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-3);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="m 48.201615,69.206053 -3.299185,9.917312 h -2.46945 l 3.31894,-10.134623 q -0.09878,-0.750713 -0.790224,-0.750713 -0.05927,0 -3.793075,0.03951 v -2.350916 h 4.089409 q 1.244603,-0.01976 2.133605,0.592668 0.968025,0.691446 0.968025,1.797759 0,0.434624 -0.158045,0.889002 z"
+       id="path1299" />
+  </g>
+  <g
+     aria-label="8"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,52.54332,61.407442)"
+     id="text886-2-22"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-5);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="m 48.448406,69.699943 q 0,1.580448 -0.98778,2.528717 1.303869,1.323625 1.303869,3.200407 0,1.600204 -1.047047,2.667006 -1.205091,1.205092 -2.904073,1.205092 -1.718737,0 -2.923829,-1.205092 -1.126069,-1.145824 -1.126069,-2.864562 0,-1.778004 1.185336,-3.042362 -0.928513,-0.889002 -0.928513,-2.489206 0,-1.540936 1.086558,-2.627494 1.086558,-1.086558 2.627495,-1.086558 1.540937,0 2.627495,1.086558 1.086558,1.086558 1.086558,2.627494 z m -2.686762,-0.03951 q 0,-0.474134 -0.335845,-0.809979 -0.335845,-0.335846 -0.80998,-0.335846 -0.474134,0 -0.809979,0.335846 -0.335846,0.335845 -0.335846,0.809979 0,0.474135 0.335846,0.80998 0.335845,0.335845 0.809979,0.335845 0.474135,0 0.80998,-0.335845 0.335845,-0.335845 0.335845,-0.80998 z m -0.05927,4.741344 q -0.395112,-0.414867 -0.968024,-0.414867 -0.572913,0 -0.98778,0.414867 -0.414868,0.414868 -0.414868,0.98778 0,0.572913 0.414868,0.98778 0.414867,0.414868 0.98778,0.414868 0.572912,0 0.968024,-0.414868 0.414868,-0.414867 0.414868,-0.98778 0,-0.572912 -0.414868,-0.98778 z"
+       id="path1302" />
+  </g>
+  <g
+     aria-label="9"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,81.583394,52.309024)"
+     id="text886-2-3"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-8);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="m 48.866051,69.857988 q 0.01976,0.730957 -0.237067,1.600204 -0.237067,0.849491 -0.49389,1.679226 0,0.01976 -1.936049,5.966191 h -2.568228 l 1.540937,-5.175967 q -2.113849,0.158045 -3.378208,-1.027291 -1.145824,-1.106314 -1.145824,-2.904074 0,-1.698981 1.205091,-2.904073 1.205092,-1.205091 2.904073,-1.205091 1.659471,0 2.864562,1.16558 1.205092,1.145825 1.244603,2.805295 z m -2.449694,0.138289 q 0,-0.691446 -0.49389,-1.16558 -0.474135,-0.49389 -1.165581,-0.49389 -0.67169,0 -1.16558,0.49389 -0.49389,0.474134 -0.49389,1.16558 0,0.671691 0.49389,1.165581 0.49389,0.474134 1.16558,0.474134 0.691446,0 1.165581,-0.474134 0.49389,-0.49389 0.49389,-1.165581 z"
+       id="path1305" />
+  </g>
+  <g
+     aria-label="10"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,110.09191,43.176378)"
+     id="text886-2-9"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-61);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 38.815081,79.123365 H 36.30612 V 65.926624 h 2.508961 z"
+       id="path1308" />
+    <path
+       d="m 54.206854,72.54475 q 0,2.746028 -1.936048,4.682077 -1.936049,1.936049 -4.662322,1.936049 -2.746028,0 -4.682077,-1.936049 -1.936049,-1.936049 -1.936049,-4.682077 0,-2.726273 1.936049,-4.662322 1.936049,-1.936049 4.682077,-1.936049 2.726273,0 4.662322,1.936049 1.936048,1.936049 1.936048,4.662322 z m -2.548472,0.03951 q 0,-1.679226 -1.185336,-2.864562 -1.185336,-1.185336 -2.864562,-1.185336 -1.679226,0 -2.864562,1.185336 -1.185336,1.185336 -1.185336,2.864562 0,1.679226 1.185336,2.864562 1.185336,1.185336 2.864562,1.185336 1.679226,0 2.864562,-1.185336 1.185336,-1.185336 1.185336,-2.864562 z"
+       id="path1310" />
+  </g>
+  <g
+     aria-label="11"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,139.55523,33.810814)"
+     id="text886-2-78"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-31);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 43.175204,79.123365 H 40.666243 V 65.926624 h 2.508961 z"
+       id="path1313" />
+    <path
+       d="M 48.847222,79.123365 H 46.338261 V 65.926624 h 2.508961 z"
+       id="path1315" />
+  </g>
+  <g
+     aria-label="12"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,168.17207,24.714907)"
+     id="text886-2-03"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-4);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 41.110898,79.123365 H 38.601937 V 65.926624 h 2.508961 z"
+       id="path1318" />
+    <path
+       d="M 51.642794,79.123365 H 43.503486 V 76.49587 q -0.09878,-1.205092 1.224848,-2.706517 0.49389,-0.533402 2.33116,-1.659471 1.521182,-0.928513 1.896538,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434623,-0.98778 -0.434624,-0.434623 -0.98778,-0.434623 -0.474135,0 -0.849491,0.296334 -0.375357,0.296334 -0.49389,0.770469 -0.01976,0.09878 -0.03951,0.335845 h -2.726273 q 0.01976,-0.335845 0.118533,-0.98778 0.335846,-1.382892 1.461915,-2.232383 1.126069,-0.869246 2.528717,-0.869246 0.49389,0 0.98778,0.118533 1.363136,0.335845 2.252138,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118534,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363136,0.928513 -1.422403,2.054582 l 5.314257,-0.01976 z"
+       id="path1320" />
+  </g>
+  <g
+     aria-label="13"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,2.5527554,104.93146)"
+     id="text886-2-5"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-06);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 41.554627,79.123365 H 39.045666 V 65.926624 h 2.508961 z"
+       id="path1323" />
+    <path
+       d="m 50.960454,69.699943 q 0,1.580448 -0.98778,2.528717 1.303869,1.323625 1.303869,3.200407 0,1.600204 -1.047047,2.667006 -1.185336,1.165581 -3.062118,1.165581 -1.936048,0 -3.160896,-1.224847 -0.03951,-0.09878 1.639715,-1.758249 0.197556,0.09878 0.553157,0.276579 0.454379,0.237067 0.948269,0.237067 0.691446,0 1.126069,-0.454379 0.434623,-0.454379 0.335845,-1.224847 -0.07902,-0.730957 -0.889002,-1.205092 -0.572912,-0.335845 -1.540937,-0.335845 v -2.46945 q 1.106314,-0.118534 1.738493,-0.691446 0.355601,-0.335845 0.355601,-0.790224 0,-0.434623 -0.335845,-0.770468 -0.31609,-0.335846 -0.80998,-0.335846 -0.948269,0 -1.48167,0.572913 -0.03951,0.05927 -0.889002,-0.80998 -0.849491,-0.869246 -0.829735,-0.889002 1.402648,-1.402647 3.318941,-1.402647 1.540937,0 2.627495,1.086558 1.086558,1.086558 1.086558,2.627494 z"
+       id="path1325" />
+  </g>
+  <g
+     aria-label="14"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,31.532343,95.689776)"
+     id="text886-2-7-6"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-3-1);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 41.303824,79.123365 H 38.794862 V 65.926624 h 2.508962 z"
+       id="path1328" />
+    <path
+       d="m 51.51963,79.14312 h -2.508961 v -3.714053 h -2.904074 q -0.572912,-0.09878 -1.16558,-0.1778 -1.145825,-0.31609 -1.540937,-1.540937 -0.118533,-0.335845 -0.118533,-0.67169 0,-0.80998 0.84949,-1.896538 l 2.805296,-3.990631 q 0.750712,-1.323625 2.15336,-1.323625 0.395112,0 0.770468,0.118533 0.691446,0.217312 1.165581,0.849491 0.49389,0.612424 0.49389,1.185336 z m -2.449695,-6.282281 v -4.464765 l -3.14114,4.464765 z"
+       id="path1330" />
+  </g>
+  <g
+     aria-label="15"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,60.487,86.343442)"
+     id="text886-2-22-9"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-5-5);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 41.149483,79.123365 H 38.640522 V 65.926624 h 2.508961 z"
+       id="path1333" />
+    <path
+       d="m 51.661623,74.717866 q -0.03951,1.955804 -1.422403,3.318941 -1.382892,1.363136 -3.338697,1.363136 -1.97556,0 -3.358452,-1.382892 l 1.817516,-1.698982 q 0.651934,0.592668 1.560692,0.592668 0.928513,0 1.580448,-0.67169 0.651935,-0.691446 0.651935,-1.600204 0,-0.928513 -0.671691,-1.600203 -0.651934,-0.671691 -1.580448,-0.671691 h -3.378207 v -6.440325 h 7.349083 l -0.01976,2.331161 -5.096944,-0.01976 v 1.619959 h 1.16558 q 2.489206,0 3.911609,2.054583 0.869246,1.264358 0.829735,2.805295 z"
+       id="path1335" />
+  </g>
+  <g
+     aria-label="16"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,89.527082,77.245021)"
+     id="text886-2-3-3"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-8-5);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 41.110898,79.123365 H 38.601937 V 65.926624 h 2.508961 z"
+       id="path1338" />
+    <path
+       d="m 51.70206,74.994444 q 0,1.698982 -1.205091,2.904073 -1.205092,1.205092 -2.904073,1.205092 -1.659471,0 -2.864562,-1.145825 -1.185336,-1.16558 -1.244603,-2.825051 -0.01976,-0.730957 0.217311,-1.619959 0.256823,-0.829735 0.513646,-1.639715 0,-0.03951 1.936049,-5.946435 h 2.568228 l -1.540937,5.136456 q 2.133605,-0.158045 3.378208,1.027291 1.145824,1.106314 1.145824,2.904073 z m -2.449694,0.01976 q 0,-0.691446 -0.49389,-1.165581 -0.474134,-0.49389 -1.16558,-0.49389 -0.691446,0 -1.185336,0.49389 -0.474135,0.474135 -0.474135,1.165581 0,0.67169 0.474135,1.16558 0.49389,0.474135 1.185336,0.474135 0.691446,0 1.16558,-0.474135 0.49389,-0.49389 0.49389,-1.16558 z"
+       id="path1340" />
+  </g>
+  <g
+     aria-label="17"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,118.03559,68.112377)"
+     id="text886-2-9-7"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-61-4);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 41.631797,79.123365 H 39.122836 V 65.926624 h 2.508961 z"
+       id="path1343" />
+    <path
+       d="m 51.037624,69.206053 -3.299185,9.917312 h -2.46945 L 48.58793,68.988742 q -0.09878,-0.750713 -0.790224,-0.750713 -0.05927,0 -3.793076,0.03951 v -2.350916 h 4.08941 q 1.244602,-0.01976 2.133604,0.592668 0.968025,0.691446 0.968025,1.797759 0,0.434624 -0.158045,0.889002 z"
+       id="path1345" />
+  </g>
+  <g
+     aria-label="18"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,147.49892,58.746813)"
+     id="text886-2-78-4"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-31-7);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 41.226653,79.123365 H 38.717692 V 65.926624 h 2.508961 z"
+       id="path1348" />
+    <path
+       d="m 51.284415,69.699943 q 0,1.580448 -0.98778,2.528717 1.303869,1.323625 1.303869,3.200407 0,1.600204 -1.047047,2.667006 -1.205091,1.205092 -2.904073,1.205092 -1.718737,0 -2.923829,-1.205092 -1.126069,-1.145824 -1.126069,-2.864562 0,-1.778004 1.185336,-3.042362 -0.928513,-0.889002 -0.928513,-2.489206 0,-1.540936 1.086558,-2.627494 1.086558,-1.086558 2.627495,-1.086558 1.540937,0 2.627495,1.086558 1.086558,1.086558 1.086558,2.627494 z m -2.686762,-0.03951 q 0,-0.474134 -0.335845,-0.809979 -0.335845,-0.335846 -0.80998,-0.335846 -0.474134,0 -0.809979,0.335846 -0.335846,0.335845 -0.335846,0.809979 0,0.474135 0.335846,0.80998 0.335845,0.335845 0.809979,0.335845 0.474135,0 0.80998,-0.335845 0.335845,-0.335845 0.335845,-0.80998 z m -0.05927,4.741344 q -0.395112,-0.414867 -0.968024,-0.414867 -0.572913,0 -0.98778,0.414867 -0.414868,0.414868 -0.414868,0.98778 0,0.572913 0.414868,0.98778 0.414867,0.414868 0.98778,0.414868 0.572912,0 0.968024,-0.414868 0.414868,-0.414867 0.414868,-0.98778 0,-0.572912 -0.414868,-0.98778 z"
+       id="path1350" />
+  </g>
+  <g
+     aria-label="19"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,176.11575,49.650909)"
+     id="text886-2-03-5"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-4-6);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 41.110898,79.123365 H 38.601937 V 65.926624 h 2.508961 z"
+       id="path1353" />
+    <path
+       d="m 51.70206,69.857988 q 0.01976,0.730957 -0.237067,1.600204 -0.237067,0.849491 -0.49389,1.679226 0,0.01976 -1.936049,5.966191 h -2.568228 l 1.540937,-5.175967 q -2.113849,0.158045 -3.378207,-1.027291 -1.145825,-1.106314 -1.145825,-2.904074 0,-1.698981 1.205091,-2.904073 1.205092,-1.205091 2.904074,-1.205091 1.65947,0 2.864562,1.16558 1.205091,1.145825 1.244602,2.805295 z m -2.449694,0.138289 q 0,-0.691446 -0.49389,-1.16558 -0.474134,-0.49389 -1.16558,-0.49389 -0.671691,0 -1.165581,0.49389 -0.49389,0.474134 -0.49389,1.16558 0,0.671691 0.49389,1.165581 0.49389,0.474134 1.165581,0.474134 0.691446,0 1.16558,-0.474134 0.49389,-0.49389 0.49389,-1.165581 z"
+       id="path1355" />
+  </g>
+  <g
+     aria-label="20"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,10.597931,130.52648)"
+     id="text886-2-5-0"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-06-2);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 41.610653,79.123365 H 33.471346 V 76.49587 q -0.09878,-1.205092 1.224847,-2.706517 0.49389,-0.533402 2.331161,-1.659471 1.521181,-0.928513 1.896537,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434623,-0.98778 -0.434623,-0.434623 -0.98778,-0.434623 -0.474135,0 -0.849491,0.296334 -0.375356,0.296334 -0.49389,0.770469 -0.01976,0.09878 -0.03951,0.335845 H 33.45159 q 0.01976,-0.335845 0.118534,-0.98778 0.335845,-1.382892 1.461914,-2.232383 1.126069,-0.869246 2.528717,-0.869246 0.49389,0 0.98778,0.118533 1.363136,0.335845 2.252138,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118533,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363137,0.928513 -1.422404,2.054582 l 5.314257,-0.01976 z"
+       id="path1358" />
+    <path
+       d="m 56.27116,72.54475 q 0,2.746028 -1.936049,4.682077 -1.936049,1.936049 -4.662321,1.936049 -2.746029,0 -4.682078,-1.936049 -1.936048,-1.936049 -1.936048,-4.682077 0,-2.726273 1.936048,-4.662322 1.936049,-1.936049 4.682078,-1.936049 2.726272,0 4.662321,1.936049 1.936049,1.936049 1.936049,4.662322 z m -2.548472,0.03951 q 0,-1.679226 -1.185336,-2.864562 -1.185336,-1.185336 -2.864562,-1.185336 -1.679226,0 -2.864562,1.185336 -1.185336,1.185336 -1.185336,2.864562 0,1.679226 1.185336,2.864562 1.185336,1.185336 2.864562,1.185336 1.679226,0 2.864562,-1.185336 1.185336,-1.185336 1.185336,-2.864562 z"
+       id="path1360" />
+  </g>
+  <g
+     aria-label="21"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,40.052519,121.13348)"
+     id="text886-2-7-6-7"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-3-1-5);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 45.970775,79.123365 H 37.831468 V 76.49587 q -0.09878,-1.205092 1.224847,-2.706517 0.49389,-0.533402 2.331161,-1.659471 1.521181,-0.928513 1.896538,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434624,-0.98778 -0.434623,-0.434623 -0.98778,-0.434623 -0.474134,0 -0.84949,0.296334 -0.375357,0.296334 -0.49389,0.770469 -0.01976,0.09878 -0.03951,0.335845 h -2.726272 q 0.01976,-0.335845 0.118533,-0.98778 0.335845,-1.382892 1.461915,-2.232383 1.126069,-0.869246 2.528716,-0.869246 0.49389,0 0.98778,0.118533 1.363137,0.335845 2.252139,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118534,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363136,0.928513 -1.422403,2.054582 l 5.314256,-0.01976 z"
+       id="path1363" />
+    <path
+       d="M 50.911527,79.123365 H 48.402566 V 65.926624 h 2.508961 z"
+       id="path1365" />
+  </g>
+  <g
+     aria-label="22"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,68.628043,111.90793)"
+     id="text886-2-22-9-8"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-5-5-4);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 43.90647,79.123365 H 35.767162 V 76.49587 q -0.09878,-1.205092 1.224848,-2.706517 0.49389,-0.533402 2.33116,-1.659471 1.521182,-0.928513 1.896538,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434623,-0.98778 -0.434624,-0.434623 -0.98778,-0.434623 -0.474135,0 -0.849491,0.296334 -0.375357,0.296334 -0.49389,0.770469 -0.01976,0.09878 -0.03951,0.335845 h -2.726273 q 0.01975,-0.335845 0.118533,-0.98778 0.335846,-1.382892 1.461915,-2.232383 1.126069,-0.869246 2.528717,-0.869246 0.49389,0 0.98778,0.118533 1.363136,0.335845 2.252138,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118534,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363136,0.928513 -1.422403,2.054582 l 5.314257,-0.01976 z"
+       id="path1368" />
+    <path
+       d="M 53.707099,79.123365 H 45.567792 V 76.49587 q -0.09878,-1.205092 1.224847,-2.706517 0.49389,-0.533402 2.331161,-1.659471 1.521181,-0.928513 1.896538,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434623,-0.98778 -0.434623,-0.434623 -0.98778,-0.434623 -0.474134,0 -0.849491,0.296334 -0.375356,0.296334 -0.49389,0.770469 -0.01975,0.09878 -0.03951,0.335845 h -2.726273 q 0.01976,-0.335845 0.118534,-0.98778 0.335845,-1.382892 1.461914,-2.232383 1.12607,-0.869246 2.528717,-0.869246 0.49389,0 0.98778,0.118533 1.363137,0.335845 2.252139,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118534,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363136,0.928513 -1.422403,2.054582 l 5.314256,-0.01976 z"
+       id="path1370" />
+  </g>
+  <g
+     aria-label="23"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,97.662867,102.81118)"
+     id="text886-2-3-3-6"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-8-5-7);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 44.350199,79.123365 H 36.210892 V 76.49587 q -0.09878,-1.205092 1.224847,-2.706517 0.49389,-0.533402 2.331161,-1.659471 1.521181,-0.928513 1.896537,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434623,-0.98778 -0.434623,-0.434623 -0.98778,-0.434623 -0.474134,0 -0.849491,0.296334 -0.375356,0.296334 -0.49389,0.770469 -0.01975,0.09878 -0.03951,0.335845 h -2.726273 q 0.01976,-0.335845 0.118534,-0.98778 0.335845,-1.382892 1.461914,-2.232383 1.126069,-0.869246 2.528717,-0.869246 0.49389,0 0.98778,0.118533 1.363136,0.335845 2.252138,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118533,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363137,0.928513 -1.422403,2.054582 l 5.314256,-0.01976 z"
+       id="path1373" />
+    <path
+       d="m 53.024759,69.699943 q 0,1.580448 -0.98778,2.528717 1.30387,1.323625 1.30387,3.200407 0,1.600204 -1.047047,2.667006 -1.185336,1.165581 -3.062118,1.165581 -1.936049,0 -3.160896,-1.224847 -0.03951,-0.09878 1.639715,-1.758249 0.197556,0.09878 0.553157,0.276579 0.454379,0.237067 0.948269,0.237067 0.691446,0 1.126069,-0.454379 0.434623,-0.454379 0.335845,-1.224847 -0.07902,-0.730957 -0.889002,-1.205092 -0.572912,-0.335845 -1.540937,-0.335845 v -2.46945 q 1.106314,-0.118534 1.738493,-0.691446 0.355601,-0.335845 0.355601,-0.790224 0,-0.434623 -0.335845,-0.770468 -0.31609,-0.335846 -0.80998,-0.335846 -0.948269,0 -1.48167,0.572913 -0.03951,0.05927 -0.889002,-0.80998 -0.849491,-0.869246 -0.829735,-0.889002 1.402647,-1.402647 3.318941,-1.402647 1.540936,0 2.627494,1.086558 1.086558,1.086558 1.086558,2.627494 z"
+       id="path1375" />
+  </g>
+  <g
+     aria-label="24"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,126.64167,93.528717)"
+     id="text886-2-9-7-8"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-61-4-4);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 44.099395,79.123365 H 35.960088 V 76.49587 q -0.09878,-1.205092 1.224847,-2.706517 0.49389,-0.533402 2.331161,-1.659471 1.521181,-0.928513 1.896538,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434624,-0.98778 -0.434623,-0.434623 -0.98778,-0.434623 -0.474134,0 -0.84949,0.296334 -0.375357,0.296334 -0.49389,0.770469 -0.01976,0.09878 -0.03951,0.335845 h -2.726272 q 0.01975,-0.335845 0.118533,-0.98778 0.335845,-1.382892 1.461915,-2.232383 1.126069,-0.869246 2.528716,-0.869246 0.49389,0 0.98778,0.118533 1.363137,0.335845 2.252139,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118534,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363136,0.928513 -1.422403,2.054582 l 5.314256,-0.01976 z"
+       id="path1378" />
+    <path
+       d="m 53.583935,79.14312 h -2.508961 v -3.714053 h -2.904073 q -0.572912,-0.09878 -1.16558,-0.1778 -1.145825,-0.31609 -1.540937,-1.540937 -0.118534,-0.335845 -0.118534,-0.67169 0,-0.80998 0.849491,-1.896538 l 2.805295,-3.990631 q 0.750713,-1.323625 2.153361,-1.323625 0.395112,0 0.770468,0.118533 0.691446,0.217312 1.16558,0.849491 0.49389,0.612424 0.49389,1.185336 z m -2.449694,-6.282281 v -4.464765 l -3.14114,4.464765 z"
+       id="path1380" />
+  </g>
+  <g
+     aria-label="25"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,155.64246,84.310498)"
+     id="text886-2-78-4-8"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-31-7-4);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 43.945055,79.123365 H 35.805748 V 76.49587 q -0.09878,-1.205092 1.224847,-2.706517 0.49389,-0.533402 2.331161,-1.659471 1.521181,-0.928513 1.896537,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434623,-0.98778 -0.434623,-0.434623 -0.98778,-0.434623 -0.474135,0 -0.849491,0.296334 -0.375356,0.296334 -0.49389,0.770469 -0.01976,0.09878 -0.03951,0.335845 h -2.726273 q 0.01976,-0.335845 0.118534,-0.98778 0.335845,-1.382892 1.461914,-2.232383 1.126069,-0.869246 2.528717,-0.869246 0.49389,0 0.98778,0.118533 1.363136,0.335845 2.252138,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118533,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363137,0.928513 -1.422404,2.054582 l 5.314257,-0.01976 z"
+       id="path1383" />
+    <path
+       d="m 53.725929,74.717866 q -0.03951,1.955804 -1.422403,3.318941 -1.382892,1.363136 -3.338697,1.363136 -1.97556,0 -3.358452,-1.382892 l 1.817515,-1.698982 q 0.651935,0.592668 1.560693,0.592668 0.928513,0 1.580448,-0.67169 0.651935,-0.691446 0.651935,-1.600204 0,-0.928513 -0.671691,-1.600203 -0.651935,-0.671691 -1.580448,-0.671691 h -3.378207 v -6.440325 h 7.349083 l -0.01976,2.331161 -5.096945,-0.01976 v 1.619959 h 1.165581 q 2.489205,0 3.911609,2.054583 0.869246,1.264358 0.829735,2.805295 z"
+       id="path1385" />
+  </g>
+  <g
+     aria-label="26"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,184.63823,75.093879)"
+     id="text886-2-03-5-4"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-4-6-3);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 43.90647,79.123365 H 35.767162 V 76.49587 q -0.09878,-1.205092 1.224848,-2.706517 0.49389,-0.533402 2.33116,-1.659471 1.521182,-0.928513 1.896538,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434623,-0.98778 -0.434624,-0.434623 -0.98778,-0.434623 -0.474135,0 -0.849491,0.296334 -0.375357,0.296334 -0.49389,0.770469 -0.01976,0.09878 -0.03951,0.335845 h -2.726273 q 0.01975,-0.335845 0.118533,-0.98778 0.335846,-1.382892 1.461915,-2.232383 1.126069,-0.869246 2.528717,-0.869246 0.49389,0 0.98778,0.118533 1.363136,0.335845 2.252138,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118534,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363136,0.928513 -1.422403,2.054582 l 5.314257,-0.01976 z"
+       id="path1388" />
+    <path
+       d="m 53.766366,74.994444 q 0,1.698982 -1.205092,2.904073 -1.205091,1.205092 -2.904073,1.205092 -1.65947,0 -2.864562,-1.145825 -1.185336,-1.16558 -1.244603,-2.825051 -0.01976,-0.730957 0.217312,-1.619959 0.256823,-0.829735 0.513646,-1.639715 0,-0.03951 1.936048,-5.946435 h 2.568228 l -1.540936,5.136456 q 2.133604,-0.158045 3.378207,1.027291 1.145825,1.106314 1.145825,2.904073 z m -2.449694,0.01976 q 0,-0.691446 -0.49389,-1.165581 -0.474135,-0.49389 -1.165581,-0.49389 -0.691446,0 -1.185336,0.49389 -0.474134,0.474135 -0.474134,1.165581 0,0.67169 0.474134,1.16558 0.49389,0.474135 1.185336,0.474135 0.691446,0 1.165581,-0.474135 0.49389,-0.49389 0.49389,-1.16558 z"
+       id="path1390" />
+  </g>
+  <g
+     aria-label="27"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,18.357336,154.5695)"
+     id="text886-2-5-5"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-06-3);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 44.427369,79.123365 H 36.288062 V 76.49587 q -0.09878,-1.205092 1.224847,-2.706517 0.49389,-0.533402 2.331161,-1.659471 1.521181,-0.928513 1.896538,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434623,-0.98778 -0.434623,-0.434623 -0.98778,-0.434623 -0.474134,0 -0.849491,0.296334 -0.375356,0.296334 -0.49389,0.770469 -0.01975,0.09878 -0.03951,0.335845 h -2.726273 q 0.01976,-0.335845 0.118534,-0.98778 0.335845,-1.382892 1.461914,-2.232383 1.12607,-0.869246 2.528717,-0.869246 0.49389,0 0.98778,0.118533 1.363137,0.335845 2.252139,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118534,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363136,0.928513 -1.422403,2.054582 l 5.314256,-0.01976 z"
+       id="path1393" />
+    <path
+       d="m 53.10193,69.206053 -3.299186,9.917312 h -2.46945 l 3.318941,-10.134623 q -0.09878,-0.750713 -0.790224,-0.750713 -0.05927,0 -3.793075,0.03951 v -2.350916 h 4.089409 q 1.244603,-0.01976 2.133605,0.592668 0.968024,0.691446 0.968024,1.797759 0,0.434624 -0.158044,0.889002 z"
+       id="path1395" />
+  </g>
+  <g
+     aria-label="28"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,47.344565,145.3254)"
+     id="text886-2-7-6-0"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-3-1-4);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 44.022225,79.123365 H 35.882918 V 76.49587 q -0.09878,-1.205092 1.224847,-2.706517 0.49389,-0.533402 2.331161,-1.659471 1.521181,-0.928513 1.896537,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434623,-0.98778 -0.434623,-0.434623 -0.98778,-0.434623 -0.474134,0 -0.849491,0.296334 -0.375356,0.296334 -0.49389,0.770469 -0.01975,0.09878 -0.03951,0.335845 h -2.726273 q 0.01976,-0.335845 0.118534,-0.98778 0.335845,-1.382892 1.461914,-2.232383 1.126069,-0.869246 2.528717,-0.869246 0.49389,0 0.98778,0.118533 1.363136,0.335845 2.252138,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118533,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363137,0.928513 -1.422403,2.054582 l 5.314256,-0.01976 z"
+       id="path1398" />
+    <path
+       d="m 53.34872,69.699943 q 0,1.580448 -0.98778,2.528717 1.30387,1.323625 1.30387,3.200407 0,1.600204 -1.047047,2.667006 -1.205091,1.205092 -2.904073,1.205092 -1.718737,0 -2.923829,-1.205092 -1.126069,-1.145824 -1.126069,-2.864562 0,-1.778004 1.185336,-3.042362 -0.928513,-0.889002 -0.928513,-2.489206 0,-1.540936 1.086558,-2.627494 1.086558,-1.086558 2.627495,-1.086558 1.540936,0 2.627494,1.086558 1.086558,1.086558 1.086558,2.627494 z m -2.686761,-0.03951 q 0,-0.474134 -0.335845,-0.809979 -0.335846,-0.335846 -0.80998,-0.335846 -0.474134,0 -0.80998,0.335846 -0.335845,0.335845 -0.335845,0.809979 0,0.474135 0.335845,0.80998 0.335846,0.335845 0.80998,0.335845 0.474134,0 0.80998,-0.335845 0.335845,-0.335845 0.335845,-0.80998 z m -0.05927,4.741344 q -0.395112,-0.414867 -0.968024,-0.414867 -0.572913,0 -0.98778,0.414867 -0.414868,0.414868 -0.414868,0.98778 0,0.572913 0.414868,0.98778 0.414867,0.414868 0.98778,0.414868 0.572912,0 0.968024,-0.414868 0.414868,-0.414867 0.414868,-0.98778 0,-0.572912 -0.414868,-0.98778 z"
+       id="path1400" />
+  </g>
+  <g
+     aria-label="29"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,76.305075,135.97719)"
+     id="text886-2-22-9-4"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-5-5-2);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="M 43.90647,79.123365 H 35.767162 V 76.49587 q -0.09878,-1.205092 1.224848,-2.706517 0.49389,-0.533402 2.33116,-1.659471 1.521182,-0.928513 1.896538,-1.817515 0.05927,-0.138289 0.05927,-0.31609 0,-0.553156 -0.434623,-0.98778 -0.434624,-0.434623 -0.98778,-0.434623 -0.474135,0 -0.849491,0.296334 -0.375357,0.296334 -0.49389,0.770469 -0.01976,0.09878 -0.03951,0.335845 h -2.726273 q 0.01975,-0.335845 0.118533,-0.98778 0.335846,-1.382892 1.461915,-2.232383 1.126069,-0.869246 2.528717,-0.869246 0.49389,0 0.98778,0.118533 1.363136,0.335845 2.252138,1.461915 0.889002,1.106313 0.889002,2.449694 0,0.49389 -0.118534,0.968024 -0.296334,1.12607 -3.852342,3.59552 -1.363136,0.928513 -1.422403,2.054582 l 5.314257,-0.01976 z"
+       id="path1403" />
+    <path
+       d="m 53.766366,69.857988 q 0.01976,0.730957 -0.237067,1.600204 -0.237067,0.849491 -0.49389,1.679226 0,0.01976 -1.936049,5.966191 h -2.568228 l 1.540937,-5.175967 q -2.113849,0.158045 -3.378208,-1.027291 -1.145825,-1.106314 -1.145825,-2.904074 0,-1.698981 1.205092,-2.904073 1.205092,-1.205091 2.904073,-1.205091 1.659471,0 2.864562,1.16558 1.205092,1.145825 1.244603,2.805295 z m -2.449694,0.138289 q 0,-0.691446 -0.49389,-1.16558 -0.474135,-0.49389 -1.165581,-0.49389 -0.67169,0 -1.16558,0.49389 -0.49389,0.474134 -0.49389,1.16558 0,0.671691 0.49389,1.165581 0.49389,0.474134 1.16558,0.474134 0.691446,0 1.165581,-0.474134 0.49389,-0.49389 0.49389,-1.165581 z"
+       id="path1405" />
+  </g>
+  <g
+     aria-label="30"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,105.24229,126.91154)"
+     id="text886-2-3-3-8"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-8-5-6);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="m 40.928313,69.699943 q 0,1.580448 -0.98778,2.528717 1.30387,1.323625 1.30387,3.200407 0,1.600204 -1.047047,2.667006 -1.185336,1.165581 -3.062118,1.165581 -1.936049,0 -3.160896,-1.224847 -0.03951,-0.09878 1.639715,-1.758249 0.197556,0.09878 0.553156,0.276579 0.454379,0.237067 0.948269,0.237067 0.691446,0 1.126069,-0.454379 0.434624,-0.454379 0.335846,-1.224847 -0.07902,-0.730957 -0.889002,-1.205092 -0.572913,-0.335845 -1.540937,-0.335845 v -2.46945 q 1.106313,-0.118534 1.738493,-0.691446 0.3556,-0.335845 0.3556,-0.790224 0,-0.434623 -0.335845,-0.770468 -0.316089,-0.335846 -0.809979,-0.335846 -0.948269,0 -1.48167,0.572913 -0.03951,0.05927 -0.889002,-0.80998 -0.849491,-0.869246 -0.829736,-0.889002 1.402648,-1.402647 3.318941,-1.402647 1.540937,0 2.627495,1.086558 1.086558,1.086558 1.086558,2.627494 z"
+       id="path1408" />
+    <path
+       d="m 55.827431,72.54475 q 0,2.746028 -1.936049,4.682077 -1.936049,1.936049 -4.662322,1.936049 -2.746028,0 -4.682077,-1.936049 -1.936049,-1.936049 -1.936049,-4.682077 0,-2.726273 1.936049,-4.662322 1.936049,-1.936049 4.682077,-1.936049 2.726273,0 4.662322,1.936049 1.936049,1.936049 1.936049,4.662322 z m -2.548473,0.03951 q 0,-1.679226 -1.185336,-2.864562 -1.185336,-1.185336 -2.864562,-1.185336 -1.679226,0 -2.864562,1.185336 -1.185336,1.185336 -1.185336,2.864562 0,1.679226 1.185336,2.864562 1.185336,1.185336 2.864562,1.185336 1.679226,0 2.864562,-1.185336 1.185336,-1.185336 1.185336,-2.864562 z"
+       id="path1410" />
+  </g>
+  <g
+     aria-label="31"
+     transform="matrix(0.93546493,-0.2980044,0.2980044,0.93546493,134.685,117.4813)"
+     id="text886-2-9-7-7"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect888-1-61-4-9);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="m 45.288436,69.699943 q 0,1.580448 -0.98778,2.528717 1.303869,1.323625 1.303869,3.200407 0,1.600204 -1.047047,2.667006 -1.185336,1.165581 -3.062118,1.165581 -1.936048,0 -3.160896,-1.224847 -0.03951,-0.09878 1.639715,-1.758249 0.197556,0.09878 0.553157,0.276579 0.454379,0.237067 0.948269,0.237067 0.691446,0 1.126069,-0.454379 0.434623,-0.454379 0.335845,-1.224847 -0.07902,-0.730957 -0.889002,-1.205092 -0.572912,-0.335845 -1.540937,-0.335845 v -2.46945 q 1.106314,-0.118534 1.738493,-0.691446 0.355601,-0.335845 0.355601,-0.790224 0,-0.434623 -0.335845,-0.770468 -0.31609,-0.335846 -0.80998,-0.335846 -0.948269,0 -1.48167,0.572913 -0.03951,0.05927 -0.889002,-0.80998 -0.849491,-0.869246 -0.829735,-0.889002 1.402648,-1.402647 3.318941,-1.402647 1.540937,0 2.627495,1.086558 1.086558,1.086558 1.086558,2.627494 z"
+       id="path1413" />
+    <path
+       d="M 50.467798,79.123365 H 47.958837 V 65.926624 h 2.508961 z"
+       id="path1415" />
+  </g>
+  <g
+     aria-label="January"
+     transform="matrix(1.0777309,-0.34332506,0.34332506,1.0777309,-19.718016,40.593603)"
+     id="text1502"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;line-height:1.25;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1504);fill:#000000;fill-opacity:1;stroke:none">
+    <path
+       d="m 29.495645,41.3422 q 0,0.609601 -0.428978,1.038579 -0.428979,0.428978 -1.038579,0.428978 -0.609601,0 -1.038579,-0.428978 -0.428978,-0.428978 -0.428978,-1.038579 0,-0.6096 0.428978,-1.038579 0.428978,-0.428978 1.038579,-0.428978 0.6096,0 1.038579,0.428978 0.428978,0.428979 0.428978,1.038579 z m -0.02258,17.633263 H 26.605686 V 44.051536 h 2.867381 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal'"
+       id="path1418" />
+    <path
+       d="m 41.969174,48.544519 v 5.937961 h -2.754492 v -1.715913 q -0.519289,0.451556 -1.693335,1.038579 -1.286934,0.654756 -1.761068,0.654756 -1.083735,0 -1.174046,-0.02258 -0.880534,-0.135467 -1.648179,-0.745068 -0.767646,-0.632178 -1.083735,-1.625601 -0.316089,-0.993424 -0.316089,-2.957692 0,-2.167469 1.53529,-3.657604 1.535291,-1.512713 3.725338,-1.512713 2.009424,0 3.476981,1.332091 1.467557,1.309512 1.693335,3.273781 z m -2.709336,0.564445 q 0.02258,-0.04516 -0.04516,-0.428979 -0.158044,-0.857956 -0.857956,-1.422401 -0.677334,-0.564445 -1.557868,-0.564445 -1.038579,0 -1.761069,0.72249 -0.722489,0.722489 -0.722489,1.761068 0,1.873958 0.135466,2.190047 0.225778,0.564445 0.790223,0.541867 0.835379,-0.02258 2.619025,-1.377246 0.835379,-0.654756 1.399824,-1.422401 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal'"
+       id="path1420" />
+    <path
+       d="m 54.990568,54.48248 h -2.799647 l -0.02258,-5.170316 q 0,-1.061157 -0.745067,-1.806224 -0.745068,-0.745068 -1.806224,-0.745068 -0.970846,0 -1.693335,0.654757 -0.72249,0.632178 -0.812801,1.603023 l -0.02258,5.463828 h -2.844803 v -5.238049 q 0.02258,-2.212625 1.603024,-3.747915 1.580446,-1.557869 3.770493,-1.557869 2.235202,0 3.79307,1.580446 1.580446,1.557869 1.580446,3.793071 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal'"
+       id="path1422" />
+    <path
+       d="m 67.863795,49.379897 q -0.02258,2.167469 -1.580446,3.70276 -1.53529,1.53529 -3.725337,1.53529 -2.190047,0 -3.747915,-1.53529 -1.557868,-1.557869 -1.557868,-3.770493 v -5.23805 h 2.777069 l 0.02258,5.23805 q 0,1.061157 0.72249,1.806224 0.745067,0.72249 1.783646,0.72249 0.970845,0 1.670757,-0.632179 0.72249,-0.654756 0.835379,-1.603024 l 0.02258,-5.531561 h 2.777069 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal'"
+       id="path1424" />
+    <path
+       d="m 80.333797,48.544519 v 5.937961 h -2.754492 v -1.715913 q -0.51929,0.451556 -1.693335,1.038579 -1.286935,0.654756 -1.761069,0.654756 -1.083734,0 -1.174045,-0.02258 -0.880534,-0.135467 -1.64818,-0.745068 -0.767645,-0.632178 -1.083734,-1.625601 -0.316089,-0.993424 -0.316089,-2.957692 0,-2.167469 1.53529,-3.657604 1.535291,-1.512713 3.725337,-1.512713 2.009424,0 3.476982,1.332091 1.467557,1.309512 1.693335,3.273781 z m -2.709337,0.564445 q 0.02258,-0.04516 -0.04515,-0.428979 -0.158045,-0.857956 -0.857957,-1.422401 -0.677334,-0.564445 -1.557868,-0.564445 -1.038579,0 -1.761068,0.72249 -0.72249,0.722489 -0.72249,1.761068 0,1.873958 0.135467,2.190047 0.225778,0.564445 0.790223,0.541867 0.835379,-0.02258 2.619025,-1.377246 0.835378,-0.654756 1.399823,-1.422401 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal'"
+       id="path1426" />
+    <path
+       d="m 87.959096,46.715717 h -1.64818 q -0.790223,0 -0.903112,0.857956 v 6.908807 h -2.799647 v -6.660451 q 0,-1.761068 1.196624,-2.844803 0.993423,-0.903112 2.167468,-0.903112 h 1.986847 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal'"
+       id="path1428" />
+    <path
+       d="M 100.43121,59.020618 H 97.563833 V 53.87288 q -1.174046,0.632178 -2.506136,0.632178 -2.190046,0 -3.747915,-1.53529 -1.557868,-1.557869 -1.557868,-3.770493 v -5.125161 h 2.77707 l 0.02258,5.125161 q 0,1.061157 0.72249,1.806224 0.745067,0.72249 1.783646,0.72249 0.970846,0 1.670757,-0.632179 0.72249,-0.654756 0.835379,-1.603024 l -0.02258,-5.418672 h 2.889955 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:'P22 Bayer Universal';-inkscape-font-specification:'P22 Bayer Universal'"
+       id="path1430" />
+  </g>
+  <rect
+     style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:1.24525;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect1604"
+     width="27.571142"
+     height="27.571142"
+     x="30.108522"
+     y="132.22444"
+     transform="rotate(-18.081646)" />
 </svg>
