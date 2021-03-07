@@ -1,6 +1,5 @@
 from app.models import db, PracticeLog, Student
 from datetime import *
-from dateutil.relativedelta import *
 
 
 def seed_practice_logs():
