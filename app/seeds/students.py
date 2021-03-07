@@ -5,10 +5,12 @@ import random
 
 fake = Faker('en_US')
 
+
 def seed_students():
     teacher1 = Teacher.query.filter(Teacher.email_address == "matt@email.com").first()
     teacher2 = Teacher.query.filter(Teacher.email_address == "michelle@email.com").first()
     students = []
+
     def phone_number():
         return '({first}) {second}-{third}'.format(first=random.randrange(100, 1000), second=random.randrange(100, 1000), third=random.randrange(1000, 10000))
 
@@ -43,7 +45,7 @@ def seed_students():
 
     for num in range(3, 6):
         student = Student(first_name=fake.first_name_female(), last_name=fake.last_name(), email_address=fake.free_email(),
-                password=fake.password(length=12), instrument='cello', phone=phone_number(), parent_name=fake.name(),
+                password=fake.password(length=12), instrument='viola', phone=phone_number(), parent_name=fake.name(),
                 photo_url=female_pics[num], teacher_id=teacher2.id)
         students.append(student)
 
@@ -55,7 +57,7 @@ def seed_students():
 
     for num in range(3):
         student = Student(first_name=fake.first_name_male(), last_name=fake.last_name(), email_address=fake.free_email(),
-                password=fake.password(length=12), instrument='cello', phone=phone_number(), parent_name=fake.name(),
+                password=fake.password(length=12), instrument='viola', phone=phone_number(), parent_name=fake.name(),
                 photo_url=male_pics[num], teacher_id=teacher2.id)
         students.append(student)
 
