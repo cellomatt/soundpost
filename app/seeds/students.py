@@ -31,7 +31,6 @@ def seed_students():
         "https://soundpost-app.s3.us-east-2.amazonaws.com/download+(5).png"
     ]
 
-
     demo = Student(first_name='Demo', last_name='Student', email_address='demo@email.com',
                 password='password', instrument='cello', phone=phone_number(), parent_name='Demo Parent',
                 photo_url='https://soundpost-app.s3.us-east-2.amazonaws.com/XzA1NTg5MzUuanBn.jpg', teacher_id=teacher1.id)

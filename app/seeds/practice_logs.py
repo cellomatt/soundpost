@@ -1,14 +1,15 @@
 from app.models import db, PracticeLog, Student
 from datetime import *
+from dateutil.relativedelta import *
 
 
 def seed_practice_logs():
     students = Student.query.all()
-    start_date = date(2021, 1, 1)
     today = date.today()
+    start_date = today + relativedelta(months=-1)
     delta = today - start_date
 
-    for student in students:
+    for student in students: 
         for i in range(delta.days + 1):
             day = start_date + timedelta(days=i)
             if day.weekday() != 6:
