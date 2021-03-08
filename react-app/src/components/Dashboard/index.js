@@ -8,20 +8,10 @@ import './Dashboard.css'
 export default function Dashboard() {
   document.title = "Soundpost — Home"
   const dispatch = useDispatch();
-  // const [loaded, setLoaded] = useState(false);
   const user = useSelector(state => state.session.user);
   const latestAssignment = useSelector(state => state.assignments.latest);
 
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const assignment = await dispatch(assignmentActions.getLatest(user.id));
-  //     if (!assignment.errors) {
-  //       setLoaded(true);
-  //     }
-  //   })();
-  // }, [dispatch, user.id]);
 
   return (
     <div className="main">
@@ -47,7 +37,7 @@ export default function Dashboard() {
               {latestAssignment != null &&
               <Assignment assignment={latestAssignment}/>
               }
-              <Link exact to="/assignments" >View previous assignments</Link>
+              <Link exact to="/assignments" className="lesson-info__link">View previous assignments</Link>
             </div>
           </div>
           <div className="lesson-info__upcoming">

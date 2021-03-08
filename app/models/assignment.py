@@ -14,14 +14,17 @@ class Assignment(db.Model):
     teacher = db.relationship("Teacher", back_populates="assignments")
 
     def to_dict(self):
-        print("----------------------", self.created_at)
+        months = ["January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November",
+                  "December"]
+
         return {
             "id": self.id,
             "student_id": self.student_id,
             "teacher_id": self.teacher_id,
             "message": self.message,
             "created_at": {"year": self.created_at.year,
-                           "month": self.created_at.month,
+                           "month": months[self.created_at.month - 1],
                            "day": self.created_at.day,
                            "hour": self.created_at.hour,
                            "minute": self.created_at.minute,
