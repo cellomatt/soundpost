@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Assignment from '../Assignment'
 import * as assignmentActions from '../../store/assignment'
+import * as lessonActions from '../../store/lesson'
 import './Dashboard.css'
 
 export default function Dashboard() {
@@ -12,6 +13,7 @@ export default function Dashboard() {
   const latestAssignment = useSelector(state => state.assignments.latest);
 
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
+  useEffect(() => dispatch(lessonActions.getUserLessons(user.id)), [dispatch, user.id])
 
   return (
     <div className="main">

@@ -7,6 +7,7 @@ assignment_routes = Blueprint('assignments', __name__)
 
 
 @assignment_routes.route('/<int:id>/latest')
+@login_required
 def latest_assignment(id):
     assignment = Assignment.query.filter(Assignment.student_id == id).order_by(
                 Assignment.created_at.desc()).first()
