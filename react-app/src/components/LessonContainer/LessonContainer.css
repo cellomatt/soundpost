@@ -1,0 +1,22 @@
+.lesson__container {
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  padding: .6em 1.4em;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lesson__container--date {
+  color: #333333;
+  font-weight: 500;
+}
+
+.lesson__container--time {
+  color: #333333;
+  font-size: .8em;
+  font-weight: 300;
+}

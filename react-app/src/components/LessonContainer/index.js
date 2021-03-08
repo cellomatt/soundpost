@@ -12,9 +12,9 @@ export default function LessonContainer({lesson}) {
   return (
     <div className="lesson__container">
       <div className="lesson__container--info">
-        <div className="lesson__container--teacher">Teacher: {lesson.teacher.first_name} {lesson.teacher.last_name}</div>
         <div className="lesson__container--date">{lesson.start_time.toLocaleDateString('en-US', options)}</div>
         <div className="lesson__container--time">{lesson.start_time.toLocaleTimeString('en-US', timeOptions)} - {lesson.end_time.toLocaleTimeString('en-US', timeOptions)}</div>
+        <div className="lesson__container--teacher">Teacher: {lesson.teacher.first_name} {lesson.teacher.last_name}</div>
       </div>
       <div>
         {student != null && student.id === lesson.student_id &&
