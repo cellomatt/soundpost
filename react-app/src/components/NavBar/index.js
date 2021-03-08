@@ -25,12 +25,12 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
   } else {
     sessionLinks = (
       <>
-      <li>
+      <li className="nav__li">
         <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/login" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
           Login
         </NavLink>
       </li>
-      <li>
+      <li className="nav__li">
         <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/signup" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
           Sign Up
         </NavLink>
@@ -46,7 +46,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
       </Link>
       <nav>
       <ul className="nav">
-        {!authenticated && <li>
+        {!authenticated && <li className="nav__li">
           <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
             Home
           </NavLink>

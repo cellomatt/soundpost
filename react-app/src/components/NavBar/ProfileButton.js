@@ -33,32 +33,34 @@ export default function ProfileButton({setAuthenticated}) {
     return (
       <>
         <button className="btn__profile" onClick={openMenu}>
-          {user.photo_url && <img className="btn__profile--img" src={user.photo_url} alt="profile"/>}
-          {!user.photo_url && <i className="fas fa-user btn__profile--icon"></i>}
+          {/* {user.photo_url && <img className="btn__profile--img" src={user.photo_url} alt="profile"/>} */}
+          {/* {!user.photo_url && */}
+          <i className="fas fa-user btn__profile--icon"></i>
+          {/* } */}
         </button>
         {showMenu && (
-        <ul className="">
-          <li>
+        <ul className="dropdown">
+          <li className="dropdown_li">
             <NavLink className="default" to="/" exact={true} activeClassName="active">
               Dashboard
             </NavLink>
           </li>
-          <li>
+          <li className="dropdown_li">
             <NavLink className="default" to="/schedule" exact={true} activeClassName="active">
               Schedule Lesson
             </NavLink>
           </li>
-          <li>
+          <li className="dropdown_li">
             <NavLink className="default" to="/assignments" exact={true} activeClassName="active">
               Assignments
             </NavLink>
           </li>
-          <li>
+          <li className="dropdown_li">
             <NavLink className="default" to="/stats" exact={true} activeClassName="active">
               Practice Stats
             </NavLink>
           </li>
-          <li>
+          <li className="dropdown_li">
             <LogoutButton setAuthenticated={setAuthenticated} />
           </li>
         </ul>
