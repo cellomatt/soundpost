@@ -35,26 +35,26 @@ function App() {
     <BrowserRouter>
       <NavBar authenticated={authenticated} setAuthenticated={setAuthenticated} />
       <Switch>
-        {!authenticated && <Route path="/" exact={true} authenticated={authenticated}>
+        {!authenticated && <Route exact path="/"  authenticated={authenticated}>
           <Home />
         </Route>}
-        <Route path="/login" exact={true}>
+        <Route exact path="/login" >
           <LoginForm
             authenticated={authenticated}
             setAuthenticated={setAuthenticated}
           />
         </Route>
-        <Route path="/signup" exact={true}>
+        <Route exact path="/signup" >
           <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
         </Route>
-        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
+        <ProtectedRoute exact path="/"  authenticated={authenticated}>
           <Dashboard authenticated={authenticated} />
         </ProtectedRoute>
         <Route>
           <div className="main">
-            <h1 style={{marginTop: ".5em", fontSize: "4em"}}>404</h1>
+            <h1 style={{marginTop: "0", fontSize: "4em"}}>404</h1>
             <p>The resource you requested does not exist. Really.</p>
-            <Sketch style={{width: "30%", height: "100%", marginTop: "1em"}}/>
+            <Sketch style={{width: "30%", height: "100%", padding: ".5em 0 1.5em"}}/>
           </div>
         </Route>
       </Switch>

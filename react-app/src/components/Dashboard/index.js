@@ -1,9 +1,27 @@
-import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Assignment from '../Assignment'
+import * as assignmentActions from '../../store/assignment'
 import './Dashboard.css'
 
 export default function Dashboard() {
-  const user = useSelector(state => state.session.user)
+  document.title = "Soundpost — Home"
+  const dispatch = useDispatch();
+  // const [loaded, setLoaded] = useState(false);
+  const user = useSelector(state => state.session.user);
+  const latestAssignment = useSelector(state => state.assignments.latest);
 
+  useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const assignment = await dispatch(assignmentActions.getLatest(user.id));
+  //     if (!assignment.errors) {
+  //       setLoaded(true);
+  //     }
+  //   })();
+  // }, [dispatch, user.id]);
 
   return (
     <div className="main">
@@ -26,8 +44,10 @@ export default function Dashboard() {
           <div className="lesson-info__assignment">
             <h1 className="title">Practice Assignment</h1>
             <div>
-              <p>assignment placeholder</p>
-              <p>link to all</p>
+              {latestAssignment != null &&
+              <Assignment assignment={latestAssignment}/>
+              }
+              <Link exact to="/assignments" >View previous assignments</Link>
             </div>
           </div>
           <div className="lesson-info__upcoming">

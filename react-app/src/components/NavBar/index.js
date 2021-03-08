@@ -26,12 +26,12 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
     sessionLinks = (
       <>
       <li className="nav__li">
-        <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/login" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+        <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} exact to="/login" activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
           Login
         </NavLink>
       </li>
       <li className="nav__li">
-        <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/signup" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+        <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} exact to="/signup" activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
           Sign Up
         </NavLink>
       </li>
@@ -47,7 +47,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
       <nav>
       <ul className="nav">
         {!authenticated && <li className="nav__li">
-          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} to="/" exact={true} activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} exact to="/" activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
             Home
           </NavLink>
         </li>

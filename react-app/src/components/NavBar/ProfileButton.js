@@ -41,22 +41,22 @@ export default function ProfileButton({setAuthenticated}) {
         {showMenu && (
         <ul className="dropdown">
           <li className="dropdown_li">
-            <NavLink className="default" to="/" exact={true} activeClassName="active">
+            <NavLink className="default" exact to="/" activeClassName="active">
               Dashboard
             </NavLink>
           </li>
           <li className="dropdown_li">
-            <NavLink className="default" to="/schedule" exact={true} activeClassName="active">
+            <NavLink className="default" exact to="/schedule" activeClassName="active">
               Schedule Lesson
             </NavLink>
           </li>
           <li className="dropdown_li">
-            <NavLink className="default" to="/assignments" exact={true} activeClassName="active">
+            <NavLink className="default" exact to="/assignments" activeClassName="active">
               Assignments
             </NavLink>
           </li>
           <li className="dropdown_li">
-            <NavLink className="default" to="/stats" exact={true} activeClassName="active">
+            <NavLink className="default" exact to="/stats" activeClassName="active">
               Practice Stats
             </NavLink>
           </li>

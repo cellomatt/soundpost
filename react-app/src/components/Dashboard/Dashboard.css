@@ -49,8 +49,9 @@
 }
 
 .user-info__pic--img {
-  width: 80%;
+  width: 70%;
   border-radius: 50%;
+  border: 4px solid #333333;
 }
 
 .title {
