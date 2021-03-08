@@ -9,7 +9,7 @@ def seed_practice_logs():
     start_date = today + relativedelta(months=-1)
     delta = today - start_date
 
-    for student in students: 
+    for student in students:
         for i in range(delta.days + 1):
             day = start_date + timedelta(days=i)
             if day.weekday() != 6:
