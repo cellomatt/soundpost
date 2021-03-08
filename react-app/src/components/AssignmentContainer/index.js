@@ -1,6 +1,6 @@
-import './Assignment.css'
+import './AssignmentContainer.css'
 
-export default function Assignment({assignment}) {
+export default function AssignmentContainer({assignment}) {
   return (
     <div className="message__container">
       <p className="message">{assignment.message}</p>

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Assignment from '../Assignment'
+import AssignmentContainer from '../AssignmentContainer'
+import LessonContainer from '../LessonContainer'
 import * as assignmentActions from '../../store/assignment'
 import * as lessonActions from '../../store/lesson'
 import './Dashboard.css'
@@ -11,6 +12,7 @@ export default function Dashboard() {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
   const latestAssignment = useSelector(state => state.assignments.latest);
+  const lessons = useSelector(state => state.lessons.scheduled)
 
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
   useEffect(() => dispatch(lessonActions.getUserLessons(user.id)), [dispatch, user.id])
@@ -37,7 +39,7 @@ export default function Dashboard() {
             <h1 className="title">Practice Assignment</h1>
             <div>
               {latestAssignment != null &&
-              <Assignment assignment={latestAssignment}/>
+              <AssignmentContainer assignment={latestAssignment}/>
               }
               <Link exact to="/assignments" className="lesson-info__link">View previous assignments</Link>
             </div>
@@ -45,7 +47,19 @@ export default function Dashboard() {
           <div className="lesson-info__upcoming">
             <h1 className="title">Upcoming Lessons</h1>
             <div>
-              <p>lessons placeholder (map all upcoming)</p>
+              {lessons != null &&
+                <div>
+                  {Object.values(lessons).map(lesson =>
+                    <LessonContainer lesson={lesson} />
+                    )}
+                </div>
+              }
+              {lessons === null &&
+                <>
+                <p>You don't have any lessons scheduled.</p>
+                <button>Book Now</button>
+                </>
+                }
             </div>
           </div>
         </div>
