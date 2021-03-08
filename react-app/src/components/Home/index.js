@@ -25,7 +25,7 @@ export default function Home() {
         <div className="section">
           <div className="section__description">
             <h1 className="section__header">Track Your Practice</h1>
-            <p className="section__description--content">With Soundpost, you can also make sure that you're practicing consistently. Students can keep a record of
+            <p className="section__description--content">With Soundpost, you can make sure that you're practicing consistently. Students can keep a record of
             which days they practice and look at some cool stats to see how they measure up. Teachers have access to their students' stats and can use the data to
             build and encourage healthy practice habits.</p>
           </div>
