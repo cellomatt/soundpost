@@ -7,6 +7,7 @@ export const setLatest = (assignment) => {
 export const getLatest = (userId) => async dispatch => {
   const res = await fetch(`/api/assignments/${userId}/latest`)
   const data = await res.json();
+  data.created_at = new Date(data.created_at);
   dispatch(setLatest(data))
   return data;
 }

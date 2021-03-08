@@ -7,6 +7,10 @@ export const setLessons = (lessons) => {
 export const getUserLessons = (userId) => async dispatch => {
   const res = await fetch(`/api/lessons/${userId}/all`)
   const data = await res.json();
+  data.forEach(lesson => {
+    lesson.start_time = new Date(lesson.start_time);
+    lesson.end_time = new Date(lesson.end_time);
+  })
   dispatch(setLessons(data))
   return data;
 }

@@ -23,10 +23,6 @@ class Assignment(db.Model):
             "student_id": self.student_id,
             "teacher_id": self.teacher_id,
             "message": self.message,
-            "created_at": {"year": self.created_at.year,
-                           "month": months[self.created_at.month - 1],
-                           "day": self.created_at.day,
-                           "hour": self.created_at.hour,
-                           "minute": self.created_at.minute,
-                           "second": self.created_at.second}
+            "created_at": self.created_at.isoformat(),
+            "teacher": self.teacher.to_dict(),
         }
