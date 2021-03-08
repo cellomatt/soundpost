@@ -49,8 +49,8 @@ def seed_assignments():
         teacher_id=teacher.id,
         message=("You are doing so well! Thank you for your amazing "
                  "preparation for today’s lesson. For this week, please continue the "
-                 "same warm-ups from last lesson and let’s begin work on ‘May Time’ for "
-                 "next time."),
+                 "same warm-ups and let’s begin work on ‘May Time’ for "
+                 "our next lesson."),
         created_at=first_assignment_time + timedelta(days=21)
     )
 

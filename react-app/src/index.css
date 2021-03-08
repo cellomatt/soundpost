@@ -92,6 +92,23 @@ body {
   border: 3px solid ;
 }
 
+.btn__tertiary {
+  margin-right: .5em;
+  outline: none;
+  border: none;
+  background-color: #0061FF;
+  color: #42ffdc;
+  font-size: 1em;
+  padding: .2em .3em;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn__tertiary:hover {
+  background-color: #0051d4;
+}
+
 .file-input {
   width: 100%;
   box-sizing: border-box;
