@@ -5,10 +5,13 @@
   border: 3px solid #0061ff;
   outline: none;
   font-size: 1em;
-  margin: .2em;
+  margin: 1.8em .3em;
   text-align: center;
   font-family: "P22BayerW00-Universal";
   color: #222;
+  background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  caret-color: transparent;
 }
 
 .input::placeholder {
@@ -17,6 +20,8 @@
 
 .nice-dates-popover {
   margin: 0 auto;
+  position: relative;
+  margin-bottom: 1.5em;
 }
 
 .nice-dates-day_date {
