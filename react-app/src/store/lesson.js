@@ -37,6 +37,7 @@ export const deleteOneLesson = (id) => async dispatch => {
 }
 
 export const getAvailability = (teacherId, startDay, endDay, duration) => async dispatch => {
+  console.log(duration)
   let newEndDay = new Date(endDay)
   const end = newEndDay.getDate()
   newEndDay.setDate(end + 1)

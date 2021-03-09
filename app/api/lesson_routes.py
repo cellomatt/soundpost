@@ -46,10 +46,30 @@ def get_availability(id):
     data = request.get_json()
     start_time = datetime.fromisoformat(data["start"])
     end_time = datetime.fromisoformat(data["end"])
+    duration = data["duration"]
 
     lessons = TimeSlot.query.filter(TimeSlot.start_time.between(start_time,
-                                    end_time)).all()
+                                    end_time)).filter(TimeSlot.student_id == None).order_by(TimeSlot.id).all()
+
+    if duration == "60":
+        i = 0
+        while i < len(lessons):
+            print("----------------", i, lessons)
+            if i == len(lessons) - 1:
+                if lessons[i].end_time - lessons[i].start_time == timedelta(minutes=30):
+                    lessons.pop(i)
+                    break
+            elif lessons[i].end_time == lessons[i+1].start_time:
+                lessons[i].end_time = lessons[i+1].end_time
+                lessons.pop(i+1)
+            elif i == 0:
+                if lessons[i].end_time - lessons[i].start_time == timedelta(minutes=30):
+                    lessons.pop(i)
+                    continue
+            i += 1
+
 
     availability = [lesson.to_dict() for lesson in lessons]
+    print(availability)
     res = json.dumps(availability)
     return res

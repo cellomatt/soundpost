@@ -22,7 +22,6 @@ export default function LessonScheduleView() {
 
   useEffect(() => {
     if (startDate && endDate) {
-      console.log(duration)
       dispatch(lessonActions.getAvailability(user.teacher.id, startDate, endDate, duration))
     }
   }, [user, startDate, endDate, dispatch, duration])
