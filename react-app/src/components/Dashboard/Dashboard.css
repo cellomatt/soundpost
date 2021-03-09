@@ -23,11 +23,12 @@
 
 .lesson-info__assignment {
   margin-bottom: 2.2em;
+  width: 100%;
 }
 
 .lesson-info__link {
-  color: #0061ff;
-  font-weight: 500;
+  color: #333;
+  font-weight: 400;
 }
 
 .user-info {
@@ -49,17 +50,21 @@
 }
 
 .user-info__pic {
-  width: 100%;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   padding: 1em;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .user-info__pic--img {
-  width: 70%;
   border-radius: 50%;
   border: 1px solid #333333;
+  width: 12em;
+  height: 12em;
+  /* width: 70%; */
+  object-fit: cover;
 }
 
 .title {

@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import Home from "./components/Home"
 import Dashboard from "./components/Dashboard"
+import LessonScheduleView from "./components/LessonScheduleView"
 import { authenticate } from "./services/auth";
 import { setUser } from "./store/session"
 import {ReactComponent as Sketch} from "./images/klee.svg"
@@ -49,6 +50,9 @@ function App() {
         </Route>
         <ProtectedRoute exact path="/"  authenticated={authenticated}>
           <Dashboard authenticated={authenticated} />
+        </ProtectedRoute>
+        <ProtectedRoute exact path="/schedule"  authenticated={authenticated}>
+          <LessonScheduleView authenticated={authenticated} />
         </ProtectedRoute>
         <Route>
           <div className="main">
