@@ -1,5 +1,8 @@
 .duration__input {
   background-color: rgba(255, 255, 255, 0.7);
+  z-index: 99;
+  margin-top: 2em;
+  cursor: pointer;
 }
 
 .input {
@@ -22,11 +25,23 @@
   color: #222;
 }
 
+.lesson-schedule-main {
+  min-height: 1000px;
+}
+
+.lessons__list {
+  width: 45%;
+}
+
 .nice-dates-popover {
   margin: 0 auto;
-  /* position: absolute; */
+  max-width: 500px;
   margin-bottom: 1.5em;
   z-index: 100;
+  border: 1px solid black;
+  border-radius: 5px;
+  position: absolute;
+
 }
 
 .nice-dates-day {
@@ -44,7 +59,7 @@
 
 .nice-dates-day.-today .nice-dates-day_date{
   color: black;
-  font-size: 1.3em;
+  font-size: 1.9em;
 }
 
 .nice-dates-day.-selected .nice-dates-day_date {
@@ -55,7 +70,7 @@
 .nice-dates-day_date {
   color: #222;
   font-family: "P22BayerW00-Universal";
-  font-size: 1.2em;
+  font-size: 1.7em;
 }
 
 .nice-dates-day_month {
@@ -100,6 +115,6 @@
 }
 
 .title__lesson {
-  font-size: 2.7em;
-  padding: .5em;
+  font-size: 3em;
+  padding: 1em 0 .8em;
 }

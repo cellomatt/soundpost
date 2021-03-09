@@ -44,7 +44,7 @@ export default function LessonScheduleView() {
   }
 
   return (
-    <div className="main">
+    <div className="main lesson-schedule-main">
       <h1 className="title__lesson">Schedule a Lesson</h1>
       {user !== null &&
       <>
@@ -106,7 +106,7 @@ export default function LessonScheduleView() {
         {availability !== null &&
         <>
           {Object.values(availability).map(lesson =>
-            <LessonContainer lesson={lesson} key={lesson.id} />
+            <LessonContainer lesson={lesson} key={lesson.id} duration={duration}/>
           )}
         </>
         }

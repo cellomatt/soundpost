@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import LessonModal from '../LessonModal'
 import './LessonContainer.css'
 
-export default function LessonContainer({lesson, setChange}) {
+export default function LessonContainer({lesson, setChange, duration}) {
   const [scheduled, setScheduled] = useState(false)
   const student = useSelector(state => state.session.user)
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -23,7 +23,7 @@ export default function LessonContainer({lesson, setChange}) {
         <div className="lesson__container--teacher">Teacher: {lesson.teacher.first_name} {lesson.teacher.last_name}</div>
       </div>
       <div className="lesson__container--modal">
-        <LessonModal lesson={lesson} scheduled={scheduled} setScheduled={setScheduled} setChange={setChange}/>
+        <LessonModal lesson={lesson} scheduled={scheduled} setScheduled={setScheduled} setChange={setChange} duration={duration}/>
       </div>
     </div>
   )

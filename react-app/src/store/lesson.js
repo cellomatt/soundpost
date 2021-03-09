@@ -79,10 +79,14 @@ export default function lessonReducer(state = initialState, action) {
       delete updateState.scheduled[action.id];
       return updateState;
     case SET_AVAILABLE:
-      updateState.available = {}
-      action.lessons.forEach(lesson => {
-        updateState.available[lesson.id] = lesson
-      })
+      if (action.lessons.length > 0) {
+        updateState.available = {}
+        action.lessons.forEach(lesson => {
+          updateState.available[lesson.id] = lesson
+        })
+      } else {
+        updateState.available = null
+      }
       return updateState;
     default:
       return state;
