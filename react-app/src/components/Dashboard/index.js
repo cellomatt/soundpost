@@ -50,7 +50,7 @@ export default function Dashboard() {
               {lessons != null &&
                 <div>
                   {Object.values(lessons).map(lesson =>
-                    <LessonContainer lesson={lesson} />
+                    <LessonContainer lesson={lesson} key={lesson.id}/>
                     )}
                 </div>
               }

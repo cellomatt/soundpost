@@ -1,6 +1,6 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, Response
 from flask_login import login_required
-from app.models import TimeSlot
+from app.models import db, TimeSlot
 import json
 
 lesson_routes = Blueprint('lessons', __name__)
@@ -21,3 +21,19 @@ def scheduled_lessons(id):
     data = [lesson.to_dict() for lesson in lessons]
     res = json.dumps(data)
     return res
+
+
+@lesson_routes.route('/<int:id>', methods=['DELETE'])
+@login_required
+def delete_lesson(id):
+    lesson = TimeSlot.query.get(id)
+    lesson2 = TimeSlot.query.filter(TimeSlot.start_time == lesson.end_time and
+                                    TimeSlot.student_id == lesson.student_id).first()
+    if lesson2:
+        lesson2.student_id = None
+        db.session.add(lesson2)
+    lesson.student_id = None
+    db.session.add(lesson)
+    db.session.commit()
+
+    return Response(status=201, mimetype='application/json')

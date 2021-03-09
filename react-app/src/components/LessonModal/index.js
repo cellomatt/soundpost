@@ -1,8 +1,12 @@
 import Modal from "react-modal";
 import { useState } from 'react';
+import { useDispatch } from 'react-redux'
+import * as lessonActions from '../../store/lesson'
 import './LessonModal.css'
 
-export default function LessonModal({scheduled, lesson}) {
+export default function LessonModal({scheduled, setScheduled, lesson}) {
+  const dispatch = useDispatch();
+
   const customStyles = {
     content : {
       top: '50%',
@@ -11,11 +15,11 @@ export default function LessonModal({scheduled, lesson}) {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      padding: "1.5em",
+      padding: ".5em",
       backgroundColor: "rgba(255, 255, 255, 0.8);",
       borderRadius: "5px",
       border: "none",
-      width: "25%",
+      maxWidth: "30%",
       boxSizing: "border-box",
     },
     overlay : {
@@ -25,8 +29,6 @@ export default function LessonModal({scheduled, lesson}) {
   };
 
   const [showModal, setShowModal] = useState(false);
-  // const [showScheduleConfirm, setShowScheduleConfirm] = useState(false);
-  // const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   const modalView = () => {
     setShowModal(true)
@@ -36,30 +38,33 @@ export default function LessonModal({scheduled, lesson}) {
     setShowModal(false);
   }
 
-
-
+  const deleteLesson = async () => {
+    const deleted = await dispatch(lessonActions.deleteOneLesson(lesson.id))
+    setScheduled(false);
+    setShowModal(false);
+  }
 
   return (
     <>
     {scheduled && <button className="btn__tertiary modal__btn" onClick={() => modalView()}>Cancel Lesson</button>}
     {!scheduled && <button className="btn__tertiary modal__btn" onClick={() => modalView()}>Schedule Lesson</button>}
-    <Modal style={customStyles} isOpen={showModal} ariaHideApp={true} onRequestClose={onRequestClose}>
+    <Modal style={customStyles} isOpen={showModal} ariaHideApp={false} onRequestClose={onRequestClose}>
       {
         !scheduled ?
           <div className="modal__popup-container">
-              <p className="modal__message">Confirm schedule lesson?</p>
+              <p className="modal__message">Confirm schedule lesson on {lesson.start_time.toLocaleDateString('en-US', {dateStyle: 'long'})} at {lesson.start_time.toLocaleTimeString('en-US', { timeStyle: "short" })}?</p>
               <button className="btn__x" onClick={onRequestClose}>
                   <i className="fas fa-times"></i>
               </button>
-              <button>Confirm</button>
+              <button className="btn__tertiary modal__btn">Confirm</button>
           </div>
         :
           <div className="modal__popup-container">
-              <p className="modal__message">Confirm delete lesson?</p>
               <button className="btn__x" onClick={onRequestClose}>
                   <i className="fas fa-times"></i>
               </button>
-              <button>Delete</button>
+              <p className="modal__message">Confirm cancel lesson on {lesson.start_time.toLocaleDateString('en-US', {dateStyle: 'long'})} at {lesson.start_time.toLocaleTimeString('en-US', { timeStyle: "short" })}?</p>
+              <button className="btn__tertiary modal__btn" onClick={deleteLesson}>Confirm</button>
           </div>
     }
     </Modal>

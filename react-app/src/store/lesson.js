@@ -1,8 +1,15 @@
 const SCHEDULED = 'lesson/SCHEDULED'
+const DELETE = 'lesson/DELETE'
+
 
 export const setLessons = (lessons) => {
   return { type: SCHEDULED, lessons }
 }
+
+export const deleteLesson = (id) => {
+  return { type: DELETE, id}
+}
+
 
 export const getUserLessons = (userId) => async dispatch => {
   const res = await fetch(`/api/lessons/${userId}/all`)
@@ -15,6 +22,17 @@ export const getUserLessons = (userId) => async dispatch => {
   return data;
 }
 
+export const deleteOneLesson = (id) => async dispatch => {
+  const res = await fetch(`/api/lessons/${id}`, {
+    method: "DELETE"
+  });
+  if (res.ok) {
+    dispatch(deleteLesson(id));
+    return res;
+  }
+}
+
+
 const initialState = { scheduled: null };
 
 export default function lessonReducer(state = initialState, action) {
@@ -25,6 +43,9 @@ export default function lessonReducer(state = initialState, action) {
       action.lessons.forEach(lesson => {
         updateState.scheduled[lesson.id] = lesson
       })
+      return updateState;
+    case DELETE:
+      delete updateState.scheduled[action.id];
       return updateState;
     default:
       return state;
