@@ -1,7 +1,8 @@
-from flask import Blueprint, jsonify, Response
+from flask import Blueprint, jsonify, Response, request
 from flask_login import login_required
 from app.models import db, TimeSlot
 import json
+from datetime import *
 
 lesson_routes = Blueprint('lessons', __name__)
 
@@ -37,3 +38,18 @@ def delete_lesson(id):
     db.session.commit()
 
     return Response(status=201, mimetype='application/json')
+
+
+@lesson_routes.route('/teachers/<int:id>', methods=['POST'])
+@login_required
+def get_availability(id):
+    data = request.get_json()
+    start_time = datetime.fromisoformat(data["start"])
+    end_time = datetime.fromisoformat(data["end"])
+
+    lessons = TimeSlot.query.filter(TimeSlot.start_time.between(start_time,
+                                    end_time)).all()
+
+    availability = [lesson.to_dict() for lesson in lessons]
+    res = json.dumps(availability)
+    return res

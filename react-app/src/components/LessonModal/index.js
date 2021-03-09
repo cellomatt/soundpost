@@ -16,7 +16,7 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange}
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
       padding: ".5em",
-      backgroundColor: "rgba(255, 255, 255, 0.8);",
+      backgroundColor: "rgba(255, 255, 255, 0.8)",
       borderRadius: "5px",
       border: "none",
       maxWidth: "30%",
@@ -43,6 +43,10 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange}
     setScheduled(false);
     setShowModal(false);
     setChange(change => !change)
+  }
+
+  const scheduleLesson = async () => {
+    // const scheduled = await dispatch(lessonActions.scheduleOneLesson(lesson.id, duration))
   }
 
   return (

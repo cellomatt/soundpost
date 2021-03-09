@@ -1,5 +1,6 @@
 const SCHEDULED = 'lesson/SCHEDULED'
 const DELETE = 'lesson/DELETE'
+const SET_AVAILABLE = 'lesson/SET_AVAILABLE'
 
 
 export const setLessons = (lessons) => {
@@ -10,6 +11,9 @@ export const deleteLesson = (id) => {
   return { type: DELETE, id}
 }
 
+export const setAvailability = (lessons) => {
+  return { type: SET_AVAILABLE, lessons }
+}
 
 export const getUserLessons = (userId) => async dispatch => {
   const res = await fetch(`/api/lessons/${userId}/all`)
@@ -32,14 +36,34 @@ export const deleteOneLesson = (id) => async dispatch => {
   }
 }
 
-export const getAvailability = (teacherId, startDay, endDay) => async dispatch => {
-  const res = await fetch(`/api/lessons/teacher/${teacherId}`, {
-    method: "POST"
+export const getAvailability = (teacherId, startDay, endDay, duration) => async dispatch => {
+  let newEndDay = new Date(endDay)
+  const end = newEndDay.getDate()
+  newEndDay.setDate(end + 1)
+  const start = startDay.toISOString().replace('Z', '+00:00')
+  const newEnd = newEndDay.toISOString().replace('Z', '+00:00')
+  const res = await fetch(`/api/lessons/teachers/${teacherId}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      start,
+      end: newEnd,
+      duration
+    }),
   })
+  const data = await res.json();
+  data.forEach(lesson => {
+    lesson.start_time = new Date(lesson.start_time);
+    lesson.end_time = new Date(lesson.end_time);
+  })
+  dispatch(setAvailability(data))
+  return data;
 }
 
 
-const initialState = { scheduled: null };
+const initialState = { scheduled: null, available: null };
 
 export default function lessonReducer(state = initialState, action) {
   const updateState = {...state}
@@ -52,6 +76,12 @@ export default function lessonReducer(state = initialState, action) {
       return updateState;
     case DELETE:
       delete updateState.scheduled[action.id];
+      return updateState;
+    case SET_AVAILABLE:
+      updateState.available = {}
+      action.lessons.forEach(lesson => {
+        updateState.available[lesson.id] = lesson
+      })
       return updateState;
     default:
       return state;
