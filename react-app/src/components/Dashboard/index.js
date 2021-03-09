@@ -10,12 +10,13 @@ import './Dashboard.css'
 export default function Dashboard() {
   document.title = "Soundpost — Home"
   const dispatch = useDispatch();
+  const [change, setChange] = useState(false);
   const user = useSelector(state => state.session.user);
   const latestAssignment = useSelector(state => state.assignments.latest);
   const lessons = useSelector(state => state.lessons.scheduled)
 
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
-  useEffect(() => dispatch(lessonActions.getUserLessons(user.id)), [dispatch, user.id])
+  useEffect(() => dispatch(lessonActions.getUserLessons(user.id)), [dispatch, user.id, change])
 
   return (
     <div className="main">
@@ -50,7 +51,7 @@ export default function Dashboard() {
               {lessons != null &&
                 <div>
                   {Object.values(lessons).map(lesson =>
-                    <LessonContainer lesson={lesson} key={lesson.id}/>
+                    <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange}/>
                     )}
                 </div>
               }

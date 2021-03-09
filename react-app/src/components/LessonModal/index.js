@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import * as lessonActions from '../../store/lesson'
 import './LessonModal.css'
 
-export default function LessonModal({scheduled, setScheduled, lesson}) {
+export default function LessonModal({scheduled, setScheduled, lesson, setChange}) {
   const dispatch = useDispatch();
 
   const customStyles = {
@@ -42,6 +42,7 @@ export default function LessonModal({scheduled, setScheduled, lesson}) {
     const deleted = await dispatch(lessonActions.deleteOneLesson(lesson.id))
     setScheduled(false);
     setShowModal(false);
+    setChange(change => !change)
   }
 
   return (
