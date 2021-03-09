@@ -1,0 +1,55 @@
+.input {
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: .4em;
+  border: 3px solid #0061ff;
+  outline: none;
+  font-size: 1em;
+  margin: .2em;
+  text-align: center;
+  font-family: "P22BayerW00-Universal";
+  color: #222;
+}
+
+.input::placeholder {
+  color: #222;
+}
+
+.nice-dates-popover {
+  margin: 0 auto;
+}
+
+.nice-dates-day_date {
+  color: #222;
+  font-family: "P22BayerW00-Universal";
+  font-size: 1.2em;
+}
+
+.nice-dates-day_month {
+  font-family: "P22BayerW00-Universal";
+  font-size: 1em;
+}
+
+.nice-dates-day.-disabled.-outside.-wide::before,
+.nice-dates-day.-disabled.-wide .nice-dates-day_date{
+  color: #ddd;
+}
+.nice-dates-day:before {
+  background-color: #0061ff;
+}
+
+.nice-dates-week-header_day {
+  font-family: "P22BayerW00-Universal";
+  font-size: 1.4em;
+}
+
+.nice-dates-navigation_current {
+  font-family: "P22BayerW00-Universal";
+  font-size: 2.5em;
+  color: #222;
+}
+
+.title__lesson {
+  font-size: 2.7em;
+  padding: .5em;
+}

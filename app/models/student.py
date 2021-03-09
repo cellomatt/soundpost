@@ -44,5 +44,6 @@ class Student(db.Model, UserMixin):
           "phone": self.phone,
           "parent_name": self.parent_name,
           "photo_url": self.photo_url,
-          "teacher_id": self.teacher_id
+          "teacher_id": self.teacher_id,
+          "teacher": self.teacher.to_dict()
         }
