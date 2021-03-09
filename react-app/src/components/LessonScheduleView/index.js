@@ -70,6 +70,7 @@ export default function LessonScheduleView() {
       </form>
       </>
       }
+      <div className="nice-dates__container">
       <DateRangePicker
       startDate={startDate}
       endDate={endDate}
@@ -101,6 +102,7 @@ export default function LessonScheduleView() {
         </div>
       )}
       </DateRangePicker>
+      </div>
       <div className="lessons__list">
         {endDate && availability === null && <p>There are no lessons available during the selected timeframe.</p>}
         {availability !== null &&

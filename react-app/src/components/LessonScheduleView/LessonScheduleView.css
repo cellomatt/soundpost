@@ -8,11 +8,11 @@
 .input {
   border-radius: 5px;
   box-sizing: border-box;
-  padding: .4em;
+  padding: .5em;
   border: 3px solid #0061ff;
   outline: none;
-  font-size: 1em;
-  margin: 1.8em .3em;
+  font-size: 1.1em;
+  margin: 1em .3em 1.8em;
   text-align: center;
   font-family: "P22BayerW00-Universal";
   color: #222;
@@ -27,10 +27,29 @@
 
 .lesson-schedule-main {
   min-height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .lessons__list {
   width: 45%;
+}
+
+.nice-dates {
+  position: relative;
+}
+
+
+
+.nice-dates__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 60%;
 }
 
 .nice-dates-popover {
@@ -40,9 +59,13 @@
   z-index: 100;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+.nice-dates-popover.-open {
   position: absolute;
 
 }
+
 
 .nice-dates-day {
   border: 1px solid black;
@@ -64,7 +87,6 @@
 
 .nice-dates-day.-selected .nice-dates-day_date {
   color: #222;
-
 }
 
 .nice-dates-day_date {
@@ -75,8 +97,9 @@
 
 .nice-dates-day_month {
   font-family: "P22BayerW00-Universal";
-  font-size: 1em;
-  padding-bottom: .3em;
+  font-size: .9em;
+  margin-bottom: .2em;
+  box-sizing: border-box;
 }
 
 .nice-dates-day.-disabled.-outside::before,
