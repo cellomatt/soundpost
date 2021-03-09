@@ -24,6 +24,29 @@
   margin-bottom: 1.5em;
 }
 
+.nice-dates-day {
+  border: 1px solid black;
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(1px * var(--tw-divide-x-reverse));
+  border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+  border-top-width: calc(1px * var(--tw-divide-x-reverse));
+  border-bottom-width: calc(1px * var(--tw-divide-x-reverse));
+}
+
+.nice-dates-day.-no-border {
+  border: none;
+}
+
+.nice-dates-day.-today .nice-dates-day_date{
+  color: black;
+  font-size: 1.3em;
+}
+
+.nice-dates-day.-selected .nice-dates-day_date {
+  color: #222;
+
+}
+
 .nice-dates-day_date {
   color: #222;
   font-family: "P22BayerW00-Universal";
@@ -33,14 +56,31 @@
 .nice-dates-day_month {
   font-family: "P22BayerW00-Universal";
   font-size: 1em;
+  padding-bottom: .3em;
 }
 
-.nice-dates-day.-disabled.-outside.-wide::before,
-.nice-dates-day.-disabled.-wide .nice-dates-day_date{
+.nice-dates-day.-disabled.-outside::before,
+.nice-dates-day.-disabled .nice-dates-day_date{
   color: #ddd;
 }
 .nice-dates-day:before {
-  background-color: #0061ff;
+  background-color: transparent;
+  border: 3px solid red;
+  border-radius: 2px;
+
+}
+
+.nice-dates-day.-selected.-selected-middle::before {
+  border-left: none;
+  border-right: none;
+}
+
+.nice-dates-day.-selected.-selected-start::before {
+  border-right: none;
+}
+
+.nice-dates-day.-selected.-selected-end::before {
+  border-left: none;
 }
 
 .nice-dates-week-header_day {

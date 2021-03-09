@@ -10,13 +10,26 @@ import './LessonScheduleView.css';
 export default function LessonScheduleView() {
   document.title = "Soundpost — Schedule a Lesson"
   const user = useSelector(state => state.session.user);
-  const [startDate, setStartDate] = useState()
-  const [endDate, setEndDate] = useState()
+  const [startDate, setStartDate] = useState(null)
+  const [endDate, setEndDate] = useState(null)
   const [focus, setFocus] = useState(START_DATE)
   const date = new Date()
 
   const handleFocusChange = newFocus => {
     setFocus(newFocus || START_DATE)
+  }
+
+  const setStart = (e) => {
+    setStartDate(e)
+    setEndDate(null)
+  }
+
+  const modifiers = {
+    noBorder: date => getDay(date) === 0
+  }
+
+  const modifiersClassNames = {
+    noBorder: '-no-border'
   }
 
   return (
@@ -30,15 +43,17 @@ export default function LessonScheduleView() {
       <DateRangePicker
       startDate={startDate}
       endDate={endDate}
-      onStartDateChange={setStartDate}
+      onStartDateChange={(e) => setStart(e)}
       onEndDateChange={setEndDate}
       focus={focus}
       onFocusChange={handleFocusChange}
       minimumDate={new Date()}
       maximumDate={date.setMonth(date.getMonth() + 1)}
-      minimumLength={1}
+      minimumLength={0}
       format='MMMMMMMMM dd, yyyy'
       locale={enUS}
+      modifiers={modifiers}
+      modifiersClassNames={modifiersClassNames}
       >
       {({ startDateInputProps, endDateInputProps, focus }) => (
         <div className='date-range'>
