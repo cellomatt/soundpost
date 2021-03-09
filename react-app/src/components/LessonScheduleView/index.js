@@ -2,18 +2,26 @@ import { useState, useEffect } from 'react';
 import { enUS } from 'date-fns/locale';
 import { getDay } from 'date-fns';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import * as lessonActions from '../../store/lesson'
 import 'react-nice-dates/build/style.css';
 import './LessonScheduleView.css';
 
 export default function LessonScheduleView() {
   document.title = "Soundpost — Schedule a Lesson"
+  const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
   const [startDate, setStartDate] = useState(null)
   const [endDate, setEndDate] = useState(null)
   const [focus, setFocus] = useState(START_DATE)
   const date = new Date()
+
+
+  useEffect(() => {
+    if (startDate && endDate) {
+      dispatch(lessonActions.getAvailability())
+    }
+  })
 
   const handleFocusChange = newFocus => {
     setFocus(newFocus || START_DATE)

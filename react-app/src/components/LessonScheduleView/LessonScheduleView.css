@@ -63,11 +63,11 @@
 .nice-dates-day.-disabled .nice-dates-day_date{
   color: #ddd;
 }
+
 .nice-dates-day:before {
   background-color: transparent;
   border: 3px solid red;
   border-radius: 2px;
-
 }
 
 .nice-dates-day.-selected.-selected-middle::before {
