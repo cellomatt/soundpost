@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { enUS } from 'date-fns/locale';
 import { getDay } from 'date-fns';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
 import { useSelector } from 'react-redux';
+import * as lessonActions from '../../store/lesson'
 import 'react-nice-dates/build/style.css';
 import './LessonScheduleView.css';
 
@@ -16,10 +17,6 @@ export default function LessonScheduleView() {
 
   const handleFocusChange = newFocus => {
     setFocus(newFocus || START_DATE)
-  }
-
-  const modifiers = {
-    // disabled: date => getDay(date) < new Date()
   }
 
   return (
@@ -42,8 +39,7 @@ export default function LessonScheduleView() {
       minimumLength={1}
       format='MMMMMMMMM dd, yyyy'
       locale={enUS}
-      modifiers={modifiers}
-    >
+      >
       {({ startDateInputProps, endDateInputProps, focus }) => (
         <div className='date-range'>
           <input
@@ -59,7 +55,10 @@ export default function LessonScheduleView() {
           />
         </div>
       )}
-    </DateRangePicker>
+      </DateRangePicker>
+      <div className="lessons__list">
+
+      </div>
     </div>
   )
 }

@@ -32,6 +32,12 @@ export const deleteOneLesson = (id) => async dispatch => {
   }
 }
 
+export const getAvailability = (teacherId, startDay, endDay) => async dispatch => {
+  const res = await fetch(`/api/lessons/teacher/${teacherId}`, {
+    method: "POST"
+  })
+}
+
 
 const initialState = { scheduled: null };
 
