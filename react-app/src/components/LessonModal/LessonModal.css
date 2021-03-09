@@ -1,0 +1,26 @@
+.btn__x {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  align-self: flex-end;
+}
+
+.btn__x:hover {
+  text-shadow: 0 0 1px rgba(0, 0, 0, 1)
+}
+
+.modal__btn {
+  margin: .8em auto;
+  justify-self: center;
+}
+
+.modal__message {
+  padding: .5em 1.5em;
+}
+
+.modal__popup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

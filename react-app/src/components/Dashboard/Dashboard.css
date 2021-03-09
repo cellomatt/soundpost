@@ -21,6 +21,14 @@
   padding: 2em;
 }
 
+.lesson-info__assignment {
+  margin-bottom: 2.2em;
+}
+
+.lesson-info__link {
+  color: #0061ff;
+  font-weight: 500;
+}
 
 .user-info {
   display: flex;
@@ -32,12 +40,12 @@
 
 .user-info__name {
   text-align: center;
-  margin: .5em 0 1em;
+  margin-bottom: 1em;
   font-family: "P22BayerW00-Universal";
-  font-size: 3em;
+  font-size: 2.3em;
   font-weight: 400;
-  border-bottom: 8px double #0061ff;
-  box-sizing: border-box;
+  /* border-bottom: 8px double #0061ff;
+  box-sizing: border-box; */
 }
 
 .user-info__pic {
@@ -49,8 +57,9 @@
 }
 
 .user-info__pic--img {
-  width: 80%;
+  width: 70%;
   border-radius: 50%;
+  border: 1px solid #333333;
 }
 
 .title {

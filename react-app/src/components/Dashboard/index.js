@@ -1,9 +1,22 @@
-import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import AssignmentContainer from '../AssignmentContainer'
+import LessonContainer from '../LessonContainer'
+import * as assignmentActions from '../../store/assignment'
+import * as lessonActions from '../../store/lesson'
 import './Dashboard.css'
 
 export default function Dashboard() {
-  const user = useSelector(state => state.session.user)
+  document.title = "Soundpost — Home"
+  const dispatch = useDispatch();
+  const [change, setChange] = useState(false);
+  const user = useSelector(state => state.session.user);
+  const latestAssignment = useSelector(state => state.assignments.latest);
+  const lessons = useSelector(state => state.lessons.scheduled)
 
+  useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
+  useEffect(() => dispatch(lessonActions.getUserLessons(user.id)), [dispatch, user.id, change])
 
   return (
     <div className="main">
@@ -26,14 +39,28 @@ export default function Dashboard() {
           <div className="lesson-info__assignment">
             <h1 className="title">Practice Assignment</h1>
             <div>
-              <p>assignment placeholder</p>
-              <p>link to all</p>
+              {latestAssignment != null &&
+              <AssignmentContainer assignment={latestAssignment}/>
+              }
+              <Link exact to="/assignments" className="lesson-info__link">View previous assignments</Link>
             </div>
           </div>
           <div className="lesson-info__upcoming">
             <h1 className="title">Upcoming Lessons</h1>
             <div>
-              <p>lessons placeholder (map all upcoming)</p>
+              {lessons != null &&
+                <div>
+                  {Object.values(lessons).map(lesson =>
+                    <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange}/>
+                    )}
+                </div>
+              }
+              {lessons === null &&
+                <>
+                <p>You don't have any lessons scheduled.</p>
+                <button>Book Now</button>
+                </>
+                }
             </div>
           </div>
         </div>

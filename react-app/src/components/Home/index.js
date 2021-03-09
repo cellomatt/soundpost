@@ -3,6 +3,7 @@ import './Home.css'
 import {ReactComponent as Calendar} from './calendar.svg';
 import {ReactComponent as Checkmark} from './checkmark.svg';
 import {ReactComponent as Music} from './music.svg';
+import {ReactComponent as MusicNote} from './music-note.svg';
 
 
 export default function Home() {
@@ -13,7 +14,6 @@ export default function Home() {
     <div className="main">
       <div className="home__main">
         <div className="section">
-          <p>image placeholder</p>
           <div className="section__description">
             <h1 className="section__header">What Is Soundpost?</h1>
             <p className="section__description--content">Soundpost is a gathering place for music students and teachers
@@ -21,15 +21,7 @@ export default function Home() {
             </p>
             <button className="btn__primary section__button"><Link className="section__button--text" to="/signup">Get Started</Link></button>
           </div>
-        </div>
-        <div className="section">
-          <div className="section__description">
-            <h1 className="section__header">Track Your Practice</h1>
-            <p className="section__description--content">With Soundpost, you can also make sure that you're practicing consistently. Students can keep a record of
-            which days they practice and look at some cool stats to see how they measure up. Teachers have access to their students' stats and can use the data to
-            build and encourage healthy practice habits.</p>
-          </div>
-          <Checkmark className="section__svg"/>
+          <MusicNote className="section__svg"/>
         </div>
         <div className="section">
           <Calendar className="section__svg"/>
@@ -41,11 +33,20 @@ export default function Home() {
         </div>
         <div className="section">
           <div className="section__description">
+            <h1 className="section__header">Track Your Practice</h1>
+            <p className="section__description--content">With Soundpost, you can make sure that you're practicing consistently. Students can keep a record of
+            which days they practice and look at some cool stats to see how they measure up. Teachers have access to their students' stats and can use the data to
+            build and encourage healthy practice habits.</p>
+          </div>
+          <Checkmark className="section__svg"/>
+        </div>
+        <div className="section">
+          <Music className="section__svg"/>
+          <div className="section__description">
             <h1 className="section__header">Practice Effectively</h1>
             <p className="section__description--content">Soundpost makes it easy for teachers to send practice assignments
-            directly to a student's dashboard. The most recent assignment displays automatically, but previous assingments are only a click away.</p>
+            directly to a student's dashboard. The most recent assignment displays automatically, but previous assignments are only a click away.</p>
           </div>
-          <Music className="section__svg"/>
         </div>
       </div>
     </div>

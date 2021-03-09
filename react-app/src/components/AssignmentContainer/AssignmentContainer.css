@@ -1,0 +1,23 @@
+.message__date {
+  color: #333333;
+  font-size: .8em;
+  font-weight: 300;
+  text-align: right;
+}
+
+.message {
+  color: #333333;
+  font-family: "Lora";
+  padding-bottom: .5em;
+  font-style: italic;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.message__container {
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  padding: 1.4em;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}

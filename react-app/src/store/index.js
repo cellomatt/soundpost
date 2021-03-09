@@ -2,11 +2,14 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import sessionReducer from "./session";
 import teacherReducer from "./teacher"
-
+import assignmentReducer from "./assignment"
+import lessonReducer from "./lesson"
 
 const appReducer = combineReducers({
   session: sessionReducer,
   teachers: teacherReducer,
+  assignments: assignmentReducer,
+  lessons: lessonReducer,
 });
 
 const rootReducer = (state, action) => {

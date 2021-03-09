@@ -16,10 +16,15 @@ class TimeSlot(db.Model):
     teacher = db.relationship("Teacher", back_populates="timeslots")
 
     def to_dict(self):
+        months = ["January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November",
+                  "December"]
+
         return {
             "id": self.id,
             "student_id": self.student_id,
             "teacher_id": self.teacher_id,
-            "start_time": self.start_time,
-            "end_time": self.end_time,
+            "start_time": self.start_time.isoformat(),
+            "end_time": self.end_time.isoformat(),
+            "teacher": self.teacher.to_dict(),
         }
