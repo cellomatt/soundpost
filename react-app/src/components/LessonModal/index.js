@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import * as lessonActions from '../../store/lesson'
 import './LessonModal.css'
 
-export default function LessonModal({scheduled, setScheduled, lesson, setChange}) {
+export default function LessonModal({scheduled, setScheduled, lesson, setChange, duration, student}) {
   const dispatch = useDispatch();
 
   const customStyles = {
@@ -16,10 +16,10 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange}
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
       padding: ".5em",
-      backgroundColor: "rgba(255, 255, 255, 0.8);",
+      backgroundColor: "rgba(255, 255, 255, 0.95)",
       borderRadius: "5px",
       border: "none",
-      maxWidth: "30%",
+      maxWidth: "400px",
       boxSizing: "border-box",
     },
     overlay : {
@@ -45,6 +45,14 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange}
     setChange(change => !change)
   }
 
+  const scheduleLesson = async () => {
+    const scheduled = await dispatch(lessonActions.scheduleOneLesson(lesson.id, duration, student.id))
+    setScheduled(true);
+    setShowModal(false);
+    dispatch(lessonActions.getUserLessons(student.id))
+    // setChange(change => !change)
+  }
+
   return (
     <>
     {scheduled && <button className="btn__tertiary modal__btn" onClick={() => modalView()}>Cancel Lesson</button>}
@@ -53,11 +61,11 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange}
       {
         !scheduled ?
           <div className="modal__popup-container">
-              <p className="modal__message">Confirm schedule lesson on {lesson.start_time.toLocaleDateString('en-US', {dateStyle: 'long'})} at {lesson.start_time.toLocaleTimeString('en-US', { timeStyle: "short" })}?</p>
               <button className="btn__x" onClick={onRequestClose}>
                   <i className="fas fa-times"></i>
               </button>
-              <button className="btn__tertiary modal__btn">Confirm</button>
+              <p className="modal__message">Confirm schedule lesson on {lesson.start_time.toLocaleDateString('en-US', {dateStyle: 'long'})} at {lesson.start_time.toLocaleTimeString('en-US', { timeStyle: "short" })}?</p>
+              <button className="btn__tertiary modal__btn" onClick={scheduleLesson}>Confirm</button>
           </div>
         :
           <div className="modal__popup-container">
