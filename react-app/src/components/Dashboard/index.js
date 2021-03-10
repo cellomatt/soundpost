@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AssignmentContainer from '../AssignmentContainer'
 import LessonContainer from '../LessonContainer'
+import { CircularProgressbar } from 'react-circular-progressbar';
 import * as assignmentActions from '../../store/assignment'
 import * as lessonActions from '../../store/lesson'
 import './Dashboard.css'
+import 'react-circular-progressbar/dist/styles.css';
 
 export default function Dashboard() {
   document.title = "Soundpost — Home"
@@ -17,6 +19,9 @@ export default function Dashboard() {
 
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
   useEffect(() => dispatch(lessonActions.getUserLessons(user.id)), [dispatch, user.id, change])
+
+
+  const percentage = 66 //pull this value from practice_logs
 
   return (
     <div className="main">
@@ -32,13 +37,13 @@ export default function Dashboard() {
           </div>
           <div className="user-info__stats">
             <h1 className="title">Days Practiced This Week</h1>
-            <p>chart placeholder</p>
+            <CircularProgressbar value={percentage} text={`${percentage}%`} />
           </div>
         </div>
         <div className="lesson-info">
           <div className="lesson-info__assignment">
             <h1 className="title">Practice Assignment</h1>
-            <div>
+            <div className="graph">
               {latestAssignment !== null &&
               <AssignmentContainer assignment={latestAssignment}/>
               }

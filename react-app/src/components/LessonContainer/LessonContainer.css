@@ -9,6 +9,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2)
 }
 
 .lesson__container--date {
