@@ -82,16 +82,15 @@ def schedule_lesson(id):
     lesson = TimeSlot.query.get(id)
     lesson.student_id = student_id
     db.session.add(lesson)
+    scheduled = lesson.to_dict()
 
     lesson2 = None
     if duration == "60":
         lesson2 = TimeSlot.query.filter(TimeSlot.start_time == lesson.end_time).first()
         lesson2.student_id = student_id
         db.session.add(lesson2)
-        db.session.commit()
-        lesson.end_time = lesson2.end_time
+        scheduled["end_time"] = lesson2.end_time.isoformat(),
 
     db.session.commit()
-    scheduled = lesson.to_dict()
     res = json.dumps(scheduled)
     return res
