@@ -4,12 +4,14 @@ import sessionReducer from "./session";
 import teacherReducer from "./teacher"
 import assignmentReducer from "./assignment"
 import lessonReducer from "./lesson"
+import practiceReducer from "./practice"
 
 const appReducer = combineReducers({
   session: sessionReducer,
   teachers: teacherReducer,
   assignments: assignmentReducer,
   lessons: lessonReducer,
+  practice: practiceReducer,
 });
 
 const rootReducer = (state, action) => {

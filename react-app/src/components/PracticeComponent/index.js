@@ -6,6 +6,16 @@ import './PracticeComponent.css'
 export default function PracticeComponent({user}) {
   const dispatch = useDispatch();
   const [practiced, setPracticed] = useState(false)
+  const practicedToday = useSelector(state => state.practice.today)
+
+  useEffect(() => {
+    dispatch(practiceActions.getPractice(user.id))
+    if (practicedToday !== null) {
+      setPracticed(practicedToday)
+    }
+  }, [dispatch, user, setPracticed, practicedToday])
+
+
 
   const practiceSubmit = async () => {
     await dispatch(practiceActions.practicedToday(user.id))
