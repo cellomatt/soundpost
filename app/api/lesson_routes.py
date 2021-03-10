@@ -10,8 +10,10 @@ lesson_routes = Blueprint('lessons', __name__)
 @lesson_routes.route('/<int:id>/all')
 @login_required
 def scheduled_lessons(id):
-    lessons = TimeSlot.query.filter(TimeSlot.student_id == id).order_by(
-        TimeSlot.id).all()
+    now = datetime.now()
+    lessons = TimeSlot.query.filter(TimeSlot.student_id == id).filter(
+        TimeSlot.start_time > now).order_by(TimeSlot.id).all()
+
     i = 1
     while i < len(lessons):
         if lessons[i-1].end_time == lessons[i].start_time:
