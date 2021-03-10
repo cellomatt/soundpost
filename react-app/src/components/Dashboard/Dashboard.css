@@ -58,6 +58,15 @@
   margin: 0 auto;
 }
 
+.user-info__practiced {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
 .user-info__pic--img {
   border-radius: 50%;
   border: 1px solid #333333;
