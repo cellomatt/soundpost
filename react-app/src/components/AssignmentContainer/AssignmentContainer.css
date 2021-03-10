@@ -1,6 +1,6 @@
 .message__date {
   color: #333333;
-  font-size: .8em;
+  font-size: .9em;
   font-weight: 300;
   /* text-align: right; */
   padding-right: .2em;
@@ -11,7 +11,7 @@
   /* font-family: "Lora"; */
   padding: .7em 0 .5em;
   /* font-style: italic; */
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 400;
 }
 

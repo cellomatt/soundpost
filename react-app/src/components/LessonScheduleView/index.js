@@ -110,7 +110,8 @@ export default function LessonScheduleView() {
       </DateRangePicker>
       </div>
       <div className="lessons__list">
-        {endDate && availability === null && <p>There are no lessons available during the selected timeframe.</p>}
+        {endDate && duration && availability === null && <p>There are no lessons available during the selected timeframe.</p>}
+        {endDate && !duration && <p>Please select a lesson duration.</p>}
         {availability !== null &&
         <>
           {Object.values(availability).map(lesson =>

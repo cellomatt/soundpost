@@ -142,7 +142,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  height: 17em;
+  height: 12em;
   position: fixed;
   top: 0;
   left: 0;
@@ -158,8 +158,8 @@
 
 .navbar-scrolled {
   background-image: linear-gradient(
-    #42ffdc 11em,
-    transparent 17em
+    #42ffdc 8em,
+    transparent 12em
     );
   transition: .1s;
 }

@@ -8,6 +8,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import Home from "./components/Home"
 import Dashboard from "./components/Dashboard"
 import LessonScheduleView from "./components/LessonScheduleView"
+import AssignmentView from "./components/AssignmentView"
 import { authenticate } from "./services/auth";
 import { setUser } from "./store/session"
 import {ReactComponent as Sketch} from "./images/klee.svg"
@@ -53,6 +54,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute exact path="/schedule"  authenticated={authenticated}>
           <LessonScheduleView authenticated={authenticated} />
+        </ProtectedRoute>
+        <ProtectedRoute exact path="/assignments"  authenticated={authenticated}>
+          <AssignmentView authenticated={authenticated} />
         </ProtectedRoute>
         <Route>
           <div className="main">
