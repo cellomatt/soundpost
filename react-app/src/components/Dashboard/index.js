@@ -39,7 +39,7 @@ export default function Dashboard() {
           <div className="lesson-info__assignment">
             <h1 className="title">Practice Assignment</h1>
             <div>
-              {latestAssignment != null &&
+              {latestAssignment !== null &&
               <AssignmentContainer assignment={latestAssignment}/>
               }
               <Link exact to="/assignments" className="lesson-info__link">View previous assignments</Link>
