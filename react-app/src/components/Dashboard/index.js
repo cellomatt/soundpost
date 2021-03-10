@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AssignmentContainer from '../AssignmentContainer'
 import LessonContainer from '../LessonContainer'
+import PracticeComponent from '../PracticeComponent'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import * as assignmentActions from '../../store/assignment'
 import * as lessonActions from '../../store/lesson'
@@ -33,7 +34,7 @@ export default function Dashboard() {
           </div>
           <h1 className="user-info__name">{user.first_name} {user.last_name}</h1>
           <div className="user-info__practiced">
-            <p>checkbox component placeholder</p>
+            <PracticeComponent />
           </div>
           <div className="user-info__stats">
             <h1 className="title">Days Practiced This Week</h1>
