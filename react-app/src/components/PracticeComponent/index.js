@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-// import 
+import * as practiceActions from '../../store/practice'
 import './PracticeComponent.css'
 
-export default function PracticeComponent() {
+export default function PracticeComponent({user}) {
   const dispatch = useDispatch();
   const [practiced, setPracticed] = useState(false)
 
   const practiceSubmit = async () => {
-    await dispatch()
+    await dispatch(practiceActions.practicedToday(user.id))
+    setPracticed(true)
   }
 
   return (
@@ -17,7 +18,7 @@ export default function PracticeComponent() {
         <div className="checkbox__text">Did you practice today? <i className="far fa-square"></i></div>
       </button>
       }
-      {practiced && <div className="checkbox__text practiced">Keep up the good work! <i class="far fa-check-square"></i></div>}
+      {practiced && <div className="checkbox__text practiced">Keep up the good work! <i className="far fa-check-square"></i></div>}
     </div>
   )
 }

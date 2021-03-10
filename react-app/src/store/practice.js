@@ -8,10 +8,10 @@ export const setPracticed = () => {
 
 export const practicedToday = (userId) => async dispatch => {
   const res = await fetch(`/api/practice/${userId}/new`, {
-    method: "POST"
+    method: "POST",
   })
   if (res.ok) {
-    dispatch(setPraticed());
+    dispatch(setPracticed());
     return res;
   }
 }

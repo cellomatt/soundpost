@@ -11,6 +11,7 @@ from .api.auth_routes import auth_routes
 from .api.teacher_routes import teacher_routes
 from .api.assignment_routes import assignment_routes
 from .api.lesson_routes import lesson_routes
+from .api.practice_routes import practice_routes
 
 from .seeds import seed_commands
 
@@ -37,6 +38,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(teacher_routes, url_prefix='/api/teachers')
 app.register_blueprint(assignment_routes, url_prefix='/api/assignments')
 app.register_blueprint(lesson_routes, url_prefix='/api/lessons')
+app.register_blueprint(practice_routes, url_prefix='/api/practice')
 db.init_app(app)
 Migrate(app, db)
 

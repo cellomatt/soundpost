@@ -34,7 +34,7 @@ export default function Dashboard() {
           </div>
           <h1 className="user-info__name">{user.first_name} {user.last_name}</h1>
           <div className="user-info__practiced">
-            <PracticeComponent />
+            <PracticeComponent user={user}/>
           </div>
           <div className="user-info__stats">
             <h1 className="title">Days Practiced This Week</h1>
