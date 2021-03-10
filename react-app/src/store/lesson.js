@@ -2,6 +2,7 @@ const SCHEDULED = 'lesson/SCHEDULED'
 const DELETE = 'lesson/DELETE'
 const SET_AVAILABLE = 'lesson/SET_AVAILABLE'
 const SET_ONE = 'lesson/SET_ONE'
+const CLEAR_AVAILABLE = 'lesson/CLEAR_AVAILABLE'
 
 export const setLessons = (lessons) => {
   return { type: SCHEDULED, lessons }
@@ -13,6 +14,10 @@ export const deleteLesson = (id) => {
 
 export const setAvailability = (lessons) => {
   return { type: SET_AVAILABLE, lessons }
+}
+
+export const clearAvailability = () => {
+  return { type: CLEAR_AVAILABLE}
 }
 
 export const setOneLesson = (lesson) => {
@@ -112,6 +117,9 @@ export default function lessonReducer(state = initialState, action) {
       } else {
         updateState.available = null
       }
+      return updateState;
+    case CLEAR_AVAILABLE:
+      updateState.available = null
       return updateState;
     default:
       return state;

@@ -25,11 +25,15 @@ export default function LessonScheduleView() {
     if (startDate && endDate) {
       dispatch(lessonActions.getAvailability(user.teacher.id, startDate, endDate, duration))
     }
+    return () => {
+      dispatch(lessonActions.clearAvailability())
+    }
   }, [user, startDate, endDate, dispatch, duration])
 
   const handleFocusChange = newFocus => {
     setFocus(newFocus || START_DATE)
   }
+
 
   const setStart = (e) => {
     setStartDate(e)
