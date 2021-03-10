@@ -23,7 +23,7 @@ export default function LessonContainer({lesson, setChange, duration}) {
         <div className="lesson__container--teacher">Teacher: {lesson.teacher.first_name} {lesson.teacher.last_name}</div>
       </div>
       <div className="lesson__container--modal">
-        <LessonModal lesson={lesson} scheduled={scheduled} setScheduled={setScheduled} setChange={setChange} duration={duration}/>
+        <LessonModal lesson={lesson} scheduled={scheduled} setScheduled={setScheduled} setChange={setChange} duration={duration} student={student}/>
       </div>
     </div>
   )

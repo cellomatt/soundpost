@@ -17,6 +17,7 @@ export default function LessonScheduleView() {
   const [endDate, setEndDate] = useState(null)
   const [focus, setFocus] = useState(START_DATE)
   const [duration, setDuration] = useState()
+  const [change, setChange] = useState(false);
   const date = new Date()
 
 
@@ -108,7 +109,7 @@ export default function LessonScheduleView() {
         {availability !== null &&
         <>
           {Object.values(availability).map(lesson =>
-            <LessonContainer lesson={lesson} key={lesson.id} duration={duration}/>
+            <LessonContainer lesson={lesson} key={lesson.id} duration={duration} setChange={setChange}/>
           )}
         </>
         }

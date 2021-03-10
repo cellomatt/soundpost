@@ -1,7 +1,7 @@
 const SCHEDULED = 'lesson/SCHEDULED'
 const DELETE = 'lesson/DELETE'
 const SET_AVAILABLE = 'lesson/SET_AVAILABLE'
-
+const SET_ONE = 'lesson/SET_ONE'
 
 export const setLessons = (lessons) => {
   return { type: SCHEDULED, lessons }
@@ -13,6 +13,10 @@ export const deleteLesson = (id) => {
 
 export const setAvailability = (lessons) => {
   return { type: SET_AVAILABLE, lessons }
+}
+
+export const setOneLesson = (lesson) => {
+  return { type: SET_ONE, lesson}
 }
 
 export const getUserLessons = (userId) => async dispatch => {
@@ -36,8 +40,23 @@ export const deleteOneLesson = (id) => async dispatch => {
   }
 }
 
+export const scheduleOneLesson = (id, duration, studentId) => async dispatch => {
+  const res = await fetch(`/api/lessons/${id}/schedule`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      studentId,
+      duration
+    })
+  })
+  const data = await res.json();
+  dispatch(setOneLesson(data));
+  return data
+}
+
 export const getAvailability = (teacherId, startDay, endDay, duration) => async dispatch => {
-  console.log(duration)
   let newEndDay = new Date(endDay)
   const end = newEndDay.getDate()
   newEndDay.setDate(end + 1)
@@ -74,6 +93,12 @@ export default function lessonReducer(state = initialState, action) {
       action.lessons.forEach(lesson => {
         updateState.scheduled[lesson.id] = lesson
       })
+      return updateState;
+    case SET_ONE:
+      if (updateState.scheduled === null) {
+        updateState.scheduled = {}
+      }
+      updateState.scheduled[action.lesson.id] = action.lesson;
       return updateState;
     case DELETE:
       delete updateState.scheduled[action.id];

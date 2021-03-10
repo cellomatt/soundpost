@@ -54,7 +54,6 @@ def get_availability(id):
     if duration == "60":
         i = 0
         while i < len(lessons):
-            print("----------------", i, lessons)
             if i == len(lessons) - 1:
                 if lessons[i].end_time - lessons[i].start_time == timedelta(minutes=30):
                     lessons.pop(i)
@@ -68,8 +67,31 @@ def get_availability(id):
                     continue
             i += 1
 
-
     availability = [lesson.to_dict() for lesson in lessons]
-    print(availability)
     res = json.dumps(availability)
+    return res
+
+
+@lesson_routes.route('/<int:id>/schedule', methods=['POST'])
+@login_required
+def schedule_lesson(id):
+    data = request.get_json()
+    duration = data["duration"]
+    student_id = data["studentId"]
+
+    lesson = TimeSlot.query.get(id)
+    lesson.student_id = student_id
+    db.session.add(lesson)
+
+    lesson2 = None
+    if duration == "60":
+        lesson2 = TimeSlot.query.filter(TimeSlot.start_time == lesson.end_time).first()
+        lesson2.student_id = student_id
+        db.session.add(lesson2)
+        db.session.commit()
+        lesson.end_time = lesson2.end_time
+
+    db.session.commit()
+    scheduled = lesson.to_dict()
+    res = json.dumps(scheduled)
     return res
