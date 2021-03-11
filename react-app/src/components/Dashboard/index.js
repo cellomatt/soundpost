@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import AssignmentContainer from '../AssignmentContainer'
 import LessonContainer from '../LessonContainer'
 import PracticeComponent from '../PracticeComponent'
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import * as assignmentActions from '../../store/assignment'
 import * as lessonActions from '../../store/lesson'
 import * as statsActions from '../../store/stats'
@@ -44,7 +44,19 @@ export default function Dashboard() {
           </div>
           <div className="user-info__stats">
             <h3 className="user-info__stats--label">Days Practiced This Week</h3>
-            <CircularProgressbar className="graph" value={percentage} text={`${percentage}%`} />
+            <div className="graph">
+              <CircularProgressbar
+                value={percentage}
+                text={`${percentage}%`}
+                styles={buildStyles(
+                  {
+                    pathColor: "#0061ff",
+                    trailColor: "rgba(190, 190, 190, 0.746)",
+                    textColor: "#0051d4"
+                  }
+                )}
+                />
+            </div>
           </div>
         </div>
         <div className="lesson-info">

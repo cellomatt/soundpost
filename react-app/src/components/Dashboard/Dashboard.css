@@ -1,3 +1,5 @@
+
+
 .dashboard_main {
   display: flex;
   flex-direction: row;
@@ -8,6 +10,10 @@
   box-sizing: border-box;
   margin-bottom: 2em;
   padding: 0 5em;
+}
+
+.graph {
+  width: 60%;
 }
 
 .lesson-info {
@@ -100,7 +106,24 @@
   margin-bottom: 2.5em;
   display: flex;
   flex-direction: column;
-  /* max-width: 100%; */
+  width: 75%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2)
+}
+
+.user-info__stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 2em 1em;
+  box-sizing: border-box;
+  width: 75%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2)
+}
+
+.user-info__stats--label {
+  padding-bottom: 1em;
 }
 
 .title {
