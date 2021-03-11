@@ -29,17 +29,19 @@ export default function Dashboard() {
     <div className="main">
       <div className="dashboard_main">
         <div className="user-info">
-          <div className="user-info__pic">
-            {user.photo_url && <img className="user-info__pic--img" src={user.photo_url} alt="profile main"/>}
-            {!user.photo_url && <i className="fas fa-user user-info__pic--icon"></i>}
-          </div>
-          <h1 className="user-info__name">{user.first_name} {user.last_name}</h1>
-          <div className="user-info__practiced">
-            <PracticeComponent user={user}/>
+          <div className="user-info__primary">
+            <div className="user-info__pic">
+              {user.photo_url && <img className="user-info__pic--img" src={user.photo_url} alt="profile main"/>}
+              {!user.photo_url && <i className="fas fa-user user-info__pic--icon"></i>}
+            </div>
+            <h1 className="user-info__name">{user.first_name} {user.last_name}</h1>
+            <div className="user-info__practiced">
+              <PracticeComponent user={user}/>
+            </div>
           </div>
           <div className="user-info__stats">
-            <CircularProgressbar className="graph" value={percentage} text={`${percentage}%`} />
             <h3 className="user-info__stats--label">Days Practiced This Week</h3>
+            <CircularProgressbar className="graph" value={percentage} text={`${percentage}%`} />
           </div>
         </div>
         <div className="lesson-info">
