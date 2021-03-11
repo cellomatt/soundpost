@@ -21,9 +21,23 @@ def new_practice(id):
 def practice_today(id):
     res = False
     practice_log = PracticeLog.query.filter(PracticeLog.date ==
-                                            date.today()).first()
+                                            date.today()).filter(PracticeLog.student_id == id).first()
 
     if practice_log:
         res = True
+
+    return json.dumps(res)
+
+
+@practice_routes.route('/<int:id>/week')
+@login_required
+def practice_week(id):
+    res = 0
+    practice_logs = PracticeLog.query.filter(PracticeLog.date.between(
+        date.today() - timedelta(weeks=1), date.today())).filter(
+        PracticeLog.student_id == id).count()
+
+    if practice_logs:
+        res = int((practice_logs/7)*100)
 
     return json.dumps(res)

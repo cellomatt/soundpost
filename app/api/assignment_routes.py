@@ -11,7 +11,10 @@ assignment_routes = Blueprint('assignments', __name__)
 def latest_assignment(id):
     assignment = Assignment.query.filter(Assignment.student_id == id).order_by(
                 Assignment.created_at.desc()).first()
-    data = assignment.to_dict()
+    if assignment is not None:
+        data = assignment.to_dict()
+    else:
+        data = None
     res = json.dumps(data)
     return res
 

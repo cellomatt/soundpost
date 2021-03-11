@@ -94,10 +94,14 @@ export default function lessonReducer(state = initialState, action) {
   const updateState = {...state}
   switch (action.type) {
     case SCHEDULED:
-      updateState.scheduled = {}
-      action.lessons.forEach(lesson => {
-        updateState.scheduled[lesson.id] = lesson
-      })
+      if (action.lessons.length) {
+        updateState.scheduled = {}
+        action.lessons.forEach(lesson => {
+          updateState.scheduled[lesson.id] = lesson
+        })
+      } else {
+        updateState.scheduled = null
+      }
       return updateState;
     case SET_ONE:
       if (updateState.scheduled === null) {
@@ -107,6 +111,9 @@ export default function lessonReducer(state = initialState, action) {
       return updateState;
     case DELETE:
       delete updateState.scheduled[action.id];
+      if (updateState.scheduled === {}) {
+        updateState.scheduled = null
+      }
       return updateState;
     case SET_AVAILABLE:
       if (action.lessons.length > 0) {

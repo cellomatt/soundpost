@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import * as practiceActions from '../../store/practice'
 import './PracticeComponent.css'
 
-export default function PracticeComponent({user}) {
+export default function PracticeComponent({user, setChange}) {
   const dispatch = useDispatch();
   const [practiced, setPracticed] = useState(false)
   const practicedToday = useSelector(state => state.practice.today)
@@ -20,6 +20,7 @@ export default function PracticeComponent({user}) {
   const practiceSubmit = async () => {
     await dispatch(practiceActions.practicedToday(user.id))
     setPracticed(true)
+    setChange(change => !change)
   }
 
   return (
