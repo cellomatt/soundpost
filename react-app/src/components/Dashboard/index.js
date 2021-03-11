@@ -7,6 +7,7 @@ import PracticeComponent from '../PracticeComponent'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import * as assignmentActions from '../../store/assignment'
 import * as lessonActions from '../../store/lesson'
+import * as statsActions from '../../store/stats'
 import './Dashboard.css'
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -18,12 +19,14 @@ export default function Dashboard() {
   const user = useSelector(state => state.session.user);
   const latestAssignment = useSelector(state => state.assignments.latest);
   const lessons = useSelector(state => state.lessons.scheduled)
+  const percentage = useSelector(state => state.stats.thisweek)
 
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
+  useEffect(() => dispatch(statsActions.getWeeklyPractice(user.id)), [dispatch, user.id, change])
   useEffect(() => dispatch(lessonActions.getUserLessons(user.id)), [dispatch, user.id, change])
 
 
-  const percentage = 66 //pull this value from practice_logs
+
 
   return (
     <div className="main">
@@ -36,7 +39,7 @@ export default function Dashboard() {
             </div>
             <h1 className="user-info__name">{user.first_name} {user.last_name}</h1>
             <div className="user-info__practiced">
-              <PracticeComponent user={user}/>
+              <PracticeComponent user={user} setChange={setChange} />
             </div>
           </div>
           <div className="user-info__stats">

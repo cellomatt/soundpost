@@ -31,7 +31,6 @@ export const getUserLessons = (userId) => async dispatch => {
     lesson.start_time = new Date(lesson.start_time);
     lesson.end_time = new Date(lesson.end_time);
   })
-  console.log("------------------------------------", data)
   dispatch(setLessons(data))
   return data;
 }
