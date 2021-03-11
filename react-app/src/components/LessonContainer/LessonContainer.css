@@ -9,11 +9,13 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2)
 }
 
 .lesson__container--date {
   color: #333333;
   font-weight: 500;
+  font-size: 1.2em;
 }
 
 .lesson__container--modal {
@@ -26,7 +28,7 @@
 
 .lesson__container--time {
   color: #333333;
-  font-size: .9em;
+  font-size: 1.1em;
   font-weight: 300;
   padding-top: .2em;
 }

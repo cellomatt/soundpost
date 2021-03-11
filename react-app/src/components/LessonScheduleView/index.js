@@ -18,8 +18,9 @@ export default function LessonScheduleView() {
   const [focus, setFocus] = useState(START_DATE)
   const [duration, setDuration] = useState()
   const [change, setChange] = useState(false);
-  const date = new Date()
-
+  const today = new Date()
+  const tomorrow = new Date(today)
+  tomorrow.setDate(tomorrow.getDate() + 1)
 
   useEffect(() => {
     if (startDate && endDate) {
@@ -83,8 +84,8 @@ export default function LessonScheduleView() {
       onEndDateChange={setEndDate}
       focus={focus}
       onFocusChange={handleFocusChange}
-      minimumDate={new Date()}
-      maximumDate={date.setMonth(date.getMonth() + 1)}
+      minimumDate={tomorrow}
+      maximumDate={today.setMonth(today.getMonth() + 1)}
       minimumLength={0}
       format='MMMMMMMMM dd, yyyy'
       locale={enUS}
@@ -109,7 +110,8 @@ export default function LessonScheduleView() {
       </DateRangePicker>
       </div>
       <div className="lessons__list">
-        {endDate && availability === null && <p>There are no lessons available during the selected timeframe.</p>}
+        {endDate && duration && availability === null && <p>There are no lessons available during the selected timeframe.</p>}
+        {endDate && !duration && <p>Please select a lesson duration.</p>}
         {availability !== null &&
         <>
           {Object.values(availability).map(lesson =>

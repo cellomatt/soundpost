@@ -1,0 +1,24 @@
+.checkbox__container {
+  width: 80%;
+  margin: 1em 0;
+  background-color: rgba(255, 88, 88, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.checkbox__text {
+  text-align: center;
+}
+
+.checkbox__button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  margin: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  cursor: pointer;
+}
