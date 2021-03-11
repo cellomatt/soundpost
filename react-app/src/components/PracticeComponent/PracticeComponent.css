@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 0.5em;
 }
 
 .checkbox__text {
@@ -17,4 +16,9 @@
   outline: none;
   border: none;
   background-color: transparent;
+  width: 100%;
+  margin: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  cursor: pointer;
 }
