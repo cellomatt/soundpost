@@ -1,17 +1,28 @@
 .checkbox__container {
-  width: 55%;
-  height: 3em;
-  margin: 1em 0;
+  margin: 1em 0 2em;
   background-color: rgba(255, 106, 106, 1);
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 10px;
+  border: 3px solid black;
+  min-width: 250px;
+}
+
+.checkbox__container:hover {
+  background-color: rgb(255, 79, 79);
 }
 
 .checkbox__text {
+  color: black;
   text-align: center;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+  font-weight: 600;
 }
 
 .checkbox__button {
@@ -20,10 +31,19 @@
   background-color: transparent;
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0.5em;
   box-sizing: border-box;
   cursor: pointer;
   font-size: 1em;
-  color: black;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
+.practiced {
+  background-color: transparent;
+  border: 3px solid #0061ff;
+}
+
+.practiced:hover {
+  background-color: transparent;
 }

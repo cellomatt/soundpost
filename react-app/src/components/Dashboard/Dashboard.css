@@ -26,6 +26,13 @@
   width: 100%;
 }
 
+
+
+.lesson-info__btn {
+  margin: .5em 0;
+}
+
+
 .lesson-info__link {
   color: #333;
   font-weight: 400;
@@ -41,12 +48,10 @@
 
 .user-info__name {
   text-align: center;
-  margin-bottom: 1em;
+  /* margin-bottom: .5em; */
   font-family: "P22BayerW00-Universal";
   font-size: 2.3em;
   font-weight: 400;
-  /* border-bottom: 8px double #0061ff;
-  box-sizing: border-box; */
 }
 
 .user-info__pic {

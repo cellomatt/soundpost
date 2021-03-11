@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import AssignmentContainer from '../AssignmentContainer'
 import LessonContainer from '../LessonContainer'
 import PracticeComponent from '../PracticeComponent'
@@ -13,6 +13,7 @@ import 'react-circular-progressbar/dist/styles.css';
 export default function Dashboard() {
   document.title = "Soundpost — Home"
   const dispatch = useDispatch();
+  const history = useHistory();
   const [change, setChange] = useState(false);
   const user = useSelector(state => state.session.user);
   const latestAssignment = useSelector(state => state.assignments.latest);
@@ -37,23 +38,28 @@ export default function Dashboard() {
             <PracticeComponent user={user}/>
           </div>
           <div className="user-info__stats">
-            <h1 className="title">Days Practiced This Week</h1>
-            <CircularProgressbar value={percentage} text={`${percentage}%`} />
+            <CircularProgressbar className="graph" value={percentage} text={`${percentage}%`} />
+            <h3 className="user-info__stats--label">Days Practiced This Week</h3>
           </div>
         </div>
         <div className="lesson-info">
           <div className="lesson-info__assignment">
             <h1 className="title">Practice Assignment</h1>
-            <div className="graph">
+            <div>
               {latestAssignment !== null &&
+              <>
               <AssignmentContainer assignment={latestAssignment}/>
-              }
               <Link exact to="/assignments" className="lesson-info__link">View previous assignments</Link>
+              </>
+              }
+              {latestAssignment === null &&
+              <p className="">You don't have any assignments yet.</p>
+              }
             </div>
           </div>
           <div className="lesson-info__upcoming">
             <h1 className="title">Upcoming Lessons</h1>
-            <div>
+            <div className="lesson-info__lessons">
               {lessons != null &&
                 <div>
                   {Object.values(lessons).map(lesson =>
@@ -64,7 +70,7 @@ export default function Dashboard() {
               {lessons === null &&
                 <>
                 <p>You don't have any lessons scheduled.</p>
-                <button>Book Now</button>
+                <button onClick={() => history.push("/schedule")} className="btn__primary lesson-info__btn">Book Now</button>
                 </>
                 }
             </div>

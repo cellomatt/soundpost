@@ -21,7 +21,7 @@ def new_practice(id):
 def practice_today(id):
     res = False
     practice_log = PracticeLog.query.filter(PracticeLog.date ==
-                                            date.today()).first()
+                                            date.today()).filter(PracticeLog.student_id == id).first()
 
     if practice_log:
         res = True
