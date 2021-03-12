@@ -24,6 +24,7 @@ class SignUpStudentForm(FlaskForm):
     teacher_id = IntegerField('teacher_id', validators=[DataRequired()])
     photo = FileField('photo')
     password = StringField('password', validators=[DataRequired()])
+    created_at = StringField('created_at')
 
 
 # class SignUpTeacherForm(FlaskForm):

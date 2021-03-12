@@ -112,6 +112,10 @@
   border-radius: 2px;
 }
 
+.nice-dates-day:after {
+  border-color: transparent;
+  z-index: -1;
+}
 
 .nice-dates-day.-selected.-selected-middle::before {
   border-left: none;
@@ -140,9 +144,4 @@
 .title__lesson {
   font-size: 3em;
   padding: 0 0 .8em;
-}
-
-.nice-dates-day:after {
-  border-color: transparent;
-  z-index: -1;
 }
