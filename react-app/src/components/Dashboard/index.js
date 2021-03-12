@@ -19,7 +19,7 @@ export default function Dashboard() {
   const user = useSelector(state => state.session.user);
   const latestAssignment = useSelector(state => state.assignments.latest);
   const lessons = useSelector(state => state.lessons.scheduled)
-  const percentage = useSelector(state => state.stats.thisweek)
+  const stats = useSelector(state => state.stats.thisweek)
 
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
   useEffect(() => dispatch(statsActions.getWeeklyPractice(user.id)), [dispatch, user.id, change])
@@ -35,7 +35,7 @@ export default function Dashboard() {
           <div className="user-info__primary">
             <div className="user-info__pic">
               {user.photo_url && <img className="user-info__pic--img" src={user.photo_url} alt="profile main"/>}
-              {!user.photo_url && <i className="fas fa-user user-info__pic--icon"></i>}
+              {!user.photo_url && <img className="user-info__pic--img" src={`https://soundpost-app.s3.us-east-2.amazonaws.com/profile_icon.png`} alt="profile main"/>}
             </div>
             <h1 className="user-info__name">{user.first_name} {user.last_name}</h1>
             <div className="user-info__practiced">
@@ -46,8 +46,8 @@ export default function Dashboard() {
             <h3 className="user-info__stats--label">Days Practiced This Week</h3>
             <div className="graph">
               <CircularProgressbar
-                value={percentage}
-                text={`${percentage}%`}
+                value={stats.percentage}
+                text={`${stats.count}`}
                 styles={buildStyles(
                   {
                     pathColor: "#0061ff",

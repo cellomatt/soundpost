@@ -14,9 +14,6 @@ class Assignment(db.Model):
     teacher = db.relationship("Teacher", back_populates="assignments")
 
     def to_dict(self):
-        months = ["January", "February", "March", "April", "May", "June",
-                  "July", "August", "September", "October", "November",
-                  "December"]
 
         return {
             "id": self.id,

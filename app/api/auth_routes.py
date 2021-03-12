@@ -7,6 +7,7 @@ from ..config import Config
 from ..s3 import *
 import boto3
 import botocore
+from datetime import *
 
 auth_routes = Blueprint('auth', __name__)
 
@@ -77,6 +78,7 @@ def sign_up():
     form = SignUpStudentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
+        created_at = form.data['created_at']
         user = Student(
             first_name=form.data['first_name'],
             last_name=form.data['last_name'],
@@ -86,7 +88,8 @@ def sign_up():
             instrument=form.data['instrument'],
             teacher_id=form.data['teacher_id'],
             photo_url=url,
-            password=form.data['password']
+            password=form.data['password'],
+            created_at=datetime.fromisoformat(created_at)
         )
         db.session.add(user)
         db.session.commit()

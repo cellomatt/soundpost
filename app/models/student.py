@@ -17,6 +17,7 @@ class Student(db.Model, UserMixin):
     photo_url = db.Column(db.String(255), nullable=True)
     teacher_id = db.Column(db.Integer, db.ForeignKey("teachers.id"),
                            nullable=False)
+    created_at = db.Column(db.Date, nullable=False)
 
     teacher = db.relationship("Teacher", back_populates="students")
     assignments = db.relationship("Assignment", back_populates="student")
@@ -45,5 +46,6 @@ class Student(db.Model, UserMixin):
           "parent_name": self.parent_name,
           "photo_url": self.photo_url,
           "teacher_id": self.teacher_id,
-          "teacher": self.teacher.to_dict()
+          "teacher": self.teacher.to_dict(),
+          "created_at": self.created_at.isoformat()
         }

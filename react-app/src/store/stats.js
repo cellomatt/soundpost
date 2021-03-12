@@ -6,15 +6,13 @@ export const setWeeklyPractice = (value) => {
 
 
 export const getWeeklyPractice = (userId) => async dispatch => {
-  console.log("Hit the weekly practice thunk")
   const res = await fetch (`/api/practice/${userId}/week`)
   const data = await res.json();
-  console.log("practice data", data)
   dispatch(setWeeklyPractice(data))
   return data;
 }
 
-const initialState = { thisweek: 0 };
+const initialState = { thisweek: {count: 0, percentage: 0} };
 
 export default function statsReducer(state = initialState, action) {
   const updateState = {...state}
