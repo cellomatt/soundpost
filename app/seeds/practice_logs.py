@@ -10,7 +10,7 @@ def seed_practice_logs():
     delta = today - start_date
 
     for student in students:
-        for i in range(delta.days + 1):
+        for i in range(delta.days):
             day = start_date + timedelta(days=i)
             if day.weekday() != 6:
                 log = PracticeLog(

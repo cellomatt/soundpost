@@ -1,10 +1,14 @@
 from app.models import db, TimeSlot, Teacher, Student
 from datetime import *
+from dateutil.relativedelta import *
+from tzlocal import get_localzone
+import pytz
 
 
 def seed_timeslots():
+    tz = get_localzone()
     today = date.today()
-    end = date(2021, 7, 1)
+    end = today + relativedelta(months=4)
     delta = end - today
     teacher = Teacher.query.filter(Teacher.first_name == "Matt").first()
     students = Student.query.filter(Student.teacher_id == teacher.id).all()
@@ -15,6 +19,7 @@ def seed_timeslots():
             for j in range(15, 21):
                 lesson_duration = timedelta(minutes=30)
                 time1 = datetime.combine(day, time(hour=j))
+                time1 = tz.localize(time1)
                 time2 = time1 + lesson_duration
                 time3 = time2 + lesson_duration
                 if day.weekday() == 3 and j == 15 and (day.month < today.month + 1):

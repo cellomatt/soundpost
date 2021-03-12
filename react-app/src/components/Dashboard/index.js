@@ -19,7 +19,7 @@ export default function Dashboard() {
   const user = useSelector(state => state.session.user);
   const latestAssignment = useSelector(state => state.assignments.latest);
   const lessons = useSelector(state => state.lessons.scheduled)
-  const percentage = useSelector(state => state.stats.thisweek)
+  const stats = useSelector(state => state.stats.thisweek)
 
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
   useEffect(() => dispatch(statsActions.getWeeklyPractice(user.id)), [dispatch, user.id, change])
@@ -46,8 +46,8 @@ export default function Dashboard() {
             <h3 className="user-info__stats--label">Days Practiced This Week</h3>
             <div className="graph">
               <CircularProgressbar
-                value={percentage}
-                text={`${percentage}%`}
+                value={stats.percentage}
+                text={`${stats.count}`}
                 styles={buildStyles(
                   {
                     pathColor: "#0061ff",

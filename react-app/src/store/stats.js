@@ -6,10 +6,8 @@ export const setWeeklyPractice = (value) => {
 
 
 export const getWeeklyPractice = (userId) => async dispatch => {
-  console.log("Hit the weekly practice thunk")
   const res = await fetch (`/api/practice/${userId}/week`)
   const data = await res.json();
-  console.log("practice data", data)
   dispatch(setWeeklyPractice(data))
   return data;
 }
