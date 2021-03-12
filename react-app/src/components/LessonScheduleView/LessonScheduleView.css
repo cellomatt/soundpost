@@ -106,11 +106,12 @@
   color: #ddd;
 }
 
-.nice-dates-day:before {
+.nice-dates-day::before {
   background-color: transparent;
   border: 3px solid red;
   border-radius: 2px;
 }
+
 
 .nice-dates-day.-selected.-selected-middle::before {
   border-left: none;
@@ -139,4 +140,9 @@
 .title__lesson {
   font-size: 3em;
   padding: 0 0 .8em;
+}
+
+.nice-dates-day:after {
+  border-color: transparent;
+  z-index: -1;
 }
