@@ -61,16 +61,14 @@
 .user-info__pic {
   display: flex;
   justify-content: center;
-  padding: 0;
   margin: 0 auto;
   border-radius: 50%;
   border: 2px solid #333333;
-  width: 12em;
-  height: 12em;
-  flex-shrink: 1;
-  flex-grow: 1;
+  width: 95%;
+  height: 0;
+  padding-bottom: 95%;
+  position: relative;
   background-color: rgba(255, 255, 255, 0.7);
-  flex-wrap: wrap;
 }
 
 .user-info__pic--img {
@@ -78,15 +76,9 @@
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  padding: 0;
   margin: 0 auto;
   object-fit: cover;
-}
-
-.user-info__pic--icon {
-  text-align: center;
-  font-size: 7em;
-  padding-top: .35em;
+  position: absolute;
 }
 
 .user-info__practiced {

@@ -12,7 +12,7 @@ export const getWeeklyPractice = (userId) => async dispatch => {
   return data;
 }
 
-const initialState = { thisweek: 0 };
+const initialState = { thisweek: {count: 0, percentage: 0} };
 
 export default function statsReducer(state = initialState, action) {
   const updateState = {...state}

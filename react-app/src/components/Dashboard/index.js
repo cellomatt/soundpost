@@ -35,7 +35,7 @@ export default function Dashboard() {
           <div className="user-info__primary">
             <div className="user-info__pic">
               {user.photo_url && <img className="user-info__pic--img" src={user.photo_url} alt="profile main"/>}
-              {!user.photo_url && <i className="fas fa-user user-info__pic--icon"></i>}
+              {!user.photo_url && <img className="user-info__pic--img" src={`https://soundpost-app.s3.us-east-2.amazonaws.com/profile_icon.png`} alt="profile main"/>}
             </div>
             <h1 className="user-info__name">{user.first_name} {user.last_name}</h1>
             <div className="user-info__practiced">

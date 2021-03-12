@@ -7,7 +7,7 @@
   box-sizing: border-box;
   border-radius: 10px;
   border: 3px solid black;
-  min-width: 250px;
+  width: 100%;
 }
 
 .checkbox__container:hover {
