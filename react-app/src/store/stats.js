@@ -19,6 +19,7 @@ export const getWeeklyPractice = (userId) => async dispatch => {
 export const getAllStats = (userId) => async dispatch => {
   const res = await fetch (`/api/practice/${userId}`)
   const data = await res.json();
+  console.log(data)
   dispatch(setAllStats(data));
   return data;
 }

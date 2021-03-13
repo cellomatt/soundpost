@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, Response, request
 from flask_login import login_required
-from app.models import db, PracticeLog, Student, TimeSlots
+from app.models import db, PracticeLog, Student, TimeSlot
 import json
 from datetime import *
 
@@ -59,7 +59,7 @@ def all_stats(id):
         (today - timedelta(days=6)), today)).filter(
         PracticeLog.student_id == id).count()
     practice_logs_month = PracticeLog.query.filter(PracticeLog.date.between(
-        (today - timedelta(months=1)), today)).filter(
+        (today - timedelta(days=30)), today)).filter(
         PracticeLog.student_id == id).count()
     lessons = TimeSlot.query.filter(TimeSlot.student_id == id).filter(
         TimeSlot.start_time.between(start_date,
@@ -80,14 +80,14 @@ def all_stats(id):
     if practice_logs_all:
         all = {
                 "count": practice_logs_all,
-                "percentage": int((practice_logs_all/days)*100)
+                "percentage": int((practice_logs_all/(days.days))*100)
             }
 
     res = {
         "thisweek": thisweek,
         "thismonth": thismonth,
         "all": all,
-        "days": days,
+        "days": days.days,
         "lessons": lessons
     }
 
