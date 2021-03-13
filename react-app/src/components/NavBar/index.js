@@ -12,7 +12,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
 
   function scroller() {
     let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    if (winScroll > 140) {
+    if (winScroll > 100) {
       setScrolled(true);
     } else { setScrolled(false); }
   }
