@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, Response, request
 from flask_login import login_required
-from app.models import db, PracticeLog
+from app.models import db, PracticeLog, Student, TimeSlots
 import json
 from datetime import *
 
@@ -39,5 +39,56 @@ def practice_week(id):
 
     if practice_logs:
         res = {"count": practice_logs, "percentage": int((practice_logs/7)*100)}
+
+    return json.dumps(res)
+
+
+@practice_routes.route('/<int:id>')
+@login_required
+def all_stats(id):
+    thisweek = 0
+    thismonth = 0
+    all = 0
+    student = Student.query.get(id)
+    start_date = student.created_at
+    today = date.today()
+    days = today - start_date
+    practice_logs_all = PracticeLog.query.filter(
+        PracticeLog.student_id == id).count()
+    practice_logs_week = PracticeLog.query.filter(PracticeLog.date.between(
+        (today - timedelta(days=6)), today)).filter(
+        PracticeLog.student_id == id).count()
+    practice_logs_month = PracticeLog.query.filter(PracticeLog.date.between(
+        (today - timedelta(months=1)), today)).filter(
+        PracticeLog.student_id == id).count()
+    lessons = TimeSlot.query.filter(TimeSlot.student_id == id).filter(
+        TimeSlot.start_time.between(start_date,
+                                    today - timedelta(days=1))).count()
+
+    if practice_logs_week:
+        thisweek = {
+                    "count": practice_logs_week,
+                    "percentage": int((practice_logs_week/7)*100)
+                }
+
+    if practice_logs_month:
+        thismonth = {
+                    "count": practice_logs_month,
+                    "percentage": int((practice_logs_month/30)*100)
+                }
+
+    if practice_logs_all:
+        all = {
+                "count": practice_logs_all,
+                "percentage": int((practice_logs_all/days)*100)
+            }
+
+    res = {
+        "thisweek": thisweek,
+        "thismonth": thismonth,
+        "all": all,
+        "days": days,
+        "lessons": lessons
+    }
 
     return json.dumps(res)
