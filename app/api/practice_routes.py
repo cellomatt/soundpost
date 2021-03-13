@@ -53,6 +53,8 @@ def all_stats(id):
     start_date = student.created_at
     today = date.today()
     days = today - start_date
+    total_days = days.days + 1
+
     practice_logs_all = PracticeLog.query.filter(
         PracticeLog.student_id == id).count()
     practice_logs_week = PracticeLog.query.filter(PracticeLog.date.between(
@@ -80,14 +82,16 @@ def all_stats(id):
     if practice_logs_all:
         all = {
                 "count": practice_logs_all,
-                "percentage": int((practice_logs_all/(days.days))*100)
+                "percentage": int((practice_logs_all/(total_days))*100)
             }
+
+
 
     res = {
         "thisweek": thisweek,
         "thismonth": thismonth,
         "all": all,
-        "days": days.days,
+        "days": total_days,
         "lessons": lessons
     }
 

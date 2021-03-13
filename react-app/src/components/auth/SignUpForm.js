@@ -44,8 +44,10 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
         dispatch(setUser(user));
         setAuthenticated(true);
         history.push("/");
+        window.scrollTo(0, 0);
       } else {
         setErrors(user.errors);
+        window.scrollTo(0, 0);
       }
     }
   };
