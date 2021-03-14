@@ -27,7 +27,7 @@ export const getAllStats = (userId) => async dispatch => {
 const initialState = {
   thisweek: {count: 0, percentage: 0},
   thismonth: {count: 0, percentage: 0},
-  all: {count: 0, percentage: 0},
+  all: {count: 0, percentage: 0, logs: {}},
   days: null,
   lessons: null
 };
@@ -48,7 +48,15 @@ export default function statsReducer(state = initialState, action) {
         updateState.thismonth = action.data.thismonth
       }
       if (action.data.all !== 0) {
-        updateState.all = action.data.all
+        updateState.all.count = action.data.all.count
+        updateState.all.percentage = action.data.all.percentage
+        console.log(action.data.all["logs"])
+
+        action.data.all["logs"].forEach(log => {
+          log.date = new Date(log.date)
+          updateState.all.logs[log.date] = log
+        })
+
       }
       updateState.days = action.data.days;
       updateState.lessons = action.data.lessons;

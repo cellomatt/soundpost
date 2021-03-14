@@ -20,8 +20,9 @@ def new_practice(id):
 @login_required
 def practice_today(id):
     res = False
-    practice_log = PracticeLog.query.filter(PracticeLog.date ==
-                                            date.today()).filter(PracticeLog.student_id == id).first()
+    practice_log = PracticeLog.query.filter(
+        PracticeLog.date == date.today()).filter(
+        PracticeLog.student_id == id).first()
 
     if practice_log:
         res = True
@@ -56,7 +57,7 @@ def all_stats(id):
     total_days = days.days + 1
 
     practice_logs_all = PracticeLog.query.filter(
-        PracticeLog.student_id == id).count()
+        PracticeLog.student_id == id).all()
     practice_logs_week = PracticeLog.query.filter(PracticeLog.date.between(
         (today - timedelta(days=6)), today)).filter(
         PracticeLog.student_id == id).count()
@@ -90,9 +91,13 @@ def all_stats(id):
 
     if practice_logs_all:
         all = {
-                "count": practice_logs_all,
-                "percentage": int((practice_logs_all/(total_days))*100)
+                "count": len(practice_logs_all),
+                "percentage": int((len(practice_logs_all)/(total_days))*100),
+                "logs": [log.to_dict() for log in practice_logs_all]
             }
+
+    for log in all["logs"]:
+        log["date"] = log["date"].isoformat()
 
     res = {
         "thisweek": thisweek,
@@ -101,5 +106,7 @@ def all_stats(id):
         "days": total_days,
         "lessons": lessons_count
     }
+
+    print("----------------------", res)
 
     return json.dumps(res)

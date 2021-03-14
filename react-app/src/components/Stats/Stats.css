@@ -6,10 +6,11 @@
 
 .stats__container {
   min-width: 160px;
-  max-width: 250px;
+  max-width: 200px;
   box-sizing: border-box;
   margin: 1.8em;
-  min-height: 259px;
+  min-height: 200px;
+  font-size: .8em;
 }
 
 .stats-main {
@@ -18,6 +19,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
+  max-width: 800px;
 }
 
 .stats-main__stats {
@@ -26,16 +28,16 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  margin: 1em auto;
   padding: 0;
+  width: 100%;
 }
 
 .stats-main__logs {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
-  padding: 0 4em;
-  /* width: 50%; */
+  margin: 2em auto;
+  width: 100%;
 }
 
 .logs__container {
@@ -47,7 +49,8 @@
   min-width: 300px;
   height: 500px;
   overflow: hidden;
-  margin: 1.8em;
+  margin: 1.8em 0;
+  width: 70%;
 }
 
 .logs__container--inner {
