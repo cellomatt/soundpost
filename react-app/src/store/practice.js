@@ -18,7 +18,6 @@ export const practicedToday = (userId) => async dispatch => {
 export const practiced = (userId, date) => async dispatch => {
   let day = new Date(date);
   const practiceDay = day.toISOString().split('T')[0];
-  console.log(practiceDay)
   const res = await fetch(`/api/practice/${userId}/edit`, {
     method: "POST",
     headers: {
