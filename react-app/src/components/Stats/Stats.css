@@ -8,12 +8,10 @@
   min-width: 160px;
   max-width: 250px;
   box-sizing: border-box;
-  margin: 1.8em;
-  min-height: 250px;
+  margin: 1.6em;
+  height: 250px;
   font-size: 1em;
 }
-
-
 
 .stats-main {
   display: flex;
@@ -27,7 +25,7 @@
 .stats-main__stats {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: column;
   align-items: center;
   justify-content: center;
   margin: 1em auto;

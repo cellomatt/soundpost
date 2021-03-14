@@ -7,9 +7,13 @@ export default function LogContainer({date, practiced, setChange, student}) {
 
   return (
     <div className="log__container">
-    <p className="log__container--date">{date}</p>
-    <p className="log__container--practiced">Practiced: {practice ? <i className="far fa-check-square green"></i> : <i className="fas fa-times-circle red"></i>}</p>
-    <PracticeModal practice={practice} setPractice={setPractice} date={date} setChange={setChange} student={student}/>
+      <div className="log__container--info">
+        <p className="log__container--date">{date}</p>
+        <p className="log__container--practiced">Practiced: {practice ? <i className="far fa-check-square green"></i> : <i className="fas fa-times-circle red"></i>}</p>
+      </div>
+      <div className="log__container--modal">
+        <PracticeModal practice={practice} setPractice={setPractice} date={date} setChange={setChange} student={student}/>
+      </div>
     </div>
   )
 }
