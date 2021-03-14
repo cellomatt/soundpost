@@ -104,9 +104,8 @@ def all_stats(id):
         "thismonth": thismonth,
         "all": all,
         "days": total_days,
-        "lessons": lessons_count
+        "lessons": lessons_count,
+        "start_date": start_date.isoformat(),
     }
-
-    print("----------------------", res)
 
     return json.dumps(res)
