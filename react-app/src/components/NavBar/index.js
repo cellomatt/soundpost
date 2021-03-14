@@ -20,21 +20,31 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
   let sessionLinks;
   if (authenticated) {
     sessionLinks = (
-      <ProfileButton setAuthenticated={setAuthenticated}/>
+      <ProfileButton authenticated={authenticated} setAuthenticated={setAuthenticated}/>
     );
   } else {
     sessionLinks = (
       <>
-      <li className="nav__li">
-        <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} exact to="/login" activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
-          Login
-        </NavLink>
-      </li>
-      <li className="nav__li">
-        <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} exact to="/signup" activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
-          Sign Up
-        </NavLink>
-      </li>
+      <div className="sessionLinks">
+        <li className="nav__li">
+          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} exact to="/" activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+            Home
+          </NavLink>
+        </li>
+        <li className="nav__li">
+          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} exact to="/login" activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+            Login
+          </NavLink>
+        </li>
+        <li className="nav__li">
+          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} exact to="/signup" activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
+            Sign Up
+          </NavLink>
+        </li>
+      </div>
+      <div className="mobile">
+        <ProfileButton authenticated={authenticated} setAuthenticated={setAuthenticated}/>
+      </div>
       </>
     )
   }
@@ -45,15 +55,9 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
         {!scrolled ? <Logo  /> : <Logo2 />}
       </Link>
       <nav>
-      <ul className="nav">
-        {!authenticated && <li className="nav__li">
-          <NavLink className={`default ${scrolled ? "default-scrolled" : ""}`} exact to="/" activeClassName={`active ${scrolled ? "active-scrolled" : ""}`}>
-            Home
-          </NavLink>
-        </li>
-        }
-        {sessionLinks}
-      </ul>
+        <ul className="nav">
+          {sessionLinks}
+        </ul>
       </nav>
     </div>
   );

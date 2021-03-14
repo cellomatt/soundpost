@@ -39,18 +39,17 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange,
   }
 
   const deleteLesson = async () => {
-    const deleted = await dispatch(lessonActions.deleteOneLesson(lesson.id))
+    await dispatch(lessonActions.deleteOneLesson(lesson.id))
     setScheduled(false);
     setShowModal(false);
     setChange(change => !change)
   }
 
   const scheduleLesson = async () => {
-    const scheduled = await dispatch(lessonActions.scheduleOneLesson(lesson.id, duration, student.id))
+    await dispatch(lessonActions.scheduleOneLesson(lesson.id, duration, student.id))
     setScheduled(true);
     setShowModal(false);
     dispatch(lessonActions.getUserLessons(student.id))
-    // setChange(change => !change)
   }
 
   return (

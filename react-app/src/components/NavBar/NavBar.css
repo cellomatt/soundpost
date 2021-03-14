@@ -48,6 +48,23 @@
   color: #0061ff;
 }
 
+.btn__profile--hamburger {
+  font-size: 2.6em;
+  color: #42ffdc;
+  border: 3px solid #42ffdc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px 7px 7px;
+  width: 60px;
+  height: 60px;
+  background-color: #0061ff;
+}
+
+.btn__profile--hamburger:hover {
+  background-color: #42ffdc;
+  color: #0061ff;
+}
+
 .btn__profile-scrolled {
   border: 3px solid #0061ff;
 }
@@ -61,6 +78,7 @@
   z-index: 90;
   box-sizing: border-box;
   padding: 7em 1em 0;
+  min-width: 325px;
 }
 
 .dropdown_li {
@@ -79,7 +97,9 @@
   flex-direction: row;
   box-sizing: border-box;
   max-width: 40%;
-  margin: 0.7em 2em;
+  min-width: 300px;
+  margin: 0em 2em;
+  padding: .5em;
   align-self: flex-start;
   flex-grow: 1;
   flex-shrink: 1;
@@ -116,7 +136,7 @@
   text-decoration: none;
   justify-content: center;
   box-sizing: border-box;
-  margin: 1.3em 1em 0 0;
+  margin: 1.5em 1em 0 0;
   flex-grow: 1;
   flex-shrink: 1;
 }
@@ -135,6 +155,11 @@
 .default:hover {
   color: #36ff68;
   transition: .2s;
+}
+
+.mobile {
+  display: none;
+  font-size: 1.2em;
 }
 
 .navbar {
@@ -172,4 +197,19 @@
 .logout-scrolled {
   color: #0061FF;
   transition: .1s;
+}
+
+.sessionLinks {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 899px) {
+  .sessionLinks {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+  }
 }
