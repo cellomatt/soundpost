@@ -7,7 +7,7 @@ def seed_assignments():
     teacher = Teacher.query.filter(Teacher.first_name == "Matt").first()
     student = Student.query.filter(Student.first_name == "Demo").first()
     today = date.today()
-    first_lesson = today + relativedelta(months=-1, weekday=WE)
+    first_lesson = today + relativedelta(months=-1, weekday=TH)
     first_assignment_time = datetime.combine(first_lesson, time(hour=16))
 
     assignment1 = Assignment(
