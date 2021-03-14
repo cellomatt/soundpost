@@ -55,6 +55,8 @@ def all_stats(id):
     today = date.today()
     days = today - start_date
     total_days = days.days + 1
+    delta = today - start_date
+    list = []
 
     practice_logs_all = PracticeLog.query.filter(
         PracticeLog.student_id == id).all()
@@ -76,6 +78,10 @@ def all_stats(id):
             continue
         lessons_count += 1
         i += 1
+
+    for i in range(delta.days):
+        day = start_date + timedelta(days=i)
+        list.append(day)
 
     if practice_logs_week:
         thisweek = {
@@ -99,11 +105,20 @@ def all_stats(id):
     for log in all["logs"]:
         log["date"] = log["date"].isoformat()
 
+    final_list = [{"date": day.isoformat(), "practiced": False} for day in list]
+
+    for day in final_list:
+        if day["date"] in all["logs"]:
+            day["practiced"] = True
+
     res = {
         "thisweek": thisweek,
         "thismonth": thismonth,
         "all": all,
-        "days": total_days,
+        "days": {
+            "count": total_days,
+            "list": final_list
+            },
         "lessons": lessons_count,
         "start_date": start_date.isoformat(),
     }

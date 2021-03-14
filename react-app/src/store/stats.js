@@ -19,6 +19,16 @@ export const getWeeklyPractice = (userId) => async dispatch => {
 export const getAllStats = (userId) => async dispatch => {
   const res = await fetch (`/api/practice/${userId}`)
   const data = await res.json();
+
+  data.all.logs.forEach(log => {
+    log.date = new Date(log.date)
+  })
+
+  data.days.list.forEach(day => {
+    day.date = new Date(day.date)
+  })
+  console.log(data.days.count)
+
   dispatch(setAllStats(data));
   return data;
 }
@@ -27,7 +37,7 @@ const initialState = {
   thisweek: {count: 0, percentage: 0},
   thismonth: {count: 0, percentage: 0},
   all: {count: 0, percentage: 0, logs: {}},
-  days: null,
+  days: {count: 0, list: {}},
   lessons: null,
   start_date: null
 };
@@ -51,12 +61,16 @@ export default function statsReducer(state = initialState, action) {
         updateState.all.count = action.data.all.count
         updateState.all.percentage = action.data.all.percentage
         action.data.all["logs"].forEach(log => {
-          log.date = new Date(log.date)
           updateState.all.logs[log.date] = log
         })
       }
+      if (action.data.days) {
+        updateState.days.count = action.data.days.count
+        action.data.days["list"].forEach(day => {
+          updateState.days.list[day.date] = day
+        })
+      }
       updateState.start_date = new Date(action.data.start_date)
-      updateState.days = action.data.days;
       updateState.lessons = action.data.lessons;
       return updateState;
     default:

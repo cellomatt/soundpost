@@ -1,7 +1,8 @@
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import LogContainer from '../LogContainer'
 import './Stats.css';
 import * as statsActions from '../../store/stats'
 
@@ -10,40 +11,12 @@ export default function Stats() {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user)
   const stats = useSelector(state => state.stats)
-  let logs = []
 
-
-  const getLogs = () => {
-    if (stats.all.logs && stats.start_date) {
-      let currentDate = stats.start_date;
-
-      Date.prototype.addDays = function(days) {
-        let date = new Date(this.valueOf());
-        date.setDate(date.getDate() + days);
-        return date;
-      }
-
-      while (currentDate <= new Date()) {
-          logs.push({date: new Date (currentDate), practiced: false});
-          currentDate = currentDate.addDays(1);
-      }
-
-      logs.forEach(log => {
-        if (log.date in stats.all.logs) {
-          log.practiced = true
-        }
-      })
-    }
-  }
 
   useEffect(() => {
     dispatch(statsActions.getAllStats(user.id))
   }, [dispatch, user])
 
-  useEffect(() => {
-    getLogs()
-    console.log(logs)
-  }, [getLogs(), stats])
 
   return (
     <div className="main">
@@ -103,7 +76,7 @@ export default function Stats() {
           </div>
           <div className="user-info__stats stats__container">
             <h3 className="user-info__stats--label">Days on Soundpost</h3>
-            <h1 className="user-info__stats--number">{stats.days}</h1>
+            <h1 className="user-info__stats--number">{stats.days.count}</h1>
           </div>
           <div className="user-info__stats stats__container">
             <h3 className="user-info__stats--label">Lessons Completed</h3>
@@ -114,9 +87,14 @@ export default function Stats() {
           <div className="logs__container">
             <h1 className="title logs__title">Practice Log</h1>
             <div className="logs__container--inner">
-              {/* {logs.length &&
-
-              } */}
+              <div>
+                <p>HELLO</p>
+              {/* {logs.map(log => {
+                return (
+                  <LogContainer key={log.date} date={log.date} practiced={log.practiced}/>
+                )
+              })} */}
+              </div>
             </div>
           </div>
         </div>
