@@ -39,7 +39,10 @@ def practice_week(id):
         PracticeLog.student_id == id).count()
 
     if practice_logs:
-        res = {"count": practice_logs, "percentage": int((practice_logs/7)*100)}
+        res = {
+            "count": practice_logs,
+            "percentage": int((practice_logs/7)*100)
+            }
 
     return json.dumps(res)
 
@@ -99,17 +102,17 @@ def all_stats(id):
         all = {
                 "count": len(practice_logs_all),
                 "percentage": int((len(practice_logs_all)/(total_days))*100),
-                "logs": [log.to_dict() for log in practice_logs_all]
             }
 
-    for log in all["logs"]:
-        log["date"] = log["date"].isoformat()
+    logs = [log.to_dict() for log in practice_logs_all]
 
-    final_list = [{"date": day.isoformat(), "practiced": False} for day in list]
+    final_list = [{"date": day.isoformat(), "practiced": False}
+                  for day in list]
 
     for day in final_list:
-        if day["date"] in all["logs"]:
-            day["practiced"] = True
+        for log in logs:
+            if day["date"] == log["date"].isoformat():
+                day["practiced"] = True
 
     res = {
         "thisweek": thisweek,

@@ -20,10 +20,6 @@ export const getAllStats = (userId) => async dispatch => {
   const res = await fetch (`/api/practice/${userId}`)
   const data = await res.json();
 
-  data.all.logs.forEach(log => {
-    log.date = new Date(log.date)
-  })
-
   data.days.list.forEach(day => {
     day.date = new Date(day.date)
   })
@@ -60,9 +56,6 @@ export default function statsReducer(state = initialState, action) {
       if (action.data.all !== 0) {
         updateState.all.count = action.data.all.count
         updateState.all.percentage = action.data.all.percentage
-        action.data.all["logs"].forEach(log => {
-          updateState.all.logs[log.date] = log
-        })
       }
       if (action.data.days) {
         updateState.days.count = action.data.days.count
