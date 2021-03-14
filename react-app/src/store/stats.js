@@ -23,7 +23,6 @@ export const getAllStats = (userId) => async dispatch => {
   data.days.list.forEach(day => {
     day.date = new Date(day.date)
   })
-  console.log(data.days.count)
 
   dispatch(setAllStats(data));
   return data;
@@ -34,8 +33,8 @@ const initialState = {
   thismonth: {count: 0, percentage: 0},
   all: {count: 0, percentage: 0, logs: {}},
   days: {count: 0, list: {}},
-  lessons: null,
-  start_date: null
+  lessons: 0,
+  start_date: new Date()
 };
 
 export default function statsReducer(state = initialState, action) {

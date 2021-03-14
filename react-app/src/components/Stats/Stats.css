@@ -44,10 +44,9 @@
   background-color: rgba(190, 190, 190, 0.746);
   box-sizing: border-box;
   border-radius: 20px;
-  padding: 1.7em;
+  padding: 2.5em 3.5em;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   min-width: 300px;
-  height: 500px;
   overflow: hidden;
   margin: 1.8em 0;
   width: 70%;
@@ -57,9 +56,12 @@
   overflow-y: scroll;
   overflow-x: hidden;
   overflow-y: overlay;
-  background-color: white;
   box-sizing: border-box;
   margin-bottom: 1em;
+  height: 500px;
+  border-radius: 5px;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .logs__title {

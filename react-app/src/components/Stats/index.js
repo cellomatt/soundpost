@@ -11,7 +11,8 @@ export default function Stats() {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user)
   const stats = useSelector(state => state.stats)
-
+  const orderedList = Object.values(stats.days.list).sort((a, b) => b.date - a.date)
+  const options = { dateStyle: 'long'};
 
   useEffect(() => {
     dispatch(statsActions.getAllStats(user.id))
@@ -88,12 +89,14 @@ export default function Stats() {
             <h1 className="title logs__title">Practice Log</h1>
             <div className="logs__container--inner">
               <div>
-                <p>HELLO</p>
-              {/* {logs.map(log => {
+              {orderedList.map(day => {
                 return (
-                  <LogContainer key={log.date} date={log.date} practiced={log.practiced}/>
+                  <LogContainer
+                    key={day.date.toLocaleDateString('en-US', options)}
+                    date={day.date.toLocaleDateString('en-US', options)}
+                    practiced={day.practiced}/>
                 )
-              })} */}
+              })}
               </div>
             </div>
           </div>
