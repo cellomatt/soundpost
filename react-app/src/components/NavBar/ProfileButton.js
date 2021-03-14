@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import './NavBar.css';
 
-export default function ProfileButton({setAuthenticated}) {
+export default function ProfileButton({authenticated, setAuthenticated}) {
 
     const [showMenu, setShowMenu] = useState(false);
 
@@ -28,10 +28,17 @@ export default function ProfileButton({setAuthenticated}) {
 
     return (
       <>
+        {authenticated &&
         <button className="btn__profile" onClick={openMenu}>
           <i className="fas fa-user btn__profile--icon"></i>
         </button>
-        {showMenu && (
+        }
+        {!authenticated &&
+        <button className="btn__profile" onClick={openMenu}>
+          <i className="fas fa-bars btn__profile--hamburger"></i>
+        </button>
+        }
+        {showMenu && authenticated && (
         <ul className="dropdown">
           <li className="dropdown_li">
             <NavLink className="default" exact to="/" activeClassName="active">
@@ -55,6 +62,25 @@ export default function ProfileButton({setAuthenticated}) {
           </li>
           <li className="dropdown_li">
             <LogoutButton setAuthenticated={setAuthenticated} />
+          </li>
+        </ul>
+        )}
+        {showMenu && !authenticated && (
+        <ul className="dropdown">
+          <li className="dropdown_li">
+          <NavLink className="default" exact to="/" activeClassName="active">
+            Home
+          </NavLink>
+          </li>
+          <li className="dropdown_li">
+            <NavLink className="default" exact to="/login" activeClassName="active">
+              Login
+            </NavLink>
+          </li>
+          <li className="dropdown_li">
+            <NavLink className="default" exact to="/signup" activeClassName="active">
+              Sign Up
+            </NavLink>
           </li>
         </ul>
         )}

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="main">
       <div className="home__main">
-        <div className="section">
+        <div className="section one">
           <div className="section__description">
             <h1 className="section__header">What Is Soundpost?</h1>
             <p className="section__description--content">Soundpost is a gathering place for music students and teachers
@@ -23,7 +23,7 @@ export default function Home() {
           </div>
           <MusicNote className="section__svg"/>
         </div>
-        <div className="section">
+        <div className="section two">
           <Calendar className="section__svg"/>
           <div className="section__description">
             <h1 className="section__header">Schedule Lessons</h1>
@@ -31,7 +31,7 @@ export default function Home() {
             Upcoming lessons display directly in your dashboard so you'll never forget when the next one is!</p>
           </div>
         </div>
-        <div className="section">
+        <div className="section three">
           <div className="section__description">
             <h1 className="section__header">Track Your Practice</h1>
             <p className="section__description--content">With Soundpost, you can make sure that you're practicing consistently. Students can keep a record of
@@ -40,7 +40,7 @@ export default function Home() {
           </div>
           <Checkmark className="section__svg"/>
         </div>
-        <div className="section">
+        <div className="section four">
           <Music className="section__svg"/>
           <div className="section__description">
             <h1 className="section__header">Practice Effectively</h1>

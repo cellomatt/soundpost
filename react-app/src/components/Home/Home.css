@@ -50,3 +50,7 @@
   height: 100%;
   padding: 1.5em 3em;
 }
+
+.two, .four {
+  flex-wrap: wrap-reverse;
+}
