@@ -5,8 +5,8 @@ export default function LogContainer({date, practiced}) {
 
   return (
     <div className="log__container">
-    <p>{date}</p>
-    <p>I practiced: {practiced ? "true" : "false"}</p>
+    <p className="log__container--date">{date}</p>
+    <p className="log__container--practiced">Practiced: {practiced ? <i className="far fa-check-square green"></i> : <i className="fas fa-times-circle red"></i>}</p>
     </div>
   )
 }
