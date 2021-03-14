@@ -126,7 +126,7 @@ def all_stats(id):
     if practice_logs_all:
         all = {
                 "count": len(practice_logs_all),
-                "percentage": int((len(practice_logs_all)/(total_days + 1))*100),
+                "percentage": int((len(practice_logs_all)/(total_days))*100),
             }
 
     logs = [log.to_dict() for log in practice_logs_all]
