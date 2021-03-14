@@ -17,7 +17,7 @@ export default function Stats() {
 
   useEffect(() => {
     dispatch(statsActions.getAllStats(user.id))
-  }, [dispatch, user])
+  }, [dispatch, user, change])
 
 
   return (
