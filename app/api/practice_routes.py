@@ -85,8 +85,6 @@ def all_stats(id):
                 "percentage": int((practice_logs_all/(total_days))*100)
             }
 
-
-
     res = {
         "thisweek": thisweek,
         "thismonth": thismonth,

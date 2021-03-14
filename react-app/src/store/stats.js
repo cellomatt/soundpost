@@ -24,7 +24,13 @@ export const getAllStats = (userId) => async dispatch => {
   return data;
 }
 
-const initialState = { thisweek: {count: 0, percentage: 0} };
+const initialState = {
+  thisweek: {count: 0, percentage: 0},
+  thismonth: {count: 0, percentage: 0},
+  all: {count: 0, percentage: 0},
+  days: null,
+  lessons: null
+};
 
 export default function statsReducer(state = initialState, action) {
   const updateState = {...state}
@@ -33,6 +39,19 @@ export default function statsReducer(state = initialState, action) {
       if (action.value !== 0) {
         updateState.thisweek = action.value
       }
+      return updateState;
+    case SET_ALL_STATS:
+      if (action.data.thisweek !== 0) {
+        updateState.thisweek = action.data.thisweek
+      }
+      if (action.data.thismonth !== 0) {
+        updateState.thismonth = action.data.thismonth
+      }
+      if (action.data.all !== 0) {
+        updateState.all = action.data.all
+      }
+      updateState.days = action.data.days;
+      updateState.lessons = action.data.lessons;
       return updateState;
     default:
       return state;

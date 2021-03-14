@@ -47,7 +47,7 @@ export default function Dashboard() {
             <div className="graph">
               <CircularProgressbar
                 value={stats.percentage}
-                text={`${stats.count}`}
+                text={`${stats.count}/7`}
                 styles={buildStyles(
                   {
                     pathColor: "#0061ff",
