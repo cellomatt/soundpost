@@ -28,6 +28,19 @@ def edit_new_practice(id):
     return Response(status=201, mimetype='application/json')
 
 
+@practice_routes.route('/<int:id>/edit', methods=['DELETE'])
+@login_required
+def delete_practice(id):
+    data = request.get_json()
+    practice_date = data["date"]
+    practice_log = PracticeLog.query.filter(
+        PracticeLog.student_id == id).filter(
+        PracticeLog.date == date.fromisoformat(practice_date)).first()
+    db.session.delete(practice_log)
+    db.session.commit()
+    return Response(status=201, mimetype='application/json')
+
+
 @practice_routes.route('/<int:id>/today')
 @login_required
 def practice_today(id):
@@ -113,7 +126,7 @@ def all_stats(id):
     if practice_logs_all:
         all = {
                 "count": len(practice_logs_all),
-                "percentage": int((len(practice_logs_all)/(total_days))*100),
+                "percentage": int((len(practice_logs_all)/(total_days + 1))*100),
             }
 
     logs = [log.to_dict() for log in practice_logs_all]

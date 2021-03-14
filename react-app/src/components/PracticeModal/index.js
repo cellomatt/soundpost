@@ -40,7 +40,8 @@ export default function PracticeModal({practice, setPractice, date, setChange, s
   }
 
   const deletePractice = async () => {
-    // const deleted = await dispatch(lessonActions.deleteOneLesson(lesson.id))
+    await dispatch(practiceActions.deleteOneLog(student.id, date))
+    await dispatch(statsActions.getAllStats(student.id))
     setPractice(false);
     setShowModal(false);
     setChange(change => !change)
