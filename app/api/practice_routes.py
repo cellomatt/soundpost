@@ -10,7 +10,19 @@ practice_routes = Blueprint('practice', __name__)
 @practice_routes.route('/<int:id>/new', methods=['POST'])
 @login_required
 def new_practice(id):
-    practice_log = PracticeLog(student_id=id, date=datetime.now())
+    practice_log = PracticeLog(student_id=id, date=date.today())
+    db.session.add(practice_log)
+    db.session.commit()
+    return Response(status=201, mimetype='application/json')
+
+
+@practice_routes.route('/<int:id>/edit', methods=['POST'])
+@login_required
+def edit_new_practice(id):
+    data = request.get_json()
+    practice_date = data["date"]
+    practice_log = PracticeLog(student_id=id,
+                               date=date.fromisoformat(practice_date))
     db.session.add(practice_log)
     db.session.commit()
     return Response(status=201, mimetype='application/json')
@@ -82,7 +94,7 @@ def all_stats(id):
         lessons_count += 1
         i += 1
 
-    for i in range(delta.days):
+    for i in range(delta.days + 1):
         day = start_date + timedelta(days=i)
         list.append(day)
 
@@ -106,13 +118,14 @@ def all_stats(id):
 
     logs = [log.to_dict() for log in practice_logs_all]
 
-    final_list = [{"date": day.isoformat(), "practiced": False}
+    final_list = [{"date": day, "practiced": False}
                   for day in list]
 
     for day in final_list:
         for log in logs:
-            if day["date"] == log["date"].isoformat():
+            if day["date"] == log["date"]:
                 day["practiced"] = True
+        day["date"] = day["date"].isoformat()
 
     res = {
         "thisweek": thisweek,

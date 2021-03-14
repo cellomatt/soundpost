@@ -46,7 +46,7 @@ export default function PracticeModal({practice, setPractice, date, setChange, s
   }
 
   const createPractice = async () => {
-    // const log = await dispatch(lessonActions.scheduleOneLesson(lesson.id, duration, student.id))
+    const log = await dispatch(practiceActions.practiced(student.id, date))
     setPractice(true);
     setShowModal(false);
     // dispatch(lessonActions.getUserLessons(student.id))
