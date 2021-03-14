@@ -18,6 +18,9 @@ export default function AssignmentView() {
     <div className="main">
       <h1 className="title__main">Practice Assignments</h1>
       <div className="assignments__list">
+        {assignments === null &&
+              <p className="">You don't have any assignments yet.</p>
+              }
         {assignments !== null &&
         <>
           {Object.values(assignments).map(assignment =>

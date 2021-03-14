@@ -39,10 +39,12 @@ export default function assignmentReducer(state = initialState, action) {
       updateState.latest = action.assignment
       return updateState;
     case ALL_ASSIGNMENTS:
-      updateState.all = {}
-      action.assignments.forEach(assignment => {
-        updateState.all[assignment.created_at] = assignment
-      })
+      if (action.assignments.length > 0) {
+        updateState.all = {}
+        action.assignments.forEach(assignment => {
+          updateState.all[assignment.created_at] = assignment
+        })
+      }
       return updateState;
     default:
       return state;
