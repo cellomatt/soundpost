@@ -24,7 +24,7 @@ export default function Dashboard() {
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
   useEffect(() => dispatch(statsActions.getWeeklyPractice(user.id)), [dispatch, user.id, change])
   useEffect(() => dispatch(lessonActions.getUserLessons(user.id)), [dispatch, user.id, change])
-
+  useEffect(() => dispatch(statsActions.getAllStats(user.id)), [dispatch, user.id, change])
 
 
 

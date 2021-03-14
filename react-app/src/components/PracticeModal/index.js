@@ -2,6 +2,7 @@ import Modal from "react-modal";
 import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import * as practiceActions from '../../store/practice'
+import * as statsActions from '../../store/stats'
 import './PracticeModal.css'
 
 export default function PracticeModal({practice, setPractice, date, setChange, student}) {
@@ -46,10 +47,10 @@ export default function PracticeModal({practice, setPractice, date, setChange, s
   }
 
   const createPractice = async () => {
-    const log = await dispatch(practiceActions.practiced(student.id, date))
+    await dispatch(practiceActions.practiced(student.id, date))
+    await dispatch(statsActions.getAllStats(student.id))
     setPractice(true);
     setShowModal(false);
-    // dispatch(lessonActions.getUserLessons(student.id))
     setChange(change => !change)
   }
 
