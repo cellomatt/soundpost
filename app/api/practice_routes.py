@@ -64,8 +64,17 @@ def all_stats(id):
         (today - timedelta(days=30)), today)).filter(
         PracticeLog.student_id == id).count()
     lessons = TimeSlot.query.filter(TimeSlot.student_id == id).filter(
-        TimeSlot.start_time.between(start_date,
-                                    today - timedelta(days=1))).count()
+        TimeSlot.start_time.between(start_date, today - timedelta(days=1))
+        ).order_by(TimeSlot.id).all()
+    lessons_count = 0
+
+    i = 0
+    while i < len(lessons):
+        if lessons[i].start_time == lessons[i-1].end_time:
+            lessons.pop(i)
+            continue
+        lessons_count += 1
+        i += 1
 
     if practice_logs_week:
         thisweek = {
@@ -90,7 +99,7 @@ def all_stats(id):
         "thismonth": thismonth,
         "all": all,
         "days": total_days,
-        "lessons": lessons
+        "lessons": lessons_count
     }
 
     return json.dumps(res)

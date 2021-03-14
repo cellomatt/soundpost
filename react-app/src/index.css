@@ -208,6 +208,11 @@ input::-webkit-file-upload-button:hover {
   color: #3f81eb;
 }
 
+.title__main {
+  font-size: 3em;
+  padding: 0 0 .8em;
+}
+
 .vertical-center {
   position: fixed;
   top: 50%;

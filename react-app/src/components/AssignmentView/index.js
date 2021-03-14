@@ -16,7 +16,7 @@ export default function AssignmentView() {
 
   return (
     <div className="main">
-      <h1 className="title__assignment">Practice Assignments</h1>
+      <h1 className="title__main">Practice Assignments</h1>
       <div className="assignments__list">
         {assignments !== null &&
         <>

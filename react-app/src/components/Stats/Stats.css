@@ -1,0 +1,22 @@
+
+.user-info__stats--number {
+  margin: .5em;
+  font-size: 4em;
+}
+
+.stats__container {
+  /* width: 30%; */
+  min-width: 160px;
+  max-width: 250px;
+  box-sizing: border-box;
+  margin: 1.8em;
+  min-height: 259px;
+}
+
+.stats-main {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
