@@ -106,7 +106,7 @@
   color: #ddd;
 }
 
-.nice-dates-day::before {
+.nice-dates-day:before {
   background-color: transparent;
   border: 3px solid red;
   border-radius: 2px;

@@ -1,0 +1,83 @@
+
+.user-info__stats--number {
+  margin: .5em;
+  font-size: 4em;
+}
+
+.stats__container {
+  min-width: 160px;
+  max-width: 200px;
+  box-sizing: border-box;
+  margin: 1.8em;
+  min-height: 200px;
+  font-size: .8em;
+}
+
+.stats-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+.stats-main__stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto;
+  padding: 0;
+  width: 100%;
+}
+
+.stats-main__logs {
+  display: flex;
+  justify-content: center;
+  margin: 2em auto;
+  width: 100%;
+}
+
+.logs__container {
+  background-color: rgba(190, 190, 190, 0.746);
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 2.5em 3.5em;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+  overflow: hidden;
+  margin: 1.8em 0;
+  width: 70%;
+}
+
+.logs__container--inner {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: overlay;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  height: 500px;
+  border-radius: 5px;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.logs__title {
+  text-align: center;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0061ff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+  display: none;
+}

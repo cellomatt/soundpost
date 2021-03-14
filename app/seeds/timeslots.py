@@ -8,13 +8,14 @@ import pytz
 def seed_timeslots():
     tz = get_localzone()
     today = date.today()
+    beginning = today + relativedelta(months=-1, weekday=TH)
     end = today + relativedelta(months=4)
-    delta = end - today
+    delta = end - beginning
     teacher = Teacher.query.filter(Teacher.first_name == "Matt").first()
     students = Student.query.filter(Student.teacher_id == teacher.id).all()
 
     for i in range(delta.days + 1):
-        day = today + timedelta(days=i)
+        day = beginning + timedelta(days=i)
         if day.weekday() not in [0, 5, 6]:
             for j in range(15, 21):
                 lesson_duration = timedelta(minutes=30)

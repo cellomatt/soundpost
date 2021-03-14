@@ -1,4 +1,5 @@
-import boto3, botocore
+import boto3
+import botocore
 from .config import Config
 
 
@@ -13,6 +14,7 @@ s3 = boto3.client(
    aws_access_key_id=Config.S3_KEY,
    aws_secret_access_key=Config.S3_SECRET
 )
+
 
 def upload_file_to_s3(file, bucket_name, acl="public-read"):
 
@@ -31,6 +33,5 @@ def upload_file_to_s3(file, bucket_name, acl="public-read"):
     except Exception as e:
         print("Something Happened: ", e)
         return e
-
 
     return f"{Config.S3_LOCATION}{file.filename}"

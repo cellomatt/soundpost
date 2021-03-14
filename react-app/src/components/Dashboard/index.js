@@ -43,11 +43,11 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="user-info__stats">
-            <h3 className="user-info__stats--label">Days Practiced This Week</h3>
+            <h3 className="user-info__stats--label">Days Practiced<br></br>This Week</h3>
             <div className="graph">
               <CircularProgressbar
                 value={stats.percentage}
-                text={`${stats.count}`}
+                text={`${stats.count}/7`}
                 styles={buildStyles(
                   {
                     pathColor: "#0061ff",

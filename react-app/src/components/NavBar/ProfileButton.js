@@ -57,7 +57,7 @@ export default function ProfileButton({setAuthenticated}) {
           </li>
           <li className="dropdown_li">
             <NavLink className="default" exact to="/stats" activeClassName="active">
-              Practice Stats
+              Your Stats
             </NavLink>
           </li>
           <li className="dropdown_li">

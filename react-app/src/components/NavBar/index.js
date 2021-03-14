@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import ProfileButton from './ProfileButton'
 import './NavBar.css'
@@ -12,7 +12,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
 
   function scroller() {
     let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    if (winScroll > 140) {
+    if (winScroll > 100) {
       setScrolled(true);
     } else { setScrolled(false); }
   }
