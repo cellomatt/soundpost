@@ -15,6 +15,40 @@ export const practicedToday = (userId) => async dispatch => {
   }
 }
 
+export const practiced = (userId, date) => async dispatch => {
+  let day = new Date(date);
+  const practiceDay = day.toISOString().split('T')[0];
+  const res = await fetch(`/api/practice/${userId}/edit`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      date: practiceDay
+    }),
+  })
+  if (res.ok) {
+    return res;
+  }
+}
+
+export const deleteOneLog = (userId, date) => async dispatch => {
+  let day = new Date(date);
+  const practiceDay = day.toISOString().split('T')[0];
+  const res = await fetch(`/api/practice/${userId}/edit`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      date: practiceDay
+    }),
+  })
+  if (res.ok) {
+    return res;
+  }
+}
+
 export const getPractice = (userId) => async dispatch => {
   const res = await fetch(`/api/practice/${userId}/today`)
   const data = await res.json();

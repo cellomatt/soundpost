@@ -1,4 +1,47 @@
+.green {
+  color: green;
+}
+
+
 .log__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   box-sizing: border-box;
-  margin: .7em .5em;
+  margin: .7em .3em;
+  font-size: 1.2em;
+  padding: .2em 1em;
+  border-radius: 5px;
+}
+
+.log__container:hover {
+background-color: #f5f5f5
+}
+
+.log__container--date {
+  font-weight: 600;
+  color: #333333;
+}
+
+.log__container--info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.log__container--modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.log__container--practiced {
+  color: #333333;
+}
+
+.red {
+  color: red;
 }

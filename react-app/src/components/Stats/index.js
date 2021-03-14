@@ -12,6 +12,7 @@ export default function Stats() {
   const user = useSelector(state => state.session.user)
   const stats = useSelector(state => state.stats)
   const orderedList = Object.values(stats.days.list).sort((a, b) => b.date - a.date)
+  const [change, setChange] = useState(false);
   const options = { dateStyle: 'long'};
 
   useEffect(() => {
@@ -94,7 +95,10 @@ export default function Stats() {
                   <LogContainer
                     key={day.date.toLocaleDateString('en-US', options)}
                     date={day.date.toLocaleDateString('en-US', options)}
-                    practiced={day.practiced}/>
+                    practiced={day.practiced}
+                    setChange={setChange}
+                    student={user}
+                    />
                 )
               })}
               </div>

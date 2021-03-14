@@ -1,5 +1,6 @@
 const SET_WEEKLY_PRACTICE = "stats/SET_WEEKLY_PRACTICE"
 const SET_ALL_STATS = "stats/SET_ALL_STATS"
+const USER_LOGOUT = "USER_LOGOUT"
 
 export const setWeeklyPractice = (value) => {
   return { type: SET_WEEKLY_PRACTICE, value }
@@ -21,7 +22,7 @@ export const getAllStats = (userId) => async dispatch => {
   const data = await res.json();
 
   data.days.list.forEach(day => {
-    day.date = new Date(day.date)
+    day.date = new Date(day.date + " 00:00")
   })
 
   dispatch(setAllStats(data));
@@ -31,10 +32,10 @@ export const getAllStats = (userId) => async dispatch => {
 const initialState = {
   thisweek: {count: 0, percentage: 0},
   thismonth: {count: 0, percentage: 0},
-  all: {count: 0, percentage: 0, logs: {}},
+  all: {count: 0, percentage: 0},
   days: {count: 0, list: {}},
   lessons: 0,
-  start_date: new Date()
+  start_date: null
 };
 
 export default function statsReducer(state = initialState, action) {
@@ -53,8 +54,7 @@ export default function statsReducer(state = initialState, action) {
         updateState.thismonth = action.data.thismonth
       }
       if (action.data.all !== 0) {
-        updateState.all.count = action.data.all.count
-        updateState.all.percentage = action.data.all.percentage
+        updateState.all = action.data.all
       }
       if (action.data.days) {
         updateState.days.count = action.data.days.count
@@ -64,6 +64,9 @@ export default function statsReducer(state = initialState, action) {
       }
       updateState.start_date = new Date(action.data.start_date)
       updateState.lessons = action.data.lessons;
+      return updateState;
+    case USER_LOGOUT:
+      updateState.days = {count: 0, list: {}}
       return updateState;
     default:
       return state;

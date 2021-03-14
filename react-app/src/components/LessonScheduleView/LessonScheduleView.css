@@ -1,3 +1,10 @@
+.date-range {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: .5em 0 2em;
+}
+
 .duration__input {
   background-color: rgba(255, 255, 255, 0.7);
   z-index: 99;
@@ -12,7 +19,7 @@
   border: 3px solid #0061ff;
   outline: none;
   font-size: 1.1em;
-  margin: 1em .3em 1.8em;
+  margin: .5em;
   text-align: center;
   font-family: "P22BayerW00-Universal";
   color: #222;
@@ -30,7 +37,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .lessons__list {
@@ -40,8 +46,6 @@
 .nice-dates {
   position: relative;
 }
-
-
 
 .nice-dates__container {
   display: flex;
@@ -55,15 +59,11 @@
 .nice-dates-popover {
   margin: 0 auto;
   max-width: 500px;
+  min-width: 300px;
   margin-bottom: 1.5em;
   z-index: 100;
   border: 1px solid black;
   border-radius: 5px;
-}
-
-.nice-dates-popover.-open {
-  position: absolute;
-
 }
 
 .nice-dates-day {
@@ -73,6 +73,9 @@
   border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
   border-top-width: calc(1px * var(--tw-divide-x-reverse));
   border-bottom-width: calc(1px * var(--tw-divide-x-reverse));
+  position: relative;
+  padding-top: .5em;
+
 }
 
 .nice-dates-day.-no-border {
@@ -91,14 +94,13 @@
 .nice-dates-day_date {
   color: #222;
   font-family: "P22BayerW00-Universal";
-  font-size: 1.7em;
+  font-size: 2em;
 }
 
 .nice-dates-day_month {
   font-family: "P22BayerW00-Universal";
-  font-size: .9em;
+  font-size: .3em;
   margin-bottom: .2em;
-  box-sizing: border-box;
 }
 
 .nice-dates-day.-disabled.-outside::before,
