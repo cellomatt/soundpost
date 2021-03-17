@@ -59,7 +59,7 @@ export default function Home() {
             <p>Copyright © 2021</p>
           </div>
         </div>
-        <a target="_blank" href="https://github.com/cellomatt">
+        <a target="_blank" rel="noreferrer" href="https://github.com/cellomatt">
           <div className="github">
           <img src={githubLogo} className="footer__img"></img>
             <div className="github__info">
@@ -67,7 +67,7 @@ export default function Home() {
             </div>
           </div>
         </a>
-        <a target="_blank" href="https://www.linkedin.com/in/mattkufchak/">
+        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mattkufchak/">
           <div className="linkedin">
           <img src={linkedinLogo} className="footer__img"></img>
             <div className="linkedin__info">
