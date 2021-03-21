@@ -42,22 +42,6 @@ export default function Dashboard() {
               <PracticeComponent user={user} setChange={setChange} />
             </div>
           </div>
-          <div className="user-info__stats">
-            <h3 className="user-info__stats--label">Days Practiced<br></br>This Week</h3>
-            <div className="graph">
-              <CircularProgressbar
-                value={stats.percentage}
-                text={`${stats.count}/7`}
-                styles={buildStyles(
-                  {
-                    pathColor: "#0061ff",
-                    trailColor: "rgba(190, 190, 190, 0.746)",
-                    textColor: "#0051d4"
-                  }
-                )}
-                />
-            </div>
-          </div>
         </div>
         <div className="lesson-info">
           <div className="lesson-info__assignment">
