@@ -103,3 +103,13 @@
     justify-content: space-between;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .footer {
+    padding: 0.5em;
+  }
+
+  .home__main {
+    padding: 1em 0em;
+  }
+}
