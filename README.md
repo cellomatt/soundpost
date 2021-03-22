@@ -1,4 +1,4 @@
-
+![soundpost](https://user-images.githubusercontent.com/70362985/112068656-5a0a8380-8b38-11eb-873e-603ca4a54c52.png)
 
 
 **Soundpost** is an app for music students to book lessons with their teachers, track their practice statistics, and access their practice assignments all in one place. Logged in students can quickly and easily choose lesson times from their teacher's availability, and upcoming lessons display directly in their dashboard. To ensure that they are practicing consistently, students can keep a record of which days they practice and look at interactive stats to see how they measure up. Students can also ensure that their practice is effective by viewing current and previous assignments from their teachers. 
