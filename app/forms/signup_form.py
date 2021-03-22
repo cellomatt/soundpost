@@ -5,13 +5,11 @@ from app.models import Student, Teacher
 
 
 def user_exists(form, field):
-    print("Checking if user exits", field.data)
     email = field.data
     user = Student.query.filter(Student.email_address == email).first()
     # or Teacher.query.filter(Teacher.email_address == email).first()
     if user:
         raise ValidationError("User is already registered.")
-
 
 class SignUpStudentForm(FlaskForm):
     first_name = StringField('first_name', validators=[DataRequired()])

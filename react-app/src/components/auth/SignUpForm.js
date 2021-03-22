@@ -49,6 +49,9 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
         setErrors(user.errors);
         window.scrollTo(0, 0);
       }
+    } else {
+      window.scrollTo(0, 0);
+      return setErrors(['Confirm Password field must be the same as the Password field']);
     }
   };
 
