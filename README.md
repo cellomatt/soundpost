@@ -1,10 +1,31 @@
-# Flask React Project
 
-This is the backend for the Flask React project.
 
-## Getting started
 
-1. Clone this repository (only this branch)
+**Soundpost** is an app for music students to book lessons with their teachers, track their practice statistics, and access their practice assignments all in one place. Logged in students can quickly and easily choose lesson times from their teacher's availability, and upcoming lessons display directly in their dashboard. To ensure that they are practicing consistently, students can keep a record of which days they practice and look at interactive stats to see how they measure up. Students can also ensure that their practice is effective by viewing current and previous assignments from their teachers. 
+
+### Try the live site <a href=https://soundpost.herokuapp.com/>here</a>. <b>|</b> View the database schema and feature list in the <a href="https://github.com/cellomatt/soundpost/wiki">Wiki</a>.
+
+
+
+# Tech Stack
+Soundpost uses the following tools, frameworks, and key packages:
+
+### [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) (with [PostgreSQL](https://www.postgresql.org/))
+### [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+### [React](https://reactjs.org/)
+### [Redux](https://react-redux.js.org/)
+### [AWS S3](https://aws.amazon.com/s3/)
+### [React Nice Dates](https://reactnicedates.hernansartorio.com/)
+### [React Circular Progressbar](https://www.npmjs.com/package/react-circular-progressbar)
+### [react-modal](https://www.npmjs.com/package/react-modal)
+### Hosted on [Heroku](https://www.heroku.com)
+
+
+
+
+## Running Soundpost Locally
+
+1. Clone this repository
 
    ```bash
    git clone https://github.com/cellomatt/soundpost
@@ -40,59 +61,9 @@ This is the backend for the Flask React project.
 
 6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
 
-***
 *IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
-
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
-
-*ALSO IMPORTANT!*
    psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
+   There is a layer in the Dockerfile that will install psycopg2 (not binary).
 ***
 
-## Deploy to Heroku
 
-1. Create a new project on Heroku
-2. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-3. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-4. Run
-
-   ```bash
-   heroku login
-   ```
-
-5. Login to the heroku container registry
-
-   ```bash
-   heroku container:login
-   ```
-
-6. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://soundpost.herokuapp.com"
-7. Push your docker container to heroku from the root directory of your project.
-   This will build the dockerfile and push the image to your heroku container registry
-
-   ```bash
-   heroku container:push web -a soundpost
-   ```
-
-8. Release your docker container to heroku
-
-   ```bash
-   heroku container:release web -a soundpost
-   ```
-
-9. set up your database:
-
-   ```bash
-   heroku run -a soundpost flask db upgrade
-   heroku run -a soundpost flask seed all
-   ```
-
-10. Under Settings find "Config Vars" and add any additional/secret .env variables.
-
-11. profit
