@@ -45,3 +45,19 @@ background-color: #f5f5f5
 .red {
   color: red;
 }
+
+@media screen and (max-width: 525px) {
+  .log__container {
+    padding: .2em;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .log__container--modal {
+    justify-self: center;
+    width: 100%;
+  }
+  .btn__tertiary {
+    padding: .3em .9em;
+  }
+}
