@@ -41,6 +41,7 @@
 
 .lessons__list {
   width: 45%;
+  min-width: 500px;
 }
 
 .nice-dates {
@@ -143,7 +144,26 @@
   color: #222;
 }
 
-.title__lesson {
-  font-size: 3em;
-  padding: 0 0 .8em;
+@media screen and (max-width: 700px) {
+  .instructions {
+    padding: 0 1.5em;
+  }
+
+  .lessons__list {
+    width: 90%;
+    min-width: 90%;
+  }
+}
+
+
+@media screen and (max-width: 570px) {
+  .nice-dates-popover {
+    max-width: 300px;
+    position: absolute;
+  }
+
+  .nice-dates-popover.-open {
+    max-width: 300px;
+    position: relative;
+  }
 }

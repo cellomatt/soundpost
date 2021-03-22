@@ -213,3 +213,20 @@
     display: flex;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .dropdown {
+    min-width: 100%;
+  }
+
+  .logo {
+    min-width: 100px;
+    max-width: 80%;
+    margin: 0 1em;
+    padding: 0;
+  }
+
+  .nav {
+    margin: 1em .5em 0 0;
+  }
+}

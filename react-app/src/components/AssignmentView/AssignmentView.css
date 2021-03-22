@@ -1,4 +1,13 @@
 .assignments__list {
   max-width: 40%;
   padding: 2.5em;
+  min-width: 560px;
+}
+
+@media screen and (max-width: 630px) {
+  .assignments__list {
+    max-width: 90%;
+    min-width: 90%;
+    padding: 2.5em 0;
+  }
 }

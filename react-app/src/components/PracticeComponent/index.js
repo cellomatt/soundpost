@@ -26,7 +26,7 @@ export default function PracticeComponent({user, setChange}) {
   return (
     <div className={`checkbox__container ${practiced ? "practiced" : ""}`}>
       {!practiced && <button className="checkbox__button" onClick={practiceSubmit}>
-        <div className="checkbox__text">Did you practice today? <i className="far fa-square"></i></div>
+        <div className="checkbox__text">Did you practice today?</div>
       </button>
       }
       {practiced && <div className="checkbox__text ">Keep up the good work! <i className="far fa-check-square"></i></div>}

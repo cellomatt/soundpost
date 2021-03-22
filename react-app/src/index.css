@@ -146,6 +146,7 @@ body {
   flex-direction: row;
   justify-content: center;
   margin-top: 1em;
+  flex-wrap: wrap;
 }
 
 .form__errors {
@@ -181,6 +182,7 @@ body {
 }
 
 html {
+  width: 100%;
   margin-left: calc(100vw - 100%);
   overflow-y: overlay;
   overflow-x: hidden;
@@ -211,6 +213,7 @@ input::-webkit-file-upload-button:hover {
 .title__main {
   font-size: 3em;
   padding: 0 0 .8em;
+  text-align: center;
 }
 
 .vertical-center {
@@ -231,4 +234,27 @@ input::-webkit-file-upload-button:hover {
 
 ::-webkit-scrollbar-track-piece {
   display: none;
+}
+
+
+@media screen and (max-width: 525px) {
+  .form {
+    width: 90%;
+    margin: 1em;
+    box-sizing: border-box;
+  }
+
+  .btn__secondary {
+    margin: .2em;
+  }
+
+  .main {
+    padding-top: 9.5em;
+  }
+
+  .title__main {
+    width: 90%;
+    font-size: 2.5em;
+    /* padding: 0 1em .8em; */
+  }
 }

@@ -52,10 +52,10 @@ export default function LessonScheduleView() {
 
   return (
     <div className="main lesson-schedule-main">
-      <h1 className="title__lesson">Schedule a Lesson</h1>
+      <h1 className="title__main">Schedule a Lesson</h1>
       {user !== null &&
       <>
-      <div>
+      <div className="instructions">
         Select a range of dates and a lesson duration to view {user.teacher.first_name} {user.teacher.last_name}'s available lesson times.
       </div>
       <form>
