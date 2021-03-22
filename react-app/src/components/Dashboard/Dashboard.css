@@ -22,7 +22,6 @@
   box-sizing: border-box;
   margin: 0 2em;
   width: 50%;
-  min-width: 390px;
   background-color: rgb(66, 255, 220, .5);
   border-radius: 20px;
   padding: 2em;
@@ -125,4 +124,28 @@
 
 .title {
   padding-bottom: .6em;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .lesson-info {
+    min-width: 450px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .dashboard_main {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .lesson-info {
+    min-width: 100%;
+  }
+
+  .user-info {
+    min-width: 100%;
+  }
+
 }

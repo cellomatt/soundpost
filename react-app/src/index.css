@@ -213,6 +213,7 @@ input::-webkit-file-upload-button:hover {
 .title__main {
   font-size: 3em;
   padding: 0 0 .8em;
+  text-align: center;
 }
 
 .vertical-center {
@@ -249,5 +250,11 @@ input::-webkit-file-upload-button:hover {
 
   .main {
     padding-top: 9.5em;
+  }
+
+  .title__main {
+    width: 90%;
+    font-size: 2.5em;
+    /* padding: 0 1em .8em; */
   }
 }
