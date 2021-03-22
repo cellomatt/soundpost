@@ -69,7 +69,6 @@
   padding: 0 0 .9em;
 }
 
-
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -81,4 +80,33 @@
 
 ::-webkit-scrollbar-track-piece {
   display: none;
+}
+
+@media screen and (max-width: 1673px) {
+  .stats-main__stats {
+    width: 75%
+  }
+}
+
+@media screen and (max-width: 1338px) {
+  .stats-main__stats {
+    width: 100%
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .logs__container {
+    width: 90%;
+    min-width: 90%;
+  }
+
+  .stats-main__logs {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .logs__container {
+    padding: 2em;
+  }
 }

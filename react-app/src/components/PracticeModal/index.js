@@ -20,7 +20,6 @@ export default function PracticeModal({practice, setPractice, date, setChange, s
       backgroundColor: "rgba(255, 255, 255, 0.95)",
       borderRadius: "5px",
       border: "none",
-      maxWidth: "400px",
       boxSizing: "border-box",
     },
     overlay : {
