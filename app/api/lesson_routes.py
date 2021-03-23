@@ -31,8 +31,7 @@ def scheduled_lessons(id):
 def delete_lesson(id):
     lesson = TimeSlot.query.get(id)
     lesson2 = TimeSlot.query.filter(TimeSlot.start_time == lesson.end_time and
-                                    TimeSlot.student_id ==
-                                    lesson.student_id).first()
+                                    TimeSlot.student_id == lesson.student_id).first()
     if lesson2:
         lesson2.student_id = None
         db.session.add(lesson2)
@@ -58,16 +57,14 @@ def get_availability(id):
         i = 0
         while i < len(lessons):
             if i == len(lessons) - 1:
-                if lessons[i].end_time - lessons[i].start_time ==
-                timedelta(minutes=30):
+                if lessons[i].end_time - lessons[i].start_time == timedelta(minutes=30):
                     lessons.pop(i)
                     break
             elif lessons[i].end_time == lessons[i+1].start_time:
                 lessons[i].end_time = lessons[i+1].end_time
                 lessons.pop(i+1)
             elif i == 0:
-                if lessons[i].end_time - lessons[i].start_time ==
-                timedelta(minutes=30):
+                if lessons[i].end_time - lessons[i].start_time == timedelta(minutes=30):
                     lessons.pop(i)
                     continue
             i += 1
@@ -91,8 +88,7 @@ def schedule_lesson(id):
 
     lesson2 = None
     if duration == "60":
-        lesson2 = TimeSlot.query.filter(TimeSlot.start_time ==
-                                        lesson.end_time).first()
+        lesson2 = TimeSlot.query.filter(TimeSlot.start_time == lesson.end_time).first()
         lesson2.student_id = student_id
         db.session.add(lesson2)
         scheduled["end_time"] = lesson2.end_time.isoformat(),
