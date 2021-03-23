@@ -11,6 +11,7 @@ def user_exists(form, field):
     if user:
         raise ValidationError("User is already registered.")
 
+
 class SignUpStudentForm(FlaskForm):
     first_name = StringField('first_name', validators=[DataRequired()])
     last_name = StringField('last_name', validators=[DataRequired()])
