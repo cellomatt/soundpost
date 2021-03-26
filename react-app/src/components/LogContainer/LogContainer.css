@@ -52,7 +52,15 @@
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 412px) {
+  .log__container--info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
   .log__container--modal {
     justify-self: center;
     width: 100%;
