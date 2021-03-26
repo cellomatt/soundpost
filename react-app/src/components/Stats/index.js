@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import LogContainer from '../LogContainer'
+import Footer from '../Footer'
 import './Stats.css';
 import * as statsActions from '../../store/stats'
 
@@ -106,6 +107,7 @@ export default function Stats() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

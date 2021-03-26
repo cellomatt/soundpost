@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as assignmentActions from '../../store/assignment'
 import AssignmentContainer from '../AssignmentContainer'
+import Footer from '../Footer'
 import "./AssignmentView.css"
 
 export default function AssignmentView() {
@@ -31,6 +32,7 @@ export default function AssignmentView() {
         </>
         }
       </div>
+      <Footer />
     </div>
   )
 }

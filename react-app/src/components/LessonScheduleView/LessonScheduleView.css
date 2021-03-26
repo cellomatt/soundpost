@@ -2,14 +2,23 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: .5em 0 2em;
+  /* height: 60px; */
+}
+
+#duration {
+  text-align: center;
+  text-align-last: center;
 }
 
 .duration__input {
   background-color: rgba(255, 255, 255, 0.7);
   z-index: 99;
-  margin-top: 2em;
   cursor: pointer;
+  padding: .5em;
+  font-size: 1.1em;
+  margin: .5em;
+  font-family: "P22BayerW00-Universal";
+  color: #222;
 }
 
 .input {
@@ -32,11 +41,24 @@
   color: #222;
 }
 
+.input-div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
 .lesson-schedule-main {
-  min-height: 1000px;
+  min-height: 800px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.lesson-schedule-footer {
+  position: absolute;
 }
 
 .lessons__list {
@@ -53,8 +75,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  width: 60%;
+  margin: .5em 0 2em;
+  width: 80%;
+  flex-wrap: wrap;
 }
 
 .nice-dates-popover {
@@ -157,6 +180,10 @@
 
 
 @media screen and (max-width: 570px) {
+  .duration__input {
+    width: 203.09px;
+  }
+
   .nice-dates-popover {
     max-width: 300px;
     position: absolute;
@@ -165,5 +192,14 @@
   .nice-dates-popover.-open {
     max-width: 300px;
     position: relative;
+  }
+
+  .nice-dates__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* height: 200px; */
   }
 }

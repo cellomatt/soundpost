@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import AssignmentContainer from '../AssignmentContainer'
 import LessonContainer from '../LessonContainer'
 import PracticeComponent from '../PracticeComponent'
+import Footer from '../Footer'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import * as assignmentActions from '../../store/assignment'
 import * as lessonActions from '../../store/lesson'
@@ -78,6 +79,7 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
