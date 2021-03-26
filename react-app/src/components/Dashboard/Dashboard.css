@@ -43,6 +43,10 @@
   font-weight: 400;
 }
 
+.lesson-info__link:hover {
+  text-decoration: none;
+}
+
 .user-info {
   display: flex;
   flex-direction: column;
@@ -93,7 +97,7 @@
 }
 
 .user-info__primary {
-  background-color: rgba(190, 190, 190, 0.746);
+  background-color: rgba(255, 255, 255, 0.7);
   box-sizing: border-box;
   border-radius: 20px;
   padding: 1.7em;

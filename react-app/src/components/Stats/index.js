@@ -61,7 +61,7 @@ export default function Stats() {
             </div>
           </div>
           <div className="user-info__stats stats__container">
-            <h3 className="user-info__stats--label">Days Practiced Since You Joined Soundpost</h3>
+            <h3 className="user-info__stats--label">Days Practiced Since Joining Soundpost</h3>
             <div className="graph">
               <CircularProgressbar
                 value={stats.all.percentage}

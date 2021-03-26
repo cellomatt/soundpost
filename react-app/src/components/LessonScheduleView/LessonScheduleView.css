@@ -14,7 +14,7 @@
   background-color: rgba(255, 255, 255, 0.7);
   z-index: 99;
   cursor: pointer;
-  padding: .5em;
+  padding: .452em .5em;
   font-size: 1.1em;
   margin: .5em;
   font-family: "P22BayerW00-Universal";
@@ -180,6 +180,10 @@
 
 
 @media screen and (max-width: 570px) {
+  .date-range {
+    height: auto;
+  }
+
   .duration__input {
     width: 203.09px;
   }
@@ -200,6 +204,6 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    /* height: 200px; */
   }
+
 }

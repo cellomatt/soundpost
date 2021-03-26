@@ -56,8 +56,8 @@ export default function PracticeModal({practice, setPractice, date, setChange, s
 
   return (
     <>
-    {practice && <button className="btn__tertiary modal__btn" onClick={() => modalView()}>Edit</button>}
-    {!practice && <button className="btn__tertiary modal__btn" onClick={() => modalView()}>Edit</button>}
+    {practice && <button className="btn__primary modal__btn" onClick={() => modalView()}>Edit</button>}
+    {!practice && <button className="btn__primary modal__btn" onClick={() => modalView()}>Edit</button>}
     <Modal style={customStyles} isOpen={showModal} ariaHideApp={false} onRequestClose={onRequestClose}>
       {
         !practice ?
@@ -66,7 +66,7 @@ export default function PracticeModal({practice, setPractice, date, setChange, s
                   <i className="fas fa-times"></i>
               </button>
               <p className="modal__message">Did you practice on {date}?</p>
-              <button className="btn__tertiary modal__btn" onClick={createPractice}>Confirm</button>
+              <button className="btn__primary modal__btn" onClick={createPractice}>Confirm</button>
           </div>
         :
           <div className="modal__popup-container">
@@ -74,7 +74,7 @@ export default function PracticeModal({practice, setPractice, date, setChange, s
                   <i className="fas fa-times"></i>
               </button>
               <p className="modal__message">Delete practice log for {date}?</p>
-              <button className="btn__tertiary modal__btn" onClick={deletePractice}>Confirm</button>
+              <button className="btn__primary modal__btn" onClick={deletePractice}>Confirm</button>
           </div>
     }
     </Modal>

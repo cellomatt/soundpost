@@ -41,7 +41,7 @@
 }
 
 .logs__container {
-  background-color: rgba(190, 190, 190, 0.746);
+  background-color: rgba(255, 255, 255, 0.7);
   box-sizing: border-box;
   border-radius: 20px;
   padding: 2.5em;
@@ -59,7 +59,8 @@
   box-sizing: border-box;
   margin-bottom: .5em;
   max-height: 400px;
-  border-radius: 5px;
+  border-radius: 7px;
+  border: 2px solid #333;
   padding: .5em;
   background-color: rgba(255, 255, 255, 0.7);
 }

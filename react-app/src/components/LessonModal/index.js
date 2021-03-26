@@ -53,8 +53,8 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange,
 
   return (
     <>
-    {scheduled && <button className="btn__tertiary modal__btn" onClick={() => modalView()}>Cancel Lesson</button>}
-    {!scheduled && <button className="btn__tertiary modal__btn" onClick={() => modalView()}>Schedule Lesson</button>}
+    {scheduled && <button className="btn__primary modal__btn" onClick={() => modalView()}>Cancel Lesson</button>}
+    {!scheduled && <button className="btn__primary modal__btn" onClick={() => modalView()}>Schedule Lesson</button>}
     <Modal style={customStyles} isOpen={showModal} ariaHideApp={false} onRequestClose={onRequestClose}>
       {
         !scheduled ?
@@ -63,7 +63,7 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange,
                   <i className="fas fa-times"></i>
               </button>
               <p className="modal__message">Confirm schedule lesson on {lesson.start_time.toLocaleDateString('en-US', {dateStyle: 'long'})} at {lesson.start_time.toLocaleTimeString('en-US', { timeStyle: "short" })}?</p>
-              <button className="btn__tertiary modal__btn" onClick={scheduleLesson}>Confirm</button>
+              <button className="btn__primary modal__btn" onClick={scheduleLesson}>Confirm</button>
           </div>
         :
           <div className="modal__popup-container">
@@ -71,7 +71,7 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange,
                   <i className="fas fa-times"></i>
               </button>
               <p className="modal__message">Confirm cancel lesson on {lesson.start_time.toLocaleDateString('en-US', {dateStyle: 'long'})} at {lesson.start_time.toLocaleTimeString('en-US', { timeStyle: "short" })}?</p>
-              <button className="btn__tertiary modal__btn" onClick={deleteLesson}>Confirm</button>
+              <button className="btn__primary modal__btn" onClick={deleteLesson}>Confirm</button>
           </div>
     }
     </Modal>
