@@ -41,7 +41,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
   return (
     <div className="main">
-      <form className="form " onSubmit={onLogin}>
+      <form className="form login-form" onSubmit={onLogin}>
         <h1 className="form__title">Log In</h1>
         {errors.length > 0 &&
         <div className="form__div form__errors">
