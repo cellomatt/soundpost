@@ -4,15 +4,19 @@
   border: none;
   font-size: 1em;
   align-self: flex-end;
+  color: #333;
 }
 
 .btn__x:hover {
+  color: black;
   text-shadow: 0 0 1px rgba(0, 0, 0, 1)
 }
 
 .modal__btn {
-  margin: .8em auto;
+  margin: .8em .4em;
   justify-self: center;
+  font-size: 1.4em;
+  padding: .2em .4em;
 }
 
 .modal__message {

@@ -43,6 +43,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 11em;
+  padding-bottom: 24em;
   box-sizing: border-box;
   left: 0;
   top: 0;

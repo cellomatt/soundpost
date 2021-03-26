@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import LogContainer from '../LogContainer'
+import Footer from '../Footer'
 import './Stats.css';
 import * as statsActions from '../../store/stats'
 
@@ -60,7 +61,7 @@ export default function Stats() {
             </div>
           </div>
           <div className="user-info__stats stats__container">
-            <h3 className="user-info__stats--label">Days Practiced Since You Joined Soundpost</h3>
+            <h3 className="user-info__stats--label">Days Practiced Since Joining Soundpost</h3>
             <div className="graph">
               <CircularProgressbar
                 value={stats.all.percentage}
@@ -106,6 +107,7 @@ export default function Stats() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard"
 import LessonScheduleView from "./components/LessonScheduleView"
 import AssignmentView from "./components/AssignmentView"
 import Stats from "./components/Stats"
+import Footer from './components/Footer'
 import { authenticate } from "./services/auth";
 import { setUser } from "./store/session"
 import {ReactComponent as Sketch} from "./images/klee.svg"

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signUp } from '../../services/auth';
 import { setUser } from "../../store/session"
 import * as teacherActions from '../../store/teacher'
+import Footer from '../Footer'
 import './SignUpForm.css'
 
 const SignUpForm = ({authenticated, setAuthenticated}) => {
@@ -185,6 +186,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
             <button className="btn__secondary" type="submit">Sign Up</button>
           </div>
         </form>
+        <Footer />
       </div>
   );
 };

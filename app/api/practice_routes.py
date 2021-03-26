@@ -81,6 +81,7 @@ def all_stats(id):
     student = Student.query.get(id)
     start_date = student.created_at
     today = date.today()
+    now = datetime.now()
     days = today - start_date
     total_days = days.days + 1
     delta = today - start_date
@@ -95,7 +96,7 @@ def all_stats(id):
         (today - timedelta(days=30)), today)).filter(
         PracticeLog.student_id == id).count()
     lessons = TimeSlot.query.filter(TimeSlot.student_id == id).filter(
-        TimeSlot.start_time.between(start_date, today - timedelta(days=1))
+        TimeSlot.start_time.between(start_date, now)
         ).order_by(TimeSlot.id).all()
     lessons_count = 0
 

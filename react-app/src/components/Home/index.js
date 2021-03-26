@@ -4,8 +4,7 @@ import {ReactComponent as Calendar} from './calendar.svg';
 import {ReactComponent as Checkmark} from './checkmark.svg';
 import {ReactComponent as Music} from './music.svg';
 import {ReactComponent as MusicNote} from './music-note.svg';
-import githubLogo from './GitHub-Mark-Light-120px-plus.png'
-import linkedinLogo from './LI-In-Bug.png'
+import Footer from '../Footer'
 
 export default function Home() {
   document.title = "Soundpost — Home"
@@ -51,31 +50,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="footer">
-        <div className="about">
-          <img src="https://soundpost-app.s3.us-east-2.amazonaws.com/matt-1.jpg" className="footer__img"></img>
-          <div className="about__info">
-            <p>Designed and developed by Matt Kufchak</p>
-            <p>Copyright © 2021</p>
-          </div>
-        </div>
-        <a target="_blank" rel="noreferrer" href="https://github.com/cellomatt">
-          <div className="github">
-          <img src={githubLogo} className="footer__img"></img>
-            <div className="github__info">
-              <p>Find me on GitHub</p>
-            </div>
-          </div>
-        </a>
-        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mattkufchak/">
-          <div className="linkedin">
-          <img src={linkedinLogo} className="footer__img"></img>
-            <div className="linkedin__info">
-              <p>Connect with me on LinkedIn</p>
-            </div>
-          </div>
-        </a>
-      </div>
+      <Footer />
     </div>
     </>
   )
