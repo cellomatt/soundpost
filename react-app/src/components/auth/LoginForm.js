@@ -56,7 +56,6 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             name="email"
             className="form__input"
             type="text"
-            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -67,7 +66,6 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             name="password"
             className="form__input"
             type="password"
-            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
