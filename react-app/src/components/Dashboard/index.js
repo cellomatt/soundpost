@@ -44,7 +44,7 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-        <div className="lesson-info">
+        <div className="info-container">
           <div className="lesson-info__assignment">
             <h1 className="title">Practice Assignment</h1>
             <div>

@@ -7,7 +7,7 @@
 }
 
 
-h1,
+/* h1, */
 h2,
 h3,
 h4,
@@ -31,6 +31,10 @@ nav {
   outline: 0;
   text-decoration: none;
   font-family: "Rubik", sans-serif;
+}
+
+h1 {
+  font-family: "P22BayerW00-Universal";
 }
 
 body {
@@ -212,9 +216,12 @@ input::-webkit-file-upload-button:hover {
 }
 
 .title__main {
-  font-size: 3em;
-  padding: 0 0 .8em;
+  font-size: 3.5em;
+  padding: 0 0 .5em;
   text-align: center;
+  margin: 0 0 .2em;
+  color: #0061FF;
+  font-weight: 400;
 }
 
 .vertical-center {
