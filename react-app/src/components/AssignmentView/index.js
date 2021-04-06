@@ -17,7 +17,7 @@ export default function AssignmentView() {
 
   return (
     <div className="main">
-      {/* <div className=""> */}
+      <div className="info-container">
         <h1 className="title__main">Practice Assignments</h1>
         <div className="assignments__list">
           {assignments === null &&
@@ -33,7 +33,7 @@ export default function AssignmentView() {
           </>
           }
         </div>
-      {/* </div> */}
+      </div>
       <Footer />
     </div>
   )

@@ -193,6 +193,19 @@ html {
   overflow-x: hidden;
 }
 
+.info-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0 2em;
+  background-color: rgb(66, 255, 220, .5);
+  border-radius: 20px;
+  padding: 2em;
+  flex-wrap: wrap;
+}
+
 input::-webkit-file-upload-button {
   margin-right: .5em;
   outline: none;
@@ -222,6 +235,7 @@ input::-webkit-file-upload-button:hover {
   margin: 0 0 .2em;
   color: #0061FF;
   font-weight: 400;
+  width: 100%;
 }
 
 .vertical-center {
@@ -244,6 +258,23 @@ input::-webkit-file-upload-button:hover {
   display: none;
 }
 
+@media screen and (max-width: 1175px) {
+  .info-container {
+    width: 60%
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .info-container {
+    width: 70%
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .info-container {
+    width: 90%
+  }
+}
 
 @media screen and (max-width: 525px) {
   .form {
@@ -266,8 +297,6 @@ input::-webkit-file-upload-button:hover {
   }
 
   .title__main {
-    width: 90%;
-    font-size: 2.5em;
-    /* padding: 0 1em .8em; */
+    font-size: 3em;
   }
 }
