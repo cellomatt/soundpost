@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField
+from wtforms import StringField, BooleanField
 from wtforms.validators import DataRequired, Email, ValidationError
 from app.models import Student, Teacher
 
@@ -7,8 +7,11 @@ from app.models import Student, Teacher
 def user_exists(form, field):
     print("Checking if user exists", field.data)
     email = field.data
-    user = Student.query.filter(Student.email_address == email).first()
-    # or Teacher.query.filter(Teacher.email_address == email).first()
+    student = form.data['student']
+    if student:
+        user = Student.query.filter(Student.email_address == email).first()
+    else:
+        user = Teacher.query.filter(Teacher.email_address == email).first()
     if not user:
         raise ValidationError("Email provided not found.")
 
@@ -33,3 +36,4 @@ class LoginForm(FlaskForm):
     email = StringField('email', validators=[DataRequired(), user_exists])
     password = StringField('password', validators=[
                            DataRequired(), password_matches])
+    student = BooleanField('student')
