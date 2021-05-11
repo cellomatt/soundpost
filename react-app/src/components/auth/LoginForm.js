@@ -6,7 +6,7 @@ import { setUser } from "../../store/session"
 import Footer from '../Footer'
 import './LoginForm.css'
 
-const LoginForm = ({ authenticated, setAuthenticated }) => {
+const LoginForm = ({ authenticated, setAuthenticated, setStudent }) => {
   document.title = "Soundpost — Login"
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
@@ -18,6 +18,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     e.preventDefault();
     const user = await login(email, password, role);
     if (!user.errors) {
+      setStudent(role);
       dispatch(setUser(user));
       setAuthenticated(true);
     } else {
@@ -29,6 +30,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     e.preventDefault();
     const demoUser = await login('demo@email.com', 'password', role);
     if (!demoUser.errors) {
+      setStudent(role);
       dispatch(setUser(demoUser))
       setAuthenticated(true);
     } else {

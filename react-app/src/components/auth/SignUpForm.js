@@ -8,7 +8,7 @@ import * as statesActions from '../../store/states'
 import Footer from '../Footer'
 import './SignUpForm.css'
 
-const SignUpForm = ({authenticated, setAuthenticated}) => {
+const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
   document.title = "Soundpost — Signup"
   const dispatch = useDispatch();
   const history = useHistory();
@@ -53,6 +53,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
       const user = await signUp({first_name, last_name, email_address, password,
                               instrument, phone, parent_name, photo, teacher_id});
       if (!user.errors) {
+        setStudent(role);
         dispatch(setUser(user));
         setAuthenticated(true);
         history.push("/");

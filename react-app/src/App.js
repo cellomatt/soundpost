@@ -16,6 +16,7 @@ import {ReactComponent as Sketch} from "./images/klee.svg"
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
+  const [student, setStudent] = useState(null)
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
@@ -45,14 +46,22 @@ function App() {
           <LoginForm
             authenticated={authenticated}
             setAuthenticated={setAuthenticated}
+            setStudent={setStudent}
           />
         </Route>
         <Route exact path="/signup" >
-          <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
+          <SignUpForm
+            authenticated={authenticated}
+            setAuthenticated={setAuthenticated}
+            setStudent={setStudent}
+          />
         </Route>
-        <ProtectedRoute exact path="/"  authenticated={authenticated}>
+        {student && <ProtectedRoute exact path="/"  authenticated={authenticated}>
           <Dashboard authenticated={authenticated} />
-        </ProtectedRoute>
+        </ProtectedRoute>}
+        {!student && <ProtectedRoute exact path="/"  authenticated={authenticated}>
+          <Home authenticated={authenticated} />
+        </ProtectedRoute>}
         <ProtectedRoute exact path="/schedule"  authenticated={authenticated}>
           <LessonScheduleView authenticated={authenticated} />
         </ProtectedRoute>
