@@ -17,8 +17,12 @@ def password_matches(form, field):
     print("Checking if password matches")
     password = field.data
     email = form.data['email']
-    user = Student.query.filter(Student.email_address == email).first()
-    # or Teacher.query.filter(Teacher.email_address == email).first()
+    student = form.data['student']
+    if student:
+        user = Student.query.filter(Student.email_address == email).first()
+    else:
+        user = Teacher.query.filter(Teacher.email_address == email).first()
+
     if not user:
         raise ValidationError("No such user exists.")
     if not user.check_password(password):
