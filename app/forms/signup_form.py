@@ -11,6 +11,7 @@ def user_exists(form, field):
     if user:
         raise ValidationError("User is already registered.")
 
+
 class SignUpStudentForm(FlaskForm):
     first_name = StringField('first_name', validators=[DataRequired()])
     last_name = StringField('last_name', validators=[DataRequired()])
@@ -25,17 +26,17 @@ class SignUpStudentForm(FlaskForm):
     created_at = StringField('created_at')
 
 
-# class SignUpTeacherForm(FlaskForm):
-#     first_name = StringField('first_name', validators=[DataRequired()])
-#     last_name = StringField('last_name', validators=[DataRequired()])
-#     email_address = StringField('email', validators=[DataRequired(), Email(),
-#                                 user_exists])
-#     password = StringField('password', validators=[DataRequired()])
-#     instrument = StringField('instrument', validators=[DataRequired()])
-#     phone = StringField('phone', validators=[DataRequired()])
-#     street_address = StringField('street_address',
-#                                   validators=[DataRequired()])
-#     city = StringField('city', validators=[DataRequired()])
-#     state_id = IntegerField('state_id', validators=[DataRequired()])
-#     zip = IntegerField('zip', validators=[DataRequired()])
-#     photo = FileField('photo', validators=[DataRequired()])
+class SignUpTeacherForm(FlaskForm):
+    first_name = StringField('first_name', validators=[DataRequired()])
+    last_name = StringField('last_name', validators=[DataRequired()])
+    email_address = StringField('email', validators=[DataRequired(), Email(),
+                                user_exists])
+    instrument = StringField('instrument', validators=[DataRequired()])
+    phone = StringField('phone', validators=[DataRequired()])
+    street_address = StringField('street_address',
+                                 validators=[DataRequired()])
+    city = StringField('city', validators=[DataRequired()])
+    state_id = IntegerField('state_id', validators=[DataRequired()])
+    zip = IntegerField('zip', validators=[DataRequired()])
+    photo = FileField('photo', validators=[DataRequired()])
+    password = StringField('password', validators=[DataRequired()])
