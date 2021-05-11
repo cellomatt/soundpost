@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signUp } from '../../services/auth';
 import { setUser } from "../../store/session"
 import * as teacherActions from '../../store/teacher'
+import * as statesActions from '../../store/states'
 import Footer from '../Footer'
 import './SignUpForm.css'
 
@@ -12,6 +13,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const teachers = useSelector(state => state.teachers.all)
+  const states = useSelector(state => state.states.all)
   const [loaded, setLoaded] = useState(false);
   const [role, setRole] = useState(true)
   const [email_address, setEmailAddress] = useState("");
@@ -24,13 +26,18 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const [parent_name, setParentName] = useState("");
   const [photo, setPhoto] = useState("");
   const [teacher_id, setTeacherId] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [stateId, setStateId] = useState("");
   const [errors, setErrors] = useState([]);
   const teachersArray = Object.values(teachers)
+  const statesArray = Object.values(states)
 
   useEffect(() => {
     (async () => {
       const data = await dispatch(teacherActions.getAllTeachers());
-      if (!data.errors) {
+      const stateData = await dispatch(statesActions.getAllStates());
+      if (!data.errors && !stateData.errors) {
         setLoaded(true);
       }
     })();
@@ -77,7 +84,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           }
           <p className="required_label">* indicates a required field</p>
           <div className="form__div">
-            <label htmlFor="student">* Student </label>
+            <label htmlFor="student">Student </label>
             <input
               id="student"
               type="radio"
@@ -95,6 +102,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
               value="false"
               checked={role === false}
             ></input>
+            <span> *</span>
           </div>
           <div className="form__div">
             <label>First Name *</label>
@@ -140,7 +148,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
               required={true}
             ></input>
           </div>
-          <div className="form__div">
+          {role && <div className="form__div">
             <label>Parent or Guardian Name </label>
             <input
               type="text"
@@ -149,7 +157,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
               onChange={(e) => setParentName(e.target.value)}
               value={parent_name}
             ></input>
-          </div>
+          </div>}
           <div className="form__div">
             <label>Instrument *</label>
             <input
@@ -161,7 +169,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
               required={true}
             ></input>
           </div>
-          <div className="form__div">
+          {role && <div className="form__div">
             <label>Teacher *</label>
             {loaded && <select
               id="teacher_id"
@@ -179,10 +187,59 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
                 }
             </select>
             }
+          </div>}
+          {!role &&
+          <>
+            <div className="form__div">
+              <label>Street Address *</label>
+              <input
+                type="text"
+                className="form__input"
+                name="street_address"
+                onChange={(e) => setAddress(e.target.value)}
+                value={address}
+                required={true}
+              ></input>
+            </div>
+            <div className="form__div">
+              <label>City *</label>
+              <input
+                type="text"
+                className="form__input"
+                name="city"
+                onChange={(e) => setCity(e.target.value)}
+                value={city}
+                required={true}
+              ></input>
+            </div>
+            <div className="form__div">
+              <label>State *</label>
+              {loaded && <select
+                id="state_id"
+                value={stateId}
+                className="form__input"
+                onChange={(e) => setStateId(e.target.value)}
+                required={true}
+              >
+                {statesArray.map(state =>
+                <option value={state.id} key={state.id}>
+                  {`${state.name}`}
+                </option>
+                )
+                }
+              </select>
+              }
           </div>
+          </>
+          }
           <div className="form__div">
-            <label>Upload A Profile Photo </label>
-            <input className="file-input" type="file" onChange={e => setPhoto(e.target.files[0])}/>
+            <label>Upload A Profile Photo {!role && <span> *</span>}</label>
+            <input
+              className="file-input"
+              type="file"
+              onChange={e => setPhoto(e.target.files[0])}
+              required={!role}
+              />
           </div>
           <div className="form__div">
             <label>Password *</label>

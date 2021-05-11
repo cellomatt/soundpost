@@ -7,7 +7,7 @@ teacher_routes = Blueprint('teachers', __name__)
 
 
 @teacher_routes.route('/all')
-def students():
+def teachers():
     teachers = Teacher.query.all()
     data = [teacher.to_dict() for teacher in teachers]
     res = json.dumps(data)

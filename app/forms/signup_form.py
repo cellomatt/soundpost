@@ -31,8 +31,8 @@ class SignUpTeacherForm(FlaskForm):
     last_name = StringField('last_name', validators=[DataRequired()])
     email_address = StringField('email', validators=[DataRequired(), Email(),
                                 user_exists])
-    instrument = StringField('instrument', validators=[DataRequired()])
     phone = StringField('phone', validators=[DataRequired()])
+    instrument = StringField('instrument', validators=[DataRequired()])
     street_address = StringField('street_address',
                                  validators=[DataRequired()])
     city = StringField('city', validators=[DataRequired()])
