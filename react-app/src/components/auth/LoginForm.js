@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { login } from "../../services/auth";
 import { setUser } from "../../store/session"
 import Footer from '../Footer'
@@ -65,7 +65,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             value="true"
             checked={role === true}
           ></input>
-          <label htmlFor="teacher">Teacher </label>
+          <label htmlFor="teacher"> Teacher </label>
           <input
             id="teacher"
             type="radio"
@@ -98,6 +98,9 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
         <div className="form__div form__buttons">
           <button className="btn__secondary" type="submit">Log In</button>
           <button className="btn__secondary" type="submit" onClick={demoLogin}>Demo User</button>
+        </div>
+        <div className="form__div form__switch">
+          <p>Don't have an account? <Link to="/signup">Sign up here.</Link></p>
         </div>
       </form>
       <Footer />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Redirect, useHistory } from 'react-router-dom';
+import { Redirect, useHistory, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { signUp } from '../../services/auth';
 import { setUser } from "../../store/session"
@@ -13,6 +13,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const history = useHistory();
   const teachers = useSelector(state => state.teachers.all)
   const [loaded, setLoaded] = useState(false);
+  const [role, setRole] = useState(true)
   const [email_address, setEmailAddress] = useState("");
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
@@ -35,6 +36,9 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
     })();
   }, [dispatch]);
 
+  const changeRole = (e) => {
+    e.target.value === "true" ? setRole(true) : setRole(false);
+  }
 
   const onSignUp = async (e) => {
     e.preventDefault();
@@ -72,6 +76,26 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           </div>
           }
           <p className="required_label">* indicates a required field</p>
+          <div className="form__div">
+            <label htmlFor="student">* Student </label>
+            <input
+              id="student"
+              type="radio"
+              name="role"
+              onChange={(e) => changeRole(e)}
+              value="true"
+              checked={role === true}
+            ></input>
+            <label htmlFor="teacher"> Teacher </label>
+            <input
+              id="teacher"
+              type="radio"
+              name="role"
+              onChange={(e) => changeRole(e)}
+              value="false"
+              checked={role === false}
+            ></input>
+          </div>
           <div className="form__div">
             <label>First Name *</label>
             <input
@@ -184,6 +208,9 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           </div>
           <div className="form__div form__buttons">
             <button className="btn__secondary" type="submit">Sign Up</button>
+          </div>
+          <div className="form__div form__switch">
+            <p>Already have an account? <Link to="/login">Log in here.</Link></p>
           </div>
         </form>
         <Footer />
