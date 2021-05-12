@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { login } from "../../services/auth";
@@ -13,6 +13,10 @@ const LoginForm = ({ authenticated, setAuthenticated, setStudent }) => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState(true)
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   const onLogin = async (e) => {
     e.preventDefault();

@@ -34,6 +34,10 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
   const statesArray = Object.values(states)
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
+  useEffect(() => {
     (async () => {
       const data = await dispatch(teacherActions.getAllTeachers());
       const stateData = await dispatch(statesActions.getAllStates());
@@ -141,7 +145,7 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
           <div className="form__div">
             <label>Phone Number *</label>
             <input
-              type="text"
+              type="tel"
               className="form__input"
               name="phone"
               onChange={(e) => setPhone(e.target.value)}
