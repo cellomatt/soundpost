@@ -79,26 +79,49 @@ def sign_up():
     """
     Creates a new user and logs them in
     """
-    form = SignUpStudentForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        created_at = form.data['created_at']
-        user = Student(
-            first_name=form.data['first_name'],
-            last_name=form.data['last_name'],
-            email_address=form.data['email_address'],
-            phone=form.data['phone'],
-            parent_name=form.data['parent_name'],
-            instrument=form.data['instrument'],
-            teacher_id=form.data['teacher_id'],
-            photo_url=url,
-            password=form.data['password'],
-            created_at=datetime.fromisoformat(created_at)
-        )
-        db.session.add(user)
-        db.session.commit()
-        login_user(user)
-        return user.to_dict()
+    student_boolean = request.form.get("student")
+    if student_boolean:
+        form = SignUpStudentForm()
+        form['csrf_token'].data = request.cookies['csrf_token']
+        if form.validate_on_submit():
+            created_at = form.data['created_at']
+            user = Student(
+                first_name=form.data['first_name'],
+                last_name=form.data['last_name'],
+                email_address=form.data['email_address'],
+                phone=form.data['phone'],
+                parent_name=form.data['parent_name'],
+                instrument=form.data['instrument'],
+                teacher_id=form.data['teacher_id'],
+                photo_url=url,
+                password=form.data['password'],
+                student=form.data['student'],
+                created_at=datetime.fromisoformat(created_at)
+            )
+    else:
+        form = SignUpTeacherForm()
+        form['csrf_token'].data = request.cookies['csrf_token']
+        if form.validate_on_submit():
+            created_at = form.data['created_at']
+            user = Teacher(
+                first_name=form.data['first_name'],
+                last_name=form.data['last_name'],
+                email_address=form.data['email_address'],
+                phone=form.data['phone'],
+                instrument=form.data['instrument'],
+                street_address=form.data['street_address'],
+                city=form.data['city'],
+                zip=form.data['zip'],
+                state_id=form.data['state_id'],
+                photo_url=url,
+                password=form.data['password'],
+                student=form.data['student'],
+                created_at=datetime.fromisoformat(created_at)
+            )
+    db.session.add(user)
+    db.session.commit()
+    login_user(user)
+    return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}
 
 

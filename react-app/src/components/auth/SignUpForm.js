@@ -31,6 +31,7 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
   const [city, setCity] = useState("");
   const [stateId, setStateId] = useState("");
   const [errors, setErrors] = useState([]);
+  const [zip, setZip] = useState("");
   const teachersArray = Object.values(teachers)
   const statesArray = Object.values(states)
 
@@ -56,7 +57,8 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
     e.preventDefault();
     if (password === repeatPassword) {
       const user = await signUp({first_name, last_name, email_address, password,
-                              instrument, phone, parent_name, photo, teacher_id});
+                              instrument, phone, parent_name, photo, teacher_id,
+                              address, city, stateId, zip, role});
       if (!user.errors) {
         setStudent(role);
         dispatch(setUser(user));
@@ -235,6 +237,17 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
                 }
               </select>
               }
+          </div>
+          <div className="form__div">
+            <label>ZIP Code *</label>
+            <InputMask mask="99999" maskChar=" " value={zip} onChange={(e) => setZip(e.target.value) }>
+              {() =>
+              <input
+                type="text"
+                className="form__input"
+                name="zip"
+              ></input>}
+            </InputMask>
           </div>
           </>
           }

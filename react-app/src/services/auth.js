@@ -32,21 +32,26 @@ export const logout = async () => {
 };
 
 
-export const signUp = async (newStudent) => {
+export const signUp = async (newUser) => {
   const {first_name, last_name, email_address, password,
-    instrument, phone, parent_name, photo, teacher_id} = newStudent;
+    instrument, phone, parent_name, photo, teacher_id,
+    address, city, stateId, zip, role} = newUser;
   const created_at = new Date()
   const form = new FormData()
   form.append("first_name", first_name)
   form.append("last_name", last_name)
   form.append("email_address", email_address)
-  form.append("password", password)
-  form.append("instrument", instrument)
   form.append("phone", phone)
-  form.append("teacher_id", teacher_id)
+  form.append("password", password)
   form.append("created_at", created_at.toISOString().replace('Z', '+00:00'))
+  form.append("student", role)
+  if (instrument) form.append("instrument", instrument)
+  if (teacher_id) form.append("teacher_id", teacher_id)
   if (photo) form.append("photo", photo)
   if (parent_name) form.append("parent_name", parent_name)
+  if (address) form.append("street_address", address)
+  if (city) form.append("city", city)
+  if (zip) form.append("zip", Number(zip))
 
   const response = await fetch("/api/auth/signup", {
     method: "POST",

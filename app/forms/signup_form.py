@@ -1,14 +1,14 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, FileField, IntegerField
+from wtforms import StringField, FileField, IntegerField, BooleanField
 from wtforms.validators import DataRequired, Email, ValidationError
 from app.models import Student, Teacher
 
 
 def user_exists(form, field):
     email = field.data
-    user = Student.query.filter(Student.email_address == email).first()
-    # or Teacher.query.filter(Teacher.email_address == email).first()
-    if user:
+    student = Student.query.filter(Student.email_address == email).first()
+    teacher = Teacher.query.filter(Teacher.email_address == email).first()
+    if student or teacher:
         raise ValidationError("User is already registered.")
 
 
@@ -24,6 +24,7 @@ class SignUpStudentForm(FlaskForm):
     photo = FileField('photo')
     password = StringField('password', validators=[DataRequired()])
     created_at = StringField('created_at')
+    student = BooleanField('student', validators=[DataRequired()])
 
 
 class SignUpTeacherForm(FlaskForm):
@@ -40,3 +41,4 @@ class SignUpTeacherForm(FlaskForm):
     zip = IntegerField('zip', validators=[DataRequired()])
     photo = FileField('photo', validators=[DataRequired()])
     password = StringField('password', validators=[DataRequired()])
+    student = BooleanField('student', validators=[DataRequired()])
