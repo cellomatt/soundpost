@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Redirect, useHistory, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import InputMask from 'react-input-mask';
 import { signUp } from '../../services/auth';
 import { setUser } from "../../store/session"
 import * as teacherActions from '../../store/teacher'
@@ -144,14 +145,14 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
           </div>
           <div className="form__div">
             <label>Phone Number *</label>
-            <input
-              type="tel"
-              className="form__input"
-              name="phone"
-              onChange={(e) => setPhone(e.target.value)}
-              value={phone}
-              required={true}
-            ></input>
+            <InputMask mask="(999) 999-9999" maskChar=" " value={phone} onChange={(e) => setPhone(e.target.value) }>
+              {() =>
+              <input
+                type="text"
+                className="form__input"
+                name="phone"
+              ></input>}
+            </InputMask>
           </div>
           {role && <div className="form__div">
             <label>Parent or Guardian Name </label>
