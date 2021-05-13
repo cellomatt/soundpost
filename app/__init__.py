@@ -24,9 +24,10 @@ app = Flask(__name__)
 login = LoginManager(app)
 login.login_view = 'auth.unauthorized'
 
-# TODO: Update for both students and teachers
+
 @login.user_loader
 def load_user(id):
+    # load student or teacher account to session based on role
     if session['student']:
         return Student.query.get(int(id))
     else:
