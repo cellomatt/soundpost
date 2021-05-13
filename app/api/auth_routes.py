@@ -28,6 +28,7 @@ def authenticate():
     """
     Authenticates a user.
     """
+    # print("--------------Current User:", current_user.to_dict())
     if current_user.is_authenticated:
         return current_user.to_dict()
     return {'errors': ['Unauthorized']}, 401
@@ -39,18 +40,19 @@ def login():
     Logs a user in
     """
     form = LoginForm()
-    print("-------------------------------------------", request.get_json())
     # Get the csrf_token from the request cookie and put it into the
     # form manually to validate_on_submit can be used
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         # Add the user to the session, we are logged in!
-        if form.data['student']:
+        student = form.data['student']
+        if student:
             user = Student.query.filter(Student.email_address ==
                                         form.data['email']).first()
         else:
             user = Teacher.query.filter(Teacher.email_address ==
                                         form.data['email']).first()
+        session['student'] = student
         login_user(user)
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
@@ -122,8 +124,6 @@ def sign_up():
             login_user(user)
             return user.to_dict()
         return {'errors': validation_errors_to_error_messages(form.errors)}
-
-
 
 
 @auth_routes.route('/unauthorized')

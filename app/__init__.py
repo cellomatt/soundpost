@@ -27,7 +27,10 @@ login.login_view = 'auth.unauthorized'
 # TODO: Update for both students and teachers
 @login.user_loader
 def load_user(id):
-    return Student.query.get(int(id))
+    if session['student']:
+        return Student.query.get(int(id))
+    else:
+        return Teacher.query.get(int(id))
 
 
 # Tell flask about seed commands

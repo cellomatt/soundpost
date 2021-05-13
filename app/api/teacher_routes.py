@@ -5,7 +5,6 @@ import json
 
 teacher_routes = Blueprint('teachers', __name__)
 
-
 @teacher_routes.route('/all')
 def teachers():
     teachers = Teacher.query.all()
