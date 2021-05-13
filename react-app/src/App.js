@@ -37,7 +37,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar authenticated={authenticated} setAuthenticated={setAuthenticated} />
+      <NavBar authenticated={authenticated} setAuthenticated={setAuthenticated} student={student}/>
       <Switch>
         {!authenticated && <Route exact path="/" authenticated={authenticated}>
           <Home />

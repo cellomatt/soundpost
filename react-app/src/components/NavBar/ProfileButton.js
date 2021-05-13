@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import './NavBar.css';
 
-export default function ProfileButton({authenticated, setAuthenticated}) {
+export default function ProfileButton({authenticated, setAuthenticated, student}) {
 
     const [showMenu, setShowMenu] = useState(false);
 
@@ -45,21 +45,31 @@ export default function ProfileButton({authenticated, setAuthenticated}) {
               Dashboard
             </NavLink>
           </li>
-          <li className="dropdown_li">
-            <NavLink className="default" exact to="/schedule" activeClassName="active">
-              Schedule Lesson
-            </NavLink>
-          </li>
-          <li className="dropdown_li">
-            <NavLink className="default" exact to="/assignments" activeClassName="active">
-              Assignments
-            </NavLink>
-          </li>
-          <li className="dropdown_li">
-            <NavLink className="default" exact to="/stats" activeClassName="active">
-              Your Stats
-            </NavLink>
-          </li>
+          {student &&
+          <>
+            <li className="dropdown_li">
+              <NavLink className="default" exact to="/schedule" activeClassName="active">
+                Schedule Lesson
+              </NavLink>
+            </li>
+            <li className="dropdown_li">
+              <NavLink className="default" exact to="/assignments" activeClassName="active">
+                Assignments
+              </NavLink>
+            </li>
+            <li className="dropdown_li">
+              <NavLink className="default" exact to="/stats" activeClassName="active">
+                Your Stats
+              </NavLink>
+            </li>
+          </>
+          }
+          {!student &&
+          <>
+          {/* Students */}
+          {/* Availability */}
+          </>
+          }
           <li className="dropdown_li">
             <LogoutButton setAuthenticated={setAuthenticated} />
           </li>
