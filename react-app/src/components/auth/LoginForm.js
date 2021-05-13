@@ -32,7 +32,12 @@ const LoginForm = ({ authenticated, setAuthenticated, setStudent }) => {
 
   const demoLogin = async (e) => {
     e.preventDefault();
-    const demoUser = await login('demo@email.com', 'password', role);
+    let demoUser;
+    if (role) {
+      demoUser = await login('demo@email.com', 'password', role);
+    } else {
+      demoUser = await login('matt@email.com', 'password', role);
+    }
     if (!demoUser.errors) {
       setStudent(role);
       dispatch(setUser(demoUser))
