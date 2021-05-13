@@ -171,7 +171,6 @@ body {
   border-radius: 5px;
   padding: .4em .3em;
   outline: none;
-  text-decoration: none !important;
 }
 
 .form__input:focus {

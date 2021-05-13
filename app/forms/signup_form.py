@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, FileField, IntegerField, BooleanField
-from wtforms.validators import DataRequired, Email, ValidationError
+from wtforms.validators import DataRequired, Email, ValidationError, InputRequired
 from app.models import Student, Teacher
 
 
@@ -24,7 +24,7 @@ class SignUpStudentForm(FlaskForm):
     photo = FileField('photo')
     password = StringField('password', validators=[DataRequired()])
     created_at = StringField('created_at')
-    student = BooleanField('student', validators=[DataRequired()])
+    student = BooleanField('student', validators=[InputRequired()])
 
 
 class SignUpTeacherForm(FlaskForm):
@@ -41,4 +41,4 @@ class SignUpTeacherForm(FlaskForm):
     zip = IntegerField('zip', validators=[DataRequired()])
     photo = FileField('photo', validators=[DataRequired()])
     password = StringField('password', validators=[DataRequired()])
-    student = BooleanField('student', validators=[DataRequired()])
+    student = BooleanField('student', validators=[InputRequired()])

@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, session, request
 from app.models import Student, Teacher, db
 from app.forms import LoginForm
-from app.forms import SignUpStudentForm  # SignUpTeacherForm
+from app.forms import SignUpStudentForm, SignUpTeacherForm
 from flask_login import current_user, login_user, logout_user, login_required
 from ..config import Config
 from ..s3 import *
@@ -10,8 +10,6 @@ import botocore
 from datetime import *
 
 auth_routes = Blueprint('auth', __name__)
-
-# ----------- TODO: Needs to be refactored for teachers in addition to students
 
 
 def validation_errors_to_error_messages(validation_errors):
@@ -79,8 +77,7 @@ def sign_up():
     """
     Creates a new user and logs them in
     """
-    student_boolean = request.form.get("student")
-    if student_boolean:
+    if request.form.get("student") == "true":
         form = SignUpStudentForm()
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
@@ -95,14 +92,18 @@ def sign_up():
                 teacher_id=form.data['teacher_id'],
                 photo_url=url,
                 password=form.data['password'],
-                student=form.data['student'],
                 created_at=datetime.fromisoformat(created_at)
             )
-    else:
+            db.session.add(user)
+            db.session.commit()
+            login_user(user)
+            return user.to_dict()
+        return {'errors': validation_errors_to_error_messages(form.errors)}
+
+    if request.form.get("student") == "false":
         form = SignUpTeacherForm()
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
-            created_at = form.data['created_at']
             user = Teacher(
                 first_name=form.data['first_name'],
                 last_name=form.data['last_name'],
@@ -115,14 +116,14 @@ def sign_up():
                 state_id=form.data['state_id'],
                 photo_url=url,
                 password=form.data['password'],
-                student=form.data['student'],
-                created_at=datetime.fromisoformat(created_at)
             )
-    db.session.add(user)
-    db.session.commit()
-    login_user(user)
-    return user.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}
+            db.session.add(user)
+            db.session.commit()
+            login_user(user)
+            return user.to_dict()
+        return {'errors': validation_errors_to_error_messages(form.errors)}
+
+
 
 
 @auth_routes.route('/unauthorized')

@@ -51,6 +51,7 @@ export const signUp = async (newUser) => {
   if (parent_name) form.append("parent_name", parent_name)
   if (address) form.append("street_address", address)
   if (city) form.append("city", city)
+  if (stateId) form.append("state_id", stateId)
   if (zip) form.append("zip", Number(zip))
 
   const response = await fetch("/api/auth/signup", {

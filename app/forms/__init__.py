@@ -1,2 +1,2 @@
 from .login_form import LoginForm
-from .signup_form import SignUpStudentForm # SignUpTeacherForm
+from .signup_form import SignUpStudentForm, SignUpTeacherForm
