@@ -66,8 +66,16 @@ export default function ProfileButton({authenticated, setAuthenticated, student}
           }
           {!student &&
           <>
-          {/* Students */}
-          {/* Availability */}
+            <li className="dropdown_li">
+              <NavLink className="default" exact to="/students" activeClassName="active">
+                Students
+              </NavLink>
+            </li>
+            <li className="dropdown_li">
+              <NavLink className="default" exact to="/availability" activeClassName="active">
+                Your Availability
+              </NavLink>
+            </li>
           </>
           }
           <li className="dropdown_li">
