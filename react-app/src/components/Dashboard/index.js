@@ -12,7 +12,7 @@ import * as statsActions from '../../store/stats'
 import './Dashboard.css'
 import 'react-circular-progressbar/dist/styles.css';
 
-export default function Dashboard() {
+export default function Dashboard({student}) {
   document.title = "Soundpost — Home"
   const dispatch = useDispatch();
   const history = useHistory();
@@ -20,11 +20,11 @@ export default function Dashboard() {
   const user = useSelector(state => state.session.user);
   const latestAssignment = useSelector(state => state.assignments.latest);
   const lessons = useSelector(state => state.lessons.scheduled)
-  const stats = useSelector(state => state.stats.thisweek)
+  // const stats = useSelector(state => state.stats.thisweek)
 
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
   useEffect(() => dispatch(statsActions.getWeeklyPractice(user.id)), [dispatch, user.id, change])
-  useEffect(() => dispatch(lessonActions.getUserLessons(user.id)), [dispatch, user.id, change])
+  useEffect(() => dispatch(lessonActions.getUserLessons(user.id, student)), [dispatch, user.id, student, change])
   useEffect(() => dispatch(statsActions.getAllStats(user.id)), [dispatch, user.id, change])
 
 
@@ -65,7 +65,7 @@ export default function Dashboard() {
               {lessons != null &&
                 <div>
                   {Object.values(lessons).map(lesson =>
-                    <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange}/>
+                    <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange} student={student}/>
                     )}
                 </div>
               }

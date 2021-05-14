@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard"
 import LessonScheduleView from "./components/LessonScheduleView"
 import AssignmentView from "./components/AssignmentView"
 import Stats from "./components/Stats"
+import TeacherDashboard from "./components/Teacher/TeacherDashboard"
 import { authenticate } from "./services/auth";
 import { setUser } from "./store/session"
 import {ReactComponent as Sketch} from "./images/klee.svg"
@@ -57,10 +58,10 @@ function App() {
           />
         </Route>
         {student && <ProtectedRoute exact path="/"  authenticated={authenticated}>
-          <Dashboard authenticated={authenticated} />
+          <Dashboard authenticated={authenticated} student={student}/>
         </ProtectedRoute>}
         {!student && <ProtectedRoute exact path="/"  authenticated={authenticated}>
-          <Home authenticated={authenticated} />
+          <TeacherDashboard authenticated={authenticated} student={student}/>
         </ProtectedRoute>}
         <ProtectedRoute exact path="/schedule"  authenticated={authenticated}>
           <LessonScheduleView authenticated={authenticated} />
