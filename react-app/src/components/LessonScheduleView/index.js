@@ -9,7 +9,7 @@ import * as lessonActions from '../../store/lesson'
 import 'react-nice-dates/build/style.css';
 import './LessonScheduleView.css';
 
-export default function LessonScheduleView() {
+export default function LessonScheduleView({student}) {
   document.title = "Soundpost — Schedule a Lesson"
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
@@ -120,7 +120,7 @@ export default function LessonScheduleView() {
         {availability !== null &&
         <>
           {Object.values(availability).map(lesson =>
-            <LessonContainer lesson={lesson} key={lesson.id} duration={duration} setChange={setChange}/>
+            <LessonContainer lesson={lesson} key={lesson.id} duration={duration} setChange={setChange} student={student}/>
           )}
         </>
         }

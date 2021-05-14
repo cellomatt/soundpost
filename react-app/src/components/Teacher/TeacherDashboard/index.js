@@ -17,6 +17,8 @@ export default function TeacherDashboard({student}){
   //get lessons for this teacher
   useEffect(() => dispatch(lessonActions.getUserLessons(user.id, student)), [dispatch, user.id, student, change])
 
+  //render today's lessons in a different way (with student photos)
+
   return (
     <div className="main">
       <div className="lesson-info__upcoming">
@@ -26,7 +28,7 @@ export default function TeacherDashboard({student}){
                 <div>
                   {Object.values(lessons).map(lesson =>
                     <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange}/>
-                    )}
+                  )}
                 </div>
               }
               {lessons === null &&

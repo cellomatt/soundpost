@@ -64,7 +64,7 @@ function App() {
           <TeacherDashboard authenticated={authenticated} student={student}/>
         </ProtectedRoute>}
         <ProtectedRoute exact path="/schedule"  authenticated={authenticated}>
-          <LessonScheduleView authenticated={authenticated} />
+          <LessonScheduleView authenticated={authenticated} student={student}/>
         </ProtectedRoute>
         <ProtectedRoute exact path="/assignments"  authenticated={authenticated}>
           <AssignmentView authenticated={authenticated} />

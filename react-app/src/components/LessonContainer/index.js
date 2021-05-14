@@ -27,11 +27,11 @@ export default function LessonContainer({lesson, setChange, duration, student}) 
           <div className="lesson__container--teacher">{lesson.teacher.city}, {lesson.teacher.state} {lesson.teacher.zip}</div>
         </>
         }
-        {/* {!student &&
+        {!student &&
         <>
-          <div className="lesson__container--teacher">Student: {lesson.student.first_name} {lesson.student.last_name}</div>
+          <div className="lesson__container--student">Student: {lesson.student.first_name} {lesson.student.last_name}</div>
         </>
-        } */}
+        }
       </div>
       <div className="lesson__container--modal">
         <LessonModal lesson={lesson} scheduled={scheduled} setScheduled={setScheduled} setChange={setChange} duration={duration} user={user}/>

@@ -32,6 +32,13 @@
   padding-top: .2em;
 }
 
+.lesson__container--student {
+  color: #333333;
+  font-size: 1em;
+  font-weight: 400;
+  padding-top: .7em;
+}
+
 .lesson__container--teacher {
   color: #333333;
   font-size: .8em;
