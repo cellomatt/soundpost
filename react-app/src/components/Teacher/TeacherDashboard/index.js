@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import * as lessonActions from '../../../store/lesson'
+import * as studentActions from '../../../store/student'
 import LessonContainer from '../../LessonContainer'
 import Footer from '../../Footer'
 import "./TeacherDashboard.css"
@@ -14,10 +15,12 @@ export default function TeacherDashboard({student}){
   const [change, setChange] = useState(false);
   const user = useSelector(state => state.session.user);
   const lessons = useSelector(state => state.lessons.scheduled)
+  const students = useSelector(state => state.students.all)
 
   useEffect(() => {window.scrollTo(0, 0);}, [])
   //get lessons for this teacher
   useEffect(() => dispatch(lessonActions.getUserLessons(user.id, student)), [dispatch, user.id, student, change])
+  useEffect(() => dispatch(studentActions.getStudioStudents(user.id)), [dispatch, user.id])
   //render today's lessons in a different way (with student photos)
 
   return (
