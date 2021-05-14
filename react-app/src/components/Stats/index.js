@@ -16,9 +16,8 @@ export default function Stats() {
   const [change, setChange] = useState(false);
   const options = { dateStyle: 'long'};
 
-  useEffect(() => {
-    dispatch(statsActions.getAllStats(user.id))
-  }, [dispatch, user, change])
+  useEffect(() => {window.scrollTo(0, 0);}, [])
+  useEffect(() => {dispatch(statsActions.getAllStats(user.id))}, [dispatch, user, change])
 
 
   return (

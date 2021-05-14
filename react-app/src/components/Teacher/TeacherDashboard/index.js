@@ -14,9 +14,9 @@ export default function TeacherDashboard({student}){
   const user = useSelector(state => state.session.user);
   const lessons = useSelector(state => state.lessons.scheduled)
 
+  useEffect(() => {window.scrollTo(0, 0);}, [])
   //get lessons for this teacher
   useEffect(() => dispatch(lessonActions.getUserLessons(user.id, student)), [dispatch, user.id, student, change])
-
   //render today's lessons in a different way (with student photos)
 
   return (

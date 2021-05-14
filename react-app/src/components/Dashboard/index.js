@@ -26,7 +26,7 @@ export default function Dashboard({student}) {
   useEffect(() => dispatch(statsActions.getWeeklyPractice(user.id)), [dispatch, user.id, change])
   useEffect(() => dispatch(lessonActions.getUserLessons(user.id, student)), [dispatch, user.id, student, change])
   useEffect(() => dispatch(statsActions.getAllStats(user.id)), [dispatch, user.id, change])
-
+  useEffect(() => {window.scrollTo(0, 0);}, [])
 
 
   return (

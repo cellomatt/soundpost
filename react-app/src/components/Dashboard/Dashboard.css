@@ -152,7 +152,7 @@
 
 @media screen and (max-width: 1066px) {
   .lesson-info {
-    min-width: 450px;
+    min-width: 80%;
   }
   .user-info {
     min-width: 100%;
@@ -166,17 +166,53 @@
   .user-info__primary {
     width: 100%;
     flex-wrap: nowrap;
-    justify-content: flex-start;
   }
 
   .user-info__pic {
-    width: 20%;
-    padding-bottom: 20%;
-    margin: 0 1.5em;
+    width: 25%;
+    padding-bottom: 25%;
+    margin: 0 2em;
   }
 
   .user-info__pic-name {
     flex-wrap: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .lesson-info {
+    min-width: 90%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .user-info__name{
+    font-size: 3em;
+  }
+
+  .user-info__name-practiced{
+    width: 58%;
+  }
+
+  .user-info__pic {
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 0 1em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .lesson-info {
+    min-width: 100%;
+  }
+  .user-info__name{
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .user-info__primary{
+    padding: 1em;
   }
 }
 
@@ -186,10 +222,5 @@
     margin: 0;
     padding: 0;
   }
-
-  .lesson-info {
-    min-width: 100%;
-  }
-
 
 }

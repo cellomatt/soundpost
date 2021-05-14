@@ -23,7 +23,7 @@ export default function LessonScheduleView({student}) {
   const tomorrow = new Date().setDate(today.getDate() + 1)
   const maximumDate = new Date().setMonth(today.getMonth() + 1)
 
-
+  useEffect(() => {window.scrollTo(0, 0);}, [])
   useEffect(() => {
     if (startDate && endDate) {
       dispatch(lessonActions.getAvailability(user.teacher.id, startDate, endDate, duration))
