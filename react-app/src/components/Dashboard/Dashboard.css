@@ -206,21 +206,46 @@
     min-width: 100%;
   }
   .user-info__name{
-    font-size: 2.5em;
+    font-size: 2.3em;
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 700px) {
   .user-info__primary{
     padding: 1em;
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
   .dashboard_main {
     min-width: 100%;
     margin: 0;
     padding: 0;
+  }
+
+
+  .user-info__primary{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .user-info__name{
+    font-size: 2.0em;
+  }
+  
+  .user-info__pic {
+    width: 35%;
+    padding-bottom: 35%;
+    margin: 0 1em;
+  }
+
+  .user-info__name-practiced{
+    width: 45%;
+  }
+
+  .user-info__primary{
+   align-items: flex-start;
   }
 
 }

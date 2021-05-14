@@ -49,3 +49,16 @@
 .practiced:hover {
   background-color: transparent;
 }
+
+@media screen and (max-width: 700px) {
+  .checkbox__container {
+    width: 70%;
+    min-width: 160px;
+  }
+
+  .checkbox__text {
+    font-size: .65em;
+    padding: 1em .8em;
+    flex-wrap: nowrap;
+  }
+}
