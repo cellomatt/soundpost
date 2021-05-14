@@ -15,7 +15,7 @@ export default function TeacherDashboard({student}){
   const lessons = useSelector(state => state.lessons.scheduled)
 
   //get lessons for this teacher
-  useEffect(() => dispatch(lessonActions.getUserLessons(user.id, student)), [dispatch, user.id, change])
+  useEffect(() => dispatch(lessonActions.getUserLessons(user.id, student)), [dispatch, user.id, student, change])
 
   return (
     <div className="main">

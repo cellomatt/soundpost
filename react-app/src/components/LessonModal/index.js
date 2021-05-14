@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import * as lessonActions from '../../store/lesson'
 import './LessonModal.css'
 
-export default function LessonModal({scheduled, setScheduled, lesson, setChange, duration, student}) {
+export default function LessonModal({scheduled, setScheduled, lesson, setChange, duration, user}) {
   const dispatch = useDispatch();
 
   const customStyles = {
@@ -45,10 +45,10 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange,
   }
 
   const scheduleLesson = async () => {
-    await dispatch(lessonActions.scheduleOneLesson(lesson.id, duration, student.id))
+    await dispatch(lessonActions.scheduleOneLesson(lesson.id, duration, user.id))
     setScheduled(true);
     setShowModal(false);
-    dispatch(lessonActions.getUserLessons(student.id))
+    dispatch(lessonActions.getUserLessons(user.id))
   }
 
   return (
