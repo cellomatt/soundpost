@@ -26,6 +26,7 @@ function App() {
       const user = await authenticate();
       if (!user.errors) {
         dispatch(setUser(user));
+        setStudent(user.student)
         setAuthenticated(true);
       }
       setLoaded(true);

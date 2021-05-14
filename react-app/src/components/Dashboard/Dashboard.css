@@ -87,6 +87,14 @@
   position: absolute;
 }
 
+.user-info__pic-name {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .user-info__practiced {
   width: 100%;
   display: flex;
@@ -140,6 +148,22 @@
   .lesson-info {
     min-width: 450px;
   }
+  .user-info {
+    min-width: 100%;
+  }
+
+  .user-info__primary {
+    width: 100%;
+  }
+
+  .user-info__pic {
+    width: 25%;
+    padding-bottom: 25%;
+  }
+
+  .user-info__pic-name {
+    flex-wrap: none;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -153,8 +177,5 @@
     min-width: 100%;
   }
 
-  .user-info {
-    min-width: 100%;
-  }
 
 }
