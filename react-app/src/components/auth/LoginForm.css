@@ -1,3 +1,22 @@
 .login-form {
   padding-bottom: 8em;
 }
+
+.form__switch{
+  text-align: center;
+  padding-top: 1em;
+}
+
+.form__switch a {
+  color: #0061FF;
+}
+
+#student__label, #teacher__label {
+  font-weight: 500;
+  padding-right: .1em;
+  font-size: 1.1em;
+}
+
+#teacher__label {
+  padding-left: .5em;
+}

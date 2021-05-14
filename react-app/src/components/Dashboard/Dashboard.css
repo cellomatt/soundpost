@@ -58,7 +58,7 @@
 
 .user-info__name {
   text-align: center;
-  margin: .4em 0;
+  margin: .2em 0;
   font-family: "P22BayerW00-Universal";
   font-size: 2.6em;
   font-weight: 400;
@@ -166,6 +166,7 @@
   .user-info__primary {
     width: 100%;
     flex-wrap: nowrap;
+    margin-bottom: 1em;
   }
 
   .user-info__pic {
@@ -233,7 +234,7 @@
   .user-info__name{
     font-size: 2.0em;
   }
-  
+
   .user-info__pic {
     width: 35%;
     padding-bottom: 35%;

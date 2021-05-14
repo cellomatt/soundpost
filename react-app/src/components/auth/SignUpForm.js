@@ -92,7 +92,7 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
           }
           <p className="required_label">* indicates a required field</p>
           <div className="form__div">
-            <label htmlFor="student">Student </label>
+            <label htmlFor="student" id="student__label">Student </label>
             <input
               id="student"
               type="radio"
@@ -101,7 +101,7 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
               value="true"
               checked={role === true}
             ></input>
-            <label htmlFor="teacher"> Teacher </label>
+            <label htmlFor="teacher" id="teacher__label"> Teacher </label>
             <input
               id="teacher"
               type="radio"
@@ -189,7 +189,7 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
                 <option defaultValue>Please select a teacher</option>
                 {teachersArray.map(teacher =>
                 <option value={teacher.id} key={teacher.id}>
-                  {`${teacher.first_name} ${teacher.last_name}, ${teacher.instrument}`}
+                  {`${teacher.first_name} ${teacher.last_name}, ${teacher.instrument.toLowerCase()}`}
                 </option>
                 )
                 }
@@ -286,7 +286,7 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
             <button className="btn__secondary" type="submit">Sign Up</button>
           </div>
           <div className="form__div form__switch">
-            <p>Already have an account? <Link to="/login">Log in here.</Link></p>
+            <p>Already have an account? <Link to="/login">Log in here</Link>.</p>
           </div>
         </form>
         <Footer />

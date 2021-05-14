@@ -20,7 +20,6 @@ export default function Dashboard({student}) {
   const user = useSelector(state => state.session.user);
   const latestAssignment = useSelector(state => state.assignments.latest);
   const lessons = useSelector(state => state.lessons.scheduled)
-  // const stats = useSelector(state => state.stats.thisweek)
 
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
   useEffect(() => dispatch(statsActions.getWeeklyPractice(user.id)), [dispatch, user.id, change])
