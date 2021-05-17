@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import * as lessonActions from '../../../store/lesson'
 import * as studentActions from '../../../store/student'
 import LessonContainer from '../../LessonContainer'

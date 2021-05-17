@@ -73,7 +73,7 @@ export default function ProfileButton({authenticated, setAuthenticated, student}
             </li>
             <li className="dropdown_li">
               <NavLink className="default" exact to="/availability" activeClassName="active">
-                Your Availability
+                Set Availability
               </NavLink>
             </li>
           </>
