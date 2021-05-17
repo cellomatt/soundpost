@@ -15,7 +15,7 @@ export default function TeacherDashboard({student}){
   const [change, setChange] = useState(false);
   const user = useSelector(state => state.session.user);
   const lessons = useSelector(state => state.lessons.scheduled)
-  const students = useSelector(state => state.students.all)
+  
 
   useEffect(() => {window.scrollTo(0, 0);}, [])
   //get lessons for this teacher
