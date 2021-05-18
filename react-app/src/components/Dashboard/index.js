@@ -64,7 +64,7 @@ export default function Dashboard({student}) {
             <div className="lesson-info__lessons">
               {lessons != null &&
                 <div>
-                  {Object.values(lessons).map(lesson =>
+                  {Object.values(lessons).sort((a,b) => a.start_time - b.start_time).map(lesson =>
                     <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange} student={student}/>
                     )}
                 </div>

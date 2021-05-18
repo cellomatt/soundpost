@@ -1,10 +1,10 @@
 .student-info {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  /* width: 30%; */
   align-items: center;
   justify-content: center;
-  min-width: 390px;
+  width: 390px;
 }
 
 .student-info__name {

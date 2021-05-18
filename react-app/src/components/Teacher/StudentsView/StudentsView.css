@@ -13,6 +13,18 @@
   color: #0061FF;
 }
 
+.student-sort{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.student-sort span, .student-sort label {
+  padding: 0.5em 0.2em 0.5em 0.6em;
+}
+
 @media screen and (max-width: 940px) {
   .student-link{
     width: 100%;

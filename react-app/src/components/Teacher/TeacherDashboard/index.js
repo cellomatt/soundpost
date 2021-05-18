@@ -15,7 +15,7 @@ export default function TeacherDashboard({student}){
   const [change, setChange] = useState(false);
   const user = useSelector(state => state.session.user);
   const lessons = useSelector(state => state.lessons.scheduled)
-  
+  console.log()
 
   useEffect(() => {window.scrollTo(0, 0);}, [])
   //get lessons for this teacher
@@ -46,7 +46,7 @@ export default function TeacherDashboard({student}){
             <div className="lesson-info__lessons">
               {lessons != null &&
                 <div>
-                  {Object.values(lessons).map(lesson =>
+                  {Object.values(lessons).sort((a,b) => a.start_time - b.start_time).map(lesson =>
                     <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange}/>
                   )}
                 </div>
