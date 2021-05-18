@@ -1,0 +1,155 @@
+.student-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  min-width: 390px;
+}
+
+.student-info__name {
+  text-align: center;
+  margin: .2em 0;
+  font-family: "P22BayerW00-Universal";
+  font-size: 2.6em;
+  font-weight: 400;
+  width: 100%;
+}
+
+.student-info__pic {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2px solid #333333;
+  width: 95%;
+  height: 0;
+  padding-bottom: 95%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.student-info__pic--img {
+  border-radius: 50%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  position: absolute;
+}
+
+.student-info__name-practiced {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: .5em;
+  width: 100%;
+}
+
+
+.student-info__primary {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 1.7em;
+  margin-bottom: 2.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 75%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+  min-height: 401.22px;
+}
+
+
+@media screen and (max-width: 940px) {
+
+  .student-info {
+    min-width: 100%;
+  }
+
+  .student-info__name{
+    font-size: 3.5em;
+    margin: .1em 0;
+  }
+
+  .student-info__name-practiced{
+    width: 65%;
+  }
+
+  .student-info__primary {
+    width: 100%;
+    flex-wrap: nowrap;
+    margin-bottom: 1em;
+    min-height: 0;
+  }
+
+  .student-info__pic {
+    width: 25%;
+    padding-bottom: 25%;
+    margin: 0 2em;
+  }
+
+  .student-info__pic-name {
+    flex-wrap: none;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .student-info__name{
+    font-size: 3em;
+  }
+
+  .student-info__name-practiced{
+    width: 58%;
+  }
+
+  .student-info__pic {
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 0 1em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .lesson-info {
+    min-width: 100%;
+  }
+  .student-info__name{
+    font-size: 2.3em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .student-info__primary{
+    padding: 1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .student-info__primary{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .student-info__name{
+    font-size: 2.0em;
+  }
+
+  .student-info__pic {
+    width: 35%;
+    padding-bottom: 35%;
+    margin: 0 1em;
+  }
+
+  .student-info__name-practiced{
+    width: 45%;
+  }
+
+}

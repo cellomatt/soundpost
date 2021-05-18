@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import * as studentActions from '../../../store/student'
+import StudentContainer from '../StudentContainer'
 import './StudentsView.css'
 
 export default function StudentsView(){
@@ -17,15 +18,19 @@ export default function StudentsView(){
 
   return (
     <div className="main">
-      {students != null &&
-        <div>
-          {Object.values(students).map(student =>
-            <Link to={`/students/${student.id}`}>
-              
-            </Link>
-          )}
+      <div className="dashboard_main">
+        <h1 className="title__main">Your Students</h1>
+        <div className="all-students">
+          {students != null &&
+              Object.values(students).map(student =>
+                <Link to={`/students/${student.id}`} className="student-link">
+                  <StudentContainer user={student}></StudentContainer>
+                </Link>
+
+              )
+          }
         </div>
-      }
+      </div>
     </div>
   )
 }
