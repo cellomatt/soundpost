@@ -22,12 +22,11 @@ export default function StudentsView(){
         <h1 className="title__main">Your Students</h1>
         <div className="all-students">
           {students != null &&
-              Object.values(students).map(student =>
-                <Link to={`/students/${student.id}`} className="student-link">
-                  <StudentContainer user={student}></StudentContainer>
-                </Link>
-
-              )
+            Object.values(students).map(student =>
+              <Link to={`/students/${student.id}`} className="student-link">
+                <StudentContainer user={student}></StudentContainer>
+              </Link>
+            )
           }
         </div>
       </div>
