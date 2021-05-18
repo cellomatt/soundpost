@@ -8,14 +8,14 @@ def seed_teachers():
 
     teacher1 = Teacher(first_name='Matt', last_name='Kufchak',
                        email_address='matt@email.com', password='password',
-                       instrument='cello', phone='123-789-6543',
+                       instrument='cello', phone='(123) 789-6543',
                        street_address='143 S 1st St', city='St. Louis',
                        state_id=state1.id, zip='63130',
                        photo_url='https://soundpost-app.s3.us-east-2.amazonaws.com/matt-1.jpg')
 
     teacher2 = Teacher(first_name='Michelle', last_name='Brown',
                        email_address='michelle@email.com', password='password',
-                       instrument='viola', phone='487-192-9999',
+                       instrument='viola', phone='(487) 192-9999',
                        street_address='73 N Main St', city='Austin',
                        state_id=state2.id, zip='78701',
                        photo_url='https://soundpost-app.s3.us-east-2.amazonaws.com/download+(27).png')
