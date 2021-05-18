@@ -24,8 +24,6 @@ export default function LessonContainer({lesson, setChange, duration, student}) 
         {student &&
         <>
           <div className="lesson__container--teacher">Teacher: {lesson.teacher.first_name} {lesson.teacher.last_name}</div>
-          {/* <div className="lesson__container--teacher">Location: {lesson.teacher.street_address}</div>
-          <div className="lesson__container--teacher">{lesson.teacher.city}, {lesson.teacher.state} {lesson.teacher.zip}</div> */}
         </>
         }
         {!student &&
