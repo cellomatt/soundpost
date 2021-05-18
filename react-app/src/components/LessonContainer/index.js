@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux'
-import LessonModal from '../LessonModal'
-import './LessonContainer.css'
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import LessonModal from '../LessonModal';
+import './LessonContainer.css';
 
 export default function LessonContainer({lesson, setChange, duration, student}) {
   const [scheduled, setScheduled] = useState(false)
@@ -23,13 +24,15 @@ export default function LessonContainer({lesson, setChange, duration, student}) 
         {student &&
         <>
           <div className="lesson__container--teacher">Teacher: {lesson.teacher.first_name} {lesson.teacher.last_name}</div>
-          <div className="lesson__container--teacher">Location: {lesson.teacher.street_address}</div>
-          <div className="lesson__container--teacher">{lesson.teacher.city}, {lesson.teacher.state} {lesson.teacher.zip}</div>
+          {/* <div className="lesson__container--teacher">Location: {lesson.teacher.street_address}</div>
+          <div className="lesson__container--teacher">{lesson.teacher.city}, {lesson.teacher.state} {lesson.teacher.zip}</div> */}
         </>
         }
         {!student &&
         <>
-          <div className="lesson__container--student">Student: {lesson.student.first_name} {lesson.student.last_name}</div>
+          <div className="lesson__container--student">
+            Student: <Link to={`/students/${lesson.student.id}`}>{lesson.student.first_name} {lesson.student.last_name}</Link>
+          </div>
         </>
         }
       </div>
