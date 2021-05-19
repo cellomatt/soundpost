@@ -11,7 +11,10 @@ export default function LessonContainer({lesson, setChange, duration, student}) 
   const timeOptions = { timeStyle: "short" }
 
   useEffect(() => {
-    if (user != null && user.id === lesson.student_id) {
+    if (user != null && student && user.id === lesson.student_id) {
+      setScheduled(true)
+    }
+    else if (user != null && !student && user.id === lesson.teacher_id) {
       setScheduled(true)
     }
   }, [user, lesson, setScheduled])

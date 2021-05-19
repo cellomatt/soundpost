@@ -15,13 +15,15 @@ export default function TeacherDashboard({student}){
   const [change, setChange] = useState(false);
   const user = useSelector(state => state.session.user);
   const lessons = useSelector(state => state.lessons.scheduled)
-  console.log()
+  let today = new Date();
+  let tomorrow = new Date();
+  tomorrow.setDate(today.getDate() + 1);
+  tomorrow.setHours(0, 0, 0);
 
   useEffect(() => {window.scrollTo(0, 0);}, [])
-  //get lessons for this teacher
   useEffect(() => dispatch(lessonActions.getUserLessons(user.id, student)), [dispatch, user.id, student, change])
   useEffect(() => dispatch(studentActions.getStudioStudents(user.id)), [dispatch, user.id])
-  //render today's lessons in a different way (with student photos)
+
 
   return (
     <div className="main">
@@ -42,20 +44,32 @@ export default function TeacherDashboard({student}){
         </div>
         <div className="lesson-info">
           <div className="lesson-info__upcoming">
-            <h1 className="title">Upcoming Lessons</h1>
+            <h1 className="title">Today's Lessons</h1>
             <div className="lesson-info__lessons">
               {lessons != null &&
                 <div>
-                  {Object.values(lessons).sort((a,b) => a.start_time - b.start_time).map(lesson =>
+                  {Object.values(lessons).filter(lesson => lesson.start_time < tomorrow).sort((a,b) => a.start_time - b.start_time).map(lesson =>
                     <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange}/>
                   )}
                 </div>
               }
-              {lessons === null &&
-                <>
-                <p>You don't have any lessons scheduled.</p>
-                <button onClick={() => history.push("/schedule")} className="btn__primary lesson-info__btn">Book Now</button>
-                </>
+              {(lessons === null || !Object.values(lessons).filter(lesson => lesson.start_time < tomorrow).length) &&
+                <p>You don't have any lessons scheduled for today.</p>
+                }
+            </div>
+          </div>
+          <div className="lesson-info__upcoming">
+            <h1 className="title">Upcoming Lessons</h1>
+            <div className="lesson-info__lessons">
+              {lessons != null &&
+                <div>
+                  {Object.values(lessons).filter(lesson => lesson.start_time > tomorrow).sort((a,b) => a.start_time - b.start_time).map(lesson =>
+                    <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange}/>
+                  )}
+                </div>
+              }
+              {(lessons === null || !Object.values(lessons).filter(lesson => lesson.start_time > tomorrow).length) &&
+                <p>You don't have any upcoming lessons scheduled.</p>
                 }
             </div>
           </div>

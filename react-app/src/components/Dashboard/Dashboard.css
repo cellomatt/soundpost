@@ -47,6 +47,10 @@
   text-decoration: none;
 }
 
+.lesson-info__upcoming {
+  padding-top: 1.5em;
+}
+
 .user-info {
   display: flex;
   flex-direction: column;
@@ -143,7 +147,7 @@
 .title {
   padding-bottom: .4em;
   font-family: "P22BayerW00-Universal";
-  font-size: 3em;
+  font-size: 3.5em;
   margin: 0 auto;
   color: #0061FF;
   font-weight: 400;
