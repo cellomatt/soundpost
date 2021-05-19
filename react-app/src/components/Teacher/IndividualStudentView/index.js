@@ -15,8 +15,7 @@ export default function IndividualStudentView(){
   const options = { dateStyle: 'long'};
 
   useEffect(() => {window.scrollTo(0, 0);}, [])
-  useEffect(() => dispatch(statsActions.getWeeklyPractice(studentId)), [dispatch, studentId])
-
+  useEffect(() => dispatch(statsActions.getAllStats(studentId)), [dispatch, studentId])
   useEffect(() => {
     const getStudentInfo = async () => {
       try {
@@ -33,6 +32,12 @@ export default function IndividualStudentView(){
   }, [dispatch, studentId, history])
 
   return (
-    <div className="main">Test</div>
+    <div className="main">
+      <div className="dashboard_main">
+        <div className="student-info__box">
+          
+        </div>
+      </div>
+    </div>
   )
 }

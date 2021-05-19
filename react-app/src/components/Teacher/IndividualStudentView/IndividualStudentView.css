@@ -1,0 +1,12 @@
+.student-info__box{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 2em;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+}
