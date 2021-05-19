@@ -10,6 +10,8 @@ import Dashboard from "./components/Dashboard"
 import LessonScheduleView from "./components/LessonScheduleView"
 import AssignmentView from "./components/AssignmentView"
 import Stats from "./components/Stats"
+import TeacherDashboard from "./components/Teacher/TeacherDashboard"
+import StudentsView from "./components/Teacher/StudentsView"
 import { authenticate } from "./services/auth";
 import { setUser } from "./store/session"
 import {ReactComponent as Sketch} from "./images/klee.svg"
@@ -25,6 +27,7 @@ function App() {
       const user = await authenticate();
       if (!user.errors) {
         dispatch(setUser(user));
+        setStudent(user.student)
         setAuthenticated(true);
       }
       setLoaded(true);
@@ -57,13 +60,13 @@ function App() {
           />
         </Route>
         {student && <ProtectedRoute exact path="/"  authenticated={authenticated}>
-          <Dashboard authenticated={authenticated} />
+          <Dashboard authenticated={authenticated} student={student}/>
         </ProtectedRoute>}
         {!student && <ProtectedRoute exact path="/"  authenticated={authenticated}>
-          <Home authenticated={authenticated} />
+          <TeacherDashboard authenticated={authenticated} student={student}/>
         </ProtectedRoute>}
         <ProtectedRoute exact path="/schedule"  authenticated={authenticated}>
-          <LessonScheduleView authenticated={authenticated} />
+          <LessonScheduleView authenticated={authenticated} student={student}/>
         </ProtectedRoute>
         <ProtectedRoute exact path="/assignments"  authenticated={authenticated}>
           <AssignmentView authenticated={authenticated} />
@@ -71,6 +74,9 @@ function App() {
         <ProtectedRoute exact path="/stats"  authenticated={authenticated}>
           <Stats authenticated={authenticated} />
         </ProtectedRoute>
+        {!student && <ProtectedRoute exact path="/students"  authenticated={authenticated}>
+          <StudentsView authenticated={authenticated} />
+        </ProtectedRoute>}
         <Route>
           <div className="main">
             <h1 style={{marginTop: "0", fontSize: "4em"}}>404</h1>

@@ -1,5 +1,4 @@
 
-
 .dashboard_main {
   display: flex;
   flex-direction: row;
@@ -59,10 +58,11 @@
 
 .user-info__name {
   text-align: center;
-  margin: .4em 0;
+  margin: .2em 0;
   font-family: "P22BayerW00-Universal";
   font-size: 2.6em;
   font-weight: 400;
+  width: 100%;
 }
 
 .user-info__pic {
@@ -88,6 +88,16 @@
   position: absolute;
 }
 
+.user-info__name-practiced {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: .5em;
+  width: 65%;
+}
+
 .user-info__practiced {
   width: 100%;
   display: flex;
@@ -104,9 +114,12 @@
   padding: 1.7em;
   margin-bottom: 2.5em;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 75%;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2)
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
 }
 
 .user-info__stats {
@@ -137,25 +150,103 @@
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1066px) {
   .lesson-info {
-    min-width: 450px;
+    min-width: 80%;
+  }
+  .user-info {
+    min-width: 100%;
+  }
+
+  .user-info__name{
+    font-size: 3.5em;
+    margin: .1em 0;
+  }
+
+  .user-info__primary {
+    width: 100%;
+    flex-wrap: nowrap;
+    margin-bottom: 1em;
+  }
+
+  .user-info__pic {
+    width: 25%;
+    padding-bottom: 25%;
+    margin: 0 2em;
+  }
+
+  .user-info__pic-name {
+    flex-wrap: none;
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 900px) {
+  .lesson-info {
+    min-width: 90%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .user-info__name{
+    font-size: 3em;
+  }
+
+  .user-info__name-practiced{
+    width: 58%;
+  }
+
+  .user-info__pic {
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 0 1em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .lesson-info {
+    min-width: 100%;
+  }
+  .user-info__name{
+    font-size: 2.3em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .user-info__primary{
+    padding: 1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .dashboard_main {
     min-width: 100%;
     margin: 0;
     padding: 0;
   }
 
-  .lesson-info {
-    min-width: 100%;
+
+  .user-info__primary{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .user-info__name{
+    font-size: 2.0em;
   }
 
-  .user-info {
-    min-width: 100%;
+  .user-info__pic {
+    width: 35%;
+    padding-bottom: 35%;
+    margin: 0 1em;
+  }
+
+  .user-info__name-practiced{
+    width: 45%;
+  }
+
+  .user-info__primary{
+   align-items: flex-start;
   }
 
 }

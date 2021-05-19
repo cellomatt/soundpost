@@ -9,7 +9,7 @@ import * as lessonActions from '../../store/lesson'
 import 'react-nice-dates/build/style.css';
 import './LessonScheduleView.css';
 
-export default function LessonScheduleView() {
+export default function LessonScheduleView({student}) {
   document.title = "Soundpost — Schedule a Lesson"
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
@@ -23,7 +23,7 @@ export default function LessonScheduleView() {
   const tomorrow = new Date().setDate(today.getDate() + 1)
   const maximumDate = new Date().setMonth(today.getMonth() + 1)
 
-
+  useEffect(() => {window.scrollTo(0, 0);}, [])
   useEffect(() => {
     if (startDate && endDate) {
       dispatch(lessonActions.getAvailability(user.teacher.id, startDate, endDate, duration))
@@ -120,7 +120,7 @@ export default function LessonScheduleView() {
         {availability !== null &&
         <>
           {Object.values(availability).map(lesson =>
-            <LessonContainer lesson={lesson} key={lesson.id} duration={duration} setChange={setChange}/>
+            <LessonContainer lesson={lesson} key={lesson.id} duration={duration} setChange={setChange} student={student}/>
           )}
         </>
         }

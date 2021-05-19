@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css'
 import {ReactComponent as Calendar} from './calendar.svg';
@@ -8,7 +9,7 @@ import Footer from '../Footer'
 
 export default function Home() {
   document.title = "Soundpost — Home"
-
+  useEffect(() => {window.scrollTo(0, 0);}, [])
 
   return (
     <>

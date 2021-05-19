@@ -1,31 +1,27 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
-import AssignmentContainer from '../AssignmentContainer'
-import LessonContainer from '../LessonContainer'
-import PracticeComponent from '../PracticeComponent'
-import Footer from '../Footer'
-import * as assignmentActions from '../../store/assignment'
-import * as lessonActions from '../../store/lesson'
-import * as statsActions from '../../store/stats'
-import './Dashboard.css'
-import 'react-circular-progressbar/dist/styles.css';
+import { useHistory } from 'react-router-dom';
+import * as lessonActions from '../../../store/lesson'
+import * as studentActions from '../../../store/student'
+import LessonContainer from '../../LessonContainer'
+import Footer from '../../Footer'
+import "./TeacherDashboard.css"
 
-export default function Dashboard({student}) {
+
+export default function TeacherDashboard({student}){
   document.title = "Soundpost — Home"
   const dispatch = useDispatch();
   const history = useHistory();
   const [change, setChange] = useState(false);
   const user = useSelector(state => state.session.user);
-  const latestAssignment = useSelector(state => state.assignments.latest);
   const lessons = useSelector(state => state.lessons.scheduled)
+  
 
-  useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
-  useEffect(() => dispatch(statsActions.getWeeklyPractice(user.id)), [dispatch, user.id, change])
-  useEffect(() => dispatch(lessonActions.getUserLessons(user.id, student)), [dispatch, user.id, student, change])
-  useEffect(() => dispatch(statsActions.getAllStats(user.id)), [dispatch, user.id, change])
   useEffect(() => {window.scrollTo(0, 0);}, [])
-
+  //get lessons for this teacher
+  useEffect(() => dispatch(lessonActions.getUserLessons(user.id, student)), [dispatch, user.id, student, change])
+  useEffect(() => dispatch(studentActions.getStudioStudents(user.id)), [dispatch, user.id])
+  //render today's lessons in a different way (with student photos)
 
   return (
     <div className="main">
@@ -38,35 +34,21 @@ export default function Dashboard({student}) {
               </div>
             <div className="user-info__name-practiced">
               <h1 className="user-info__name">{user.first_name} {user.last_name}</h1>
-              <div className="user-info__practiced">
-                <PracticeComponent user={user} setChange={setChange} />
+              <div className="user-info__instrument">
+                {user.instrument.toLowerCase()}
               </div>
             </div>
           </div>
         </div>
         <div className="lesson-info">
-          <div className="lesson-info__assignment">
-            <h1 className="title">Practice Assignment</h1>
-            <div>
-              {latestAssignment !== null &&
-              <>
-              <AssignmentContainer assignment={latestAssignment}/>
-              <Link exact to="/assignments" className="lesson-info__link">View previous assignments</Link>
-              </>
-              }
-              {latestAssignment === null &&
-              <p className="">You don't have any assignments yet.</p>
-              }
-            </div>
-          </div>
           <div className="lesson-info__upcoming">
             <h1 className="title">Upcoming Lessons</h1>
             <div className="lesson-info__lessons">
               {lessons != null &&
                 <div>
                   {Object.values(lessons).map(lesson =>
-                    <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange} student={student}/>
-                    )}
+                    <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange}/>
+                  )}
                 </div>
               }
               {lessons === null &&

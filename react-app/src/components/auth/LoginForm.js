@@ -67,7 +67,7 @@ const LoginForm = ({ authenticated, setAuthenticated, setStudent }) => {
         </div>
         }
         <div className="form__div">
-          <label htmlFor="student">Student </label>
+          <label htmlFor="student" id="student__label">Student </label>
           <input
             id="student"
             type="radio"
@@ -76,7 +76,7 @@ const LoginForm = ({ authenticated, setAuthenticated, setStudent }) => {
             value="true"
             checked={role === true}
           ></input>
-          <label htmlFor="teacher"> Teacher </label>
+          <label htmlFor="teacher" id="teacher__label"> Teacher </label>
           <input
             id="teacher"
             type="radio"
@@ -111,7 +111,7 @@ const LoginForm = ({ authenticated, setAuthenticated, setStudent }) => {
           <button className="btn__secondary" type="submit" onClick={demoLogin}>Demo User</button>
         </div>
         <div className="form__div form__switch">
-          <p>Don't have an account? <Link to="/signup">Sign up here.</Link></p>
+          <p>Don't have an account? <Link to="/signup">Sign up here</Link>.</p>
         </div>
       </form>
       <Footer />

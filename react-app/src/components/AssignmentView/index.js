@@ -11,6 +11,7 @@ export default function AssignmentView() {
   const user = useSelector(state => state.session.user)
   const assignments = useSelector(state => state.assignments.all)
 
+  useEffect(() => {window.scrollTo(0, 0);}, [])
   useEffect(() => {
     dispatch(assignmentActions.getAllAssignments(user.id))
   }, [dispatch, user])

@@ -24,8 +24,13 @@ export const setOneLesson = (lesson) => {
   return { type: SET_ONE, lesson}
 }
 
-export const getUserLessons = (userId) => async dispatch => {
-  const res = await fetch(`/api/lessons/${userId}/all`)
+export const getUserLessons = (userId, student) => async dispatch => {
+  let res;
+  if (student) {
+    res = await fetch(`/api/lessons/student/${userId}/all`)
+  } else {
+    res = await fetch(`/api/lessons/teacher/${userId}/all`)
+  }
   const data = await res.json();
   data.forEach(lesson => {
     lesson.start_time = new Date(lesson.start_time);

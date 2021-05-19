@@ -20,6 +20,11 @@ class TimeSlot(db.Model):
                   "July", "August", "September", "October", "November",
                   "December"]
 
+        if self.student:
+            student = self.student.to_dict()
+        else:
+            student = None
+
         return {
             "id": self.id,
             "student_id": self.student_id,
@@ -27,4 +32,5 @@ class TimeSlot(db.Model):
             "start_time": self.start_time.isoformat(),
             "end_time": self.end_time.isoformat(),
             "teacher": self.teacher.to_dict(),
+            "student": student,
         }
