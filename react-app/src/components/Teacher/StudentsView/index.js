@@ -25,24 +25,28 @@ export default function StudentsView(){
         <h1 className="title__main">Your Students</h1>
         <div className="form__div student-sort">
           <span>Order By:  </span>
-          <label htmlFor="firstName" id="name__label"> First Name </label>
-          <input
-            type="radio"
-            id="firstName"
-            name="firstName"
-            onChange={(e) => changeOrder(e)}
-            value="true"
-            checked={firstName === true}
-          ></input>
-          <label htmlFor="lastName" id="name__label"> Last Name </label>
-          <input
-            type="radio"
-            id="lastName"
-            name="lastName"
-            onChange={(e) => changeOrder(e)}
-            value="false"
-            checked={firstName === false}
-          ></input>
+          <div>
+            <label htmlFor="firstName" id="name__label"> First Name </label>
+            <input
+              type="radio"
+              id="firstName"
+              name="firstName"
+              onChange={(e) => changeOrder(e)}
+              value="true"
+              checked={firstName === true}
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="lastName" id="name__label"> Last Name </label>
+            <input
+              type="radio"
+              id="lastName"
+              name="lastName"
+              onChange={(e) => changeOrder(e)}
+              value="false"
+              checked={firstName === false}
+            ></input>
+          </div>
         </div>
         <div className="all-students">
           {students != null &&

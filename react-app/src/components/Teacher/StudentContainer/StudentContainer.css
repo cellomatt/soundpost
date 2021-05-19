@@ -71,6 +71,7 @@
 
   .student-info {
     min-width: 100%;
+    width: 100%;
   }
 
   .student-info__name{
@@ -117,9 +118,6 @@
 }
 
 @media screen and (max-width: 750px) {
-  .lesson-info {
-    min-width: 100%;
-  }
   .student-info__name{
     font-size: 2.3em;
   }
@@ -152,4 +150,10 @@
     width: 45%;
   }
 
+}
+
+@media screen and (max-width: 330px) {
+  .student-info__name{
+    font-size: 1.7em;
+  }
 }

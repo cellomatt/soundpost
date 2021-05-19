@@ -19,9 +19,11 @@
   align-items: center;
   justify-content: center;
   font-weight: 600;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
-.student-sort span, .student-sort label {
+.student-sort span, .student-sort div {
   padding: 0.5em 0.2em 0.5em 0.6em;
 }
 
