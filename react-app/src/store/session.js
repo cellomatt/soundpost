@@ -6,7 +6,9 @@ export const userLogout = () => {
 }
 
 export const setUser = (user) => {
-  user.created_at = new Date(user.created_at)
+  if (user.created_at){
+    user.created_at = new Date(user.created_at)
+  }
   return { type: SET_USER, user };
 };
 

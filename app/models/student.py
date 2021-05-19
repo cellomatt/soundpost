@@ -47,5 +47,6 @@ class Student(db.Model, UserMixin):
           "photo_url": self.photo_url,
           "teacher_id": self.teacher_id,
           "teacher": self.teacher.to_dict(),
-          "created_at": self.created_at.isoformat()
+          "created_at": self.created_at.isoformat(),
+          "student": True,
         }

@@ -6,6 +6,7 @@ import assignmentReducer from "./assignment"
 import lessonReducer from "./lesson"
 import practiceReducer from "./practice"
 import statsReducer from "./stats"
+import statesReducer from "./states"
 
 const appReducer = combineReducers({
   session: sessionReducer,
@@ -14,6 +15,7 @@ const appReducer = combineReducers({
   lessons: lessonReducer,
   practice: practiceReducer,
   stats: statsReducer,
+  states: statesReducer,
 });
 
 const rootReducer = (state, action) => {

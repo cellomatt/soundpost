@@ -1,15 +1,16 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, FileField, IntegerField
-from wtforms.validators import DataRequired, Email, ValidationError
+from wtforms import StringField, FileField, IntegerField, BooleanField
+from wtforms.validators import DataRequired, Email, ValidationError, InputRequired
 from app.models import Student, Teacher
 
 
 def user_exists(form, field):
     email = field.data
-    user = Student.query.filter(Student.email_address == email).first()
-    # or Teacher.query.filter(Teacher.email_address == email).first()
-    if user:
+    student = Student.query.filter(Student.email_address == email).first()
+    teacher = Teacher.query.filter(Teacher.email_address == email).first()
+    if student or teacher:
         raise ValidationError("User is already registered.")
+
 
 class SignUpStudentForm(FlaskForm):
     first_name = StringField('first_name', validators=[DataRequired()])
@@ -23,19 +24,21 @@ class SignUpStudentForm(FlaskForm):
     photo = FileField('photo')
     password = StringField('password', validators=[DataRequired()])
     created_at = StringField('created_at')
+    student = BooleanField('student', validators=[InputRequired()])
 
 
-# class SignUpTeacherForm(FlaskForm):
-#     first_name = StringField('first_name', validators=[DataRequired()])
-#     last_name = StringField('last_name', validators=[DataRequired()])
-#     email_address = StringField('email', validators=[DataRequired(), Email(),
-#                                 user_exists])
-#     password = StringField('password', validators=[DataRequired()])
-#     instrument = StringField('instrument', validators=[DataRequired()])
-#     phone = StringField('phone', validators=[DataRequired()])
-#     street_address = StringField('street_address',
-#                                   validators=[DataRequired()])
-#     city = StringField('city', validators=[DataRequired()])
-#     state_id = IntegerField('state_id', validators=[DataRequired()])
-#     zip = IntegerField('zip', validators=[DataRequired()])
-#     photo = FileField('photo', validators=[DataRequired()])
+class SignUpTeacherForm(FlaskForm):
+    first_name = StringField('first_name', validators=[DataRequired()])
+    last_name = StringField('last_name', validators=[DataRequired()])
+    email_address = StringField('email', validators=[DataRequired(), Email(),
+                                user_exists])
+    phone = StringField('phone', validators=[DataRequired()])
+    instrument = StringField('instrument', validators=[DataRequired()])
+    street_address = StringField('street_address',
+                                 validators=[DataRequired()])
+    city = StringField('city', validators=[DataRequired()])
+    state_id = IntegerField('state_id', validators=[DataRequired()])
+    zip = IntegerField('zip', validators=[DataRequired()])
+    photo = FileField('photo', validators=[DataRequired()])
+    password = StringField('password', validators=[DataRequired()])
+    student = BooleanField('student', validators=[InputRequired()])

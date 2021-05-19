@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import Student, db  # Teacher
+from app.models import Student, Teacher, db
 from app.forms import LoginForm
-from app.forms import SignUpStudentForm  # SignUpTeacherForm
+from app.forms import SignUpStudentForm, SignUpTeacherForm
 from flask_login import current_user, login_user, logout_user, login_required
 from ..config import Config
 from ..s3 import *
@@ -10,8 +10,6 @@ import botocore
 from datetime import *
 
 auth_routes = Blueprint('auth', __name__)
-
-# ----------- TODO: Needs to be refactored for teachers in addition to students
 
 
 def validation_errors_to_error_messages(validation_errors):
@@ -30,6 +28,7 @@ def authenticate():
     """
     Authenticates a user.
     """
+    # print("--------------Current User:", current_user.to_dict())
     if current_user.is_authenticated:
         return current_user.to_dict()
     return {'errors': ['Unauthorized']}, 401
@@ -41,14 +40,19 @@ def login():
     Logs a user in
     """
     form = LoginForm()
-    print(request.get_json())
     # Get the csrf_token from the request cookie and put it into the
     # form manually to validate_on_submit can be used
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         # Add the user to the session, we are logged in!
-        user = Student.query.filter(Student.email_address ==
-                                    form.data['email']).first()
+        student = form.data['student']
+        if student:
+            user = Student.query.filter(Student.email_address ==
+                                        form.data['email']).first()
+        else:
+            user = Teacher.query.filter(Teacher.email_address ==
+                                        form.data['email']).first()
+        session['student'] = student
         login_user(user)
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
@@ -75,27 +79,51 @@ def sign_up():
     """
     Creates a new user and logs them in
     """
-    form = SignUpStudentForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        created_at = form.data['created_at']
-        user = Student(
-            first_name=form.data['first_name'],
-            last_name=form.data['last_name'],
-            email_address=form.data['email_address'],
-            phone=form.data['phone'],
-            parent_name=form.data['parent_name'],
-            instrument=form.data['instrument'],
-            teacher_id=form.data['teacher_id'],
-            photo_url=url,
-            password=form.data['password'],
-            created_at=datetime.fromisoformat(created_at)
-        )
-        db.session.add(user)
-        db.session.commit()
-        login_user(user)
-        return user.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}
+    if request.form.get("student") == "true":
+        form = SignUpStudentForm()
+        form['csrf_token'].data = request.cookies['csrf_token']
+        if form.validate_on_submit():
+            created_at = form.data['created_at']
+            user = Student(
+                first_name=form.data['first_name'],
+                last_name=form.data['last_name'],
+                email_address=form.data['email_address'],
+                phone=form.data['phone'],
+                parent_name=form.data['parent_name'],
+                instrument=form.data['instrument'],
+                teacher_id=form.data['teacher_id'],
+                photo_url=url,
+                password=form.data['password'],
+                created_at=datetime.fromisoformat(created_at)
+            )
+            db.session.add(user)
+            db.session.commit()
+            login_user(user)
+            return user.to_dict()
+        return {'errors': validation_errors_to_error_messages(form.errors)}
+
+    if request.form.get("student") == "false":
+        form = SignUpTeacherForm()
+        form['csrf_token'].data = request.cookies['csrf_token']
+        if form.validate_on_submit():
+            user = Teacher(
+                first_name=form.data['first_name'],
+                last_name=form.data['last_name'],
+                email_address=form.data['email_address'],
+                phone=form.data['phone'],
+                instrument=form.data['instrument'],
+                street_address=form.data['street_address'],
+                city=form.data['city'],
+                zip=form.data['zip'],
+                state_id=form.data['state_id'],
+                photo_url=url,
+                password=form.data['password'],
+            )
+            db.session.add(user)
+            db.session.commit()
+            login_user(user)
+            return user.to_dict()
+        return {'errors': validation_errors_to_error_messages(form.errors)}
 
 
 @auth_routes.route('/unauthorized')

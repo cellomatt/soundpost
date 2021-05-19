@@ -15,7 +15,8 @@ class Teacher(db.Model, UserMixin):
     phone = db.Column(db.String(15), nullable=False)
     street_address = db.Column(db.String(255), nullable=False)
     city = db.Column(db.String(255), nullable=False)
-    state_id = db.Column(db.Integer, db.ForeignKey("states.id"), nullable=False)
+    state_id = db.Column(db.Integer, db.ForeignKey("states.id"),
+                         nullable=False)
     zip = db.Column(db.Integer, nullable=False)
     photo_url = db.Column(db.String(255), nullable=False)
 
@@ -39,7 +40,7 @@ class Teacher(db.Model, UserMixin):
         return {
           "id": self.id,
           "first_name": self.first_name,
-          "last_name": self.last_name,  
+          "last_name": self.last_name,
           "email_address": self.email_address,
           "instrument": self.instrument,
           "phone": self.phone,
@@ -48,4 +49,5 @@ class Teacher(db.Model, UserMixin):
           "state": self.state.name,
           "zip": self.zip,
           "photo_url": self.photo_url,
+          "student": False,
         }

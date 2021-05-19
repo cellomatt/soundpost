@@ -12,6 +12,7 @@ from .api.teacher_routes import teacher_routes
 from .api.assignment_routes import assignment_routes
 from .api.lesson_routes import lesson_routes
 from .api.practice_routes import practice_routes
+from .api.states_routes import states_routes
 
 from .seeds import seed_commands
 
@@ -23,10 +24,14 @@ app = Flask(__name__)
 login = LoginManager(app)
 login.login_view = 'auth.unauthorized'
 
-# TODO: Update for both students and teachers
+
 @login.user_loader
 def load_user(id):
-    return Student.query.get(int(id))
+    # load student or teacher account to session based on role
+    if session['student']:
+        return Student.query.get(int(id))
+    else:
+        return Teacher.query.get(int(id))
 
 
 # Tell flask about seed commands
@@ -36,6 +41,7 @@ app.config.from_object(Config)
 app.register_blueprint(student_routes, url_prefix='/api/students')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(teacher_routes, url_prefix='/api/teachers')
+app.register_blueprint(states_routes, url_prefix='/api/states')
 app.register_blueprint(assignment_routes, url_prefix='/api/assignments')
 app.register_blueprint(lesson_routes, url_prefix='/api/lessons')
 app.register_blueprint(practice_routes, url_prefix='/api/practice')

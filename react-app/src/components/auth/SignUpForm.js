@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Redirect, useHistory } from 'react-router-dom';
+import { Redirect, useHistory, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import InputMask from 'react-input-mask';
 import { signUp } from '../../services/auth';
 import { setUser } from "../../store/session"
 import * as teacherActions from '../../store/teacher'
+import * as statesActions from '../../store/states'
 import Footer from '../Footer'
 import './SignUpForm.css'
 
-const SignUpForm = ({authenticated, setAuthenticated}) => {
+const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
   document.title = "Soundpost — Signup"
   const dispatch = useDispatch();
   const history = useHistory();
   const teachers = useSelector(state => state.teachers.all)
+  const states = useSelector(state => state.states.all)
   const [loaded, setLoaded] = useState(false);
+  const [role, setRole] = useState(true)
   const [email_address, setEmailAddress] = useState("");
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
@@ -23,25 +27,40 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const [parent_name, setParentName] = useState("");
   const [photo, setPhoto] = useState("");
   const [teacher_id, setTeacherId] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [stateId, setStateId] = useState("");
   const [errors, setErrors] = useState([]);
+  const [zip, setZip] = useState("");
   const teachersArray = Object.values(teachers)
+  const statesArray = Object.values(states)
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   useEffect(() => {
     (async () => {
       const data = await dispatch(teacherActions.getAllTeachers());
-      if (!data.errors) {
+      const stateData = await dispatch(statesActions.getAllStates());
+      if (!data.errors && !stateData.errors) {
         setLoaded(true);
       }
     })();
   }, [dispatch]);
 
+  const changeRole = (e) => {
+    e.target.value === "true" ? setRole(true) : setRole(false);
+  }
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
       const user = await signUp({first_name, last_name, email_address, password,
-                              instrument, phone, parent_name, photo, teacher_id});
+                              instrument, phone, parent_name, photo, teacher_id,
+                              address, city, stateId, zip, role});
       if (!user.errors) {
+        setStudent(role);
         dispatch(setUser(user));
         setAuthenticated(true);
         history.push("/");
@@ -72,6 +91,27 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           </div>
           }
           <p className="required_label">* indicates a required field</p>
+          <div className="form__div">
+            <label htmlFor="student">Student </label>
+            <input
+              id="student"
+              type="radio"
+              name="role"
+              onChange={(e) => changeRole(e)}
+              value="true"
+              checked={role === true}
+            ></input>
+            <label htmlFor="teacher"> Teacher </label>
+            <input
+              id="teacher"
+              type="radio"
+              name="role"
+              onChange={(e) => changeRole(e)}
+              value="false"
+              checked={role === false}
+            ></input>
+            <span> *</span>
+          </div>
           <div className="form__div">
             <label>First Name *</label>
             <input
@@ -107,16 +147,16 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           </div>
           <div className="form__div">
             <label>Phone Number *</label>
-            <input
-              type="text"
-              className="form__input"
-              name="phone"
-              onChange={(e) => setPhone(e.target.value)}
-              value={phone}
-              required={true}
-            ></input>
+            <InputMask mask="(999) 999-9999" maskChar=" " value={phone} onChange={(e) => setPhone(e.target.value) }>
+              {() =>
+              <input
+                type="text"
+                className="form__input"
+                name="phone"
+              ></input>}
+            </InputMask>
           </div>
-          <div className="form__div">
+          {role && <div className="form__div">
             <label>Parent or Guardian Name </label>
             <input
               type="text"
@@ -125,7 +165,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
               onChange={(e) => setParentName(e.target.value)}
               value={parent_name}
             ></input>
-          </div>
+          </div>}
           <div className="form__div">
             <label>Instrument *</label>
             <input
@@ -137,7 +177,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
               required={true}
             ></input>
           </div>
-          <div className="form__div">
+          {role && <div className="form__div">
             <label>Teacher *</label>
             {loaded && <select
               id="teacher_id"
@@ -155,10 +195,70 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
                 }
             </select>
             }
+          </div>}
+          {!role &&
+          <>
+            <div className="form__div">
+              <label>Street Address *</label>
+              <input
+                type="text"
+                className="form__input"
+                name="street_address"
+                onChange={(e) => setAddress(e.target.value)}
+                value={address}
+                required={true}
+              ></input>
+            </div>
+            <div className="form__div">
+              <label>City *</label>
+              <input
+                type="text"
+                className="form__input"
+                name="city"
+                onChange={(e) => setCity(e.target.value)}
+                value={city}
+                required={true}
+              ></input>
+            </div>
+            <div className="form__div">
+              <label>State *</label>
+              {loaded && <select
+                id="state_id"
+                value={stateId}
+                className="form__input"
+                onChange={(e) => setStateId(e.target.value)}
+                required={true}
+              >
+                {statesArray.map(state =>
+                <option value={state.id} key={state.id}>
+                  {`${state.name}`}
+                </option>
+                )
+                }
+              </select>
+              }
           </div>
           <div className="form__div">
-            <label>Upload A Profile Photo </label>
-            <input className="file-input" type="file" onChange={e => setPhoto(e.target.files[0])}/>
+            <label>ZIP Code *</label>
+            <InputMask mask="99999" maskChar=" " value={zip} onChange={(e) => setZip(e.target.value) }>
+              {() =>
+              <input
+                type="text"
+                className="form__input"
+                name="zip"
+              ></input>}
+            </InputMask>
+          </div>
+          </>
+          }
+          <div className="form__div">
+            <label>Upload A Profile Photo {!role && <span> *</span>}</label>
+            <input
+              className="file-input"
+              type="file"
+              onChange={e => setPhoto(e.target.files[0])}
+              required={!role}
+              />
           </div>
           <div className="form__div">
             <label>Password *</label>
@@ -184,6 +284,9 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           </div>
           <div className="form__div form__buttons">
             <button className="btn__secondary" type="submit">Sign Up</button>
+          </div>
+          <div className="form__div form__switch">
+            <p>Already have an account? <Link to="/login">Log in here.</Link></p>
           </div>
         </form>
         <Footer />

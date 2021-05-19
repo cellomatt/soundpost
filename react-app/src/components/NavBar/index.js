@@ -6,7 +6,7 @@ import {ReactComponent as Logo} from './logo.svg'
 import {ReactComponent as Logo2} from './logo2.svg'
 
 
-const NavBar = ({ authenticated, setAuthenticated }) => {
+const NavBar = ({ authenticated, setAuthenticated, student }) => {
   const [scrolled, setScrolled] = useState(false)
   window.onscroll = function() {scroller()};
 
@@ -20,7 +20,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
   let sessionLinks;
   if (authenticated) {
     sessionLinks = (
-      <ProfileButton authenticated={authenticated} setAuthenticated={setAuthenticated}/>
+      <ProfileButton authenticated={authenticated} setAuthenticated={setAuthenticated} student={student}/>
     );
   } else {
     sessionLinks = (
