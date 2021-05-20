@@ -35,7 +35,27 @@ export default function IndividualStudentView(){
     <div className="main">
       <div className="dashboard_main">
         <div className="student-info__box">
-          
+          {student &&
+          <>
+            <h1 className="title name">{student.first_name} {student.last_name}</h1>
+            <div className="user-content">
+              <div className="user-info">
+                <div className="user-info__container">
+                  <div className="user-info__pic">
+                    {student.photo_url && <img className="user-info__pic--img" src={student.photo_url} alt="profile main"/>}
+                    {!student.photo_url && <img className="user-info__pic--img" src={`https://soundpost-app.s3.us-east-2.amazonaws.com/profile_icon.png`} alt="profile main"/>}
+                  </div>
+                  <div className="student-info__contact">
+                    <h3 className="student-info__contact-item">tel: <a href="tel:+6143019973">{student.phone}</a></h3>
+                    <h3 className="student-info__contact-item">email: <a href={`mailto:${student.email_address}`}>{student.email_address}</a></h3>
+                    {student.parent_name && <h3 className="student-info__contact-item">parent name: {student.parent_name.toLowerCase()}</h3>}
+                  </div>
+                </div>
+              </div>
+              <div className="student-data"></div>
+            </div>
+          </>
+          }
         </div>
       </div>
     </div>
