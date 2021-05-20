@@ -8,6 +8,10 @@
   padding-top: 1.5em;
 }
 
+.all-students p {
+  text-align: center;
+}
+
 .student-link {
   text-decoration: none;
   color: #0061FF;

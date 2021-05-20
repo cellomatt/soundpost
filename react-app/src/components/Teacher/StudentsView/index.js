@@ -23,7 +23,7 @@ export default function StudentsView(){
     <div className="main">
       <div className="dashboard_main">
         <h1 className="title__main">Your Students</h1>
-        <div className="form__div student-sort">
+        {students != null && <div className="form__div student-sort">
           <span>Order By:  </span>
           <div>
             <label htmlFor="firstName" id="name__label"> First Name </label>
@@ -47,8 +47,11 @@ export default function StudentsView(){
               checked={firstName === false}
             ></input>
           </div>
-        </div>
+        </div>}
         <div className="all-students">
+          {students === null &&
+            <p>You don't have any registered students. Send them to <b>soundpost.herokuapp.com/signup</b>!</p>
+          }
           {students != null &&
             Object.values(students).sort((a,b) => {
               let nameA = firstName ? a.first_name.toUpperCase() : a.last_name.toUpperCase();

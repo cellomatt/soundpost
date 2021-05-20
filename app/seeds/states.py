@@ -11,6 +11,7 @@ def seed_states():
         {"name": "Colorado", "abbreviation": "CO"},
         {"name": "Connecticut", "abbreviation": "CT"},
         {"name": "Delaware", "abbreviation": "DE"},
+        {"name": "District of Columbia", "abbreviation": "DC"},
         {"name": "Florida", "abbreviation": "FL"},
         {"name": "Georgia", "abbreviation": "GA"},
         {"name": "Hawaii", "abbreviation": "HI"},

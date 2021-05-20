@@ -34,10 +34,12 @@ export default function studentReducer(state = initialState, action) {
   const updateState = {...state}
   switch (action.type) {
     case GET_STUDENTS:
-      updateState.all = {}
-      action.students.forEach(student => {
-        updateState.all[student.id] = student
-      })
+      if (action.students.length > 0) {
+        updateState.all = {}
+        action.students.forEach(student => {
+          updateState.all[student.id] = student
+        })
+      }
       return updateState;
     case GET_ONE_STUDENT:
       updateState.currentStudent = action.student

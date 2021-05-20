@@ -43,7 +43,7 @@ export default function IndividualStudentView(){
         <div className="student-info__box">
           {student &&
           <>
-            <h1 className="title name">{student.first_name} {student.last_name}</h1>
+            <h1 className="title__main">{student.first_name} {student.last_name}</h1>
             <div className="user-content">
               <div className="user-info">
                 <div className="student-info__container">
@@ -60,7 +60,7 @@ export default function IndividualStudentView(){
               </div>
               <div className="student-data">
                 <div className="student-data__assignments">
-                  <h1 className="title__main">Practice Assignments</h1>
+                  <h1 className="title student-data__title">Practice Assignments</h1>
                   <div className="assignments__list">
                     {assignments === null &&
                           <p className="">You don't have any assignments yet.</p>

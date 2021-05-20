@@ -29,7 +29,7 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
   const [teacher_id, setTeacherId] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
-  const [stateId, setStateId] = useState("");
+  const [stateId, setStateId] = useState(1);
   const [errors, setErrors] = useState([]);
   const [zip, setZip] = useState("");
   const teachersArray = Object.values(teachers)
@@ -59,6 +59,7 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
       const user = await signUp({first_name, last_name, email_address, password,
                               instrument, phone, parent_name, photo, teacher_id,
                               address, city, stateId, zip, role});
+      console.log(stateId)
       if (!user.errors) {
         setStudent(role);
         dispatch(setUser(user));
