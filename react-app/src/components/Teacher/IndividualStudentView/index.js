@@ -10,20 +10,24 @@ import './IndividualStudentView.css'
 export default function IndividualStudentView(){
   const history = useHistory();
   const { studentId } = useParams();
+  const studentIdNum = Number(studentId)
   const dispatch = useDispatch();
+  const user = useSelector(state => state.session.user)
   const student = useSelector(state => state.students.currentStudent);
   const stats = useSelector(state => state.stats)
   const assignments = useSelector(state => state.assignments.all)
   const orderedList = Object.values(stats.days.list).sort((a, b) => b.date - a.date)
   const options = { dateStyle: 'long'};
   const [newAssignment, setNewAssignment] = useState("");
+  const [change, setChange] = useState(false);
 
   useEffect(() => {window.scrollTo(0, 0);}, [])
-  useEffect(() => dispatch(statsActions.getAllStats(studentId)), [dispatch, studentId])
+  useEffect(() => dispatch(statsActions.getAllStats(studentIdNum)), [dispatch, studentIdNum])
+
   useEffect(() => {
     const getStudentInfo = async () => {
       try {
-        await dispatch(studentActions.getOneStudent(studentId));
+        await dispatch(studentActions.getOneStudent(studentIdNum));
       }
       catch {
         history.push("/students")
@@ -33,10 +37,20 @@ export default function IndividualStudentView(){
     return () => {
       dispatch(studentActions.cleanupStudent())
     }
-  }, [dispatch, studentId, history])
+  }, [dispatch, studentIdNum, history])
+
   useEffect(() => {
-    dispatch(assignmentActions.getAllAssignments(studentId))
-  }, [dispatch, studentId])
+    dispatch(assignmentActions.getAllAssignments(studentIdNum));
+    return () => {
+      dispatch(assignmentActions.cleanupAssignments())
+    }
+  }, [dispatch, studentIdNum, change])
+
+  const sendAssignment = async () => {
+    await dispatch(assignmentActions.sendNewAssignment(user.id, studentIdNum, newAssignment));
+    setNewAssignment("");
+    setChange(change => !change);
+  }
 
   return (
     <div className="main">
@@ -70,7 +84,7 @@ export default function IndividualStudentView(){
                       value={newAssignment}
                       onChange={(e) => setNewAssignment(e.target.value)}>
                     </textarea>
-                    <button id="assignment-submit" className="btn btn__primary">Send</button>
+                    <button id="assignment-submit" className="btn btn__primary" onClick={sendAssignment}>Send</button>
                     <div className="list">
                     {assignments === null &&
                           <p className="">You haven't sent any assignments yet.</p>

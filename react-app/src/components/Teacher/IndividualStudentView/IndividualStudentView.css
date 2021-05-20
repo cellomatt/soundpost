@@ -1,15 +1,16 @@
 #assignment-submit {
-  margin: .2em 0 .5em;
+  margin: .2em 0 .7em;
   align-self: flex-end;
   width: 3.5em;
 }
 
 .list {
-  max-height: 450px;
+  max-height: 400px;
   overflow-y: scroll;
   box-sizing: border-box;
   border-radius: 8px;
   padding: .5em;
+  padding-left: 1em;
   border: 3px solid #0061FF;
 }
 

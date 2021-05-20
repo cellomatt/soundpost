@@ -14,7 +14,7 @@ class Assignment(db.Model):
     teacher = db.relationship("Teacher", back_populates="assignments")
 
     def to_dict(self):
-
+        print("_______________", self.teacher)
         return {
             "id": self.id,
             "student_id": self.student_id,

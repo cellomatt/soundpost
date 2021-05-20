@@ -1,7 +1,8 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, Response, request
 from flask_login import login_required
-from app.models import Assignment
+from app.models import db, Assignment
 import json
+from datetime import *
 
 assignment_routes = Blueprint('assignments', __name__)
 
@@ -28,3 +29,24 @@ def all_assignments(id):
     data = [assignment.to_dict() for assignment in assignments]
     res = json.dumps(data)
     return res
+
+
+@assignment_routes.route('/new', methods=['POST'])
+@login_required
+def set_new_assignment():
+    data = request.get_json()
+    teacher_id = data["teacherId"]
+    student_id = data["studentId"]
+    message = data["assignment"]
+    print("---------------------------", teacher_id, student_id, message)
+
+    new_assignment = Assignment(
+        student_id=student_id,
+        teacher_id=teacher_id,
+        message=message,
+        created_at=datetime.now(tz=None)
+    )
+    db.session.add(new_assignment)
+    db.session.commit()
+    res = new_assignment.to_dict()
+    return json.dumps(res)
