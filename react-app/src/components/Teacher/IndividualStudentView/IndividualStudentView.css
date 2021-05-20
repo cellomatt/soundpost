@@ -23,10 +23,14 @@
   padding-top: 1em;
 }
 
-.student-info__contact-item,
+.student-info__contact-item span,
 .student-info__contact-item a {
   color: #333;
   text-align: left;
+}
+
+.student-info__contact-item a:hover {
+  color: black;
 }
 
 .student-info__container{
@@ -36,11 +40,19 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 75%;
+  /* width: 75%; */
   justify-content: center;
   align-items: center;
 }
 
+.user-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
 
 
 @media screen and (max-width: 940px) {
