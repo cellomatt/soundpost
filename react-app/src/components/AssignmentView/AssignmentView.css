@@ -1,7 +1,7 @@
 .assignments__list {
   width: 100%;
-  /* padding: 1.5em 2.5em; */
-  /* min-width: 560px; */
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 630px) {

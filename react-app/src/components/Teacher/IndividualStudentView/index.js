@@ -16,6 +16,7 @@ export default function IndividualStudentView(){
   const assignments = useSelector(state => state.assignments.all)
   const orderedList = Object.values(stats.days.list).sort((a, b) => b.date - a.date)
   const options = { dateStyle: 'long'};
+  const [newAssignment, setNewAssignment] = useState("");
 
   useEffect(() => {window.scrollTo(0, 0);}, [])
   useEffect(() => dispatch(statsActions.getAllStats(studentId)), [dispatch, studentId])
@@ -67,11 +68,21 @@ export default function IndividualStudentView(){
                           }
                     {assignments !== null &&
                     <>
-                      {Object.values(assignments).map(assignment =>
-                      <div key={assignment.id}>
-                        <AssignmentContainer assignment={assignment} />
+                      <textarea
+                        id="new-assignment"
+                        className="form__input"
+                        placeholder="New assignment..."
+                        value={newAssignment}
+                        onChange={(e) => setNewAssignment(e.target.value)}>
+                      </textarea>
+                      <button id="assignment-submit" className="btn btn__primary">Send</button>
+                      <div className="list">
+                        {Object.values(assignments).map(assignment =>
+                        <div key={assignment.id}>
+                          <AssignmentContainer assignment={assignment} />
+                        </div>
+                        )}
                       </div>
-                      )}
                     </>
                     }
                   </div>
