@@ -63,28 +63,28 @@ export default function IndividualStudentView(){
                 <div className="student-data__assignments">
                   <h1 className="title student-data__title">Practice Assignments</h1>
                   <div className="assignments__list">
+                    <textarea
+                      id="new-assignment"
+                      className="form__input"
+                      placeholder="New assignment..."
+                      value={newAssignment}
+                      onChange={(e) => setNewAssignment(e.target.value)}>
+                    </textarea>
+                    <button id="assignment-submit" className="btn btn__primary">Send</button>
+                    <div className="list">
                     {assignments === null &&
-                          <p className="">You don't have any assignments yet.</p>
+                          <p className="">You haven't sent any assignments yet.</p>
                           }
                     {assignments !== null &&
                     <>
-                      <textarea
-                        id="new-assignment"
-                        className="form__input"
-                        placeholder="New assignment..."
-                        value={newAssignment}
-                        onChange={(e) => setNewAssignment(e.target.value)}>
-                      </textarea>
-                      <button id="assignment-submit" className="btn btn__primary">Send</button>
-                      <div className="list">
                         {Object.values(assignments).map(assignment =>
                         <div key={assignment.id}>
                           <AssignmentContainer assignment={assignment} />
                         </div>
                         )}
-                      </div>
                     </>
                     }
+                    </div>
                   </div>
                 </div>
               </div>
