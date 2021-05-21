@@ -49,7 +49,7 @@ export default function TeacherDashboard({student}){
               {lessons != null &&
                 <div>
                   {Object.values(lessons).filter(lesson => lesson.start_time < tomorrow).sort((a,b) => a.start_time - b.start_time).map(lesson =>
-                    <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange}/>
+                    <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange} student={student}/>
                   )}
                 </div>
               }
@@ -64,7 +64,7 @@ export default function TeacherDashboard({student}){
               {lessons != null &&
                 <div>
                   {Object.values(lessons).filter(lesson => lesson.start_time > tomorrow).sort((a,b) => a.start_time - b.start_time).map(lesson =>
-                    <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange}/>
+                    <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange} student={student}/>
                   )}
                 </div>
               }

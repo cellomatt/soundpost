@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import * as studentActions from '../../../store/student'
 import * as statsActions from '../../../store/stats'
 import * as assignmentActions from '../../../store/assignment'
+import * as lessonActions from '../../../store/lesson'
 import AssignmentContainer from '../../AssignmentContainer'
+import LessonContainer from '../../LessonContainer'
 import './IndividualStudentView.css'
 
-export default function IndividualStudentView(){
+export default function IndividualStudentView({role}){
   const history = useHistory();
   const { studentId } = useParams();
   const studentIdNum = Number(studentId)
@@ -17,12 +19,14 @@ export default function IndividualStudentView(){
   const stats = useSelector(state => state.stats)
   const assignments = useSelector(state => state.assignments.all)
   const orderedList = Object.values(stats.days.list).sort((a, b) => b.date - a.date)
+  const lessons = useSelector(state => state.lessons.scheduled)
   const options = { dateStyle: 'long'};
   const [newAssignment, setNewAssignment] = useState("");
   const [change, setChange] = useState(false);
 
   useEffect(() => {window.scrollTo(0, 0);}, [])
   useEffect(() => dispatch(statsActions.getAllStats(studentIdNum)), [dispatch, studentIdNum])
+  useEffect(() => dispatch(lessonActions.getUserLessons(studentIdNum, !role)), [dispatch, studentIdNum, change])
 
   useEffect(() => {
     const getStudentInfo = async () => {
@@ -58,7 +62,7 @@ export default function IndividualStudentView(){
         <div className="student-info__box">
           {student &&
           <>
-            <h1 className="title__main">{student.first_name} {student.last_name}</h1>
+            <h1 className="title__main student-name">{student.first_name} {student.last_name}</h1>
             <div className="user-content">
               <div className="user-info">
                 <div className="student-info__container">
@@ -99,6 +103,41 @@ export default function IndividualStudentView(){
                     </>
                     }
                     </div>
+                  </div>
+                </div>
+                <div className="student-data__stats">
+                  <h1 className="title student-data__title">Quick Stats</h1>
+                  {stats.start_date != null && <div className="student-data__stats-box">
+                    <p>
+                      Days Practiced This Week: {stats.thisweek.count}
+                    </p>
+                    <p>
+                      Days Practiced This Month: {stats.thismonth.count}
+                    </p>
+                    <p>
+                      Percentage of Days Practiced (All Time): {stats.all.percentage}%
+                    </p>
+                    <p>
+                      Soundpost Start Date: {stats.start_date.toLocaleDateString('en-US', options)}
+                    </p>
+                  </div>}
+                </div>
+                <div className="student-data__lessons">
+                  <h1 className="title student-data__title">Upcoming Lessons</h1>
+                  <div className="lesson-info__lessons">
+                    {lessons != null &&
+                      <div>
+                        {Object.values(lessons).sort((a,b) => a.start_time - b.start_time).map(lesson =>
+                          <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange} student={role}/>
+                          )}
+                      </div>
+                    }
+                    {lessons === null &&
+                      <>
+                      <p>No upcoming lessons are scheduled.</p>
+                      <button onClick={() => history.push("/schedule")} className="btn__primary lesson-info__btn">Book Now</button>
+                      </>
+                      }
                   </div>
                 </div>
               </div>

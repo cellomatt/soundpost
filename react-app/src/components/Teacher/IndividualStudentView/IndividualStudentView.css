@@ -5,22 +5,23 @@
 }
 
 .list {
-  max-height: 400px;
+  max-height: 375px;
   overflow-y: scroll;
   box-sizing: border-box;
   border-radius: 8px;
-  padding: .5em;
-  padding-left: 1em;
+  padding: 1em .4em 0 1em;
+  /* padding-left: 1em; */
   border: 3px solid #0061FF;
 }
 
 #new-assignment {
   background-color:rgba(255, 255, 255, 0.7);
-  height: 150px;
+  height: 120px;
   resize: vertical;
   font-family: 'Rubik';
   font-size: 1.1em;
   color: #333;
+  border-radius: 8px;
 }
 
 .student-data {
@@ -30,7 +31,7 @@
 
 .student-data__assignments{
   padding: 0 1em 1em;
-  max-width: 650px;
+  max-width: 625px;
 }
 
 .student-data__title {
@@ -79,6 +80,11 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+}
+
+.student-name {
+  font-size: 5em;
 }
 
 .user-content {

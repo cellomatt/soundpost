@@ -38,7 +38,6 @@ def set_new_assignment():
     teacher_id = data["teacherId"]
     student_id = data["studentId"]
     message = data["assignment"]
-    print("---------------------------", teacher_id, student_id, message)
 
     new_assignment = Assignment(
         student_id=student_id,

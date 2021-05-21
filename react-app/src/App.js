@@ -79,7 +79,7 @@ function App() {
           <StudentsView authenticated={authenticated} />
         </ProtectedRoute>}
         {!student && <ProtectedRoute exact path="/students/:studentId"  authenticated={authenticated}>
-          <IndividualStudentView authenticated={authenticated} />
+          <IndividualStudentView authenticated={authenticated} role={student}/>
         </ProtectedRoute>}
         <Route>
           <div className="main">
