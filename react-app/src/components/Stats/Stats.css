@@ -100,15 +100,10 @@
   .logs__container {
     width: 90%;
     min-width: 90%;
+    padding: 2em;
   }
 
   .stats-main__logs {
     width: 100%;
-  }
-}
-
-@media screen and (max-width: 525px) {
-  .logs__container {
-    padding: 2em;
   }
 }

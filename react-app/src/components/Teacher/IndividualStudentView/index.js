@@ -144,11 +144,31 @@ export default function IndividualStudentView({role}){
                   </div>
                 </div>
               </div>
+                <div className="student-data__log">
+                  <h1 className="title student-data__title">Practice Log</h1>
+                  <div className="student-data__log--inner ">
+                    <div>
+                    {orderedList.map(day => {
+                      return (
+                        <LogContainer
+                          key={day.date.toLocaleDateString('en-US', options)}
+                          date={day.date.toLocaleDateString('en-US', options)}
+                          practiced={day.practiced}
+                          setChange={setChange}
+                          student={student}
+                          role={role}
+                          />
+                      )
+                    })}
+                    </div>
+                  </div>
+                </div>
             </div>
           </>
           }
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

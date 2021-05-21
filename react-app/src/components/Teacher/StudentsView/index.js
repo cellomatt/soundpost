@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as studentActions from '../../../store/student'
 import StudentContainer from '../StudentContainer'
+import Footer from '../../Footer'
 import './StudentsView.css'
 
 export default function StudentsView(){
@@ -71,6 +72,7 @@ export default function StudentsView(){
           }
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
