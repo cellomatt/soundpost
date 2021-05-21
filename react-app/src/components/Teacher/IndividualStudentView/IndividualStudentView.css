@@ -36,23 +36,25 @@
 .student-data__assignments,
 .student-data__stats,
 .student-data__lessons {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   padding: 0 1em 1em;
   max-width: 600px;
+  margin: 0 auto;
 }
 
 .student-data__log {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 79%;
+  width: 78%;
   padding: 0 .5em;
-  /* max-width: 390px; */
   align-items: flex-start;
   justify-self: start;
   margin: 0 auto;
-  position: relative;
-  /* left: -20em; */
-  top: -50em;
+  position: absolute;
+  top: 23.5em;
 }
 
 .student-data__log--inner {
@@ -68,7 +70,6 @@
   border: 3px solid #333;
   padding: .5em;
   background-color: rgba(255, 255, 255, 0.7);
-
 }
 
 .student-data__title {
@@ -144,26 +145,30 @@
   width: 100%;
   align-items: flex-start;
   justify-content: center;
+  height: 100%;
+  position: relative;
 }
 
-/* @media screen and (max-width: 1420px) {
+@media screen and (max-width: 1250px) {
   .student-data__log {
-    left: -20em;
-    margin-left: 10em;
+    width: 82%;
   }
-} */
+}
 
-/* @media screen and (max-width: 1375px) {
+@media screen and (max-width: 1113px) {
   .student-data__log {
-    left: -19.5em;
+    position: relative;
+    top: 0;
+    width: 55%;
+    min-width: 500px;
+    padding: 0 1em 1em;
+    max-width: 600px;
   }
-} */
 
-/* @media screen and (max-width: 1350px) {
-  .student-data__log {
-    left: -19em;
+  .student-data__log--inner {
+    max-width: 600px;
   }
-} */
+}
 
 @media screen and (max-width: 940px) {
 
@@ -173,11 +178,27 @@
     margin-bottom: 1em;
   }
 
+  .student-data__assignments,
+  .student-data__stats,
+  .student-data__lessons,
+  .student-data__log--inner {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .student-data__log,
+  .student-data {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 700px) {
   .student-info__container{
     padding: 1em;
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
