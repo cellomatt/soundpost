@@ -26,12 +26,12 @@ export default function LessonContainer({lesson, setChange, duration, student}) 
         <div className="lesson__container--time">{lesson.start_time.toLocaleTimeString('en-US', timeOptions)} - {lesson.end_time.toLocaleTimeString('en-US', timeOptions)}</div>
         {student &&
         <>
-          <div className="lesson__container--teacher">Teacher: {lesson.teacher.first_name} {lesson.teacher.last_name}</div>
+          <div className="lesson__container--person">Teacher: {lesson.teacher.first_name} {lesson.teacher.last_name}</div>
         </>
         }
         {!student &&
         <>
-          <div className="lesson__container--student">
+          <div className="lesson__container--person">
             Student: <Link to={`/students/${lesson.student.id}`}>{lesson.student.first_name} {lesson.student.last_name}</Link>
           </div>
         </>

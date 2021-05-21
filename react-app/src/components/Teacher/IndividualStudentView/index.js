@@ -7,6 +7,8 @@ import * as assignmentActions from '../../../store/assignment'
 import * as lessonActions from '../../../store/lesson'
 import AssignmentContainer from '../../AssignmentContainer'
 import LessonContainer from '../../LessonContainer'
+import LogContainer from '../../LogContainer'
+import Footer from '../../Footer'
 import './IndividualStudentView.css'
 
 export default function IndividualStudentView({role}){
@@ -23,6 +25,10 @@ export default function IndividualStudentView({role}){
   const options = { dateStyle: 'long'};
   const [newAssignment, setNewAssignment] = useState("");
   const [change, setChange] = useState(false);
+
+  if (student != null) {
+    document.title = `Soundpost — ${student.first_name} ${student.last_name}`
+  }
 
   useEffect(() => {window.scrollTo(0, 0);}, [])
   useEffect(() => dispatch(statsActions.getAllStats(studentIdNum)), [dispatch, studentIdNum])
@@ -109,16 +115,16 @@ export default function IndividualStudentView({role}){
                   <h1 className="title student-data__title">Quick Stats</h1>
                   {stats.start_date != null && <div className="student-data__stats-box">
                     <p>
-                      Days Practiced This Week: {stats.thisweek.count}
+                      Days Practiced This Week: <span>{stats.thisweek.count}</span>
                     </p>
                     <p>
-                      Days Practiced This Month: {stats.thismonth.count}
+                      Days Practiced This Month: <span>{stats.thismonth.count}</span>
                     </p>
                     <p>
-                      Percentage of Days Practiced (All Time): {stats.all.percentage}%
+                      Percentage of Days Practiced (All Time): <span>{stats.all.percentage}%</span>
                     </p>
                     <p>
-                      Soundpost Start Date: {stats.start_date.toLocaleDateString('en-US', options)}
+                      Soundpost Start Date: <span>{stats.start_date.toLocaleDateString('en-US', options)}</span>
                     </p>
                   </div>}
                 </div>
@@ -133,10 +139,7 @@ export default function IndividualStudentView({role}){
                       </div>
                     }
                     {lessons === null &&
-                      <>
                       <p>No upcoming lessons are scheduled.</p>
-                      <button onClick={() => history.push("/schedule")} className="btn__primary lesson-info__btn">Book Now</button>
-                      </>
                       }
                   </div>
                 </div>
