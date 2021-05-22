@@ -1,6 +1,6 @@
 import './AssignmentContainer.css'
 
-export default function AssignmentContainer({assignment}) {
+export default function AssignmentContainer({assignment, role}) {
   const options = { dateStyle: 'long'};
 
   return (

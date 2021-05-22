@@ -103,7 +103,7 @@ export default function IndividualStudentView({role}){
                     <>
                         {Object.values(assignments).map(assignment =>
                         <div key={assignment.id}>
-                          <AssignmentContainer assignment={assignment} />
+                          <AssignmentContainer assignment={assignment} role={user.student}/>
                         </div>
                         )}
                     </>

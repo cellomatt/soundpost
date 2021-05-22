@@ -36,7 +36,6 @@ export const getAllAssignments = (userId) => async dispatch => {
 }
 
 export const sendNewAssignment = (teacherId, studentId, assignment) => async dispatch => {
-  console.log(teacherId, studentId, assignment)
   const res = await fetch(`/api/assignments/new`, {
     method: "POST",
     headers: {
@@ -48,7 +47,6 @@ export const sendNewAssignment = (teacherId, studentId, assignment) => async dis
       assignment
     }),
   })
-  console.log(res)
   const data = await res.json();
   data.created_at = new Date(data.created_at)
   dispatch(setOneAssignment(data))

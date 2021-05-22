@@ -83,7 +83,11 @@ def sign_up():
         form = SignUpStudentForm()
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
+            # need to figure out what's going on with timezone on student signup
+            # print("---------------------", timezone)
             created_at = form.data['created_at']
+            # print("---------------------", datetime.fromisoformat(created_at).replace(tzinfo=timezone))
+            # timezone = today.tzinfo()
             user = Student(
                 first_name=form.data['first_name'],
                 last_name=form.data['last_name'],

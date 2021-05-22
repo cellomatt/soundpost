@@ -50,7 +50,7 @@ export default function Dashboard({student}) {
             <div>
               {latestAssignment !== null &&
               <>
-              <AssignmentContainer assignment={latestAssignment}/>
+              <AssignmentContainer assignment={latestAssignment} role={user.student}/>
               <Link exact to="/assignments" className="lesson-info__link">View previous assignments</Link>
               </>
               }

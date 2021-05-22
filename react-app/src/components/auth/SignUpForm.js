@@ -59,13 +59,10 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
       const user = await signUp({first_name, last_name, email_address, password,
                               instrument, phone, parent_name, photo, teacher_id,
                               address, city, stateId, zip, role});
-      console.log(stateId)
       if (!user.errors) {
         setStudent(role);
         dispatch(setUser(user));
         setAuthenticated(true);
-        history.push("/");
-        window.scrollTo(0, 0);
       } else {
         setErrors(user.errors);
         window.scrollTo(0, 0);
