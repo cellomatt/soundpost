@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect, Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import InputMask from 'react-input-mask';
 import { signUp } from '../../services/auth';
@@ -12,7 +12,7 @@ import './SignUpForm.css'
 const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
   document.title = "Soundpost — Signup"
   const dispatch = useDispatch();
-  // const history = useHistory();
+  const history = useHistory();
   const teachers = useSelector(state => state.teachers.all)
   const states = useSelector(state => state.states.all)
   const [loaded, setLoaded] = useState(false);
@@ -63,6 +63,7 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
         setStudent(role);
         dispatch(setUser(user));
         setAuthenticated(true);
+        history.push("/");
       } else {
         setErrors(user.errors);
         window.scrollTo(0, 0);
