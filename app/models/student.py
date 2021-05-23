@@ -17,7 +17,7 @@ class Student(db.Model, UserMixin):
     photo_url = db.Column(db.String(255), nullable=True)
     teacher_id = db.Column(db.Integer, db.ForeignKey("teachers.id"),
                            nullable=False)
-    created_at = db.Column(db.Date, nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False)
 
     teacher = db.relationship("Teacher", back_populates="students")
     assignments = db.relationship("Assignment", back_populates="student")

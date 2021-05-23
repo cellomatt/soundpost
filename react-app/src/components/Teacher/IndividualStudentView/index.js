@@ -32,7 +32,13 @@ export default function IndividualStudentView({role}){
 
   useEffect(() => {window.scrollTo(0, 0);}, [])
   useEffect(() => dispatch(lessonActions.getUserLessons(studentIdNum, !role)), [dispatch, studentIdNum, change, role])
-  useEffect(() => dispatch(statsActions.getAllStats(studentIdNum)), [dispatch, studentIdNum])
+
+  useEffect(() => {
+    dispatch(statsActions.getAllStats(studentIdNum))
+    return () => {
+      dispatch(statsActions.cleanupStats())
+    }
+  }, [dispatch, studentIdNum])
 
   useEffect(() => {
     const getStudentInfo = async () => {

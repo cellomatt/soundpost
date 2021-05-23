@@ -83,6 +83,7 @@ def sign_up():
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
             created_at = form.data['created_at']
+            # or datetime.now(tz=None)?
             user = Student(
                 first_name=form.data['first_name'],
                 last_name=form.data['last_name'],
