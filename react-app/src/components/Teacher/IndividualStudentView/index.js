@@ -31,8 +31,8 @@ export default function IndividualStudentView({role}){
   }
 
   useEffect(() => {window.scrollTo(0, 0);}, [])
+  useEffect(() => dispatch(lessonActions.getUserLessons(studentIdNum, !role)), [dispatch, studentIdNum, change, role])
   useEffect(() => dispatch(statsActions.getAllStats(studentIdNum)), [dispatch, studentIdNum])
-  useEffect(() => dispatch(lessonActions.getUserLessons(studentIdNum, !role)), [dispatch, studentIdNum, change])
 
   useEffect(() => {
     const getStudentInfo = async () => {
@@ -82,19 +82,21 @@ export default function IndividualStudentView({role}){
                     {student.parent_name && <h3 className="student-info__contact-item">parent name: <span>{student.parent_name.toLowerCase()}</span></h3>}
                   </div>
                 </div>
+                <div>
+                  <textarea
+                      id="new-assignment"
+                      className="form__input"
+                      placeholder="Send new assignment..."
+                      value={newAssignment}
+                      onChange={(e) => setNewAssignment(e.target.value)}>
+                    </textarea>
+                    <button id="assignment-submit" className="btn btn__primary" onClick={sendAssignment}>Send</button>
+                </div>
               </div>
               <div className="student-data">
                 <div className="student-data__assignments">
                   <h1 className="title student-data__title">Practice Assignments</h1>
                   <div className="assignments__list">
-                    <textarea
-                      id="new-assignment"
-                      className="form__input"
-                      placeholder="New assignment..."
-                      value={newAssignment}
-                      onChange={(e) => setNewAssignment(e.target.value)}>
-                    </textarea>
-                    <button id="assignment-submit" className="btn btn__primary" onClick={sendAssignment}>Send</button>
                     <div className="list">
                     {assignments === null &&
                           <p className="">You haven't sent any assignments yet.</p>
@@ -143,7 +145,6 @@ export default function IndividualStudentView({role}){
                       }
                   </div>
                 </div>
-              </div>
                 <div className="student-data__log">
                   <h1 className="title student-data__title">Practice Log</h1>
                   <div className="student-data__log--inner ">
@@ -163,6 +164,7 @@ export default function IndividualStudentView({role}){
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
           </>
           }

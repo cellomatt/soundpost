@@ -17,7 +17,7 @@ export default function LessonContainer({lesson, setChange, duration, student}) 
     else if (user != null && !student && user.id === lesson.teacher_id) {
       setScheduled(true)
     }
-  }, [user, lesson, setScheduled])
+  }, [user, lesson, student, setScheduled])
 
   return (
     <div className="lesson__container">

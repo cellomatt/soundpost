@@ -7,6 +7,12 @@ export default function AssignmentContainer({assignment, role}) {
     <div className="message__container">
       <p className="message__date">{assignment.created_at.toLocaleDateString('en-US', options)} • {assignment.teacher.first_name} {assignment.teacher.last_name}</p>
       <p className="message">{assignment.message}</p>
+      {!role &&
+        <>
+        <button>edit</button>
+        <button>delete</button>
+        </>
+      }
     </div>
   )
 }

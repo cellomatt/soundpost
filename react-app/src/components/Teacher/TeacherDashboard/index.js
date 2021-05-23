@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import * as lessonActions from '../../../store/lesson'
 import * as studentActions from '../../../store/student'
 import LessonContainer from '../../LessonContainer'
@@ -11,7 +11,7 @@ import "./TeacherDashboard.css"
 export default function TeacherDashboard({student}){
   document.title = "Soundpost — Home"
   const dispatch = useDispatch();
-  const history = useHistory();
+  // const history = useHistory();
   const [change, setChange] = useState(false);
   const user = useSelector(state => state.session.user);
   const lessons = useSelector(state => state.lessons.scheduled)

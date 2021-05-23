@@ -35,7 +35,8 @@
 
 .student-data__assignments,
 .student-data__stats,
-.student-data__lessons {
+.student-data__lessons,
+.student-data__log {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -44,18 +45,6 @@
   margin: 0 auto;
 }
 
-.student-data__log {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  width: 78%;
-  padding: 0 .5em;
-  align-items: flex-start;
-  justify-self: start;
-  margin: 0 auto;
-  position: absolute;
-  top: 23.5em;
-}
 
 .student-data__log--inner {
   overflow-y: scroll;
@@ -64,7 +53,7 @@
   box-sizing: border-box;
   margin: .5em 0;
   max-height: 400px;
-  max-width: 250px;
+  max-width: 350px;
   width: 100%;
   border-radius: 8px;
   border: 3px solid #333;
@@ -126,7 +115,7 @@
 .student-info__container{
   box-sizing: border-box;
   padding: 1.7em;
-  margin-bottom: 2.5em;
+  margin-bottom: 1.5em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -136,6 +125,7 @@
 
 .student-name {
   font-size: 5em;
+  padding: 0;
 }
 
 .user-content {
@@ -149,27 +139,6 @@
   position: relative;
 }
 
-@media screen and (max-width: 1250px) {
-  .student-data__log {
-    width: 82%;
-  }
-}
-
-@media screen and (max-width: 1113px) {
-  .student-data__log {
-    position: relative;
-    top: 0;
-    width: 55%;
-    min-width: 500px;
-    padding: 0 1em 1em;
-    max-width: 600px;
-  }
-
-  .student-data__log--inner {
-    max-width: 600px;
-  }
-}
-
 @media screen and (max-width: 940px) {
 
   .student-info__container {
@@ -181,6 +150,7 @@
   .student-data__assignments,
   .student-data__stats,
   .student-data__lessons,
+  .student-data__log,
   .student-data__log--inner {
     max-width: 100%;
     min-width: 0;
