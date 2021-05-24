@@ -27,7 +27,6 @@ export const getAllStats = (userId) => async dispatch => {
   const data = await res.json();
 
   data.days.list.forEach(day => {
-    console.log(day.date)
     day.date = new Date(day.date)
   })
 

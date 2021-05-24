@@ -25,7 +25,6 @@ export default function IndividualStudentView({role}){
   const options = { dateStyle: 'long'};
   const [newAssignment, setNewAssignment] = useState("");
   const [change, setChange] = useState(false);
-  console.log(change)
 
   if (student != null) {
     document.title = `Soundpost — ${student.first_name} ${student.last_name}`
@@ -57,12 +56,13 @@ export default function IndividualStudentView({role}){
 
   useEffect(() => {
     dispatch(assignmentActions.getAllAssignments(studentIdNum));
+    console.log(change)
   }, [dispatch, studentIdNum, change])
 
-  const sendAssignment = async () => {
-    await dispatch(assignmentActions.sendNewAssignment(user.id, studentIdNum, newAssignment));
+  const sendAssignment = () => {
+    dispatch(assignmentActions.sendNewAssignment(user.id, studentIdNum, newAssignment));
     setNewAssignment("");
-    setChange(change => !change);
+    setChange((change) => !change);
   }
 
   return (
