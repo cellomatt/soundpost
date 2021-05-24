@@ -28,9 +28,16 @@
   border-radius: 8px;
 }
 
+.send-assignment {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
 .student-data {
   width: 55%;
   min-width: 500px;
+  margin-left: 1.5em;
 }
 
 .student-data__assignments,

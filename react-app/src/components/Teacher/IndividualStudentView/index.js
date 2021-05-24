@@ -25,6 +25,7 @@ export default function IndividualStudentView({role}){
   const options = { dateStyle: 'long'};
   const [newAssignment, setNewAssignment] = useState("");
   const [change, setChange] = useState(false);
+  console.log(change)
 
   if (student != null) {
     document.title = `Soundpost — ${student.first_name} ${student.last_name}`
@@ -35,9 +36,6 @@ export default function IndividualStudentView({role}){
 
   useEffect(() => {
     dispatch(statsActions.getAllStats(studentIdNum))
-    return () => {
-      dispatch(statsActions.cleanupStats())
-    }
   }, [dispatch, studentIdNum])
 
   useEffect(() => {
@@ -52,14 +50,13 @@ export default function IndividualStudentView({role}){
     getStudentInfo();
     return () => {
       dispatch(studentActions.cleanupStudent())
+      dispatch(assignmentActions.cleanupAssignments())
+      dispatch(statsActions.cleanupStats())
     }
   }, [dispatch, studentIdNum, history])
 
   useEffect(() => {
     dispatch(assignmentActions.getAllAssignments(studentIdNum));
-    return () => {
-      dispatch(assignmentActions.cleanupAssignments())
-    }
   }, [dispatch, studentIdNum, change])
 
   const sendAssignment = async () => {
@@ -88,11 +85,11 @@ export default function IndividualStudentView({role}){
                     {student.parent_name && <h3 className="student-info__contact-item">parent name: <span>{student.parent_name.toLowerCase()}</span></h3>}
                   </div>
                 </div>
-                <div>
+                <div className="send-assignment">
                   <textarea
                       id="new-assignment"
                       className="form__input"
-                      placeholder="Send new assignment..."
+                      placeholder="Send a new assignment..."
                       value={newAssignment}
                       onChange={(e) => setNewAssignment(e.target.value)}>
                     </textarea>
@@ -111,7 +108,7 @@ export default function IndividualStudentView({role}){
                     <>
                         {Object.values(assignments).map(assignment =>
                         <div key={assignment.id}>
-                          <AssignmentContainer assignment={assignment} role={user.student}/>
+                          <AssignmentContainer assignment={assignment} role={user.student} change={change} setChange={setChange}/>
                         </div>
                         )}
                     </>

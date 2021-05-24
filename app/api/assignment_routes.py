@@ -49,3 +49,13 @@ def set_new_assignment():
     db.session.commit()
     res = new_assignment.to_dict()
     return json.dumps(res)
+
+
+@assignment_routes.route('/<int:id>/delete', methods=['DELETE'])
+@login_required
+def delete_assignment(id):
+    assignment = Assignment.query.get(id)
+    res = {"created_at": assignment.created_at.isoformat()}
+    db.session.delete(assignment)
+    db.session.commit()
+    return json.dumps(res)

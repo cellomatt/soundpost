@@ -36,14 +36,12 @@ export const signUp = async (newUser) => {
   const {first_name, last_name, email_address, password,
     instrument, phone, parent_name, photo, teacher_id,
     address, city, stateId, zip, role} = newUser;
-  const created_at = new Date()
   const form = new FormData()
   form.append("first_name", first_name)
   form.append("last_name", last_name)
   form.append("email_address", email_address)
   form.append("phone", phone)
   form.append("password", password)
-  form.append("created_at", created_at.toISOString().replace('Z', '+00:00'))
   form.append("student", role)
   if (instrument) form.append("instrument", instrument)
   if (teacher_id) form.append("teacher_id", teacher_id)
