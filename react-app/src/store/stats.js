@@ -27,7 +27,8 @@ export const getAllStats = (userId) => async dispatch => {
   const data = await res.json();
 
   data.days.list.forEach(day => {
-    day.date = new Date(day.date + " 00:00")
+    console.log(day.date)
+    day.date = new Date(day.date)
   })
 
   dispatch(setAllStats(data));
@@ -72,7 +73,7 @@ export default function statsReducer(state = initialState, action) {
       return updateState;
     case CLEANUP_STATS:
       updateState = initialState;
-      updateState.days = {count: 0, list: {}} 
+      updateState.days = {count: 0, list: {}}
       return updateState;
     case USER_LOGOUT:
       updateState.days = {count: 0, list: {}}
