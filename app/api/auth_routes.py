@@ -82,8 +82,7 @@ def sign_up():
         form = SignUpStudentForm()
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
-            created_at = form.data['created_at']
-            # or datetime.now(tz=None)?
+            created_at = datetime.now()
             user = Student(
                 first_name=form.data['first_name'],
                 last_name=form.data['last_name'],
@@ -94,7 +93,7 @@ def sign_up():
                 teacher_id=form.data['teacher_id'],
                 photo_url=url,
                 password=form.data['password'],
-                created_at=datetime.fromisoformat(created_at)
+                created_at=created_at
             )
             db.session.add(user)
             db.session.commit()
