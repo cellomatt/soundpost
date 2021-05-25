@@ -42,7 +42,10 @@ export default function AssignmentContainer({assignment, role, setChange}) {
         <p>{assignment.created_at.toLocaleDateString('en-US', options)} • {assignment.teacher.first_name} {assignment.teacher.last_name}</p>
         {!role &&
           <div className="assignment-buttons">
-            <button className="btn btn__secondary assignment-buttons__button" onClick={editAssignment}><i className="far fa-edit"></i></button>
+            <button className="btn btn__secondary assignment-buttons__button" onClick={editAssignment}>
+              {!edit && <i className="far fa-edit"></i>}
+              {edit && <i className="fas fa-times"></i>}
+            </button>
             {edit && <button className="btn btn__secondary assignment-buttons__button" onClick={saveAssignment}><i className="far fa-save"></i></button>}
             <button className="btn btn__secondary assignment-buttons__button" onClick={deleteAssignment}><i className="far fa-trash-alt"></i></button>
           </div>
