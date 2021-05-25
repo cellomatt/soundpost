@@ -43,11 +43,27 @@ def set_new_assignment():
         student_id=student_id,
         teacher_id=teacher_id,
         message=message,
-        created_at=datetime.now(tz=None)
+        created_at=datetime.now()
     )
     db.session.add(new_assignment)
     db.session.commit()
     res = new_assignment.to_dict()
+    return json.dumps(res)
+
+
+@assignment_routes.route('/<int:id>/edit', methods=['PATCH'])
+@login_required
+def edit_assignment(id):
+    data = request.get_json()
+    message = data["assignment"]
+    assignment = Assignment.query.get(id)
+
+    assignment.message = message
+    assignment.created_at = datetime.now()
+
+    db.session.add(assignment)
+    db.session.commit()
+    res = assignment.to_dict()
     return json.dumps(res)
 
 

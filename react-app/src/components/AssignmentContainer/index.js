@@ -1,26 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as assignmentActions from '../../store/assignment'
 import './AssignmentContainer.css'
 
-export default function AssignmentContainer({assignment, role, change, setChange}) {
+export default function AssignmentContainer({assignment, role, setChange}) {
   const dispatch = useDispatch();
   const options = { dateStyle: 'long'};
+
+  const [messageHeight, setMessageHeight] = useState("120px")
   const [edit, setEdit] = useState(false);
   const [editedAssignment, setEditedAssignment] = useState(assignment.message);
+
+  useEffect(() => {
+    const messageEl = document.querySelector(`#assignment-${assignment.id}`);
+    let height = window.getComputedStyle(messageEl, null).height.replace("px", "")
+    height = Number(height) + 40
+    setMessageHeight(height.toString() + "px")
+  }, [assignment.id])
 
   const editAssignment = async () => {
     setEdit((edit) => !edit)
   }
 
   const saveAssignment = async () => {
+    await dispatch(assignmentActions.editAssignment(assignment.id, editedAssignment))
     setEdit((edit) => !edit)
+    setChange((change) => !change)
   }
 
   const deleteAssignment = async () => {
     await dispatch(assignmentActions.deleteAssignment(assignment.id))
     setChange((change) => !change)
   }
+
+
+
 
   return (
     <div className="message__container">
@@ -34,12 +48,13 @@ export default function AssignmentContainer({assignment, role, change, setChange
           </div>
         }
       </div>
-      {!edit && <p className="message">{assignment.message}</p>}
+      {!edit && <p id={`assignment-${assignment.id}`} className="message">{assignment.message}</p>}
       {edit &&
         <textarea
-          id="new-assignment"
+          id="edit-assignment"
           className="form__input"
           value={editedAssignment}
+          style={{height: messageHeight}}
           onChange={(e) => setEditedAssignment(e.target.value)}>
         </textarea>
       }

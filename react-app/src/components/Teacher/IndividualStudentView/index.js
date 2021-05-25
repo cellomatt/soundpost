@@ -56,7 +56,6 @@ export default function IndividualStudentView({role}){
 
   useEffect(() => {
     dispatch(assignmentActions.getAllAssignments(studentIdNum));
-    console.log(change)
   }, [dispatch, studentIdNum, change])
 
   const sendAssignment = () => {
@@ -108,7 +107,7 @@ export default function IndividualStudentView({role}){
                     <>
                         {Object.values(assignments).map(assignment =>
                         <div key={assignment.id}>
-                          <AssignmentContainer assignment={assignment} role={user.student} change={change} setChange={setChange}/>
+                          <AssignmentContainer assignment={assignment} role={user.student} setChange={setChange}/>
                         </div>
                         )}
                     </>

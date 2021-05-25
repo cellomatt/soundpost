@@ -67,6 +67,22 @@ export const deleteAssignment = (id) => async dispatch => {
   dispatch(deleteOneAssignment(data.created_at))
 }
 
+export const editAssignment = (id, assignment) => async dispatch => {
+  const res = await fetch(`/api/assignments/${id}/edit`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      assignment
+    })
+  })
+  const data = await res.json();
+  data.created_at = new Date(data.created_at)
+  getAllAssignments(data.student_id)
+  return data;
+}
+
 
 export const cleanupAssignments = () => {
   return { type: CLEANUP_ASSIGNMENTS}
