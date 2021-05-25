@@ -1,10 +1,9 @@
 .student-info {
   display: flex;
   flex-direction: column;
-  width: 30%;
   align-items: center;
   justify-content: center;
-  min-width: 390px;
+  width: 390px;
 }
 
 .student-info__name {
@@ -21,7 +20,7 @@
   justify-content: center;
   margin: 0 auto;
   border-radius: 50%;
-  border: 2px solid #333333;
+  border: 3px solid #333333;
   width: 95%;
   height: 0;
   padding-bottom: 95%;
@@ -71,6 +70,7 @@
 
   .student-info {
     min-width: 100%;
+    width: 100%;
   }
 
   .student-info__name{
@@ -117,9 +117,6 @@
 }
 
 @media screen and (max-width: 750px) {
-  .lesson-info {
-    min-width: 100%;
-  }
   .student-info__name{
     font-size: 2.3em;
   }
@@ -152,4 +149,10 @@
     width: 45%;
   }
 
+}
+
+@media screen and (max-width: 330px) {
+  .student-info__name{
+    font-size: 1.7em;
+  }
 }

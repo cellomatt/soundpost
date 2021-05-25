@@ -28,7 +28,7 @@ export default function AssignmentView() {
           <>
             {Object.values(assignments).map(assignment =>
             <div key={assignment.id}>
-              <AssignmentContainer assignment={assignment} />
+              <AssignmentContainer assignment={assignment} role={user.student}/>
             </div>
             )}
           </>

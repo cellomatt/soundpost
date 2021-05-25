@@ -11,7 +11,7 @@ fake = Faker('en_US')
 def seed_students():
     teacher1 = Teacher.query.filter(Teacher.email_address == "matt@email.com").first()
     teacher2 = Teacher.query.filter(Teacher.email_address == "michelle@email.com").first()
-    today = date.today()
+    today = datetime.now(tz=None)
     start_date = today + relativedelta(months=-1)
     students = []
 

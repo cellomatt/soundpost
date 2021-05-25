@@ -37,7 +37,6 @@
   margin: .5em 0;
 }
 
-
 .lesson-info__link {
   color: #333;
   font-weight: 400;
@@ -45,6 +44,10 @@
 
 .lesson-info__link:hover {
   text-decoration: none;
+}
+
+.lesson-info__upcoming {
+  padding-top: 1.5em;
 }
 
 .user-info {
@@ -70,7 +73,7 @@
   justify-content: center;
   margin: 0 auto;
   border-radius: 50%;
-  border: 2px solid #333333;
+  border: 3px solid #333333;
   width: 95%;
   height: 0;
   padding-bottom: 95%;
@@ -143,7 +146,7 @@
 .title {
   padding-bottom: .4em;
   font-family: "P22BayerW00-Universal";
-  font-size: 3em;
+  font-size: 3.5em;
   margin: 0 auto;
   color: #0061FF;
   font-weight: 400;

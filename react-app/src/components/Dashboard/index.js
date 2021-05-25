@@ -18,6 +18,7 @@ export default function Dashboard({student}) {
   const [change, setChange] = useState(false);
   const user = useSelector(state => state.session.user);
   const latestAssignment = useSelector(state => state.assignments.latest);
+  console.log("Latest Assignment", latestAssignment)
   const lessons = useSelector(state => state.lessons.scheduled)
 
   useEffect(() => dispatch(assignmentActions.getLatest(user.id)), [dispatch, user.id])
@@ -48,9 +49,9 @@ export default function Dashboard({student}) {
           <div className="lesson-info__assignment">
             <h1 className="title">Practice Assignment</h1>
             <div>
-              {latestAssignment !== null &&
+              {latestAssignment !== null && user !== null &&
               <>
-              <AssignmentContainer assignment={latestAssignment}/>
+              <AssignmentContainer assignment={latestAssignment} role={user.student}/>
               <Link exact to="/assignments" className="lesson-info__link">View previous assignments</Link>
               </>
               }
@@ -64,7 +65,7 @@ export default function Dashboard({student}) {
             <div className="lesson-info__lessons">
               {lessons != null &&
                 <div>
-                  {Object.values(lessons).map(lesson =>
+                  {Object.values(lessons).sort((a,b) => a.start_time - b.start_time).map(lesson =>
                     <LessonContainer lesson={lesson} key={lesson.id} setChange={setChange} student={student}/>
                     )}
                 </div>

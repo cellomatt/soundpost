@@ -82,9 +82,9 @@ def all_stats(id):
     start_date = student.created_at
     today = date.today()
     now = datetime.now()
-    days = today - start_date
+    days = today - start_date.date()
     total_days = days.days + 1
-    delta = today - start_date
+    delta = today - start_date.date()
     list = []
 
     practice_logs_all = PracticeLog.query.filter(
@@ -137,7 +137,7 @@ def all_stats(id):
 
     for day in final_list:
         for log in logs:
-            if day["date"] == log["date"]:
+            if day["date"].date() == log["date"]:
                 day["practiced"] = True
         day["date"] = day["date"].isoformat()
 

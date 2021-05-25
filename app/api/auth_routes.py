@@ -28,7 +28,6 @@ def authenticate():
     """
     Authenticates a user.
     """
-    # print("--------------Current User:", current_user.to_dict())
     if current_user.is_authenticated:
         return current_user.to_dict()
     return {'errors': ['Unauthorized']}, 401
@@ -83,7 +82,7 @@ def sign_up():
         form = SignUpStudentForm()
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
-            created_at = form.data['created_at']
+            created_at = datetime.now()
             user = Student(
                 first_name=form.data['first_name'],
                 last_name=form.data['last_name'],
@@ -94,10 +93,11 @@ def sign_up():
                 teacher_id=form.data['teacher_id'],
                 photo_url=url,
                 password=form.data['password'],
-                created_at=datetime.fromisoformat(created_at)
+                created_at=created_at
             )
             db.session.add(user)
             db.session.commit()
+            session['student'] = True
             login_user(user)
             return user.to_dict()
         return {'errors': validation_errors_to_error_messages(form.errors)}
@@ -121,6 +121,7 @@ def sign_up():
             )
             db.session.add(user)
             db.session.commit()
+            session['student'] = False
             login_user(user)
             return user.to_dict()
         return {'errors': validation_errors_to_error_messages(form.errors)}
@@ -131,4 +132,5 @@ def unauthorized():
     """
     Returns unauthorized JSON when flask-login authentication fails
     """
+    print("--------------- Hit the unauthorized route")
     return {'errors': ['Unauthorized']}, 401

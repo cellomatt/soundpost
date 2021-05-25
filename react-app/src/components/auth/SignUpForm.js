@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Redirect, useHistory, Link } from 'react-router-dom';
+import { Redirect, Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import InputMask from 'react-input-mask';
 import { signUp } from '../../services/auth';
@@ -29,7 +29,7 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
   const [teacher_id, setTeacherId] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
-  const [stateId, setStateId] = useState("");
+  const [stateId, setStateId] = useState(1);
   const [errors, setErrors] = useState([]);
   const [zip, setZip] = useState("");
   const teachersArray = Object.values(teachers)
@@ -64,7 +64,6 @@ const SignUpForm = ({authenticated, setAuthenticated, setStudent}) => {
         dispatch(setUser(user));
         setAuthenticated(true);
         history.push("/");
-        window.scrollTo(0, 0);
       } else {
         setErrors(user.errors);
         window.scrollTo(0, 0);

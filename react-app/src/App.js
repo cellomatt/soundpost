@@ -12,6 +12,7 @@ import AssignmentView from "./components/AssignmentView"
 import Stats from "./components/Stats"
 import TeacherDashboard from "./components/Teacher/TeacherDashboard"
 import StudentsView from "./components/Teacher/StudentsView"
+import IndividualStudentView from "./components/Teacher/IndividualStudentView"
 import { authenticate } from "./services/auth";
 import { setUser } from "./store/session"
 import {ReactComponent as Sketch} from "./images/klee.svg"
@@ -76,6 +77,9 @@ function App() {
         </ProtectedRoute>
         {!student && <ProtectedRoute exact path="/students"  authenticated={authenticated}>
           <StudentsView authenticated={authenticated} />
+        </ProtectedRoute>}
+        {!student && <ProtectedRoute exact path="/students/:studentId"  authenticated={authenticated}>
+          <IndividualStudentView authenticated={authenticated} role={student}/>
         </ProtectedRoute>}
         <Route>
           <div className="main">

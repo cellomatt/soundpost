@@ -98,6 +98,7 @@ export default function Stats() {
                     practiced={day.practiced}
                     setChange={setChange}
                     student={user}
+                    role={user.student}
                     />
                 )
               })}

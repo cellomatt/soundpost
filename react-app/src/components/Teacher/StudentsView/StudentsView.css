@@ -8,9 +8,27 @@
   padding-top: 1.5em;
 }
 
+.all-students p {
+  text-align: center;
+}
+
 .student-link {
   text-decoration: none;
-  color: #0041FF;
+  color: #0061FF;
+}
+
+.student-sort{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.student-sort span, .student-sort div {
+  padding: 0.5em 0.2em 0.5em 0.6em;
 }
 
 @media screen and (max-width: 940px) {

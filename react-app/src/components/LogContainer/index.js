@@ -2,7 +2,7 @@ import {useState} from 'react'
 import PracticeModal from '../PracticeModal'
 import './LogContainer.css'
 
-export default function LogContainer({date, practiced, setChange, student}) {
+export default function LogContainer({date, practiced, setChange, student, role}) {
   const [practice, setPractice] = useState(practiced)
 
   return (
@@ -11,9 +11,9 @@ export default function LogContainer({date, practiced, setChange, student}) {
         <p className="log__container--date">{date}</p>
         <p className="log__container--practiced">Practiced: {practice ? <i className="far fa-check-square green"></i> : <i className="fas fa-times-circle red"></i>}</p>
       </div>
-      <div className="log__container--modal">
-        <PracticeModal practice={practice} setPractice={setPractice} date={date} setChange={setChange} student={student}/>
-      </div>
+      {role && <div className="log__container--modal">
+        <PracticeModal practice={practice} setPractice={setPractice} date={date} setChange={setChange} student={student} role={role}/>
+      </div>}
     </div>
   )
 }

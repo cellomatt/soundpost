@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux'
-import LessonModal from '../LessonModal'
-import './LessonContainer.css'
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import LessonModal from '../LessonModal';
+import './LessonContainer.css';
 
 export default function LessonContainer({lesson, setChange, duration, student}) {
   const [scheduled, setScheduled] = useState(false)
@@ -10,10 +11,13 @@ export default function LessonContainer({lesson, setChange, duration, student}) 
   const timeOptions = { timeStyle: "short" }
 
   useEffect(() => {
-    if (user != null && user.id === lesson.student_id) {
+    if (user != null && student && user.id === lesson.student_id) {
       setScheduled(true)
     }
-  }, [user, lesson, setScheduled])
+    else if (user != null && !student && user.id === lesson.teacher_id) {
+      setScheduled(true)
+    }
+  }, [user, lesson, student, setScheduled])
 
   return (
     <div className="lesson__container">
@@ -22,14 +26,14 @@ export default function LessonContainer({lesson, setChange, duration, student}) 
         <div className="lesson__container--time">{lesson.start_time.toLocaleTimeString('en-US', timeOptions)} - {lesson.end_time.toLocaleTimeString('en-US', timeOptions)}</div>
         {student &&
         <>
-          <div className="lesson__container--teacher">Teacher: {lesson.teacher.first_name} {lesson.teacher.last_name}</div>
-          <div className="lesson__container--teacher">Location: {lesson.teacher.street_address}</div>
-          <div className="lesson__container--teacher">{lesson.teacher.city}, {lesson.teacher.state} {lesson.teacher.zip}</div>
+          <div className="lesson__container--person">Teacher: {lesson.teacher.first_name} {lesson.teacher.last_name}</div>
         </>
         }
         {!student &&
         <>
-          <div className="lesson__container--student">Student: {lesson.student.first_name} {lesson.student.last_name}</div>
+          <div className="lesson__container--person">
+            Student: <Link to={`/students/${lesson.student.id}`}>{lesson.student.first_name} {lesson.student.last_name}</Link>
+          </div>
         </>
         }
       </div>
