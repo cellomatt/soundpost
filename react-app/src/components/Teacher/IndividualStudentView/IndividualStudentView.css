@@ -189,8 +189,8 @@
 
 @media screen and (max-width: 1143px) {
   .student-info {
-    min-width: 80%;
-    width: 80%
+    min-width: 82%;
+    width: 82%
   }
 
   .student-info__container {
@@ -275,6 +275,7 @@
     width: 100%;
     max-width: 100%;
   }
+
   .send-assignment,
   .student-data {
     min-width: 90%;
@@ -297,27 +298,40 @@
   }
 }
 
-
-
-@media screen and (max-width: 525px) {
-  .student-data__log--inner {
-    width: 90%;
-    min-width: 90%;
-    padding: 2em;
+@media screen and (max-width: 575px) {
+  .send-assignment,
+  .student-data {
+    min-width: 100%;
+    width: 100%
   }
 
-  .student-info__contact-item {
-    font-size: 1em;
-    font-weight: 500;
+  .student-info__container {
+    flex-direction: column;
+    margin-top: .5em;
   }
-}
 
-@media screen and (max-width: 500px){
+  .student-info__contact {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .student-info__pic {
+    width: 35%;
+    padding-bottom: 35%;
+    margin: 1em;
+  }
+
   .student-name {
     font-size: 3em;
   }
+
+
 }
 
-@media screen and (max-width: 450px) {
-
+@media screen and (max-width: 350px) {
+  .student-info__contact-item {
+    font-weight: 500;
+    font-size: 1em;
+  }
 }
