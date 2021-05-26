@@ -11,7 +11,6 @@ import "./TeacherDashboard.css"
 export default function TeacherDashboard({student}){
   document.title = "Soundpost — Home"
   const dispatch = useDispatch();
-  // const history = useHistory();
   const [change, setChange] = useState(false);
   const user = useSelector(state => state.session.user);
   const lessons = useSelector(state => state.lessons.scheduled)

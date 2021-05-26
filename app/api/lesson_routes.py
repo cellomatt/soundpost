@@ -32,7 +32,7 @@ def scheduled_teacher_lessons(id):
     now = datetime.now()
     lessons = TimeSlot.query.filter(TimeSlot.teacher_id == id).filter(
         TimeSlot.start_time > now).filter(
-        TimeSlot.student_id != None).all()
+        TimeSlot.student_id != None).order_by(TimeSlot.id).all()
 
     i = 1
     while i < len(lessons):
