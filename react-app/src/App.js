@@ -13,6 +13,7 @@ import Stats from "./components/Stats"
 import TeacherDashboard from "./components/Teacher/TeacherDashboard"
 import StudentsView from "./components/Teacher/StudentsView"
 import IndividualStudentView from "./components/Teacher/IndividualStudentView"
+import SetAvailability from "./components/Teacher/SetAvailability"
 import { authenticate } from "./services/auth";
 import { setUser } from "./store/session"
 import {ReactComponent as Sketch} from "./images/klee.svg"
@@ -80,6 +81,9 @@ function App() {
         </ProtectedRoute>}
         {!student && <ProtectedRoute exact path="/students/:studentId"  authenticated={authenticated}>
           <IndividualStudentView authenticated={authenticated} role={student}/>
+        </ProtectedRoute>}
+        {!student && <ProtectedRoute exact path="/availability"  authenticated={authenticated}>
+          <SetAvailability />
         </ProtectedRoute>}
         <Route>
           <div className="main">
