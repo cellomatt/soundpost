@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import AssignmentModal from "../AssignmentModal"
 import * as assignmentActions from '../../store/assignment'
@@ -12,7 +12,8 @@ export default function AssignmentContainer({assignment, role, setChange}) {
   const [edit, setEdit] = useState(false);
   const [editedAssignment, setEditedAssignment] = useState(assignment.message);
 
-  useEffect(() => {
+
+  const getMessageHeight = useCallback(() => {
     const messageEl = document.querySelector(`#assignment-${assignment.id}`);
     let height = window.getComputedStyle(messageEl, null).height.replace("px", "")
     height = Number(height) + 40
@@ -20,6 +21,9 @@ export default function AssignmentContainer({assignment, role, setChange}) {
   }, [assignment.id])
 
   const editAssignment = async () => {
+    if (!edit) {
+      getMessageHeight();
+    }
     setEdit((edit) => !edit)
   }
 
