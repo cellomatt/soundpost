@@ -146,6 +146,7 @@
   align-items: flex-start;
   justify-content: space-between;
   padding-top: 1em;
+  flex-wrap: wrap;
 }
 
 .student-info__contact-item span,
@@ -195,7 +196,8 @@
   .student-info__container {
     width: 100%;
     flex-wrap: nowrap;
-    margin-bottom: 1em;
+    margin: 2em 0;
+    padding: 0;
   }
 
   .student-info__pic {
@@ -218,12 +220,17 @@
     width: 70%;
     margin: 0 auto;
   }
+
+  .student-info__contact {
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 940px) {
   .student-info {
     width: 100%;
   }
+
   .send-assignment,
   .student-info__container,
   .student-data {
@@ -242,9 +249,19 @@
 @media screen and (max-width: 850px) {
 
   .student-info__pic {
-    width: 30%;
-    padding-bottom: 30%;
+    width: 25%;
+    padding-bottom: 25%;
     margin: 0 1em;
+  }
+
+  .student-info__contact {
+    width: 65%;
+  }
+
+  .student-info__container {
+    justify-content: space-between;
+    min-width: 90%;
+    width: 90%
   }
 }
 
@@ -254,13 +271,11 @@
   }
 
   .student-info__container{
-    padding: 1em;
     min-width: 100%;
     width: 100%;
     max-width: 100%;
   }
   .send-assignment,
-  .student-info__container,
   .student-data {
     min-width: 90%;
     width: 90%
@@ -270,6 +285,15 @@
 @media screen and (max-width: 600px) {
   .student-info__box {
     margin: 2em;
+  }
+
+  .student-info__pic {
+    width: 20%;
+    padding-bottom: 20%;
+  }
+
+  .student-info__contact {
+    width: 70%;
   }
 }
 
@@ -281,6 +305,11 @@
     min-width: 90%;
     padding: 2em;
   }
+
+  .student-info__contact-item {
+    font-size: 1em;
+    font-weight: 500;
+  }
 }
 
 @media screen and (max-width: 500px){
@@ -290,10 +319,5 @@
 }
 
 @media screen and (max-width: 450px) {
-  .student-info__pic {
-    width: 35%;
-    padding-bottom: 35%;
-    margin: 0 1em;
-  }
 
 }

@@ -81,7 +81,7 @@ export default function IndividualStudentView({role}){
                   <div className="student-info__contact">
                     <h3 className="student-info__contact-item">tel: <a href="tel:+6143019973">{student.phone}</a></h3>
                     <h3 className="student-info__contact-item">email: <a href={`mailto:${student.email_address}`}>{student.email_address}</a></h3>
-                    {student.parent_name && <h3 className="student-info__contact-item">parent name: <span>{student.parent_name.toLowerCase()}</span></h3>}
+                    {student.parent_name && <h3 className="student-info__contact-item">parent: <span>{student.parent_name.toLowerCase()}</span></h3>}
                   </div>
                 </div>
                 <div className="send-assignment">
