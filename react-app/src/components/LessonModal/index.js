@@ -6,6 +6,7 @@ import './LessonModal.css'
 
 export default function LessonModal({scheduled, setScheduled, lesson, setChange, duration, user}) {
   const dispatch = useDispatch();
+  const [canceled, setCanceled] = useState(false)
 
   const customStyles = {
     content : {
@@ -39,8 +40,25 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange,
 
   const deleteLesson = async () => {
     await dispatch(lessonActions.deleteOneLesson(lesson.id))
-    setScheduled(false);
+    if (user.student) {
+      setShowModal(false);
+      setScheduled(false);
+      setChange(change => !change)
+    } else {
+      setCanceled(true);
+    }
+  }
+
+  const deleteAvailability = async () => {
+    await dispatch(lessonActions.deleteTimeslot(lesson.id))
     setShowModal(false);
+    setScheduled(false);
+    setChange(change => !change)
+  }
+
+  const noDeleteAvailability = () => {
+    setShowModal(false);
+    setScheduled(false);
     setChange(change => !change)
   }
 
@@ -57,7 +75,7 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange,
     {!scheduled && <button className="btn__primary modal__btn" onClick={() => modalView()}>Schedule Lesson</button>}
     <Modal style={customStyles} isOpen={showModal} ariaHideApp={false} onRequestClose={onRequestClose}>
       {
-        !scheduled ?
+        !scheduled &&
           <div className="modal__popup-container">
               <button className="btn__x" onClick={onRequestClose}>
                   <i className="fas fa-times"></i>
@@ -65,15 +83,28 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange,
               <p className="modal__message">Confirm schedule lesson on {lesson.start_time.toLocaleDateString('en-US', {dateStyle: 'long'})} at {lesson.start_time.toLocaleTimeString('en-US', { timeStyle: "short" })}?</p>
               <button className="btn__primary modal__btn" onClick={scheduleLesson}>Confirm</button>
           </div>
-        :
-          <div className="modal__popup-container">
+      }
+          {scheduled && !canceled &&
+            <div className="modal__popup-container">
               <button className="btn__x" onClick={onRequestClose}>
                   <i className="fas fa-times"></i>
               </button>
               <p className="modal__message">Confirm cancel lesson on {lesson.start_time.toLocaleDateString('en-US', {dateStyle: 'long'})} at {lesson.start_time.toLocaleTimeString('en-US', { timeStyle: "short" })}?</p>
               <button className="btn__primary modal__btn" onClick={deleteLesson}>Confirm</button>
-          </div>
-    }
+            </div>
+          }
+          {scheduled && canceled && !user.student &&
+            <div className="modal__popup-container">
+              <button className="btn__x" onClick={onRequestClose}>
+                  <i className="fas fa-times"></i>
+              </button>
+              <p className="modal__message">Delete availability on {lesson.start_time.toLocaleDateString('en-US', {dateStyle: 'long'})} at {lesson.start_time.toLocaleTimeString('en-US', { timeStyle: "short" })}?</p>
+              <div className="yes-no-buttons">
+                <button className="btn__primary modal__btn" onClick={deleteAvailability}>Yes</button>
+                <button className="btn__primary modal__btn" onClick={noDeleteAvailability}>No</button>
+              </div>
+            </div>
+          }
     </Modal>
     </>
   )

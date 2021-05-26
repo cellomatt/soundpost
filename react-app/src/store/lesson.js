@@ -41,6 +41,16 @@ export const getUserLessons = (userId, student) => async dispatch => {
 }
 
 export const deleteOneLesson = (id) => async dispatch => {
+  const res = await fetch(`/api/lessons/${id}/unschedule`, {
+    method: "DELETE"
+  });
+  if (res.ok) {
+    dispatch(deleteLesson(id));
+    return res;
+  }
+}
+
+export const deleteTimeslot = (id) => async dispatch => {
   const res = await fetch(`/api/lessons/${id}`, {
     method: "DELETE"
   });
