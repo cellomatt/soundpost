@@ -12,20 +12,18 @@ export default function AssignmentContainer({assignment, role, setChange}) {
   const [edit, setEdit] = useState(false);
   const [editedAssignment, setEditedAssignment] = useState(assignment.message);
 
-  // useCallback()
-  const getMessageHeight = () => {
+
+  const getMessageHeight = useCallback(() => {
     const messageEl = document.querySelector(`#assignment-${assignment.id}`);
     let height = window.getComputedStyle(messageEl, null).height.replace("px", "")
     height = Number(height) + 40
-    console.log("height", height)
     setMessageHeight(height.toString() + "px")
-  }
-
-  useEffect(() => {
-    getMessageHeight()
-  }, [getMessageHeight, assignment.id])
+  }, [assignment.id])
 
   const editAssignment = async () => {
+    if (!edit) {
+      getMessageHeight();
+    }
     setEdit((edit) => !edit)
   }
 
