@@ -67,21 +67,21 @@ export default function IndividualStudentView({role}){
   return (
     <div className="main">
       <div className="dashboard_main">
-        <div className="student-info__box">
+        <div className="indstudent-info__box">
           {student &&
           <>
             <h1 className="title__main student-name">{student.first_name} {student.last_name}</h1>
             <div className="user-content">
-              <div className="user-info">
-                <div className="student-info__container">
-                  <div className="user-info__pic">
-                    {student.photo_url && <img className="user-info__pic--img" src={student.photo_url} alt="profile main"/>}
-                    {!student.photo_url && <img className="user-info__pic--img" src={`https://soundpost-app.s3.us-east-2.amazonaws.com/profile_icon.png`} alt="profile main"/>}
+              <div className="indstudent-info">
+                <div className="indstudent-info__container">
+                  <div className="indstudent-info__pic">
+                    {student.photo_url && <img className="indstudent-info__pic--img" src={student.photo_url} alt="profile main"/>}
+                    {!student.photo_url && <img className="indstudent-info__pic--img" src={`https://soundpost-app.s3.us-east-2.amazonaws.com/profile_icon.png`} alt="profile main"/>}
                   </div>
-                  <div className="student-info__contact">
-                    <h3 className="student-info__contact-item">tel: <a href="tel:+6143019973">{student.phone}</a></h3>
-                    <h3 className="student-info__contact-item">email: <a href={`mailto:${student.email_address}`}>{student.email_address}</a></h3>
-                    {student.parent_name && <h3 className="student-info__contact-item">parent name: <span>{student.parent_name.toLowerCase()}</span></h3>}
+                  <div className="indstudent-info__contact">
+                    <h3 className="indstudent-info__contact-item">tel: <a href="tel:+6143019973">{student.phone}</a></h3>
+                    <h3 className="indstudent-info__contact-item">email: <a href={`mailto:${student.email_address}`}>{student.email_address}</a></h3>
+                    {student.parent_name && <h3 className="indstudent-info__contact-item">parent: <span>{student.parent_name.toLowerCase()}</span></h3>}
                   </div>
                 </div>
                 <div className="send-assignment">

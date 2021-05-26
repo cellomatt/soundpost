@@ -60,7 +60,6 @@
   box-sizing: border-box;
   margin: .5em 0;
   max-height: 300px;
-  /* max-width: 350px; */
   width: 100%;
   border-radius: 8px;
   border: 3px solid #333;
@@ -95,7 +94,39 @@
   padding-left: .2em;
 }
 
-.student-info__box{
+.indstudent-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  min-width: 390px;
+}
+
+.indstudent-info__pic {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 3px solid #333333;
+  width: 95%;
+  height: 0;
+  padding-bottom: 95%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.indstudent-info__pic--img {
+  border-radius: 50%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  position: absolute;
+}
+
+.indstudent-info__box{
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -109,25 +140,26 @@
   align-items: center;
 }
 
-.student-info__contact {
+.indstudent-info__contact {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   padding-top: 1em;
+  flex-wrap: wrap;
 }
 
-.student-info__contact-item span,
-.student-info__contact-item a {
+.indstudent-info__contact-item span,
+.indstudent-info__contact-item a {
   color: #333;
   text-align: left;
 }
 
-.student-info__contact-item a:hover {
+.indstudent-info__contact-item a:hover {
   color: black;
 }
 
-.student-info__container{
+.indstudent-info__container{
   box-sizing: border-box;
   padding: 1.7em;
   margin-bottom: 1.5em;
@@ -154,12 +186,24 @@
   position: relative;
 }
 
-@media screen and (max-width: 940px) {
 
-  .student-info__container {
+@media screen and (max-width: 1143px) {
+  .indstudent-info {
+    min-width: 82%;
+    width: 82%
+  }
+
+  .indstudent-info__container {
     width: 100%;
     flex-wrap: nowrap;
-    margin-bottom: 1em;
+    margin: 2em 0;
+    padding: 0;
+  }
+
+  .indstudent-info__pic {
+    width: 25%;
+    padding-bottom: 25%;
+    margin: 0 2em;
   }
 
   .student-data__assignments,
@@ -172,37 +216,122 @@
     width: 100%;
   }
 
-  .student-data__log,
   .student-data {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .indstudent-info__contact {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .indstudent-info {
     width: 100%;
+  }
+
+  .send-assignment,
+  .indstudent-info__container,
+  .student-data {
+    min-width: 80%;
+    width: 80%
+  }
+
+  .student-data__assignments,
+  .student-data__stats,
+  .student-data__lessons,
+  .student-data__log {
+    padding: 0 0 1em;
+  }
+}
+
+@media screen and (max-width: 850px) {
+
+  .indstudent-info__pic {
+    width: 25%;
+    padding-bottom: 25%;
+    margin: 0 1em;
+  }
+
+  .indstudent-info__contact {
+    width: 65%;
+  }
+
+  .indstudent-info__container {
+    justify-content: space-between;
+    min-width: 90%;
+    width: 90%
   }
 }
 
 @media screen and (max-width: 700px) {
-  .student-info__container{
-    padding: 1em;
+  .student-name {
+    font-size: 4em;
+  }
+
+  .indstudent-info__container{
     min-width: 100%;
     width: 100%;
     max-width: 100%;
   }
+
+  .send-assignment,
+  .student-data {
+    min-width: 90%;
+    width: 90%
+  }
 }
 
 @media screen and (max-width: 600px) {
-  .student-info__box {
+  .indstudent-info__box {
     margin: 2em;
   }
-}
 
-@media screen and (max-width: 525px) {
-  .student-data__log--inner {
-    width: 90%;
-    min-width: 90%;
-    padding: 2em;
+  .indstudent-info__pic {
+    width: 20%;
+    padding-bottom: 20%;
+  }
+
+  .indstudent-info__contact {
+    width: 70%;
   }
 }
 
-@media screen and (max-width: 500px){
-  .name {
-    font-size: 2.5em;
+@media screen and (max-width: 575px) {
+  .send-assignment,
+  .student-data {
+    min-width: 100%;
+    width: 100%
+  }
+
+  .indstudent-info__container {
+    flex-direction: column;
+    margin-top: .5em;
+  }
+
+  .indstudent-info__contact {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .indstudent-info__pic {
+    width: 35%;
+    padding-bottom: 35%;
+    margin: 1em;
+  }
+
+  .student-name {
+    font-size: 3em;
+  }
+
+
+}
+
+@media screen and (max-width: 350px) {
+  .indstudent-info__contact-item {
+    font-weight: 500;
+    font-size: 1em;
   }
 }

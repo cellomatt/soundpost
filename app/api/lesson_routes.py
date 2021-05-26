@@ -32,7 +32,7 @@ def scheduled_teacher_lessons(id):
     now = datetime.now()
     lessons = TimeSlot.query.filter(TimeSlot.teacher_id == id).filter(
         TimeSlot.start_time > now).filter(
-        TimeSlot.student_id != None).order_by(TimeSlot.start_time).all()  # need to fix this!!
+        TimeSlot.student_id != None).order_by(TimeSlot.id).all()
 
     i = 1
     while i < len(lessons):
@@ -46,9 +46,9 @@ def scheduled_teacher_lessons(id):
     return res
 
 
-@lesson_routes.route('/<int:id>', methods=['DELETE'])
+@lesson_routes.route('/<int:id>/unschedule', methods=['DELETE'])
 @login_required
-def delete_lesson(id):
+def unschedule_lesson(id):
     lesson = TimeSlot.query.get(id)
     lesson2 = TimeSlot.query.filter(TimeSlot.start_time == lesson.end_time and
                                     TimeSlot.student_id == lesson.student_id).first()
@@ -57,6 +57,20 @@ def delete_lesson(id):
         db.session.add(lesson2)
     lesson.student_id = None
     db.session.add(lesson)
+    db.session.commit()
+
+    return Response(status=201, mimetype='application/json')
+
+
+@lesson_routes.route('/<int:id>', methods=['DELETE'])
+@login_required
+def delete_lesson(id):
+    lesson = TimeSlot.query.get(id)
+    lesson2 = TimeSlot.query.filter(TimeSlot.start_time == lesson.end_time and
+                                    TimeSlot.student_id == lesson.student_id).first()
+    if lesson2:
+        db.session.delete(lesson2)
+    db.session.delete(lesson)
     db.session.commit()
 
     return Response(status=201, mimetype='application/json')
