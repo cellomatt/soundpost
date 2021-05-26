@@ -29,13 +29,6 @@ export default function AssignmentContainer({assignment, role, setChange}) {
     setChange((change) => !change)
   }
 
-  const deleteAssignment = async () => {
-    await dispatch(assignmentActions.deleteAssignment(assignment.id))
-    setChange((change) => !change)
-  }
-
-
-
 
   return (
     <div className="message__container">

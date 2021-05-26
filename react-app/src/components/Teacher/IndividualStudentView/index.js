@@ -72,11 +72,11 @@ export default function IndividualStudentView({role}){
           <>
             <h1 className="title__main student-name">{student.first_name} {student.last_name}</h1>
             <div className="user-content">
-              <div className="user-info">
+              <div className="student-info">
                 <div className="student-info__container">
-                  <div className="user-info__pic">
-                    {student.photo_url && <img className="user-info__pic--img" src={student.photo_url} alt="profile main"/>}
-                    {!student.photo_url && <img className="user-info__pic--img" src={`https://soundpost-app.s3.us-east-2.amazonaws.com/profile_icon.png`} alt="profile main"/>}
+                  <div className="student-info__pic">
+                    {student.photo_url && <img className="student-info__pic--img" src={student.photo_url} alt="profile main"/>}
+                    {!student.photo_url && <img className="student-info__pic--img" src={`https://soundpost-app.s3.us-east-2.amazonaws.com/profile_icon.png`} alt="profile main"/>}
                   </div>
                   <div className="student-info__contact">
                     <h3 className="student-info__contact-item">tel: <a href="tel:+6143019973">{student.phone}</a></h3>

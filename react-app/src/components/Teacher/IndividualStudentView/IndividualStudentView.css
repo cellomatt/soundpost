@@ -60,7 +60,6 @@
   box-sizing: border-box;
   margin: .5em 0;
   max-height: 300px;
-  /* max-width: 350px; */
   width: 100%;
   border-radius: 8px;
   border: 3px solid #333;
@@ -93,6 +92,38 @@
   color: #0061FF;
   font-weight: 600;
   padding-left: .2em;
+}
+
+.student-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  min-width: 390px;
+}
+
+.student-info__pic {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 3px solid #333333;
+  width: 95%;
+  height: 0;
+  padding-bottom: 95%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.student-info__pic--img {
+  border-radius: 50%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  position: absolute;
 }
 
 .student-info__box{
@@ -154,12 +185,23 @@
   position: relative;
 }
 
-@media screen and (max-width: 940px) {
+
+@media screen and (max-width: 1143px) {
+  .student-info {
+    min-width: 80%;
+    width: 80%
+  }
 
   .student-info__container {
     width: 100%;
     flex-wrap: nowrap;
     margin-bottom: 1em;
+  }
+
+  .student-info__pic {
+    width: 25%;
+    padding-bottom: 25%;
+    margin: 0 2em;
   }
 
   .student-data__assignments,
@@ -172,18 +214,56 @@
     width: 100%;
   }
 
-  .student-data__log,
   .student-data {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .student-info {
     width: 100%;
+  }
+  .send-assignment,
+  .student-info__container,
+  .student-data {
+    min-width: 80%;
+    width: 80%
+  }
+
+  .student-data__assignments,
+  .student-data__stats,
+  .student-data__lessons,
+  .student-data__log {
+    padding: 0 0 1em;
+  }
+}
+
+@media screen and (max-width: 850px) {
+
+  .student-info__pic {
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 0 1em;
   }
 }
 
 @media screen and (max-width: 700px) {
+  .student-name {
+    font-size: 4em;
+  }
+
   .student-info__container{
     padding: 1em;
     min-width: 100%;
     width: 100%;
     max-width: 100%;
+  }
+  .send-assignment,
+  .student-info__container,
+  .student-data {
+    min-width: 90%;
+    width: 90%
   }
 }
 
@@ -192,6 +272,8 @@
     margin: 2em;
   }
 }
+
+
 
 @media screen and (max-width: 525px) {
   .student-data__log--inner {
@@ -202,7 +284,16 @@
 }
 
 @media screen and (max-width: 500px){
-  .name {
-    font-size: 2.5em;
+  .student-name {
+    font-size: 3em;
   }
+}
+
+@media screen and (max-width: 450px) {
+  .student-info__pic {
+    width: 35%;
+    padding-bottom: 35%;
+    margin: 0 1em;
+  }
+
 }
