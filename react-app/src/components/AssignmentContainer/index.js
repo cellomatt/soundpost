@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import AssignmentModal from "../AssignmentModal"
 import * as assignmentActions from '../../store/assignment'
 import './AssignmentContainer.css'
 
@@ -47,7 +48,7 @@ export default function AssignmentContainer({assignment, role, setChange}) {
               {edit && <i className="fas fa-times"></i>}
             </button>
             {edit && <button className="btn btn__secondary assignment-buttons__button" onClick={saveAssignment}><i className="far fa-save"></i></button>}
-            <button className="btn btn__secondary assignment-buttons__button" onClick={deleteAssignment}><i className="far fa-trash-alt"></i></button>
+            <AssignmentModal assignment={assignment} setChange={setChange}></AssignmentModal>
           </div>
         }
       </div>

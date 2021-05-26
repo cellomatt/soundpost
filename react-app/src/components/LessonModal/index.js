@@ -98,7 +98,7 @@ export default function LessonModal({scheduled, setScheduled, lesson, setChange,
               <button className="btn__x" onClick={onRequestClose}>
                   <i className="fas fa-times"></i>
               </button>
-              <p className="modal__message">Delete availability on {lesson.start_time.toLocaleDateString('en-US', {dateStyle: 'long'})} at {lesson.start_time.toLocaleTimeString('en-US', { timeStyle: "short" })}?</p>
+              <p className="modal__message">Do you want to delete your availability on {lesson.start_time.toLocaleDateString('en-US', {dateStyle: 'long'})} at {lesson.start_time.toLocaleTimeString('en-US', { timeStyle: "short" })}?</p>
               <div className="yes-no-buttons">
                 <button className="btn__primary modal__btn" onClick={deleteAvailability}>Yes</button>
                 <button className="btn__primary modal__btn" onClick={noDeleteAvailability}>No</button>
