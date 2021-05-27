@@ -21,10 +21,10 @@ def seed_students():
     female_pics = [
         "https://soundpost-app.s3.us-east-2.amazonaws.com/download.png",
         "https://soundpost-app.s3.us-east-2.amazonaws.com/download+(26).png",
-        "https://soundpost-app.s3.us-east-2.amazonaws.com/download+(25).png",
-        "https://soundpost-app.s3.us-east-2.amazonaws.com/download+(21).png",
         "https://soundpost-app.s3.us-east-2.amazonaws.com/XzA1MjQxOTkuanBn.jpg",
-        "https://soundpost-app.s3.us-east-2.amazonaws.com/download+(22).png"
+        "https://soundpost-app.s3.us-east-2.amazonaws.com/download+(21).png",
+        "https://soundpost-app.s3.us-east-2.amazonaws.com/download+(22).png",
+        "https://soundpost-app.s3.us-east-2.amazonaws.com/download+(25).png"
     ]
     male_pics = [
         "https://soundpost-app.s3.us-east-2.amazonaws.com/download+(1).png",
@@ -40,15 +40,27 @@ def seed_students():
                 photo_url='https://soundpost-app.s3.us-east-2.amazonaws.com/XzA1NTg5MzUuanBn.jpg', teacher_id=teacher1.id, created_at=start_date)
     students.append(demo)
 
-    for num in range(3):
+    for num in range(2):
         student = Student(first_name=fake.first_name_female(), last_name=fake.last_name(), email_address=fake.free_email(),
                 password=fake.password(length=12), instrument='cello', phone=phone_number(), parent_name=fake.name(),
                 photo_url=female_pics[num], teacher_id=teacher1.id, created_at=start_date)
         students.append(student)
 
-    for num in range(3, 6):
+    for num in range(5, 6):
+        student = Student(first_name=fake.first_name_female(), last_name=fake.last_name(), email_address=fake.free_email(),
+                password=fake.password(length=12), instrument='cello', phone=phone_number(),
+                photo_url=female_pics[num], teacher_id=teacher1.id, created_at=start_date)
+        students.append(student)
+
+    for num in range(2, 3):
         student = Student(first_name=fake.first_name_female(), last_name=fake.last_name(), email_address=fake.free_email(),
                 password=fake.password(length=12), instrument='viola', phone=phone_number(), parent_name=fake.name(),
+                photo_url=female_pics[num], teacher_id=teacher2.id, created_at=start_date)
+        students.append(student)
+
+    for num in range(3, 5):
+        student = Student(first_name=fake.first_name_female(), last_name=fake.last_name(), email_address=fake.free_email(),
+                password=fake.password(length=12), instrument='viola', phone=phone_number(),
                 photo_url=female_pics[num], teacher_id=teacher2.id, created_at=start_date)
         students.append(student)
 
@@ -58,7 +70,7 @@ def seed_students():
                 photo_url=male_pics[num], teacher_id=teacher1.id, created_at=start_date)
         students.append(student)
 
-    for num in range(3):
+    for num in range(3, 6):
         student = Student(first_name=fake.first_name_male(), last_name=fake.last_name(), email_address=fake.free_email(),
                 password=fake.password(length=12), instrument='viola', phone=phone_number(), parent_name=fake.name(),
                 photo_url=male_pics[num], teacher_id=teacher2.id, created_at=start_date)
