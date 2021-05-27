@@ -128,6 +128,9 @@ export default function IndividualStudentView({role}){
                       Percentage of Days Practiced (All Time): <span>{stats.all.percentage}%</span>
                     </p>
                     <p>
+                      Completed Lessons: <span>{stats.lessons}</span>
+                    </p>
+                    <p>
                       Soundpost Start Date: <span>{stats.start_date.toLocaleDateString('en-US', options)}</span>
                     </p>
                   </div>}
