@@ -21,9 +21,9 @@
   margin: 0 auto;
   border-radius: 50%;
   border: 3px solid #333333;
-  width: 95%;
+  width: 80%;
   height: 0;
-  padding-bottom: 95%;
+  padding-bottom: 80%;
   position: relative;
   background-color: rgba(255, 255, 255, 0.7);
 }
@@ -62,7 +62,7 @@
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   justify-content: center;
   align-items: center;
-  min-height: 401.22px;
+  min-height: 370px;
 }
 
 
