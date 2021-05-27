@@ -16,7 +16,7 @@ export default function AssignmentContainer({assignment, role, setChange}) {
   const getMessageHeight = useCallback(() => {
     const messageEl = document.querySelector(`#assignment-${assignment.id}`);
     let height = window.getComputedStyle(messageEl, null).height.replace("px", "")
-    height = Number(height) + 40
+    height = Number(height) + 45
     setMessageHeight(height.toString() + "px")
   }, [assignment.id])
 
