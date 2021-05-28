@@ -154,6 +154,9 @@
 .indstudent-info__contact-item a {
   color: #333;
   text-align: left;
+  font-weight: 500;
+  padding-left: .1em;
+  word-wrap: break-word;
 }
 
 .indstudent-info__contact-item a:hover {
